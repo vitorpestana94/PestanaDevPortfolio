@@ -1,4 +1,13 @@
 @import "tailwindcss";
+@tailwind utilities;
+
+@theme {
+  --breakpoint-xxs: 320px;
+  --breakpoint-xs: 360px;
+  --breakpoint-ssm: 400px;
+  --breakpoint-3xl: 120rem;
+  --breakpoint-4xl: 175rem;
+}
 
 :root {
   --background: #000000;
@@ -12,9 +21,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@layer components{
-    .homeSocialMediaIcons {
-    @apply fill-[#bfbfbf] aspect-square w-6
+@layer components {
+  .homeSocialMediaIcons {
+    @apply fill-[#bfbfbf] aspect-square w-5 sm:w-4 md:w-5 xl:w-6 3xl:w-10 cursor-pointer;
   }
 }
 
