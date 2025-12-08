@@ -31,7 +31,11 @@
   }
 
   .conteudoWrapper {
-    @apply flex flex-col justify-between items-center sm:justify-stretch sm:items-baseline sm:mx-16 xl:mx-36;
+    @apply sm:mx-16 xl:mx-36;
+  }
+
+  .homeParagraph {
+    @apply text-white text-[0.625rem] xl:text-[1rem] text-justify;
   }
 }
 

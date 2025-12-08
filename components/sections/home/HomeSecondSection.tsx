@@ -1,12 +1,13 @@
 import Wrapper from "@/components/wrappers/home/HomeWrapper";
-import UmPoucoSobreMim from "@/components/textBlocks/home/AboutTextBlock";
-import Sobre from "@/components/textBlocks/home/AboutFirstTextBlock";
+import SobreMim from "@/components/divs/home/firstSession/HomeAboutTextDiv";
+import MaisSobreMim from "@/components/divs/home/firstSession/HomeTextAndPicture";
+
 export default function HomeSecondSection() {
   return (
-    <section className="w-full my-20 xl:my-40">
-      <Wrapper className="conteudoWrapper sm:w-1/2 xl:w-1/4 space-y-10">
-        <UmPoucoSobreMim />
-        <Sobre />
+    <section id="sobre" className="relative w-full my-20 xl:my-40">
+      <Wrapper className="conteudoWrapper flex flex-col justify-between gap-y-16 sm:flex-row sm:gap-y-0">
+        <SobreMim />
+        <MaisSobreMim />
       </Wrapper>
     </section>
   );

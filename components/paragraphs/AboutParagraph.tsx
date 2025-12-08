@@ -1,6 +1,12 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function AboutParagraph() {
+  const t = useTranslations();
+
   return (
-    <p className="text-white text-[0.625rem] xl:text-[1rem] text-justify">
+    <p className="homeParagraph">
       AD AD Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
       tempor mi ut nulla rutrum, ut dictum libero tempor. Nunc vehicula faucibus
       elementum. Morbi facilisis sed leo condimentum ultrices. Etiam feugiat

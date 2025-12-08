@@ -1,5 +1,5 @@
 import VitorPestana from "@/components/textBlocks/home/VitorPestanaTextBlock";
-import Frame from "@/components/divs/FrameDiv";
+import Frame from "@/components/divs/frameDiv/FrameDiv";
 import FullStackWebDeveloper from "@/components/paragraphs/FullStackWebDeveloperParagraph";
 
 export default function HomeFirstSectionTextBLock() {
@@ -17,7 +17,11 @@ export default function HomeFirstSectionTextBLock() {
       4xl:ml-[600px]"
     >
       <VitorPestana />
-      <Frame className="w-[35%] sm:w-[22%] xl:w-[18%] 3xl:w-[14%] 4xl:w-[12%]">
+      <Frame
+        props={{
+          className: "w-[35%] sm:w-[22%] xl:w-[18%] 3xl:w-[14%] 4xl:w-[12%]",
+        }}
+      >
         <FullStackWebDeveloper />
       </Frame>
     </section>
