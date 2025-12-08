@@ -9,7 +9,7 @@ export default function VitorPestanaTextBlock() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, delay: 0.5 }}
     >
-      <div className="flex flex-col text-[#38b6ff] leading-none -space-y-2 sm:-space-y-6">
+      <div className="flex flex-col azulPestana leading-none -space-y-2 sm:-space-y-6">
         <Vitor />
         <Pestana />
       </div>

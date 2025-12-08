@@ -1,8 +1,11 @@
 {
-   "home": {
-        "header": {
-            "sobre": "About",
-            "meuTrabalho": "My Work"
-        }
+  "home": {
+    "header": {
+      "sobre": "About",
+      "meuTrabalho": "My Work"
+    },
+    "segundaSessao": {
+      "titulo": "Um pouco\nsobre mim"
     }
+  }
 }

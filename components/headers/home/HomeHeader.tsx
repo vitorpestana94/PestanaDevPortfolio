@@ -11,7 +11,7 @@ export default function HomeHeader() {
 
   return (
     <motion.header
-      className="flex fixed justify-between w-full sm:mx-5 xl:mx-0 sm:w-[90%] xl:w-[85%] top-0 items-center mt-2 xl:ml-4 xl:mt-4 3xl:mt-8 "
+      className="flex fixed justify-between w-full sm:mx-5 xl:mx-0 sm:w-[90%] xl:w-[85%] 4xl:w-[90%] top-0 items-center mt-2 xl:mt-4 3xl:mt-8 "
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}

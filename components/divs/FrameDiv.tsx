@@ -2,14 +2,14 @@ import * as motion from "motion/react-client";
 
 export default function FrameDiv({
   children,
-  frameSize,
+  className,
 }: {
   children: React.ReactNode;
-  frameSize: string;
+  className: string;
 }) {
   return (
     <motion.div
-      className={`relative aspect-2/1 ${frameSize} flex justify-center items-center`}
+      className={`relative aspect-2/1 ${className} flex justify-center items-center`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5, delay: 1.5 }}

@@ -5,13 +5,11 @@ import Wrapper from "@/components/wrappers/home/HomeWrapper";
 
 export default function HomeFirstSection() {
   return (
-    <div className="sm:mt-20">
-      <BackGround>
-        <Wrapper specificStyle="mt-16 sm:mt-20">
-          <VpSobreMeuTrabalhoSocialMedia />
-          <VitorPestanaFullStackWebDeveloper />
-        </Wrapper>
-      </BackGround>
-    </div>
+    <BackGround>
+      <Wrapper className="mt-16 sm:mt-20 xl:mt-40 xl:mx-[90px]">
+        <VpSobreMeuTrabalhoSocialMedia />
+        <VitorPestanaFullStackWebDeveloper />
+      </Wrapper>
+    </BackGround>
   );
 }

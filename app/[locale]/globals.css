@@ -25,6 +25,14 @@
   .homeSocialMediaIcons {
     @apply fill-[#bfbfbf] aspect-square w-5 sm:w-4 md:w-5 xl:w-6 3xl:w-10 cursor-pointer;
   }
+
+  .azulPestana {
+    @apply text-[#38b6ff];
+  }
+
+  .conteudoWrapper {
+    @apply flex flex-col justify-between items-center sm:justify-stretch sm:items-baseline sm:mx-16 xl:mx-36;
+  }
 }
 
 body {
