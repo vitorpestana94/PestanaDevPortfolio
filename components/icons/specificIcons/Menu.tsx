@@ -9,9 +9,7 @@ export default function Menu({
 }) {
   return (
     <div
-      className={`flex justify-center w-full animate-fadeIn ${
-        open ? "hidden" : ""
-      }`}
+      className={`flex justify-center w-full ${open ? "hidden" : ""}`}
       onClick={() => setOpen(!open)}
     >
       <MenuIcon iconName="menu" className="aspect-square w-6" />

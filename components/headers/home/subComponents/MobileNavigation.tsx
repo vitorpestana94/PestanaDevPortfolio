@@ -12,7 +12,7 @@ export default function MobileNavigation() {
       }`}
     >
       <div className="relative h-full">
-        <div className="absolute top-10 sm:top-[62px] right-6 z-20">
+        <div className="absolute top-10 sm:top-[62px] right-12 z-20">
           <Menu open={open} setOpen={setOpen} />
         </div>
         {open && (
