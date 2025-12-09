@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 import HomeTitle from "./HomeTitle";
 
-export default function AbouTitle() {
-  const t = useTranslations("home.segundaSessao");
+export default function MyWork() {
+  const t = useTranslations("home.terceiraSessao");
 
   return (
     <HomeTitle>

@@ -1,6 +1,7 @@
 import SocialMediaIcon from "../icons/specificIcons/socialMediaIcon/SocialMediaIcon";
 import Email from "../icons/Icons";
 import Link from "next/link";
+import options from "@/data/options.json";
 
 export default function SocialMediaSpan() {
   return (
@@ -11,26 +12,25 @@ export default function SocialMediaSpan() {
       <SocialMediaIcon
         props={{
           iconName: "instagram",
-          linkToSocialMedia: "https://www.instagram.com/vitorluizpestana/",
+          linkToSocialMedia: options.socialMedias.instagram,
         }}
       />
       <SocialMediaIcon
         props={{
           iconName: "linkedin",
-          linkToSocialMedia:
-            "https://www.linkedin.com/in/vitor-pestana-9ab88b200/",
+          linkToSocialMedia: options.socialMedias.linkedin,
         }}
       />
       <SocialMediaIcon
         props={{
           iconName: "whatsapp",
-          linkToSocialMedia: "https://wa.me/5521991505625",
+          linkToSocialMedia: options.socialMedias.whatsapp,
         }}
       />
       <Link href={"#email"} className="flex justify-center items-center">
         <Email
           iconName="email"
-          className="w-[23px] sm:w-[18px] md:w-[22px] xl:w-[26px] 3xl:w-[46px] stroke-[#bfbfbf] cursor-pointer"
+          className="w-[23px] sm:w-[18px] md:w-[22px] xl:w-[26px] 3xl:w-[46px] stroke-[#bfbfbf] hover:stroke-[#38b6ff]"
         />
       </Link>
     </span>

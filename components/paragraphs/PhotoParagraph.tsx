@@ -8,7 +8,7 @@ export default function PhotoParagraph() {
 
   return (
     <motion.p
-      className="homeParagraph px-20 xl:px-24 2xl:px-40 3xl:px-64"
+      className="homeParagraph px-20 xl:px-24 2xl:px-44 3xl:px-64"
       ref={ref}
       initial={{ opacity: 0, x: 20 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}

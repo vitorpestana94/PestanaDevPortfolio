@@ -1,10 +1,9 @@
 "use client";
 
-import UmPoucoSobreMim from "@/components/titles/AbouTitle";
 import { motion } from "motion/react";
 import useEffetInView from "@/hooks/useEffetInView";
 
-export default function AboutTextBlock() {
+export default function HomeTitle({ children }: { children: React.ReactNode }) {
   const { ref, isInView } = useEffetInView();
 
   return (
@@ -15,7 +14,7 @@ export default function AboutTextBlock() {
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.9, delay: 1 }}
     >
-      <UmPoucoSobreMim />
+      {children}
     </motion.div>
   );
 }

@@ -1,14 +1,21 @@
+"use client";
+
 import Wrapper from "@/components/wrappers/home/HomeWrapper";
-import SobreMim from "@/components/divs/home/firstSession/HomeAboutTextDiv";
-import MaisSobreMim from "@/components/divs/home/firstSession/HomeTextAndPicture";
+import SobreMim from "@/components/divs/home/SecondSession/HomeAboutTextDiv";
+import MaisSobreMim from "@/components/divs/home/SecondSession/HomeTextAndPicture";
+import QuadradoAzul from "@/components/divs/home/SecondSession/HomeBlueDiv";
+import useIsMobile from "@/hooks/useIsMobile";
 
 export default function HomeSecondSection() {
+  const { isMobile } = useIsMobile();
+
   return (
-    <section id="sobre" className="relative w-full my-20 xl:my-40">
-      <Wrapper className="conteudoWrapper flex flex-col justify-between gap-y-16 sm:flex-row sm:gap-y-0">
+    <section id="sobre" className="relative homeSectionMargin">
+      <Wrapper className="conteudoWrapper homeMobileDirection sm:flex-row">
         <SobreMim />
         <MaisSobreMim />
       </Wrapper>
+      {!isMobile && <QuadradoAzul />}
     </section>
   );
 }

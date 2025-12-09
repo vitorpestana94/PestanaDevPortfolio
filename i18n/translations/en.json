@@ -5,7 +5,10 @@
       "meuTrabalho": "My Work"
     },
     "segundaSessao": {
-      "titulo": "Um pouco\nsobre mim"
+      "titulo": "About me"
+    },
+    "terceiraSessao": {
+      "titulo": "My work"
     }
   }
 }

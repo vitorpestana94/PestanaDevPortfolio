@@ -1,15 +1,20 @@
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export default function SeuZeLeiteiro() {
   return (
-    <div className="aspect-2/1 w-[70%] sm:w-[80%] xl:w-[85%] relative self-center xl:mt-40">
+    <motion.div
+      className="mx-auto aspect-12/5 w-[70%] sm:w-[75%] xl:w-[80%] relative self-center xl:mt-40"
+      whileHover={{ filter: "brightness(1.1) contrast(1.2)" }}
+    >
       <Image
+        className="rounded-lg"
         src={"/png/seuZeLeiteiro.png"}
-        alt="passPicture"
+        alt="seuZeLeiteiroPicture"
         fill
         style={{ objectFit: "fill" }}
         loading="lazy"
       />
-    </div>
+    </motion.div>
   );
 }

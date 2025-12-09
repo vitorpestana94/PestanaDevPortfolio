@@ -1,4 +1,4 @@
-import UmPoucoSobreMim from "@/components/textBlocks/home/AboutTextBlock";
+import UmPoucoSobreMim from "@/components/titles/AbouTitle";
 import Sobre from "@/components/textBlocks/home/AboutFirstTextBlock";
 
 export default function HomeAboutTextDiv() {
