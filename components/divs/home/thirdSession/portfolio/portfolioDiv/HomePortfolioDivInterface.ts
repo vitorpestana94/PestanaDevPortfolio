@@ -1,4 +1,7 @@
+export type componentType = "gifOrImage" | "link" | "bgColors";
+
 export default interface HomePortfolioDivInterface {
+  type?: componentType;
   props: {
     size: {
       widthAndHeight: string;
@@ -7,6 +10,7 @@ export default interface HomePortfolioDivInterface {
       pictureUrl: string;
       routeOrSiteUrl: string;
     };
-    bgColor?: string;
+    bgColors?: string[];
+    bgImage?: string;
   };
 }

@@ -1,20 +1,16 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
 import FrameDivInterface from "./FrameDivInterface";
 import useEffetInView from "@/hooks/useEffetInView";
 
 export default function FrameDiv({ children, props }: FrameDivInterface) {
-  const opacity = { opacity: 1 };
   const { ref, isInView } = useEffetInView();
-  const [animate, setAnimate] = useState(props.waitIsInView ? {} : opacity);
-
-  useEffect(() => {
-    if (isInView) {
-      setAnimate(opacity);
-    }
-  }, [isInView]);
+  const animate = props.waitIsInView
+    ? isInView
+      ? { opacity: 1 }
+      : {}
+    : { opacity: 1 };
 
   return (
     <motion.div

@@ -12,17 +12,10 @@ export default function MobileNavigation() {
       }`}
     >
       <div className="relative h-full">
-        <div className="absolute top-10 sm:top-[62px] right-5 z-20">
+        <div className="absolute top-10 sm:top-[62px] right-8 z-20">
           <Menu open={open} setOpen={setOpen} />
         </div>
-        {open && (
-          <MobileNav
-            props={{
-              navRef: navRef,
-              setOpen: setOpen,
-            }}
-          />
-        )}
+        {open && <MobileNav ref={navRef} setOpen={setOpen} />}
       </div>
     </div>
   );

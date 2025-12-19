@@ -1,30 +1,36 @@
 import PortfolioDiv from "../portfolioDiv/HomePortfolioDiv";
 import HomePortfolioDivsGroups from "../portfolioDivsGroups/HomePortfolioDivsGroups";
+import Aggregation from "../PortfolioDivText/PortfolioDivAggregation";
 
 export default function PortfolioSecondPart() {
   return (
     <HomePortfolioDivsGroups>
-      <div className="portfolioFlex">
+      <Aggregation>
         <PortfolioDiv
+          type="bgColors"
           props={{
-            bgColor: "bg-white",
+            bgColors: ["#008042"],
             size: {
-              widthAndHeight: "w-[40%] h-[230px]",
+              widthAndHeight: "w-[60%] sm:w-[25%] aspect-1/2",
             },
           }}
         />
         <PortfolioDiv
+          type="bgColors"
           props={{
-            bgColor: "bg-red-900",
-            size: { widthAndHeight: "flex-1 h-[230px]" },
+            bgColors: ["#008042"],
+            size: {
+              widthAndHeight: "flex-1",
+            },
           }}
         />
-      </div>
+      </Aggregation>
       <PortfolioDiv
+        type="bgColors"
         props={{
-          bgColor: "bg-white",
+          bgColors: ["#008042"],
           size: {
-            widthAndHeight: "w-full h-[170px]",
+            widthAndHeight: "w-full flex-1",
           },
         }}
       />

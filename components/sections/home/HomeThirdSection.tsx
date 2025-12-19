@@ -5,7 +5,7 @@ import Portfolio from "@/components/divs/home/thirdSession/HomeMyWorkDiv";
 export default function HomeThirdSection() {
   return (
     <section id="meuTrabalho" className="homeSectionMargin">
-      <Wrapper className="conteudoWrapper homeMobileDirection ">
+      <Wrapper className="conteudoWrapper homeMobileDirection">
         <MeuTrabalho />
         <Portfolio />
       </Wrapper>

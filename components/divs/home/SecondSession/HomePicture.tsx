@@ -4,9 +4,12 @@ import SeuZeLeiteiroFoto from "@/components/images/SeuZeLeiteiro";
 import { motion } from "motion/react";
 
 export default function HomePicture() {
+  const effect = { scale: 1.15 };
+
   return (
     <motion.div
-      whileHover={{ scale: 1.15 }}
+      whileHover={effect}
+      whileTap={effect}
       transition={{ type: "spring", stiffness: 200, damping: 12 }}
     >
       <SeuZeLeiteiroFoto />

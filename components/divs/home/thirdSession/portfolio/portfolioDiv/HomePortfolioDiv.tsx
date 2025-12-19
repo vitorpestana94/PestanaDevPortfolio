@@ -1,33 +1,35 @@
+"use client";
+
 import HomePortfolioDivInterface from "./HomePortfolioDivInterface";
-import Link from "next/link";
+import PortfolioLink from "./HomePortfolioLink";
+import DivWithBgColors from "./HomePortofolioDivWithBgColors";
+import DivGif from "./HomePortfolioDivGifOrImage";
+import { JSX } from "react";
 
-function getLink({ props }: HomePortfolioDivInterface) {
-  return (
-    <Link
-      target="_blank"
-      rel="noopener noreferrer"
-      href={props.picture?.routeOrSiteUrl!}
-      className={`${props.size.widthAndHeight}  border-8 border-black relative`}
-    >
-      <div
-        className={`absolute inset-0 bg-[url('/png/${props.picture?.pictureUrl}.png')] bg-no-repeat bg-cover bg-center`}
-      />
-    </Link>
-  );
-}
+export default function HomePortfolioDiv({
+  type,
+  props,
+}: HomePortfolioDivInterface) {
+  function getComponent() {
+    let component: JSX.Element | null;
 
-function getDivWithBg({ props }: HomePortfolioDivInterface) {
-  return (
-    <div
-      className={`${props.size.widthAndHeight} ${props.bgColor}    border-8 border-black relative`}
-    >
-      <div
-        className={`absolute inset-0 bg-[url('/png/${props.picture?.pictureUrl}.png')] bg-no-repeat bg-cover bg-center`}
-      />
-    </div>
-  );
-}
+    switch (type) {
+      case "link":
+        component = <PortfolioLink props={props} />;
+        break;
+      case "bgColors":
+        component = <DivWithBgColors props={props} />;
+        break;
+      case "gifOrImage":
+        component = <DivGif props={props} />;
+        break;
+      default:
+        component = null;
+        break;
+    }
 
-export default function HomePortfolioDiv({ props }: HomePortfolioDivInterface) {
-  return <>{props.picture ? getLink({ props }) : getDivWithBg({ props })}</>;
+    return component;
+  }
+
+  return <>{getComponent()}</>;
 }

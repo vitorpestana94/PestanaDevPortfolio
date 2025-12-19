@@ -1,10 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-
 export default function AboutParagraph() {
-  const t = useTranslations();
-
   return (
     <p className="homeParagraph">
       AD AD Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
