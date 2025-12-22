@@ -63,7 +63,7 @@ export const portfolioMeio = {
     bgImage:
       "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDNpNGtlZXRoY29hZHd3cTl5ejBzYm9pMGt3Z2llY3ZxZThvOW9yOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KVZWZQoS0yqfIiTAKq/giphy.gif",
     size: {
-      widthAndHeight: "w-[20%] sm:w-[25%] aspect-[2/3.8]",
+      widthAndHeight: "w-[20%] sm:w-[25%] aspect-[2/5]",
     },
   },
 };
