@@ -9,6 +9,15 @@
     },
     "terceiraSessao": {
       "titulo": "Meu trabalho"
+    },
+    "quartaSessao": {
+      "copyright": "Todos os direitos reservados",
+      "form": {
+        "titulo": "Contato",
+        "email": "seu email",
+        "nome": "seu nome",
+        "mensagem": "Quer me conhecer melhor?\nVocê pode falar comigo pelas minhas redes sociais ou me mandando um email!"
+      }
     }
   }
 }

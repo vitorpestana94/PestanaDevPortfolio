@@ -16,10 +16,7 @@ export default function HomeHeader() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
     >
-      <VP
-        iconName="vP"
-        className=" aspect-square w-24 md:w-28 xl:w-32 3xl:w-44 4xl:w-60"
-      />
+      <VP iconName="vP" className="homeVp" />
       {isMobile ? <MobileNavigation /> : <DesktopNavBar />}
     </motion.header>
   );

@@ -38,6 +38,10 @@
     @apply sm:mx-16 xl:mx-20;
   }
 
+  .homeVp {
+    @apply aspect-square w-24 md:w-28 xl:w-32 3xl:w-44 4xl:w-60;
+  }
+
   .homeParagraph {
     @apply text-white text-[0.625rem] xl:text-[1rem] text-justify;
   }
@@ -59,4 +63,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+  text-align: right;
 }
