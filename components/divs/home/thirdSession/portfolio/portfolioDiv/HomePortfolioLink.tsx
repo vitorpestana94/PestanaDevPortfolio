@@ -3,6 +3,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import DivText from "../PortfolioDivText";
 import useHomePortfolioDiv from "./useHomePortfolioDivLink";
+
 export default function HomePortfolioLink({
   props,
 }: HomePortfolioDivInterface) {
@@ -11,7 +12,7 @@ export default function HomePortfolioLink({
 
   return (
     <motion.div
-      whileHover={{ scale: 1.5 }}
+      whileHover={{ scale: 1.4 }}
       whileTap={{ scale: 1.2 }}
       onTap={handleTap}
       onHoverEnd={() => hoverStart()}
@@ -35,6 +36,7 @@ export default function HomePortfolioLink({
       </Link>
       <DivText
         show={show}
+        style={props.picture?.style}
         text="koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe  koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe koe"
       />
     </motion.div>

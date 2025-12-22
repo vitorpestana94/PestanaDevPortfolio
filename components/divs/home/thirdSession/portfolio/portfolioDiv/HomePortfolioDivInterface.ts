@@ -9,6 +9,7 @@ export default interface HomePortfolioDivInterface {
     picture?: {
       pictureUrl: string;
       routeOrSiteUrl: string;
+      style?: string;
     };
     bgColors?: string[];
     bgImage?: string;

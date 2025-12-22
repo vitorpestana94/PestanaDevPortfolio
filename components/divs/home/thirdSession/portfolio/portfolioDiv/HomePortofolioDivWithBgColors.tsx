@@ -1,5 +1,6 @@
 import useDivWithBgColor from "./useDivWithBgColor";
 import HomePortfolioDivInterface from "./HomePortfolioDivInterface";
+
 export default function HomePortofolioDivWithBgColors({
   props,
 }: HomePortfolioDivInterface) {

@@ -13,9 +13,9 @@ export default function useDivWithBgColor(colors: string[]) {
       motionElement,
       { backgroundColor: colors },
       {
-        duration: 2,
+        duration: 3,
         repeat: Infinity,
-        repeatType: "reverse",
+        repeatType: "mirror",
         ease: "linear",
       }
     );
