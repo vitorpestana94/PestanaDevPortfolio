@@ -36,9 +36,9 @@ export default function HomeFooterForm() {
             }}
           />
         </span>
-        <div className="flex flex-col gap-y-6 sm:gap-y-8 w-full items-center sm:items-end">
+        <div className="flex flex-col gap-y-4 w-full items-center sm:items-end">
           <EmailText placeHolder={t("quartaSessao.form.mensagem")} />
-          <Enviar label="Enviar" />
+          <Enviar label={t("quartaSessao.form.buttonLabel")} />
         </div>
       </div>
     </form>

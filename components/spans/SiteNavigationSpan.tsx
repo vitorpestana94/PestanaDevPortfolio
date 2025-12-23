@@ -10,7 +10,8 @@ export default function SiteNavigationSpan() {
     <span
       className="flex text-[#bfbfbf]
         text-[0.75rem] flex-col gap-y-4 items-center
-        md:text-[1rem] sm:flex-row sm:gap-x-2 sm:gap-y-0
+        sm:flex-row sm:gap-x-4 sm:gap-y-0
+        md:text-[1rem]
         xl:text-[1.25rem] xl:gap-x-5
         3xl:text-[1.625rem] 3xl:gap-x-8
         4xl:text-[2rem] 4xl:gap-x-10"
