@@ -44,4 +44,4 @@ next-env.d.ts
 .vscode
 
 # Images privadas em dev
-.public/png/*.png
+public/png/*.png
