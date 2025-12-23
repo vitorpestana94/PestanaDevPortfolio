@@ -45,3 +45,4 @@ next-env.d.ts
 
 # Images privadas em dev
 public/png/*.png
+public/png/
