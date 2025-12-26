@@ -17,8 +17,27 @@
         "titulo": "Contact",
         "email": "your email",
         "nome": "your name",
-        "mensagem": "Want to get to know me better?\nYou can reach out to me on my social networks or by sending me an email!",
+        "mensagem": "Wanna know me better?\nYou can reach out to me on my social networks or by sending me an email!",
         "buttonLabel": "Send"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "banner": {
+        "title": "Want to try it out?",
+        "paragraph": "Just log in or register!"
+      },
+      "form": {
+        "title": "Login",
+        "name": "name",
+        "password": "password"
+      }
+    },
+    "signUp": {
+      "banner": {
+        "title": "teste",
+        "paragraph": "teste2"
       }
     }
   }

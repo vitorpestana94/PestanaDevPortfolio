@@ -1,4 +1,4 @@
-export default interface Input {
+export default interface InputInterface {
   props: {
     type: string;
     placeHolder: string;

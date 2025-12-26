@@ -21,5 +21,24 @@
         "buttonLabel": "Enviar"
       }
     }
+  },
+  "auth": {
+    "login": {
+      "banner": {
+        "title": "Quer testar?",
+        "paragraph": "É só logar ou cadastrar!"
+      },
+      "form": {
+        "title": "Logar",
+        "name": "nome",
+        "password": "senha"
+      }
+    },
+    "signUp": {
+      "banner": {
+        "title": "teste",
+        "paragraph": "teste2"
+      }
+    }
   }
 }

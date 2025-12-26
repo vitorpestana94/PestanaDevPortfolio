@@ -1,8 +1,8 @@
 "use client";
 
-import Input from "../inputs/input/Input";
+import Input from "../inputs/HomeFooterFormInput";
 import Contato from "../titles/FooterFormTitle";
-import EmailText from "../inputs/HomeTextArea";
+import EmailText from "../textAreas/HomeTextArea";
 import { useTranslations } from "next-intl";
 import Enviar from "../buttons/HomeFormButton";
 

@@ -30,8 +30,20 @@
     @apply text-[#38b6ff];
   }
 
+  .fillAzulPestana {
+    @apply fill-[#38b6ff];
+  }
+
+  .loginInputs {
+    @apply border w-full py-2 flex backdrop-blur-lg rounded-3xl border-[#808080] text-black;
+  }
+
   .hoverPestana {
     @apply hover:text-[#38b6ff];
+  }
+
+  .homeDefault {
+    @apply min-h-screen bg-black;
   }
 
   .conteudoWrapper {
@@ -57,23 +69,13 @@
   .homeMobileDirection {
     @apply flex flex-col justify-between items-center gap-y-16 sm:items-start sm:gap-y-0;
   }
+
+  .strokeAzulPestana {
+    @apply stroke-[#38b6ff];
+  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-}
-
-@media screen and (max-width: 639px) {
-  input::placeholder,
-  textarea::placeholder {
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 639px) {
-  input::placeholder,
-  textarea::placeholder {
-    text-align: right;
-  }
 }

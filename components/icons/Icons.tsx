@@ -9,6 +9,10 @@ import Linkedin from "@public/icons/Linkedin.svg";
 import Email from "@public/icons/Email.svg";
 import Menu from "@public/icons/Menu.svg";
 import XCross from "@public/icons/XCross.svg";
+import Profile from "@public/icons/profile.svg";
+import Padlock from "@public/icons/padlock.svg";
+import EyeOn from "@public/icons/eyeOn.svg";
+import EyeOff from "@public/icons/eyeOff.svg";
 
 export const icons = {
   vP: <VP />,
@@ -18,6 +22,10 @@ export const icons = {
   email: <Email />,
   menu: <Menu />,
   xCross: <XCross />,
+  profile: <Profile />,
+  padlock: <Padlock />,
+  eyeOn: <EyeOn />,
+  eyeOff: <EyeOff />,
 } as const;
 
 export type IconName = keyof typeof icons;

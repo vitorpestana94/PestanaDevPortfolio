@@ -1,7 +1,12 @@
+import SignInOrUp from "@/components/sections/AuthSection/AuthSection";
+
 export default function AuthPage() {
   return (
-    <main className="w-full bg-black">
-      <p className="text-white">koe</p>
+    <main
+      className="homeDefault z-0 flex
+    sm:p-10"
+    >
+      <SignInOrUp />
     </main>
   );
 }

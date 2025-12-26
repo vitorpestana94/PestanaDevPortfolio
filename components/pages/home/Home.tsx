@@ -5,7 +5,7 @@ import QuartaSessao from "@/components/sections/home/HomeFourthSection";
 
 export default function Home() {
   return (
-    <main className="w-full bg-black flex flex-col relative h-full">
+    <main className="homeDefault flex flex-col relative">
       <PrimeiraSessao />
       <SegundaSessao />
       <TerceiraoSessao />
