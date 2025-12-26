@@ -2,9 +2,10 @@
 
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-
+import useLocalePath from "@/hooks/useLocalePath";
 export default function SiteNavigationSpan() {
   const t = useTranslations("home.header");
+  const { path } = useLocalePath("auth");
 
   return (
     <span
@@ -21,6 +22,9 @@ export default function SiteNavigationSpan() {
       </Link>
       <Link className="hoverPestana" href={"#meuTrabalho"}>
         {t("meuTrabalho")}
+      </Link>
+      <Link className="hoverPestana" href={path}>
+        {t("logar")}
       </Link>
     </span>
   );

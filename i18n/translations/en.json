@@ -2,7 +2,8 @@
   "home": {
     "header": {
       "sobre": "About",
-      "meuTrabalho": "My Work"
+      "meuTrabalho": "My Work",
+      "logar": "Login"
     },
     "segundaSessao": {
       "titulo": "About me"
