@@ -31,7 +31,13 @@
       "form": {
         "title": "Login",
         "name": "name",
-        "password": "password"
+        "password": "password",
+        "errors": {
+          "email": "The email is empty, please provide it to proceed!",
+          "emailFormat": "The provided email format is invalid; please, enter a valid format like: email@example.com!",
+          "password": "The password is empty, please provide it to proceed!",
+          "invalidCredentials": "At least one of your credentials is incorrect!"
+        }
       }
     },
     "signUp": {

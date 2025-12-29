@@ -35,7 +35,11 @@
   }
 
   .loginInputs {
-    @apply border w-full py-2 flex backdrop-blur-lg rounded-3xl border-[#808080] text-black;
+    @apply autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] flex-1 focus:outline-none text-[0.75rem];
+  }
+
+  .loginInputsDivs {
+    @apply flex border w-full py-2 rounded-3xl border-[#808080] text-black px-4;
   }
 
   .hoverPestana {
