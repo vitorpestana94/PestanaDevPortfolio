@@ -3,6 +3,7 @@ import Password from "../../inputs/LoginPasswordFormInput/LoginPasswordFormInput
 import LoginButton from "../../buttons/authButton/AuthButton";
 import useLoginInputsDiv from "./useLoginInputsDiv";
 import Error from "@/components/errors/error/Error";
+import { handleGoogleSignIn } from "@/utils/authentication/googleAuth";
 
 export default function loginInputsDiv() {
   const {
@@ -17,6 +18,15 @@ export default function loginInputsDiv() {
 
   return (
     <div className="flex flex-col gap-y-6 items-center w-[70%] sm:w-[60%]">
+      <button
+        onClick={() => {
+          handleGoogleSignIn("/", "en");
+        }}
+        type="button"
+        className="bg-black text-white"
+      >
+        Logar com google
+      </button>
       <div className="w-full flex flex-col gap-y-2 ">
         <Email setEmailError={setEmailError} setEmail={setEmail} />
         <span className="w-full flex flex-col gap-y-2">

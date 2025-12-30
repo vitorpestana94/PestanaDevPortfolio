@@ -5,7 +5,7 @@ import Link from "next/link";
 import useLocalePath from "@/hooks/useLocalePath";
 export default function SiteNavigationSpan() {
   const t = useTranslations("home.header");
-  const { path } = useLocalePath("auth");
+  const { path } = useLocalePath("authentication");
 
   return (
     <span

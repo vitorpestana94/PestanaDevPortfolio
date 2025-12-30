@@ -2,26 +2,27 @@ import { Session, Account } from "next-auth";
 import { JWT } from "next-auth/jwt";
 import type { SessionStrategy } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { login } from "./authRequestHandlers";
+import GoogleProvider from "next-auth/providers/google";
+import { login, loginWithPlatform } from "./authRequestHandlers";
 
-// if (!process.env.NEXT_PUBLIC_API_URL) {
-//     throw new Error("Api URL is not defined!");
-// }
+if (!process.env.NEXT_PUBLIC_API_URL) {
+  throw new Error("Api URL is not defined!");
+}
 
-// if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
-//     throw new Error("Google's credentials are not defined.");
-// }
+if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
+  throw new Error("Google's credentials are not defined.");
+}
 
 // if (!process.env.APPLE_CLIENT_ID) {
-//     throw new Error("Apple's credentials are not defined.");
+//   throw new Error("Apple's credentials are not defined.");
 // }
 
 export const nextAuthOptions = {
   providers: [
-    // GoogleProvider({
-    //     clientId: process.env.GOOGLE_CLIENT_ID,
-    //     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    // }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
     // AppleProvider({
     //     clientId: process.env.APPLE_CLIENT_ID,
     //     clientSecret: await getAppleClientSecret(),
@@ -77,13 +78,6 @@ export const nextAuthOptions = {
     },
   },
   callbacks: {
-    async signIn({ user, account }: { user: any; account?: Account | null }) {
-      if (user === null) {
-        return false;
-      }
-
-      return true;
-    },
     async jwt({
       token,
       account,
@@ -93,16 +87,20 @@ export const nextAuthOptions = {
       account?: Account | null;
       user: any;
     }) {
-      //   if (account?.id_token && account?.provider) {
-      //     token.id_token = account.id_token;
-      //     token.provider = account.provider;
+      if (account?.id_token && account?.provider) {
+        token.id_token = account.id_token;
+        token.provider = account.provider;
 
-      //     return await loginWithProvider(
-      //       account.id_token,
-      //       account.provider,
-      //       token
-      //     );
-      //   }
+        const response = await loginWithPlatform(
+          account.id_token,
+          account.provider
+        );
+
+        token.token = response?.token;
+        token.refreshToken = response?.refreshToken;
+        token.id = response?.id;
+        token.expirationTime = response?.expirationTime;
+      }
 
       if (user?.id === "error") {
         token.loginFailed = true;
