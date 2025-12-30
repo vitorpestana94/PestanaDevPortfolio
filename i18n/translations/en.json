@@ -32,6 +32,7 @@
         "title": "Login",
         "name": "name",
         "password": "password",
+        "forgot": "forgot password?",
         "errors": {
           "email": "The email is empty, please provide it to proceed!",
           "emailFormat": "The provided email format is invalid; please, enter a valid format like: email@example.com!",

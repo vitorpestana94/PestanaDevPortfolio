@@ -1,14 +1,21 @@
 import Profile from "../../icons/Icons";
-import { useTranslations } from "next-intl";
-import LoginEmailFormInputInterface from "./LoginEmailFormInput";
+import LoginEmailFormInputInterface from "./LoginEmailFormInputInterface";
 import Error from "@/components/errors/error/Error";
+import useLoginEmailFormInput from "./useLoginEmailFormInput";
 
 export default function LoginEmailFormInput({
-  isInputWithError,
-  email,
   setEmail,
+  setEmailError,
 }: LoginEmailFormInputInterface) {
-  const t = useTranslations();
+  const {
+    getErrorMessage,
+    verifyEmail,
+    t,
+    isEmailEmpty,
+    isEmailFormatInvalid,
+  } = useLoginEmailFormInput({
+    setEmailError,
+  });
 
   return (
     <div className="flex flex-col">
@@ -18,6 +25,9 @@ export default function LoginEmailFormInput({
           className="aspect-square w-4 strokeAzulPestana mr-2"
         />
         <input
+          onBlur={(event) => {
+            verifyEmail(event);
+          }}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
             setEmail(event.target.value)
           }
@@ -29,12 +39,8 @@ export default function LoginEmailFormInput({
         />
       </div>
       <Error
-        shouldRender={isInputWithError ?? false}
-        message={
-          email
-            ? t("auth.login.form.errors.emailFormat")
-            : t("auth.login.form.errors.email")
-        }
+        shouldRender={isEmailEmpty || isEmailFormatInvalid}
+        message={getErrorMessage()}
       />
     </div>
   );

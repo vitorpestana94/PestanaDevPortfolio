@@ -32,6 +32,7 @@
         "title": "Logar",
         "name": "nome",
         "password": "senha",
+        "forgot": "esqueceu a senha?",
         "errors": {
           "email": "O email está vazio, forneça-o para prosseguir!",
           "emailFormat": "O formato de email fornecido é invalido. Por favor, digite um formato válido como: email@example.com!",

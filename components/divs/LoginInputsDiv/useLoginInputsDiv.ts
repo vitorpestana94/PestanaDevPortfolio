@@ -6,6 +6,7 @@ import { signIn } from "next-auth/react";
 import { useRedirectTo } from "@/hooks/useRedirectTo";
 import { useSearchParams, usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 type loginFormErros = {
   email: boolean;
@@ -14,6 +15,7 @@ type loginFormErros = {
 };
 
 export default function useLoginInputsDiv() {
+  // #region Declarations
   const [loginRequest, setLoginRequest] = useState<LoginRequest>({
     email: "",
     password: "",
@@ -27,32 +29,15 @@ export default function useLoginInputsDiv() {
   const router = useRouter();
   const pathName = usePathname();
   const { redirectTo } = useRedirectTo(searchParams, router, pathName);
+  const t = useTranslations();
+  // #endregion
 
-  useEffect(() => {
-    if (formErros.email) {
-      setEmailError(
-        loginRequest.email ? true : false || isEmailValid(loginRequest.email)
-      );
-    }
-  }, [formErros.email]);
-
-  function validateForm(): boolean {
-    const nextErrors = {
-      email: !loginRequest.email || !isEmailValid(loginRequest.email),
-      password: !loginRequest.password,
-      invalidCredentials: false,
-    };
-
-    setFormErrors(nextErrors);
-
-    return !nextErrors.email && !nextErrors.password;
+  // #region Functions
+  function isFormInputsValids(): boolean {
+    return (
+      !formErros.email && !formErros.password && !formErros.invalidCredentials
+    );
   }
-
-  useEffect(() => {
-    if (formErros.password) {
-      setPasswordError(loginRequest.password ? true : false);
-    }
-  }, [formErros.password]);
 
   function setEmailError(isError: boolean) {
     setFormErrors((previous) => ({ ...previous, email: isError }));
@@ -75,7 +60,8 @@ export default function useLoginInputsDiv() {
   }
 
   async function submit() {
-    if (!validateForm()) return;
+    if (!isFormInputsValids()) return;
+
     const result = await signIn("credentials", {
       email: loginRequest.email,
       password: loginRequest.password,
@@ -88,12 +74,30 @@ export default function useLoginInputsDiv() {
       setFormErrors((prev) => ({ ...prev, invalidCredentials: true }));
     }
   }
+  // #endregion
+
+  // #region useEffects
+  useEffect(() => {
+    if (formErros.email) {
+      setEmailError(
+        loginRequest.email ? true : false || isEmailValid(loginRequest.email)
+      );
+    }
+  }, [formErros.email]);
+
+  useEffect(() => {
+    if (formErros.password) {
+      setPasswordError(loginRequest.password ? true : false);
+    }
+  }, [formErros.password]);
+  // #endregion
 
   return {
     loginRequest,
     formErros,
+    t,
     submit,
-    validateForm,
+    isFormInputsValids,
     setEmail,
     setPassword,
     setEmailError,

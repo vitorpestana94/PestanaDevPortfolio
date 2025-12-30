@@ -5,9 +5,12 @@ import Error from "@/components/errors/error/Error";
 
 export default function LoginPasswordFormInput({
   setPassword,
-  isInputWithError,
+  setPasswordError,
 }: LoginPasswordFormInputInterface) {
-  const { t, eye, eyeOn, switchEye } = useLoginPasswordFormInput();
+  const { t, isPasswordEmpty, eye, eyeOn, switchEye, verifyPassword } =
+    useLoginPasswordFormInput({
+      setPasswordError,
+    });
 
   return (
     <div className="flex flex-col">
@@ -17,6 +20,7 @@ export default function LoginPasswordFormInput({
           className="aspect-square w-[10%] max-w-4 shrink-0 strokeAzulPestana"
         />
         <input
+          onBlur={(event) => verifyPassword(event)}
           type={eye === eyeOn ? "password" : "text"}
           placeholder={t("auth.login.form.password")}
           className={`loginInputs mx-2`}
@@ -32,7 +36,7 @@ export default function LoginPasswordFormInput({
         </span>
       </div>
       <Error
-        shouldRender={isInputWithError ?? false}
+        shouldRender={isPasswordEmpty}
         message={t("auth.login.form.errors.password")}
       />
     </div>
