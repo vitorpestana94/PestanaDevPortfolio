@@ -4,6 +4,7 @@ import type { SessionStrategy } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { login, loginWithPlatform } from "./authRequestHandlers";
+import GitHubProvider from "next-auth/providers/github";
 
 if (!process.env.NEXT_PUBLIC_API_URL) {
   throw new Error("Api URL is not defined!");
@@ -13,9 +14,11 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
   throw new Error("Google's credentials are not defined.");
 }
 
-// if (!process.env.APPLE_CLIENT_ID) {
-//   throw new Error("Apple's credentials are not defined.");
-// }
+if (!process.env.GITHUB_CLIENT_ID || !process.env.GITHUB_CLIENT_SECRET) {
+  throw new Error("Github's credentials are not defined.");
+}
+
+// Tudo que está comentando deve ser revisado posteriormente, se será mantido e etc.
 
 export const nextAuthOptions = {
   providers: [
@@ -23,10 +26,11 @@ export const nextAuthOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
-    // AppleProvider({
-    //     clientId: process.env.APPLE_CLIENT_ID,
-    //     clientSecret: await getAppleClientSecret(),
-    // })
+    GitHubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      authorization: { params: { scope: "read:user user:email" } },
+    }),
     CredentialsProvider({
       id: "credentials",
       name: "credentials",
@@ -87,12 +91,16 @@ export const nextAuthOptions = {
       account?: Account | null;
       user: any;
     }) {
-      if (account?.id_token && account?.provider) {
-        token.id_token = account.id_token;
-        token.provider = account.provider;
+      if ((account?.id_token || account?.access_token) && account?.provider) {
+        if (account.id_token) {
+          token.id_token = account.id_token;
+        } else if (account.access_token) {
+          token.id_token = account.access_token;
+        }
 
+        token.provider = account.provider;
         const response = await loginWithPlatform(
-          account.id_token,
+          account.id_token ? token.id_token! : account.access_token!,
           account.provider
         );
 
@@ -100,12 +108,6 @@ export const nextAuthOptions = {
         token.refreshToken = response?.refreshToken;
         token.id = response?.id;
         token.expirationTime = response?.expirationTime;
-      }
-
-      if (user?.id === "error") {
-        token.loginFailed = true;
-
-        return token;
       }
 
       if (user?.token && user?.refreshToken) {

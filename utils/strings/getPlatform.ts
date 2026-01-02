@@ -2,8 +2,13 @@ import { Platform } from "@/models/enums/Platform";
 
 const platformObj = {
   google: Platform.Google,
-  apple: Platform.Apple,
+  github: Platform.Github,
 } as const;
+
+const platformAsString = {
+  0: "google",
+  1: "github",
+};
 
 export function getPlatform(platform: string) {
   const key = platform.toLowerCase() as keyof typeof platformObj;
@@ -13,4 +18,8 @@ export function getPlatform(platform: string) {
   }
 
   return platformObj[key];
+}
+
+export function getPlatformAsString(platform: Platform) {
+  return platformAsString[platform];
 }

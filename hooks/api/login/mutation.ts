@@ -16,7 +16,6 @@ export function useLogin(): MutationDefaultProps<
       if (error?.message === "Invalid Credentials") {
         return "Invalid Credentials";
       }
-      console.log(error?.message);
       throw new Error(error?.message);
     },
     mutationKey: ["loginMutation"],

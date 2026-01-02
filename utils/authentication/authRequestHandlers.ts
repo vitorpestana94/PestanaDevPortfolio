@@ -21,13 +21,13 @@ export async function login(email: string, password: string) {
   return await handleLoginResponse(response, deviceId);
 }
 
-export async function loginWithPlatform(idToken: string, authPlatform: string) {
+export async function loginWithPlatform(token: string, authPlatform: string) {
   const deviceId = crypto.randomUUID();
   let response: ApiToken | null = null;
 
   try {
     response = await LoginService.loginWithPlatform({
-      idToken,
+      token,
       deviceId: deviceId,
       platform: getPlatform(authPlatform),
     });
