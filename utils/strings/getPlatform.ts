@@ -3,11 +3,13 @@ import { Platform } from "@/models/enums/Platform";
 const platformObj = {
   google: Platform.Google,
   github: Platform.Github,
+  linkedin: Platform.Linkedin,
 } as const;
 
 const platformAsString = {
   0: "google",
   1: "github",
+  2: "linkedin",
 };
 
 export function getPlatform(platform: string) {

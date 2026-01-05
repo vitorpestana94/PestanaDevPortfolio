@@ -3,8 +3,9 @@ import { JWT } from "next-auth/jwt";
 import type { SessionStrategy } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import { login, loginWithPlatform } from "./authRequestHandlers";
 import GitHubProvider from "next-auth/providers/github";
+import LinkedInProvider from "next-auth/providers/linkedin";
+import { login, loginWithPlatform } from "./authRequestHandlers";
 
 if (!process.env.NEXT_PUBLIC_API_URL) {
   throw new Error("Api URL is not defined!");
@@ -16,6 +17,10 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
 
 if (!process.env.GITHUB_CLIENT_ID || !process.env.GITHUB_CLIENT_SECRET) {
   throw new Error("Github's credentials are not defined.");
+}
+
+if (!process.env.LINKEDIN_CLIENT_ID || !process.env.LINKEDIN_CLIENT_SECRET) {
+  throw new Error("Linkedin's credentials are not defined.");
 }
 
 // Tudo que está comentando deve ser revisado posteriormente, se será mantido e etc.
@@ -30,6 +35,23 @@ export const nextAuthOptions = {
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
       authorization: { params: { scope: "read:user user:email" } },
+    }),
+    LinkedInProvider({
+      clientId: process.env.LINKEDIN_CLIENT_ID,
+      clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+      issuer: "https://www.linkedin.com/oauth",
+      jwks_endpoint: "https://www.linkedin.com/oauth/openid/jwks",
+      authorization: {
+        params: { scope: "openid profile email" },
+      },
+      profile(profile) {
+        return {
+          id: profile.sub,
+          name: profile.name,
+          email: profile.email,
+          image: profile.picture,
+        };
+      },
     }),
     CredentialsProvider({
       id: "credentials",
@@ -99,6 +121,7 @@ export const nextAuthOptions = {
         }
 
         token.provider = account.provider;
+
         const response = await loginWithPlatform(
           account.id_token ? token.id_token! : account.access_token!,
           account.provider

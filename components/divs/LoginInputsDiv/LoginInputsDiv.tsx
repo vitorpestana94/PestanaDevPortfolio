@@ -37,6 +37,15 @@ export default function loginInputsDiv() {
       >
         Logar com Gihub
       </button>
+      <button
+        onClick={() => {
+          handleSign(Platform.Linkedin, "/", "en");
+        }}
+        type="button"
+        className="bg-black text-white"
+      >
+        Logar com linkedin
+      </button>
       <div className="w-full flex flex-col gap-y-2 ">
         <Email setEmailError={setEmailError} setEmail={setEmail} />
         <span className="w-full flex flex-col gap-y-2">
