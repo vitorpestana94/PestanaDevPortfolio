@@ -28,6 +28,8 @@
         "title": "Quer testar?",
         "paragraph": "É só logar ou cadastrar!"
       },
+      "with": "Continuar com",
+      "or": "or",
       "form": {
         "title": "Logar",
         "name": "nome",

@@ -8,7 +8,7 @@ export default function AuthButton({
   submit,
   isLoginFormWithErrors,
 }: AuthButtonInterface) {
-  const { t, scale, handleLogin } = useAuthButton(submit);
+  const { t, scale, transition, handleLogin } = useAuthButton(submit);
 
   return (
     <motion.button
@@ -18,7 +18,7 @@ export default function AuthButton({
       whileTap={scale}
       whileHover={scale}
       disabled={isLoginFormWithErrors}
-      transition={{ type: "spring", stiffness: 200, damping: 6 }}
+      transition={transition}
       className={`loginInputsDivs w-[55%] shadow-2xs shadow-black text-shadow-2xs text-shadow-black border-black 
       text-[0.75rem] bg-[#38b6ff] text-white flex justify-center
       ${

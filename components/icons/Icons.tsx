@@ -6,6 +6,8 @@ import VP from "@public/icons/VP.svg";
 import Instagram from "@public/icons/Instagram.svg";
 import Whatsapp from "@public/icons/Whatsapp.svg";
 import Linkedin from "@public/icons/Linkedin.svg";
+import GitHub from "@public/icons/github.svg";
+import Google from "@public/icons/Google.svg";
 import Email from "@public/icons/Email.svg";
 import Menu from "@public/icons/Menu.svg";
 import XCross from "@public/icons/XCross.svg";
@@ -26,6 +28,8 @@ export const icons = {
   padlock: <Padlock />,
   eyeOn: <EyeOn />,
   eyeOff: <EyeOff />,
+  gitHub: <GitHub />,
+  google: <Google />,
 } as const;
 
 export type IconName = keyof typeof icons;

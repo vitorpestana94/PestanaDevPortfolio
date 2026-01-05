@@ -2,13 +2,20 @@
 
 import AuthForm from "./AuthForm";
 import Login from "../titles/LoginTitle";
-import EmailPasswordButton from "../divs/LoginInputsDiv/LoginInputsDiv";
+import LoginWithEmail from "../divs/LoginInputsDiv/LoginInputsDiv";
+import LoginWithPlatforms from "../divs/PlatformsLoginDiv/PlatformsLoginDiv";
+import Wrapper from "../wrappers/AuthWrapper";
+import Or from "../hrs/LoginHr";
 
 export default function LoginForm() {
   return (
     <AuthForm>
       <Login />
-      <EmailPasswordButton />
+      <LoginWithPlatforms />
+      <Or />
+      <Wrapper>
+        <LoginWithEmail />
+      </Wrapper>
     </AuthForm>
   );
 }

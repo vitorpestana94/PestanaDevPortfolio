@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { useLocale } from "next-intl";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 function getRedirectTo(
   searchParams: URLSearchParams,
@@ -14,11 +14,10 @@ function getRedirectTo(
   return redirectTo ?? "";
 }
 
-export function useRedirectTo(
-  searchParams: URLSearchParams,
-  router: AppRouterInstance,
-  pathName: string
-) {
+export function useRedirectTo() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathName = usePathname();
   const [redirectTo, setRedirectTo] = useState<string>("/");
 
   useEffect(() => {

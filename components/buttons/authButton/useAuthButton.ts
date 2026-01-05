@@ -1,7 +1,8 @@
 import { useTranslations } from "next-intl";
+import useButtonMotionEffects from "@/hooks/useButtonMotionEffects";
 
 export default function useAuthButton(submit: () => Promise<void>) {
-  const scale = { scale: 1.1 };
+  const { scale, transition } = useButtonMotionEffects();
   const t = useTranslations();
 
   async function handleLogin(
@@ -12,5 +13,5 @@ export default function useAuthButton(submit: () => Promise<void>) {
     await submit();
   }
 
-  return { t, scale, handleLogin };
+  return { t, transition, scale, handleLogin };
 }

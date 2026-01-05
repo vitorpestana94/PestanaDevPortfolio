@@ -28,6 +28,8 @@
         "title": "Want to try it out?",
         "paragraph": "Just log in or register!"
       },
+      "with": "Contiue with",
+      "or": "or",
       "form": {
         "title": "Login",
         "name": "name",
