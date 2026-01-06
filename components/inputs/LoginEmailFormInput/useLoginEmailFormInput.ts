@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import useFormError from "@/models/interfaces/UI/useLoginFormError";
 
 export default function useLoginEmailFormInput({
+  isEmailAlreadyRegistered,
   setEmailError,
 }: useFormError) {
   const t = useTranslations();
@@ -35,6 +36,8 @@ export default function useLoginEmailFormInput({
       errordMessage = isEmailFormatInvalid
         ? t("auth.login.form.errors.emailFormat")
         : t("auth.login.form.errors.email");
+    } else if (isEmailAlreadyRegistered) {
+      errordMessage = t("auth.signUp.form.errors.alreadyRegistered");
     }
 
     return errordMessage;
@@ -46,7 +49,7 @@ export default function useLoginEmailFormInput({
     } else {
       setEmailError!(false);
     }
-  }, [isEmailEmpty, isEmailFormatInvalid]);
+  }, [isEmailEmpty, isEmailFormatInvalid, isEmailAlreadyRegistered]);
 
   return {
     getErrorMessage,

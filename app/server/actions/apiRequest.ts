@@ -1,6 +1,6 @@
 "use server";
 
-import RequestDto from "@/models/interfaces/dtos/requests/dtos/RequestDto";
+import RequestDto from "@/models/interfaces/dtos/requests/RequestDto";
 import RequestService from "@/services/request/RequestService";
 import ResponseDto from "@/models/interfaces/dtos/responses/dtos/ResponseDto";
 

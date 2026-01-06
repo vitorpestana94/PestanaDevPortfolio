@@ -3,5 +3,5 @@ export default function AuthWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="w-[70%] sm:w-[60%]">{children}</div>;
+  return <div className=" w-[70%] sm:w-[60%]">{children}</div>;
 }

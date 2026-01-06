@@ -1,7 +1,6 @@
 "use server";
 
-import RequestDto from "@/models/interfaces/dtos/requests/dtos/RequestDto";
-import ResponseDto from "@/models/interfaces/dtos/responses/dtos/ResponseDto";
+import RequestDto from "@/models/interfaces/dtos/requests/RequestDto";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 

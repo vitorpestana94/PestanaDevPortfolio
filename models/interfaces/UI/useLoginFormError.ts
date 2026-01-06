@@ -3,4 +3,5 @@ export default interface useLoginFormError {
   setEmailError?: (isError: boolean) => void;
   setInvalidCredentials?: (isError: boolean) => void;
   isInputWithError?: boolean;
+  isEmailAlreadyRegistered?: boolean;
 }

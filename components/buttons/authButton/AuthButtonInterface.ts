@@ -1,4 +1,5 @@
 export default interface AuthButtonInterface {
-  isLoginFormWithErrors: boolean;
+  buttonLabel: string;
+  isFormWithErrors: boolean;
   submit: () => Promise<void>;
 }

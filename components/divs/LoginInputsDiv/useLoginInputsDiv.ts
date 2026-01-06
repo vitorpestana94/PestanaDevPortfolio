@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import isEmailValid from "@/utils/strings/verifyEmailFormat";
 import { signIn } from "next-auth/react";
 import { useRedirectTo } from "@/hooks/useRedirectTo";
-import { useSearchParams, usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 
@@ -25,10 +24,8 @@ export default function useLoginInputsDiv() {
     password: false,
     invalidCredentials: false,
   });
-  const searchParams = useSearchParams();
   const router = useRouter();
-  const pathName = usePathname();
-  const { redirectTo } = useRedirectTo(searchParams, router, pathName);
+  const { redirectTo } = useRedirectTo();
   const t = useTranslations();
   // #endregion
 

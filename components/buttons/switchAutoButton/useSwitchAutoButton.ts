@@ -1,29 +1,20 @@
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
-export default function useSwitchAutoButton() {
-  const [active, setActive] = useState<number>(0);
+export default function useSwitchAutoButton(isLogin: boolean) {
+  const t = useTranslations("auth.switchButton");
   const activeStyle: string = "bg-[#38b6ff] text-white";
-  const inactiveStyle: string = "bg-gray-600 grayscale-75 text-gray-400";
+  const inactiveStyle: string = "text-white";
   const [loginStyle, setLoginStyle] = useState<string>(activeStyle);
   const [signUpStyle, setSignUpsStyle] = useState<string>(inactiveStyle);
 
-  function activeLogin() {
-    setActive(0);
-  }
-
-  function activeSignUp() {
-    setActive(1);
-  }
-
   useEffect(() => {
-    setLoginStyle(active === 0 ? activeStyle : inactiveStyle);
-    setSignUpsStyle(active === 1 ? activeStyle : inactiveStyle);
-  }, [active]);
+    setLoginStyle(isLogin ? activeStyle : inactiveStyle);
+    setSignUpsStyle(!isLogin ? activeStyle : inactiveStyle);
+  }, [isLogin]);
 
   return {
-    activeLogin,
-    activeSignUp,
-    active,
+    t,
     inactiveStyle,
     activeStyle,
     loginStyle,

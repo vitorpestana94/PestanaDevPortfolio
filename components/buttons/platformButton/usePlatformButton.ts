@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import useButtonMotionEffects from "@/hooks/useButtonMotionEffects";
 
 export default function usePlatformButton() {
-  const t = useTranslations("auth.login");
+  const t = useTranslations("auth.common");
   const { scale, transition } = useButtonMotionEffects();
   const buttonColors: { [key: string]: string } = {
     google: "bg-white text-black",

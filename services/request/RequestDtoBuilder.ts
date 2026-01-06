@@ -1,4 +1,4 @@
-import RequestDto from "@/models/interfaces/dtos/requests/dtos/RequestDto";
+import RequestDto from "@/models/interfaces/dtos/requests/RequestDto";
 import LoginRequest from "@/models/interfaces/dtos/requests/LoginRequest";
 import LoginWithPlatformRequest from "@/models/interfaces/dtos/requests/LoginWithPlatformRequest";
 export default class RequestDtoBuilder {
@@ -14,5 +14,12 @@ export default class RequestDtoBuilder {
       httpMethod: "post",
       requestBody: requestBody,
     };
+  }
+
+  static IsEmailRegistered(email?: string) {
+    return {
+      path: `sign-up/isEmailRegistered/${email}`,
+      httpMethod: "get",
+    } as const;
   }
 }

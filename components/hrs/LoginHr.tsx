@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 export default function LoginHr() {
-  const t = useTranslations("auth.login");
+  const t = useTranslations("auth.common");
 
   return (
     <div className="flex items-center w-[70%] sm:w-[60%] self-center">

@@ -1,7 +1,6 @@
-import Profile from "../../icons/Icons";
 import LoginEmailFormInputInterface from "./LoginEmailFormInputInterface";
-import Error from "@/components/errors/error/Error";
 import useLoginEmailFormInput from "./useLoginEmailFormInput";
+import EmailInput from "../emailInput/EmailInput";
 
 export default function LoginEmailFormInput({
   setEmail,
@@ -18,30 +17,12 @@ export default function LoginEmailFormInput({
   });
 
   return (
-    <div className="flex flex-col">
-      <div className="loginInputsDivs">
-        <Profile
-          iconName="profile"
-          className="aspect-square w-4 strokeAzulPestana mr-2"
-        />
-        <input
-          onBlur={(event) => {
-            verifyEmail(event);
-          }}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setEmail(event.target.value)
-          }
-          type={"email"}
-          placeholder={t("auth.login.form.name")}
-          className={`mr-6 loginInputs`}
-          name={"email"}
-          autoComplete={"username"}
-        />
-      </div>
-      <Error
-        shouldRender={isEmailEmpty || isEmailFormatInvalid}
-        message={getErrorMessage()}
-      />
-    </div>
+    <EmailInput
+      verifyEmail={verifyEmail}
+      getErrorMessage={getErrorMessage}
+      setEmail={setEmail}
+      shoudlRenderError={isEmailEmpty || isEmailFormatInvalid}
+      emailInputPlaceHolder={t("auth.login.form.email")}
+    />
   );
 }

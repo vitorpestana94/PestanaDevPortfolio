@@ -5,7 +5,7 @@ export default function useAuthButton(submit: () => Promise<void>) {
   const { scale, transition } = useButtonMotionEffects();
   const t = useTranslations();
 
-  async function handleLogin(
+  async function handleClick(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) {
     event.preventDefault();
@@ -13,5 +13,5 @@ export default function useAuthButton(submit: () => Promise<void>) {
     await submit();
   }
 
-  return { t, transition, scale, handleLogin };
+  return { t, transition, scale, handleClick };
 }

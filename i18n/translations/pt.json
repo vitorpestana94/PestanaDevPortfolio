@@ -23,16 +23,22 @@
     }
   },
   "auth": {
+    "common": {
+      "with": "Continuar com",
+      "or": "ou"
+    },
+    "switchButton": {
+      "login": "Logar",
+      "signUp": "Cadastrar"
+    },
     "login": {
       "banner": {
-        "title": "Quer testar?",
-        "paragraph": "É só logar ou cadastrar!"
+        "title": "É ótimo de ver de volta?",
+        "paragraph": "quer logar?"
       },
-      "with": "Continuar com",
-      "or": "or",
       "form": {
         "title": "Logar",
-        "name": "nome",
+        "email": "email",
         "password": "senha",
         "forgot": "esqueceu a senha?",
         "errors": {
@@ -45,8 +51,18 @@
     },
     "signUp": {
       "banner": {
-        "title": "teste",
-        "paragraph": "teste2"
+        "title": "Quer ver como transformo ideias em código?",
+        "paragraph": "Cadastre-se agora!"
+      },
+      "form": {
+        "title": "Cadastrar",
+        "firstStep": {
+          "email": "seu email",
+          "button": "Cadastrar"
+        },
+        "errors": {
+          "alreadyRegistered": "O email fornecido já foi registrado."
+        }
       }
     }
   }

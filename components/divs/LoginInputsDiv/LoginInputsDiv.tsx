@@ -38,7 +38,8 @@ export default function loginInputsDiv() {
         }
       </div>
       <LoginButton
-        isLoginFormWithErrors={formErros.email || formErros.email}
+        buttonLabel={t("auth.login.form.title")}
+        isFormWithErrors={formErros.email || formErros.email}
         submit={submit}
       />
     </div>
