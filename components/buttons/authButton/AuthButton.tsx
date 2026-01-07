@@ -22,11 +22,7 @@ export default function AuthButton({
       transition={transition}
       className={`loginInputsDivs w-[55%] shadow-2xs shadow-black text-shadow-2xs text-shadow-black border-black 
       text-[0.75rem] bg-[#38b6ff] text-white flex justify-center self-center
-      ${
-        isFormWithErrors
-          ? "cursor-not-allowed disabled:grayscale-100 disabled:opacity-80"
-          : "cursor-pointer"
-      }`}
+      ${isFormWithErrors ? "buttonDisabled" : "cursor-pointer"}`}
       type="submit"
     >
       {buttonLabel}

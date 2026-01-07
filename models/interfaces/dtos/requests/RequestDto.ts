@@ -1,11 +1,13 @@
 import LoginRequest from "./LoginRequest";
-import LoginWithPlatformRequest from "./LoginWithPlatformRequest";
+import LoginWithPlatformRequest from "./LoginOrSignUpWithPlatformRequest";
 import SignUpRequest from "./SignUpRequest";
+import SendContactEmailRequest from "./SendContactEmailRequest";
 
 interface RequestBody
   extends LoginRequest,
     LoginWithPlatformRequest,
-    SignUpRequest {}
+    SignUpRequest,
+    SendContactEmailRequest {}
 
 export type HttpMethod = "post" | "get" | "delete" | "put";
 

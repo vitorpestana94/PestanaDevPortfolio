@@ -25,6 +25,7 @@ interface MutationProps<TVariables = void> {
   isPending: boolean;
   isSuccess: boolean;
   isError: boolean;
+  reset: () => void;
 }
 
 // First generic: type of data returned from mutation

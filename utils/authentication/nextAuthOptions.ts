@@ -5,7 +5,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import LinkedInProvider from "next-auth/providers/linkedin";
-import { login, loginWithPlatform } from "./authRequestHandlers";
+import { login, loginOrSignUpWithPlatform } from "./authRequestHandlers";
 
 if (!process.env.NEXT_PUBLIC_API_URL) {
   throw new Error("Api URL is not defined!");
@@ -122,7 +122,7 @@ export const nextAuthOptions = {
 
         token.provider = account.provider;
 
-        const response = await loginWithPlatform(
+        const response = await loginOrSignUpWithPlatform(
           account.id_token ? token.id_token! : account.access_token!,
           account.provider
         );

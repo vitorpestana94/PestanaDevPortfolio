@@ -18,7 +18,13 @@
         "email": "your email",
         "nome": "your name",
         "mensagem": "Wanna know me better?\nYou can reach out to me on my social networks or by sending me an email!",
-        "buttonLabel": "Send"
+        "buttonLabel": "Send",
+        "emailSended": "Your contact email has been sent successfully! I will answer you shortly!",
+        "errors": {
+          "name": "Name is required!",
+          "textArea": "A message is required!",
+          "button": "There are errors on the form or there are empty fields. Please check it to proceed!"
+        }
       }
     }
   },

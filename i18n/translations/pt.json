@@ -18,7 +18,13 @@
         "email": "seu email",
         "nome": "seu nome",
         "mensagem": "Quer me conhecer melhor?\nVocê pode falar comigo pelas minhas redes sociais ou me mandando um email!",
-        "buttonLabel": "Enviar"
+        "buttonLabel": "Enviar",
+        "emailSended": "Seu e-mail de contato foi enviado com sucesso! Responderei em breve!",
+        "errors": {
+          "name": "Nome é necessário!",
+          "textArea": "Uma mensagem é necessária!",
+          "button": "Há erros no formulário ou há campos vazios. Verifique-os para continuar!"
+        }
       }
     }
   },

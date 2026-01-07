@@ -2,7 +2,7 @@
 
 import Wrapper from "@/components/wrappers/home/HomeWrapper";
 import VP from "../../icons/Icons";
-import Contato from "@/components/forms/HomeFooterForm";
+import Contato from "@/components/forms/homeFooterForm/HomeFooterForm";
 import Copyright from "@/components/paragraphs/CopyrightParagraph";
 import useIsMobile from "@/hooks/useIsMobile";
 

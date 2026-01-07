@@ -34,6 +34,10 @@
     @apply fill-[#38b6ff];
   }
 
+  .buttonDisabled {
+    @apply cursor-not-allowed disabled:grayscale-100 disabled:opacity-80;
+  }
+
   .loginInputs {
     @apply autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] flex-1 focus:outline-none text-[0.75rem];
   }

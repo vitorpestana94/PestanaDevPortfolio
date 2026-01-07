@@ -1,4 +1,5 @@
 import LoginService from "@/services/LoginService";
+import PlatformService from "@/services/PlatformService";
 import { jwtDecode, JwtPayload } from "jwt-decode";
 import ApiToken from "@/models/interfaces/dtos/responses/ApiToken";
 import { getPlatform } from "../strings/getPlatform";
@@ -21,12 +22,15 @@ export async function login(email: string, password: string) {
   return await handleLoginResponse(response, deviceId);
 }
 
-export async function loginWithPlatform(token: string, authPlatform: string) {
+export async function loginOrSignUpWithPlatform(
+  token: string,
+  authPlatform: string
+) {
   const deviceId = crypto.randomUUID();
   let response: ApiToken | null = null;
 
   try {
-    response = await LoginService.loginWithPlatform({
+    response = await PlatformService.loginOrSignUpWithPlatform({
       token,
       deviceId: deviceId,
       platform: getPlatform(authPlatform),
