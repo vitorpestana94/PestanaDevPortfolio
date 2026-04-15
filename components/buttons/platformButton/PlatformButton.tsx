@@ -19,7 +19,7 @@ export default function PlatformButton({
       whileHover={scale}
       transition={transition}
       type="button"
-      className={`flex items-center gap-x-5 border py-1.5 px-5
+      className={`flex items-center justify-center gap-x-5 border py-1.5
         rounded-3xl border-[#808080] cursor-pointer
         ${buttonColors[iconName]}`}
     >

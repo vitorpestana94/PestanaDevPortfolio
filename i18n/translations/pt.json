@@ -39,8 +39,8 @@
     },
     "login": {
       "banner": {
-        "title": "É ótimo de ver de volta?",
-        "paragraph": "quer logar?"
+        "title": "É ótimo de ver de volta!",
+        "paragraph": "Quer logar?"
       },
       "form": {
         "title": "Logar",
@@ -57,7 +57,7 @@
     },
     "signUp": {
       "banner": {
-        "title": "Quer ver como transformo ideias em código?",
+        "title": "Quer ver como transformo\n ideias em código?",
         "paragraph": "Cadastre-se agora!"
       },
       "form": {
