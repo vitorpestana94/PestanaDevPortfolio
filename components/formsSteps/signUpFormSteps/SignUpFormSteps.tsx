@@ -18,7 +18,7 @@ export default function SignUpFormSteps() {
             />
           ),
           2: <SecondStep />,
-          3: <p>nome foto</p>,
+          3: <p>nome</p>,
           4: <p>senha</p>,
           5: <p>final</p>,
         }[step]

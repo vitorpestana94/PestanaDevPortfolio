@@ -1,14 +1,18 @@
 import RequestDto from "@/models/interfaces/dtos/requests/RequestDto";
 import LoginRequest from "@/models/interfaces/dtos/requests/LoginRequest";
 import LoginOrSignUpWithPlatformRequest from "@/models/interfaces/dtos/requests/LoginOrSignUpWithPlatformRequest";
+import SendConfirmationCodeRequest from "@/models/interfaces/dtos/requests/SendConfirmationCodeRequest";
 import SendContactEmailRequest from "@/models/interfaces/dtos/requests/SendContactEmailRequest";
+import CheckConfirmationCodeRequest from "@/models/interfaces/dtos/requests/CheckConfirmationCodeRequest";
+import ResendConfirmationCodeEmailRequest from "@/models/interfaces/dtos/requests/ResendConfirmationCodeEmailRequest";
+
 export default class RequestDtoBuilder {
   static LoginRequest(requestBody: LoginRequest): RequestDto {
     return { path: "login", httpMethod: "post", requestBody: requestBody };
   }
 
   static LoginWithPlatformRequest(
-    requestBody: LoginOrSignUpWithPlatformRequest
+    requestBody: LoginOrSignUpWithPlatformRequest,
   ): RequestDto {
     return {
       path: "platform/auth",
@@ -27,6 +31,32 @@ export default class RequestDtoBuilder {
   static SendContactEmailRequest(requestBody: SendContactEmailRequest) {
     return {
       path: "email/contact",
+      httpMethod: "post" as const,
+      requestBody: requestBody,
+    };
+  }
+
+  static SendConfirmationCodeEmail(requestBody: SendConfirmationCodeRequest) {
+    return {
+      path: "email/confirmation",
+      httpMethod: "post" as const,
+      requestBody: requestBody,
+    };
+  }
+
+  static ResendConfirmationCodeEmail(
+    requestBody: ResendConfirmationCodeEmailRequest,
+  ) {
+    return {
+      path: "email/confirmation/resend",
+      httpMethod: "post" as const,
+      requestBody: requestBody,
+    };
+  }
+
+  static CheckConfirmationCode(requestBody: CheckConfirmationCodeRequest) {
+    return {
+      path: "confirmation",
       httpMethod: "post" as const,
       requestBody: requestBody,
     };

@@ -66,6 +66,15 @@
           "email": "your email",
           "button": "Sign Up"
         },
+        "secondStep": {
+          "button": "Check",
+          "resendToken": {
+            "havent": "Haven't received your code yet?",
+            "sendNow": " Send now",
+            "waitToSendResetToken": " Wait {wait} to resend.",
+            "reached": "You have reached the maximum number of attempts. Please try again later if you have not yet received the code."
+          }
+        },
         "errors": {
           "alreadyRegistered": "The provided email is already registered."
         }

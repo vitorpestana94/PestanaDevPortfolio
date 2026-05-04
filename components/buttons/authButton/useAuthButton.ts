@@ -6,7 +6,7 @@ export default function useAuthButton(submit: () => Promise<void>) {
   const t = useTranslations();
 
   async function handleClick(
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) {
     event.preventDefault();
 
