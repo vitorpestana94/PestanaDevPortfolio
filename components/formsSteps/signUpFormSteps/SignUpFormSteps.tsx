@@ -17,7 +17,7 @@ export default function SignUpFormSteps() {
               setEmail={setEmail}
             />
           ),
-          2: <SecondStep />,
+          2: <SecondStep email={formData.email!} nextStep={nextStep} />,
           3: <p>nome</p>,
           4: <p>senha</p>,
           5: <p>final</p>,

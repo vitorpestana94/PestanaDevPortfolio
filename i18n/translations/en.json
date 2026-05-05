@@ -68,6 +68,11 @@
         },
         "secondStep": {
           "button": "Check",
+          "paragraph": "I sent an email with a confirmation code.\n Please, check your email.",
+          "error": {
+            "wrongToken": "Wrong code, try again!",
+            "tokenNotSetted": "Please, provide all the characters of the code sended to your email."
+          },
           "resendToken": {
             "havent": "Haven't received your code yet?",
             "sendNow": " Send now",

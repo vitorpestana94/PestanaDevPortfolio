@@ -4,7 +4,7 @@ export default function SignUpTitle() {
   const t = useTranslations();
 
   return (
-    <h1 className="text-black font-semibold text-[1.5rem] sm:text-[1.75rem]">
+    <h1 className="text-black font-semibold text-[1.5rem] sm:text-[1.75rem] mt-10">
       {t("auth.signUp.form.title")}
     </h1>
   );

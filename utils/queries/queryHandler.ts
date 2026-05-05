@@ -4,7 +4,7 @@
  */
 export default async function QueryHandler<T>(
   fetchFunction: Promise<T>,
-  dataHandler?: (data: T) => any
+  dataHandler?: (data: T) => any,
 ) {
   try {
     let response = await fetchFunction;

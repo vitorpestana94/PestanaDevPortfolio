@@ -2,16 +2,14 @@ import { useState, useRef, useEffect } from "react";
 import { useCheckConfirmationCode } from "@/hooks/api/confirmationCode/mutation";
 import { useTranslations } from "next-intl";
 import Inteface from "./SignUpSecondStepInterface";
+import { keys, ValidationKey } from "@/models/types/ConfirmationCodeTypes";
 
 export default function useSignUpSecondStep({ email, nextStep }: Inteface) {
   const [error, setError] = useState<string>("");
-  const t = useTranslations();
+  const t = useTranslations("auth.signUp.form.secondStep");
   const { mutateAsync, isError, isPending, isSuccess } =
     useCheckConfirmationCode();
   const defaultValue: string = "-1";
-  const keys = ["firstCode", "secondCode", "thirdCode", "fourthCode"] as const;
-
-  type ValidationKey = (typeof keys)[number];
 
   const [validationCode, setValidationCode] = useState<{
     [key: string]: string;
@@ -34,7 +32,7 @@ export default function useSignUpSecondStep({ email, nextStep }: Inteface) {
   }
 
   function getValidationCode() {
-    return `${validationCode.firstNumber}${validationCode.secondNumber}${validationCode.thirdNumber}${validationCode.fourthNumber}`;
+    return `${validationCode.firstCode}${validationCode.secondCode}${validationCode.thirdCode}${validationCode.fourthCode}`;
   }
 
   function setEmptyError() {
@@ -161,6 +159,8 @@ export default function useSignUpSecondStep({ email, nextStep }: Inteface) {
     keys,
     error,
     isError,
+    shouldShowError: isError || error === t("error.tokenNotSetted"),
+    isFormEmpty: error === t("error.tokenNotSetted"),
     t,
     handleInputChange,
     handleOnKeyDown,

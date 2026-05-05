@@ -1,5 +1,6 @@
 import ErrorInterface from "./ErrorInterface";
 import { motion } from "motion/react";
+
 export default function Error({
   shouldRender,
   message,
