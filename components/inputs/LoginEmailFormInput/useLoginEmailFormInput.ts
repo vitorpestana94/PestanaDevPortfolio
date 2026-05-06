@@ -4,8 +4,6 @@ import { useTranslations } from "next-intl";
 import useFormError from "@/models/interfaces/UI/useLoginFormError";
 
 export default function useLoginEmailFormInput({
-  isEmailAlreadyRegistered,
-  isConfirmationCodeEmailAlreadySent,
   setEmailError,
 }: useFormError) {
   const t = useTranslations();
@@ -38,12 +36,6 @@ export default function useLoginEmailFormInput({
       errorMessage = t("auth.login.form.errors.emailFormat");
     } else if (isEmailEmpty) {
       errorMessage = t("auth.login.form.errors.email");
-    } else if (isEmailAlreadyRegistered) {
-      errorMessage = t("auth.signUp.form.errors.alreadyRegistered");
-    } else if (isConfirmationCodeEmailAlreadySent) {
-      errorMessage = t(
-        "auth.signUp.form.errors.confirmationCodeEmailAlreadySent",
-      );
     }
 
     return errorMessage;

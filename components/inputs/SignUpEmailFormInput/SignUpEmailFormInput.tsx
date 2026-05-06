@@ -3,19 +3,11 @@ import useSignUpEmailFormInput from "./useSignUpEmailFormInput";
 import SignUpEmailFormatInputInterface from "./SignUpEmailFormatInputInterface";
 
 export default function SignUpEmailFormInput({
-  isEmailError,
-  isEmailAlreadyRegistered,
-  isConfirmationCodeEmailAlreadySent,
   setEmail,
   setIsEmaiLError,
 }: SignUpEmailFormatInputInterface) {
   const { verifyEmail, getErrorMessage, t, shoudlRenderError } =
-    useSignUpEmailFormInput(
-      isEmailError,
-      isEmailAlreadyRegistered,
-      isConfirmationCodeEmailAlreadySent,
-      setIsEmaiLError,
-    );
+    useSignUpEmailFormInput(setIsEmaiLError);
 
   return (
     <Email

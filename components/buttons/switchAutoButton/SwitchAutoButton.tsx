@@ -11,7 +11,7 @@ export default function SwitchAutoButton({
   return (
     <div
       className="absolute z-50 flex rounded-2xl p-1
-    w-[25%] h-[3.5%] top-[40%] sm:top-[2%] sm:w-[10%] sm:h-[7%] xl:h-[5%] text-black
+    w-[25%] h-[4%] top-[40%] sm:top-[2%] sm:w-[10%] sm:h-[7%] xl:h-[5%] text-black
     right-[3%] sm:right-[0.5%] bg-gray-800 
     text-[0.5rem]
     sm:text-[0.75rem]"

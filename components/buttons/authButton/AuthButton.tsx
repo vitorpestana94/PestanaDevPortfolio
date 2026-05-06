@@ -9,6 +9,7 @@ export default function AuthButton({
   buttonLabel,
   isFormWithErrors,
   isLoading,
+  styles,
   submit,
 }: AuthButtonInterface) {
   const { scale, transition, handleClick } = useAuthButton(submit);
@@ -24,7 +25,7 @@ export default function AuthButton({
       transition={transition}
       className={`loginInputsDivs min-h-9 relative w-[55%] shadow-2xs shadow-black text-shadow-2xs text-shadow-black border-black 
       text-[0.75rem] bg-[#38b6ff] text-white flex justify-center self-center
-      ${isFormWithErrors ? "buttonDisabled" : "cursor-pointer"}`}
+      ${isFormWithErrors ? "buttonDisabled" : "cursor-pointer"} ${styles}`}
       type="submit"
     >
       {isLoading ? (

@@ -5,6 +5,8 @@ import Wrapper from "@/components/wrappers/AuthWrapper";
 import Email from "@/components/inputs/SignUpEmailFormInput/SignUpEmailFormInput";
 import useSignUpFirstStep from "./useSignUpFirstStep";
 import StartSignUpButton from "@/components/buttons/authButton/AuthButton";
+import Error from "@/components/errors/error/Error";
+import SignUpTitle from "@/components/titles/SignUpTitle";
 
 export default function SignUpFirstStep({
   nextStep,
@@ -16,27 +18,28 @@ export default function SignUpFirstStep({
     isEmailError,
     isLoading,
     isConfirmationCodeEmailAlreadySent,
-    isEmailAlreadyRegistered,
     setIsEmaiLError,
     submit,
   } = useSignUpFirstStep(nextStep, email);
 
   return (
     <div className="w-full h-[90%] flex flex-col justify-around items-center">
+      <SignUpTitle />
       <SignUpWithPlatform />
       <Or />
       <Wrapper>
-        <div className="flex flex-col justify-around gap-y-6">
-          <Email
-            isEmailError={isEmailError}
-            isEmailAlreadyRegistered={isEmailAlreadyRegistered}
-            isConfirmationCodeEmailAlreadySent={
+        <div className="flex flex-col justify-between gap-y-1 lg:gap-y-6">
+          <Email setIsEmaiLError={setIsEmaiLError} setEmail={setEmail} />
+          <Error
+            shouldRender={isEmailError}
+            message={
               isConfirmationCodeEmailAlreadySent
+                ? t("auth.signUp.form.errors.confirmationCodeEmailAlreadySent")
+                : t("auth.signUp.form.errors.alreadyRegistered")
             }
-            setIsEmaiLError={setIsEmaiLError}
-            setEmail={setEmail}
           />
           <StartSignUpButton
+            styles={isEmailError ? "mt-1" : "mt-4"}
             submit={submit}
             isLoading={isLoading}
             isFormWithErrors={isEmailError}

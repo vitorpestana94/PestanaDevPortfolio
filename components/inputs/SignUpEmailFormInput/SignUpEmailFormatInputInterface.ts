@@ -2,5 +2,4 @@ import IsEmailRegisteredInterface from "@/components/formsSteps/signUpFormSteps/
 
 export default interface SignUpEmailFormatInputInterface extends IsEmailRegisteredInterface {
   setEmail: (email: string) => void;
-  isConfirmationCodeEmailAlreadySent: boolean;
 }

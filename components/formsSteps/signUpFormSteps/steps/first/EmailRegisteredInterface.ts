@@ -1,5 +1,3 @@
 export default interface IsEmailRegisteredInterface {
-  isEmailAlreadyRegistered: boolean;
-  isEmailError: boolean;
   setIsEmaiLError: (isError: boolean) => void;
 }

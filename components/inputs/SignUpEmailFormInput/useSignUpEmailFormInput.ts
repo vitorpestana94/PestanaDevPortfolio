@@ -2,9 +2,6 @@ import useLoginEmailFormInput from "../LoginEmailFormInput/useLoginEmailFormInpu
 import { useState, useEffect } from "react";
 
 export default function useSignUpEmailFormInput(
-  isEmailError: boolean,
-  isEmailAlreadyRegistered: boolean,
-  isConfirmationCodeEmailAlreadySent: boolean,
   setEmailError: (isError: boolean) => void,
 ) {
   const {
@@ -14,38 +11,24 @@ export default function useSignUpEmailFormInput(
     isEmailEmpty,
     isEmailFormatInvalid,
   } = useLoginEmailFormInput({
-    isConfirmationCodeEmailAlreadySent,
-    isEmailAlreadyRegistered,
     setEmailError,
   });
 
   const [shoudlRenderError, setShoudlRenderError] = useState<boolean>(false);
 
   useEffect(() => {
-    if (
-      isEmailAlreadyRegistered ||
-      isEmailError ||
-      isEmailEmpty ||
-      isEmailFormatInvalid
-    ) {
+    if (isEmailEmpty || isEmailFormatInvalid) {
       setShoudlRenderError(true);
     } else {
       setShoudlRenderError(false);
     }
-  }, [
-    isEmailError,
-    isEmailEmpty,
-    isEmailFormatInvalid,
-    isEmailAlreadyRegistered,
-    isConfirmationCodeEmailAlreadySent,
-  ]);
+  }, [isEmailEmpty, isEmailFormatInvalid]);
 
   return {
     getErrorMessage,
     verifyEmail,
     shoudlRenderError,
     isEmailEmpty,
-    isEmailAlreadyRegistered,
     t,
     isEmailFormatInvalid,
   };
