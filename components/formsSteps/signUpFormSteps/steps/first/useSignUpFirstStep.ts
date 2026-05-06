@@ -39,12 +39,15 @@ export default function useSignUpFirstStep(
       if (isEmailRegisteredData && confirmationCodeAlreadySentData) {
         if (isEmailRegisteredData.isRegistered) {
           setIsEmailAlreadyRegistered(true);
+          setIsEmaiLError(true);
         } else if (
           confirmationCodeAlreadySentData.confirmationCodeAlreadySent
         ) {
           setIsConfirmationCodeEmailAlreadySent(true);
+          setIsEmaiLError(true);
         } else {
           setIsEmailAlreadyRegistered(false);
+          setIsEmaiLError(false);
           setIsConfirmationCodeEmailAlreadySent(false);
 
           mutateAsync({ clientEmail: email!, clientLocale: locale });

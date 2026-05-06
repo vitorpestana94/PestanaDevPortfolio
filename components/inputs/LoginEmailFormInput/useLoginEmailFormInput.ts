@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import useFormError from "@/models/interfaces/UI/useLoginFormError";
 
 export default function useLoginEmailFormInput({
-  isEmailError,
   isEmailAlreadyRegistered,
+  isUserClickedButtonWithEmailEmpty,
   isConfirmationCodeEmailAlreadySent,
   setEmailError,
 }: useFormError) {
@@ -14,16 +14,15 @@ export default function useLoginEmailFormInput({
   const [isEmailFormatInvalid, setIsEmailFormatInvalid] =
     useState<boolean>(false);
 
-  function verifyEmail(event: React.FocusEvent<HTMLInputElement, Element>) {
-    const email = event.target.value;
+  async function verifyEmail(
+    event?: React.FocusEvent<HTMLInputElement, Element>,
+  ) {
+    const email = event?.target.value;
 
     if (!email) {
       setIsEmailEmpty(true);
-      setEmailError!(true);
-      setIsEmailFormatInvalid(false);
     } else {
       setIsEmailEmpty(false);
-      setEmailError!(false);
 
       if (!isEmailValid(email)) {
         setIsEmailFormatInvalid(true);
@@ -38,7 +37,7 @@ export default function useLoginEmailFormInput({
 
     if (isEmailFormatInvalid) {
       errorMessage = t("auth.login.form.errors.emailFormat");
-    } else if (isEmailEmpty) {
+    } else if (isEmailEmpty || isUserClickedButtonWithEmailEmpty) {
       errorMessage = t("auth.login.form.errors.email");
     } else if (isEmailAlreadyRegistered) {
       errorMessage = t("auth.signUp.form.errors.alreadyRegistered");
@@ -52,22 +51,12 @@ export default function useLoginEmailFormInput({
   }
 
   useEffect(() => {
-    if (
-      isEmailEmpty ||
-      isEmailFormatInvalid ||
-      isEmailAlreadyRegistered ||
-      isConfirmationCodeEmailAlreadySent
-    ) {
+    if (isEmailEmpty || isEmailFormatInvalid) {
       setEmailError!(true);
     } else {
       setEmailError!(false);
     }
-  }, [
-    isEmailEmpty,
-    isEmailFormatInvalid,
-    isEmailAlreadyRegistered,
-    isConfirmationCodeEmailAlreadySent,
-  ]);
+  }, [isEmailEmpty, isEmailFormatInvalid]);
 
   return {
     getErrorMessage,

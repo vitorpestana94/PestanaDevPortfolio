@@ -16,6 +16,7 @@ export default function useSignUpEmailFormInput(
   } = useLoginEmailFormInput({
     isConfirmationCodeEmailAlreadySent,
     isEmailAlreadyRegistered,
+    isUserClickedButtonWithEmailEmpty: isEmailError,
     setEmailError,
   });
 
@@ -39,8 +40,6 @@ export default function useSignUpEmailFormInput(
     isEmailAlreadyRegistered,
     isConfirmationCodeEmailAlreadySent,
   ]);
-
-  function verifyEmailAndGetErrorMessage() {}
 
   return {
     getErrorMessage,

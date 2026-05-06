@@ -5,5 +5,5 @@ export default interface useLoginFormError {
   isInputWithError?: boolean;
   isEmailAlreadyRegistered?: boolean;
   isConfirmationCodeEmailAlreadySent?: boolean;
-  isEmailError?: boolean;
+  isUserClickedButtonWithEmailEmpty?: boolean;
 }
