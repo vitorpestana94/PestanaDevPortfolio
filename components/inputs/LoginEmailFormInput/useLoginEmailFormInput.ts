@@ -5,7 +5,6 @@ import useFormError from "@/models/interfaces/UI/useLoginFormError";
 
 export default function useLoginEmailFormInput({
   isEmailAlreadyRegistered,
-  isUserClickedButtonWithEmailEmpty,
   isConfirmationCodeEmailAlreadySent,
   setEmailError,
 }: useFormError) {
@@ -37,7 +36,7 @@ export default function useLoginEmailFormInput({
 
     if (isEmailFormatInvalid) {
       errorMessage = t("auth.login.form.errors.emailFormat");
-    } else if (isEmailEmpty || isUserClickedButtonWithEmailEmpty) {
+    } else if (isEmailEmpty) {
       errorMessage = t("auth.login.form.errors.email");
     } else if (isEmailAlreadyRegistered) {
       errorMessage = t("auth.signUp.form.errors.alreadyRegistered");
