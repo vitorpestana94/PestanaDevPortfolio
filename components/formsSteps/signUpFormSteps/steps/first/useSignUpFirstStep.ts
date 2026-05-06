@@ -59,13 +59,7 @@ export default function useSignUpFirstStep(
   }, [isEmailRegisteredData, confirmationCodeAlreadySentData]);
 
   async function submit(): Promise<void> {
-    if (!email) {
-      setIsEmaiLError(true);
-
-      return;
-    } else {
-      setIsEmaiLError(false);
-    }
+    if (!email) return;
 
     await getIsEmailRegistered();
 

@@ -31,9 +31,11 @@ export default function useLoginInputsDiv() {
 
   // #region Functions
   function isFormInputsValids(): boolean {
-    return (
-      !formErros.email && !formErros.password && !formErros.invalidCredentials
-    );
+    return !formErros.email && !formErros.password;
+  }
+
+  function isFormInputsEmpty(): boolean {
+    return !loginRequest.email || !loginRequest.password;
   }
 
   function setEmailError(isError: boolean) {
@@ -59,6 +61,8 @@ export default function useLoginInputsDiv() {
   async function submit() {
     if (!isFormInputsValids()) return;
 
+    if (isFormInputsEmpty()) return;
+
     const result = await signIn("credentials", {
       email: loginRequest.email,
       password: loginRequest.password,
@@ -77,7 +81,7 @@ export default function useLoginInputsDiv() {
   useEffect(() => {
     if (formErros.email) {
       setEmailError(
-        loginRequest.email ? true : false || isEmailValid(loginRequest.email)
+        loginRequest.email ? true : false || isEmailValid(loginRequest.email),
       );
     }
   }, [formErros.email]);
