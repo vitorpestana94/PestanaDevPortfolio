@@ -8,6 +8,7 @@ export default async function QueryHandler<T>(
 ) {
   try {
     let response = await fetchFunction;
+
     return dataHandler ? dataHandler(response) : response;
   } catch (error) {
     throw new Error("error-ocurred");

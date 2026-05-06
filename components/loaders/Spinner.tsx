@@ -1,4 +1,10 @@
-export default function Spinner({ loading }: { loading: boolean }) {
+export default function Spinner({
+  loading,
+  style,
+}: {
+  loading: boolean;
+  style?: string;
+}) {
   return (
     <>
       {loading && (
@@ -14,7 +20,7 @@ export default function Spinner({ loading }: { loading: boolean }) {
             viewBox="0 0 17 17"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={`aspect-square text-gray-200 animate-[spin_1500ms_linear_infinite] stroke-white w-11/12`}
+            className={`aspect-square text-gray-200 animate-[spin_1500ms_linear_infinite] stroke-white w-11/12 ${style}`}
           >
             <g clipPath="url(#clip0_2725_4752)">
               <path

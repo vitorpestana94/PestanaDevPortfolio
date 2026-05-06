@@ -1,6 +1,6 @@
 import useConfirmationCodeInput from "./useSignUpSecondStep";
 import Interface from "./SignUpSecondStepInterface";
-import Button from "@/components/buttons/authButton/AuthButton";
+import Check from "@/components/buttons/authButton/AuthButton";
 import ResendToken from "@/components/spans/resendTokenSpan/ResendTokenSpan";
 import Error from "@/components/errors/error/Error";
 import ISentAnEmail from "@/components/paragraphs/ConfirmationCodeParagraph";
@@ -43,7 +43,7 @@ export default function SignUpSecondStep({ email, nextStep }: Interface) {
         <ResendToken email={email!} />
         <Error shouldRender={shouldShowError} message={error} />
       </div>
-      <Button
+      <Check
         buttonLabel={t("button")}
         isFormWithErrors={isFormEmpty}
         submit={handleButtonClick}

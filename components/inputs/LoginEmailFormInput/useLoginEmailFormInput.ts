@@ -4,7 +4,9 @@ import { useTranslations } from "next-intl";
 import useFormError from "@/models/interfaces/UI/useLoginFormError";
 
 export default function useLoginEmailFormInput({
+  isEmailError,
   isEmailAlreadyRegistered,
+  isConfirmationCodeEmailAlreadySent,
   setEmailError,
 }: useFormError) {
   const t = useTranslations();
@@ -17,9 +19,11 @@ export default function useLoginEmailFormInput({
 
     if (!email) {
       setIsEmailEmpty(true);
+      setEmailError!(true);
       setIsEmailFormatInvalid(false);
     } else {
       setIsEmailEmpty(false);
+      setEmailError!(false);
 
       if (!isEmailValid(email)) {
         setIsEmailFormatInvalid(true);
@@ -30,26 +34,40 @@ export default function useLoginEmailFormInput({
   }
 
   function getErrorMessage(): string {
-    let errordMessage: string = "";
+    let errorMessage: string = "";
 
-    if (isEmailEmpty || isEmailFormatInvalid) {
-      errordMessage = isEmailFormatInvalid
-        ? t("auth.login.form.errors.emailFormat")
-        : t("auth.login.form.errors.email");
+    if (isEmailFormatInvalid) {
+      errorMessage = t("auth.login.form.errors.emailFormat");
+    } else if (isEmailEmpty) {
+      errorMessage = t("auth.login.form.errors.email");
     } else if (isEmailAlreadyRegistered) {
-      errordMessage = t("auth.signUp.form.errors.alreadyRegistered");
+      errorMessage = t("auth.signUp.form.errors.alreadyRegistered");
+    } else if (isConfirmationCodeEmailAlreadySent) {
+      errorMessage = t(
+        "auth.signUp.form.errors.confirmationCodeEmailAlreadySent",
+      );
     }
 
-    return errordMessage;
+    return errorMessage;
   }
 
   useEffect(() => {
-    if (isEmailEmpty || isEmailFormatInvalid) {
+    if (
+      isEmailEmpty ||
+      isEmailFormatInvalid ||
+      isEmailAlreadyRegistered ||
+      isConfirmationCodeEmailAlreadySent
+    ) {
       setEmailError!(true);
     } else {
       setEmailError!(false);
     }
-  }, [isEmailEmpty, isEmailFormatInvalid, isEmailAlreadyRegistered]);
+  }, [
+    isEmailEmpty,
+    isEmailFormatInvalid,
+    isEmailAlreadyRegistered,
+    isConfirmationCodeEmailAlreadySent,
+  ]);
 
   return {
     getErrorMessage,

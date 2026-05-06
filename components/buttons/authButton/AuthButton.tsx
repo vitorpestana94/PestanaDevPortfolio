@@ -3,13 +3,15 @@
 import useAuthButton from "./useAuthButton";
 import AuthButtonInterface from "./AuthButtonInterface";
 import { motion } from "motion/react";
+import Spinner from "@/components/loaders/Spinner";
 
 export default function AuthButton({
   buttonLabel,
-  submit,
   isFormWithErrors,
+  isLoading,
+  submit,
 }: AuthButtonInterface) {
-  const { t, scale, transition, handleClick } = useAuthButton(submit);
+  const { scale, transition, handleClick } = useAuthButton(submit);
 
   return (
     <motion.button
@@ -20,12 +22,16 @@ export default function AuthButton({
       whileHover={scale}
       disabled={isFormWithErrors}
       transition={transition}
-      className={`loginInputsDivs w-[55%] shadow-2xs shadow-black text-shadow-2xs text-shadow-black border-black 
+      className={`loginInputsDivs min-h-9 relative w-[55%] shadow-2xs shadow-black text-shadow-2xs text-shadow-black border-black 
       text-[0.75rem] bg-[#38b6ff] text-white flex justify-center self-center
       ${isFormWithErrors ? "buttonDisabled" : "cursor-pointer"}`}
       type="submit"
     >
-      {buttonLabel}
+      {isLoading ? (
+        <Spinner loading={isLoading} style="max-h-7" />
+      ) : (
+        buttonLabel
+      )}
     </motion.button>
   );
 }

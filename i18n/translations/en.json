@@ -81,7 +81,8 @@
           }
         },
         "errors": {
-          "alreadyRegistered": "The provided email is already registered."
+          "alreadyRegistered": "The provided email is already registered.",
+          "confirmationCodeEmailAlreadySent": "A confirmation code was already sent to the provided email. Check your email box or try again later."
         }
       }
     }

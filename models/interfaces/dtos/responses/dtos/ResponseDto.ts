@@ -1,4 +1,5 @@
-import ApiToken from "../ApiToken";
-import IsEmailRegistered from "../IsEmailRegistered";
-
-export default interface ResponseDto extends ApiToken, IsEmailRegistered {}
+export default interface ResponseDto {
+  isSuccess: boolean;
+  statusCode: number;
+  message: string;
+}

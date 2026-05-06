@@ -61,4 +61,11 @@ export default class RequestDtoBuilder {
       requestBody: requestBody,
     };
   }
+
+  static CheckConfirmationCodeEmailAlreadySent(email: string) {
+    return {
+      path: `confirmation/sent/${email}`,
+      httpMethod: "get" as const,
+    };
+  }
 }

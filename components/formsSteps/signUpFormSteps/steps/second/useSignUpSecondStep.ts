@@ -3,13 +3,20 @@ import { useCheckConfirmationCode } from "@/hooks/api/confirmationCode/mutation"
 import { useTranslations } from "next-intl";
 import Inteface from "./SignUpSecondStepInterface";
 import { keys, ValidationKey } from "@/models/types/ConfirmationCodeTypes";
+import { useCheckConfirmationCodeEmailAlreadySent } from "@/hooks/api/confirmationCode/queries";
 
 export default function useSignUpSecondStep({ email, nextStep }: Inteface) {
+  const defaultValue: string = "-1";
+
   const [error, setError] = useState<string>("");
   const t = useTranslations("auth.signUp.form.secondStep");
   const { mutateAsync, isError, isPending, isSuccess } =
     useCheckConfirmationCode();
-  const defaultValue: string = "-1";
+  const {
+    data,
+    refetch,
+    isFetching: isCheckingConfirmationCodeAlreadySent,
+  } = useCheckConfirmationCodeEmailAlreadySent(email);
 
   const [validationCode, setValidationCode] = useState<{
     [key: string]: string;
@@ -130,6 +137,10 @@ export default function useSignUpSecondStep({ email, nextStep }: Inteface) {
     } else {
       setError(t("error.tokenNotSetted"));
     }
+  }
+
+  async function checkConfirmationCodeAlreadySent(): Promise<void> {
+    refetch();
   }
 
   useEffect(() => {
