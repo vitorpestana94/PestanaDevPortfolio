@@ -76,7 +76,7 @@
           "resendToken": {
             "havent": "Ainda não recebeu seu código?",
             "sendNow": "Enviar agora",
-            "waitToSendResetToken": " Aguarde {wait} para reenviar.",
+            "waitToSendResetToken": "Aguarde {wait} para reenviar.",
             "reached": "Você atingiu o número máximo de tentativas. Tente novamente mais tarde se ainda não tiver recebido o código."
           }
         },
