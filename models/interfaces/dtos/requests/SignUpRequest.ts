@@ -3,5 +3,4 @@ export default interface SignUpRequest {
   name?: string;
   password?: string;
   deviceId?: string;
-  picture?: string;
 }

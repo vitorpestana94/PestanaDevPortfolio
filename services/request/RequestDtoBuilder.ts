@@ -5,6 +5,7 @@ import SendConfirmationCodeRequest from "@/models/interfaces/dtos/requests/SendC
 import SendContactEmailRequest from "@/models/interfaces/dtos/requests/SendContactEmailRequest";
 import CheckConfirmationCodeRequest from "@/models/interfaces/dtos/requests/CheckConfirmationCodeRequest";
 import ResendConfirmationCodeEmailRequest from "@/models/interfaces/dtos/requests/ResendConfirmationCodeEmailRequest";
+import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 
 export default class RequestDtoBuilder {
   static LoginRequest(requestBody: LoginRequest): RequestDto {
@@ -66,6 +67,14 @@ export default class RequestDtoBuilder {
     return {
       path: `confirmation/sent/${email}`,
       httpMethod: "get" as const,
+    };
+  }
+
+  static SignUp(requestBody: SignUpRequest) {
+    return {
+      path: `sign-up`,
+      httpMethod: "post" as const,
+      requestBody: requestBody,
     };
   }
 }

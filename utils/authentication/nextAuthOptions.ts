@@ -6,6 +6,8 @@ import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import LinkedInProvider from "next-auth/providers/linkedin";
 import { login, loginOrSignUpWithPlatform } from "./authRequestHandlers";
+import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
+import { signup } from "./authRequestHandlers";
 
 if (!process.env.NEXT_PUBLIC_API_URL) {
   throw new Error("Api URL is not defined!");
@@ -59,6 +61,7 @@ export const nextAuthOptions = {
       credentials: {
         email: { label: "email", type: "text" },
         password: { label: "password", type: "password" },
+        mode: { label: "mode", type: "text" },
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
@@ -66,6 +69,22 @@ export const nextAuthOptions = {
         }
 
         return await login(credentials.email, credentials.password);
+      },
+    }),
+    CredentialsProvider({
+      id: "credentials-signup",
+      name: "credentials-signup",
+      credentials: {
+        request: { label: "request", type: "text" },
+      },
+      async authorize(credentials) {
+        if (!credentials?.request) {
+          return null;
+        }
+
+        const request: SignUpRequest = JSON.parse(credentials.request);
+
+        return await signup(request);
       },
     }),
   ],
@@ -124,7 +143,7 @@ export const nextAuthOptions = {
 
         const response = await loginOrSignUpWithPlatform(
           account.id_token ? token.id_token! : account.access_token!,
-          account.provider
+          account.provider,
         );
 
         token.token = response?.token;

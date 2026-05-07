@@ -7,11 +7,10 @@ export default function useSignUpFormSteps() {
     name: "",
     password: "",
     deviceId: "",
-    picture: "",
   });
 
   const { step, nextStep, previousStep, setStep } = useHandleStep({
-    maxSteps: 5,
+    maxSteps: 4,
   });
 
   function setEmail(emailProvided: string) {
@@ -26,10 +25,6 @@ export default function useSignUpFormSteps() {
     setFormData((previous) => ({ ...previous, name: nameProvided }));
   }
 
-  function setPicture(pictureProvided: string) {
-    setFormData((previous) => ({ ...previous, picture: pictureProvided }));
-  }
-
   return {
     formData,
     step,
@@ -39,6 +34,5 @@ export default function useSignUpFormSteps() {
     setEmail,
     setPassword,
     setName,
-    setPicture,
   };
 }
