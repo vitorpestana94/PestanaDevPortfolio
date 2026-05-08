@@ -39,7 +39,7 @@
   }
 
   .loginInputs {
-    @apply autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] flex-1 focus:outline-none text-[0.75rem];
+    @apply autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] flex-1 focus:outline-none text-[0.5rem] lg:text-[0.75rem];
   }
 
   .loginInputsDivs {

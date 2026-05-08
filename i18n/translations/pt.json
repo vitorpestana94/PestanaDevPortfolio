@@ -73,6 +73,25 @@
             "wrongToken": "Código errado, tente novamente!",
             "tokenNotSetted": "Por favor, forneça todos os caracteres do código que foram enviados para o seu email."
           },
+          "thirdStep": {
+            "paragraph": "Agora, por favor, informe seu nome e defina uma senha.",
+            "buttonLabel": "Cadastrar",
+            "placeholders": {
+              "name": "Seu nome",
+              "password": "Defina uma senha"
+            },
+            "error": {
+              "name": "O nome é necessário. Forneça para prosseguir.",
+              "password": {
+                "empty": "A senha é necessária. Forneça para prosseguir.",
+                "wrongFormat": "Sua senha deve ter: \n\n• Pelo menos 8 caracteres\n• Uma letra maiúscula\n• Uma letra minúscula\n• Pelo menos dois números\n• Não pode conter espaços em branco.\n• Deve conter um caractere especial, como @"
+              },
+              "passwordConfirmation": {
+                "empty": "Por favor, confirme sua senha.",
+                "mismatch": "Sua confirmação de senha não corresponde a senha definida."
+              }
+            }
+          },
           "resendToken": {
             "havent": "Ainda não recebeu seu código?",
             "sendNow": "Enviar agora",

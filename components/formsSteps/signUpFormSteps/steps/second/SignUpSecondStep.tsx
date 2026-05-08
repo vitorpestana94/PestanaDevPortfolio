@@ -3,7 +3,7 @@ import Interface from "./SignUpSecondStepInterface";
 import Check from "@/components/buttons/authButton/AuthButton";
 import ResendToken from "@/components/spans/resendTokenSpan/ResendTokenSpan";
 import Error from "@/components/errors/error/Error";
-import ISentAnEmail from "@/components/paragraphs/ConfirmationCodeParagraph";
+import ISentAnEmail from "@/components/paragraphs/SignUpFormParagraph";
 import ConfirmationCode from "@/components/inputs/confirmationCodeInput/ConfirmationCodeInput";
 
 export default function SignUpSecondStep({ email, nextStep }: Interface) {

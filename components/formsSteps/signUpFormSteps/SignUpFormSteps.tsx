@@ -5,12 +5,12 @@ import ThirdStep from "./steps/third/SignUpThirdStep";
 
 export default function SignUpFormSteps() {
   const {
+    isLoading,
     step,
     formData,
     setEmail,
     nextStep,
-    previousStep,
-    setStep,
+    submitForm,
     setName,
     setPassword,
   } = useSignUpFormSteps();
@@ -27,7 +27,15 @@ export default function SignUpFormSteps() {
             />
           ),
           2: <SecondStep email={formData.email!} nextStep={nextStep} />,
-          3: <ThirdStep setName={setName} setPassword={setPassword} />,
+          3: (
+            <ThirdStep
+              isLoading={isLoading}
+              password={formData.password}
+              submitForm={submitForm}
+              setName={setName}
+              setPassword={setPassword}
+            />
+          ),
           4: <p>final</p>,
         }[step]
       }

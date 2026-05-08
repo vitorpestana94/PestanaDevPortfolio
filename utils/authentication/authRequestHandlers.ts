@@ -60,15 +60,15 @@ export async function loginOrSignUpWithPlatform(
 }
 
 async function handleLoginResponse(response: ApiToken, deviceId: string) {
-  if (response && response.token) {
-    const decoded: JwtPayload = await jwtDecode(response.token);
+  if (response && response.apiTokens.token) {
+    const decoded: JwtPayload = await jwtDecode(response.apiTokens.token);
     const userId: string = decoded.sub ?? "";
 
     return {
       id: userId,
       expirationTime: decoded?.exp,
-      token: response.token,
-      refreshToken: response.refreshToken,
+      token: response.apiTokens.token,
+      refreshToken: response.apiTokens.refreshToken,
       email: decoded.email,
       name: decoded.name,
       deviceId: deviceId,

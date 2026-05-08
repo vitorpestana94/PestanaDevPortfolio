@@ -80,6 +80,26 @@
             "reached": "You have reached the maximum number of attempts. Please try again later if you have not yet received the code."
           }
         },
+        "thirdStep": {
+          "paragraph": "Now, please, provide your name\n and define a password.",
+          "buttonLabel": "Register",
+          "placeholders": {
+            "name": "Your name",
+            "password": "Define a password",
+            "passwordConfirmation": "Confirm your password"
+          },
+          "error": {
+            "name": "Name is required. Provide it to continue.",
+            "password": {
+              "empty": "Password is required. Provide it to continue",
+              "wrongFormat": "Your password must have: \n\n• At least 8 characters\n• One capital letter\n• One small letter\n• At least two digits\n• Must not have empty spaces.\n• Must have one special character, like @"
+            },
+            "passwordConfirmation": {
+              "empty": "please, confirm your password.",
+              "mismatch": "Your password confirmation doest not match the defined password."
+            }
+          }
+        },
         "errors": {
           "alreadyRegistered": "The provided email is already registered.",
           "confirmationCodeEmailAlreadySent": "A confirmation code was already sent to the provided email. Check your email box or try again later."
