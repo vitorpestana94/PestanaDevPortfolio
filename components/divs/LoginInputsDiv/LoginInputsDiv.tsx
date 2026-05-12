@@ -16,16 +16,16 @@ export default function loginInputsDiv() {
   } = useLoginInputsDiv();
 
   return (
-    <div className="flex flex-col gap-y-2 sm:gap-y-6 items-center">
-      <div className="w-full flex flex-col gap-y-1 sm:gap-y-2 ">
+    <div className="flex flex-col gap-y-2 sm:gap-y-6 items-cente">
+      <div className="w-full flex flex-col items-center gap-y-1 sm:gap-y-2">
         <Email setEmailError={setEmailError} setEmail={setEmail} />
-        <span className="w-full flex flex-col gap-y-2">
+        <span className="w-full flex flex-col gap-y-3">
           <Password
             isInputWithError={formErros.password}
             setPasswordError={setPasswordError}
             setPassword={setPassword}
           />
-          <p className="ml-auto text-[0.5rem] cursor-pointer hover:text-[#30b6ff]">
+          <p className="ml-auto text-[0.5rem] lg:text-[0.625rem] underline underline-offset-4 cursor-pointer hover:text-[#30b6ff]">
             {t("auth.login.form.forgot")}
           </p>
         </span>

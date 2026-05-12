@@ -25,8 +25,8 @@ export default function SignUpSecondStep({ email, nextStep }: Interface) {
       onSubmit={(event) => event.preventDefault()}
       className="flex flex-col flex-1 justify-around sm:items-center"
     >
-      <div className="flex flex-col gap-y-5 px-6 sm:px-16 md:px-20">
-        <ISentAnEmail text={t("paragraph")} />
+      <ISentAnEmail text={t("paragraph")} />
+      <div className="flex flex-col gap-y-4 px-6 sm:px-16 md:px-20">
         <div
           className="flex select-none w-full justify-center
           gap-x-3
@@ -45,6 +45,7 @@ export default function SignUpSecondStep({ email, nextStep }: Interface) {
       </div>
       <Check
         buttonLabel={t("button")}
+        styles="w-4/12! lg:w-3/12!"
         isFormWithErrors={isFormEmpty}
         submit={handleButtonClick}
       />

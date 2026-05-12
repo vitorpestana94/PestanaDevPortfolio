@@ -39,12 +39,10 @@ export default function useSignUpFirstStep(
       if (isEmailRegisteredData && confirmationCodeAlreadySentData) {
         if (isEmailRegisteredData.isRegistered) {
           setIsEmailAlreadyRegistered(true);
-          setIsEmaiLError(true);
         } else if (
           confirmationCodeAlreadySentData.confirmationCodeAlreadySent
         ) {
           setIsConfirmationCodeEmailAlreadySent(true);
-          setIsEmaiLError(true);
         } else {
           setIsEmailAlreadyRegistered(false);
           setIsEmaiLError(false);
@@ -69,6 +67,8 @@ export default function useSignUpFirstStep(
   return {
     t,
     isEmailError,
+    isEmailVerificationsError:
+      isEmailAlreadyRegistered || isConfirmationCodeEmailAlreadySent,
     isEmailAlreadyRegistered,
     isConfirmationCodeEmailAlreadySent,
     isLoading: isFetching || isPending,

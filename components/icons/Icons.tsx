@@ -15,6 +15,7 @@ import Profile from "@public/icons/profile.svg";
 import Padlock from "@public/icons/padlock.svg";
 import EyeOn from "@public/icons/eyeOn.svg";
 import EyeOff from "@public/icons/eyeOff.svg";
+import BadgeCheck from "@public/icons/badgeCheck.svg";
 
 export const icons = {
   vP: <VP />,
@@ -30,6 +31,7 @@ export const icons = {
   eyeOff: <EyeOff />,
   gitHub: <GitHub />,
   google: <Google />,
+  badgeCheck: <BadgeCheck />,
 } as const;
 
 export type IconName = keyof typeof icons;

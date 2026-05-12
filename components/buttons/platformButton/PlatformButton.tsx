@@ -20,7 +20,7 @@ export default function PlatformButton({
       transition={transition}
       type="button"
       className={`flex items-center justify-center gap-x-5 border py-1.5
-        rounded-3xl border-[#808080] cursor-pointer
+        rounded-3xl border-[#808080] cursor-pointer 3xl:py-2
         ${buttonColors[iconName]}`}
     >
       <Icon iconName={iconName} className={`h-4 w-4 fill-white`} />

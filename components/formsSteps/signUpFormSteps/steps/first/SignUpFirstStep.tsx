@@ -16,6 +16,7 @@ export default function SignUpFirstStep({
   const {
     t,
     isEmailError,
+    isEmailVerificationsError,
     isLoading,
     isConfirmationCodeEmailAlreadySent,
     setIsEmaiLError,
@@ -28,10 +29,10 @@ export default function SignUpFirstStep({
       <SignUpWithPlatform />
       <Or />
       <Wrapper>
-        <div className="flex flex-col justify-between gap-y-1 lg:gap-y-6">
+        <div className="flex flex-col items-center justify-between gap-y-1 lg:gap-y-6">
           <Email setIsEmaiLError={setIsEmaiLError} setEmail={setEmail} />
           <Error
-            shouldRender={isEmailError}
+            shouldRender={isEmailVerificationsError}
             message={
               isConfirmationCodeEmailAlreadySent
                 ? t("auth.signUp.form.errors.confirmationCodeEmailAlreadySent")
@@ -39,10 +40,11 @@ export default function SignUpFirstStep({
             }
           />
           <StartSignUpButton
-            styles={isEmailError ? "mt-1" : "mt-4"}
+            styles={`w-4/12! lg:w-3/12!
+              ${isEmailError || isEmailVerificationsError ? "mt-1" : "mt-4"}`}
             submit={submit}
             isLoading={isLoading}
-            isFormWithErrors={isEmailError}
+            isFormWithErrors={isEmailError || isEmailVerificationsError}
             buttonLabel={t("auth.signUp.form.firstStep.button")}
           />
         </div>

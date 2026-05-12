@@ -10,7 +10,7 @@ export default function EmailInput({
   emailInputPlaceHolder,
 }: EmailInputInterface) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-10/12">
       <div className="loginInputsDivs">
         <Profile
           iconName="profile"

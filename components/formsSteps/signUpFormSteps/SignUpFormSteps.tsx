@@ -2,6 +2,7 @@ import useSignUpFormSteps from "./useSignUpFormSteps";
 import FirstStep from "./steps/first/SignUpFirstStep";
 import SecondStep from "./steps/second/SignUpSecondStep";
 import ThirdStep from "./steps/third/SignUpThirdStep";
+import FourthStep from "./steps/fourth/FourthStep";
 
 export default function SignUpFormSteps() {
   const {
@@ -36,7 +37,7 @@ export default function SignUpFormSteps() {
               setPassword={setPassword}
             />
           ),
-          4: <p>final</p>,
+          4: <FourthStep />,
         }[step]
       }
     </div>

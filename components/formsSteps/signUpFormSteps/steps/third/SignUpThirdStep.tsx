@@ -43,7 +43,7 @@ export default function SignUpThirdStep({
           isFormError.passwordConfirmationError ||
           isFormError.passwordError
         }
-        styles=" !w-[40%]"
+        styles=" w-4/12! lg:w-3/12!"
         submit={submitForm}
       />
     </section>

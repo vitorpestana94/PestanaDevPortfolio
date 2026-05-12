@@ -13,8 +13,8 @@ export default function LoginPasswordFormInput({
     });
 
   return (
-    <div className="flex flex-col">
-      <div className="loginInputsDivs flex justify-between items-center px-4">
+    <div className="flex flex-col items-center w-full">
+      <div className="loginInputsDivs flex justify-between items-center px-4 w-10/12">
         <Icon
           iconName="padlock"
           className="aspect-square w-[10%] max-w-4 shrink-0 strokeAzulPestana"

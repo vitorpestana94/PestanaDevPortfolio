@@ -15,7 +15,8 @@ export default function SwitchAutoButton({
     sm:text-[0.625rem]
     md:text-[0.75rem]
     lg:top-[2%] lg:w-[10%] lg:h-[7%] lg:right-[0.5%]
-    xl:h-[5%]"
+    xl:h-[5%]
+    3xl:h-[4.5%]"
     >
       <Button
         buttonLabel={t("signUp")}
