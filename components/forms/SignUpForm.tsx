@@ -1,5 +1,3 @@
-"use client";
-
 import AuthForm from "./AuthForm";
 import FormSteps from "../formsSteps/signUpFormSteps/SignUpFormSteps";
 

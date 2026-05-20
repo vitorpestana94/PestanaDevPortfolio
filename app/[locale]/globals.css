@@ -81,6 +81,10 @@
   .strokeAzulPestana {
     @apply stroke-[#38b6ff];
   }
+
+  .authFormTitle {
+    @apply text-black font-semibold  text-[1.5rem] sm:text-[1.75rem] xl:text-[1.875rem] 3xl:text-[2.125rem];
+  }
 }
 
 body {
