@@ -40,7 +40,7 @@
     "login": {
       "banner": {
         "title": "Good to see you back!",
-        "paragraph": "Would you like to log in?"
+        "paragraph": "Would you like to login?"
       },
       "form": {
         "title": "Login",
@@ -107,6 +107,12 @@
           "alreadyRegistered": "The provided email is already registered.",
           "confirmationCodeEmailAlreadySent": "A confirmation code was already sent to the provided email. Try again later."
         }
+      }
+    },
+    "metaData": {
+      "auth": {
+        "title": "| Login or Sign-up",
+        "description": "Here you can both login or sign-up."
       }
     }
   }

@@ -3,45 +3,48 @@ import Password from "../../inputs/LoginPasswordFormInput/LoginPasswordFormInput
 import LoginButton from "../../buttons/authButton/AuthButton";
 import useLoginInputsDiv from "./useLoginInputsDiv";
 import Error from "@/components/errors/error/Error";
+import Interface from "@/components/forms/loginForm/LoginFormInterface";
+import ForgotPassword from "@/components/paragraphs/forgotPassword/ForgotPasswordParagraph";
 
-export default function loginInputsDiv() {
-  const {
-    formErros,
-    t,
-    setEmailError,
-    setPasswordError,
-    setEmail,
-    submit,
-    setPassword,
-  } = useLoginInputsDiv();
+export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
+   const {
+      formErros,
+      t,
+      setEmailError,
+      setPasswordError,
+      setEmail,
+      submit,
+      setPassword,
+   } = useLoginInputsDiv();
 
-  return (
-    <div className="flex flex-col gap-y-2 sm:gap-y-6 items-cente">
-      <div className="w-full flex flex-col items-center gap-y-1 sm:gap-y-2">
-        <Email setEmailError={setEmailError} setEmail={setEmail} />
-        <span className="w-full flex flex-col gap-y-3">
-          <Password
-            isInputWithError={formErros.password}
-            setPasswordError={setPasswordError}
-            setPassword={setPassword}
-          />
-          <p className="ml-auto text-[0.5rem] lg:text-[0.625rem] underline underline-offset-4 cursor-pointer hover:text-[#30b6ff]">
-            {t("auth.login.form.forgot")}
-          </p>
-        </span>
-        {
-          <Error
-            shouldRender={formErros.invalidCredentials}
-            message={t("auth.login.form.errors.invalidCredentials")}
-            styles="self-start"
-          />
-        }
+   return (
+      <div className="flex flex-col gap-y-2 sm:gap-y-6 items-center">
+         <div className="w-full flex flex-col items-center gap-y-1 sm:gap-y-2">
+            <Email setEmailError={setEmailError} setEmail={setEmail} />
+            <span className="w-full flex flex-col gap-y-3">
+               <Password
+                  isInputWithError={formErros.password}
+                  setPasswordError={setPasswordError}
+                  setPassword={setPassword}
+               />
+               <ForgotPassword
+                  switchToForgotPassword={switchToForgotPassword}
+                  text={t("auth.login.form.forgot")}
+               />
+            </span>
+            {
+               <Error
+                  shouldRender={formErros.invalidCredentials}
+                  message={t("auth.login.form.errors.invalidCredentials")}
+                  styles="self-start"
+               />
+            }
+         </div>
+         <LoginButton
+            buttonLabel={t("auth.login.form.title")}
+            isFormWithErrors={formErros.email || formErros.email}
+            submit={submit}
+         />
       </div>
-      <LoginButton
-        buttonLabel={t("auth.login.form.title")}
-        isFormWithErrors={formErros.email || formErros.email}
-        submit={submit}
-      />
-    </div>
-  );
+   );
 }
