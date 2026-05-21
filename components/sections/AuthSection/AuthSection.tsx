@@ -32,7 +32,7 @@ export default function AuthSection() {
 
    return (
       <section className="w-full flex flex-1 flex-col lg:flex-row relative">
-         <Banner isLogin={isLogin} />
+         <Banner formType={formType} />
          {loginOrSignUpSwitch}
          {getForm()}
       </section>

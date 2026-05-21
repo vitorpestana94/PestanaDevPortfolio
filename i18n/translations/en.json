@@ -1,119 +1,133 @@
 {
-  "home": {
-    "header": {
-      "sobre": "About",
-      "meuTrabalho": "My Work",
-      "logar": "Login"
-    },
-    "segundaSessao": {
-      "titulo": "About me"
-    },
-    "terceiraSessao": {
-      "titulo": "My work"
-    },
-    "quartaSessao": {
-      "copyright": "All rights reserverd",
-      "form": {
-        "titulo": "Contact",
-        "email": "your email",
-        "nome": "your name",
-        "mensagem": "Wanna know me better?\nYou can reach out to me on my social networks or by sending me an email!",
-        "buttonLabel": "Send",
-        "emailSended": "Your contact email has been sent successfully! I will answer you shortly!",
-        "errors": {
-          "name": "Name is required!",
-          "textArea": "A message is required!",
-          "button": "There are errors on the form or there are empty fields. Please check it to proceed!"
-        }
-      }
-    }
-  },
-  "auth": {
-    "common": {
-      "with": "Continue with",
-      "or": "or"
-    },
-    "switchButton": {
-      "login": "Login",
-      "signUp": "Sign Up"
-    },
-    "login": {
-      "banner": {
-        "title": "Good to see you back!",
-        "paragraph": "Would you like to login?"
+   "home": {
+      "header": {
+         "sobre": "About",
+         "meuTrabalho": "My Work",
+         "logar": "Login"
       },
-      "form": {
-        "title": "Login",
-        "email": "email",
-        "password": "password",
-        "forgot": "forgot password?",
-        "errors": {
-          "email": "The email is empty, please provide it to proceed!",
-          "emailFormat": "The provided email format is invalid; please, enter a valid format like: email@example.com!",
-          "password": "The password is empty, please provide it to proceed!",
-          "invalidCredentials": "At least one of your credentials is incorrect!"
-        }
-      }
-    },
-    "signUp": {
-      "banner": {
-        "title": "Would you like to see how \nI turn ideas into code?",
-        "paragraph": "Sign up right now!"
+      "segundaSessao": {
+         "titulo": "About me"
       },
-      "form": {
-        "title": "Sign Up",
-        "firstStep": {
-          "email": "your email",
-          "button": "Sign Up"
-        },
-        "secondStep": {
-          "button": "Check",
-          "paragraph": "I sent an email with a confirmation code.\n Please, check your email.",
-          "error": {
-            "wrongToken": "Wrong code, try again!",
-            "tokenNotSetted": "Please, provide all the characters of the code sended to your email."
-          },
-          "resendToken": {
-            "havent": "Haven't received your code yet?",
-            "sendNow": "Send now",
-            "waitToSendResetToken": "Wait {wait} to resend.",
-            "reached": "You have reached the maximum number of attempts. Please try again later if you have not yet received the code."
-          }
-        },
-        "thirdStep": {
-          "paragraph": "Now, please, provide your name\n and define a password.",
-          "buttonLabel": "Register",
-          "placeholders": {
-            "name": "Your name",
-            "password": "Define a password",
-            "passwordConfirmation": "Confirm your password"
-          },
-          "error": {
-            "name": "Name is required. Provide it to continue.",
-            "password": {
-              "empty": "Password is required. Provide it to continue",
-              "wrongFormat": "Your password must have: \n\n• At least 8 characters\n• One capital letter\n• One small letter\n• At least two digits\n• Must not have empty spaces.\n• Must have one special character, like @"
-            },
-            "passwordConfirmation": {
-              "empty": "please, confirm your password.",
-              "mismatch": "Your password confirmation doest not match the defined password."
+      "terceiraSessao": {
+         "titulo": "My work"
+      },
+      "quartaSessao": {
+         "copyright": "All rights reserverd",
+         "form": {
+            "titulo": "Contact",
+            "email": "your email",
+            "nome": "your name",
+            "mensagem": "Wanna know me better?\nYou can reach out to me on my social networks or by sending me an email!",
+            "buttonLabel": "Send",
+            "emailSended": "Your contact email has been sent successfully! I will answer you shortly!",
+            "errors": {
+               "name": "Name is required!",
+               "textArea": "A message is required!",
+               "button": "There are errors on the form or there are empty fields. Please check it to proceed!"
             }
-          }
-        },
-        "fourthStep": {
-          "title": "🎉 Success! 🎉\nCheckout what i can do!"
-        },
-        "errors": {
-          "alreadyRegistered": "The provided email is already registered.",
-          "confirmationCodeEmailAlreadySent": "A confirmation code was already sent to the provided email. Try again later."
-        }
+         }
       }
-    },
-    "metaData": {
-      "auth": {
-        "title": "| Login or Sign-up",
-        "description": "Here you can both login or sign-up."
+   },
+   "auth": {
+      "common": {
+         "with": "Continue with",
+         "or": "or"
+      },
+      "switchButton": {
+         "login": "Login",
+         "signUp": "Sign Up"
+      },
+      "login": {
+         "banner": {
+            "title": "Good to see you back!",
+            "paragraph": "Would you like to login?"
+         },
+         "form": {
+            "title": "Login",
+            "email": "email",
+            "password": "password",
+            "forgot": "forgot password?",
+            "errors": {
+               "email": "The email is empty, please provide it to proceed!",
+               "emailFormat": "The provided email format is invalid; please, enter a valid format like: email@example.com!",
+               "password": "The password is empty, please provide it to proceed!",
+               "invalidCredentials": "At least one of your credentials is incorrect!"
+            }
+         }
+      },
+      "signUp": {
+         "banner": {
+            "title": "Would you like to see how \nI turn ideas into code?",
+            "paragraph": "Sign up right now!"
+         },
+         "form": {
+            "title": "Sign Up",
+            "firstStep": {
+               "email": "your email",
+               "button": "Sign Up"
+            },
+            "secondStep": {
+               "button": "Check",
+               "paragraph": "I sent an email with a confirmation code.\n Please, check your email.",
+               "error": {
+                  "wrongToken": "Wrong code, try again!",
+                  "tokenNotSetted": "Please, provide all the characters of the code sended to your email."
+               },
+               "resendToken": {
+                  "havent": "Haven't received your code yet?",
+                  "sendNow": "Send now",
+                  "waitToSendResetToken": "Wait {wait} to resend.",
+                  "reached": "You have reached the maximum number of attempts. Please try again later if you have not yet received the code."
+               }
+            },
+            "thirdStep": {
+               "paragraph": "Now, please, provide your name\n and define a password.",
+               "buttonLabel": "Register",
+               "placeholders": {
+                  "name": "Your name",
+                  "password": "Define a password",
+                  "passwordConfirmation": "Confirm your password"
+               },
+               "error": {
+                  "name": "Name is required. Provide it to continue.",
+                  "password": {
+                     "empty": "Password is required. Provide it to continue",
+                     "wrongFormat": "Your password must have: \n\n• At least 8 characters\n• One capital letter\n• One small letter\n• At least two digits\n• Must not have empty spaces.\n• Must have one special character, like @"
+                  },
+                  "passwordConfirmation": {
+                     "empty": "please, confirm your password.",
+                     "mismatch": "Your password confirmation doest not match the defined password."
+                  }
+               }
+            },
+            "fourthStep": {
+               "title": "🎉 Success! 🎉\nCheckout what i can do!"
+            },
+            "errors": {
+               "alreadyRegistered": "The provided email is already registered.",
+               "confirmationCodeEmailAlreadySent": "A confirmation code was already sent to the provided email. Try again later."
+            }
+         }
+      },
+      "forgotPassword": {
+         "banner": {
+            "title": "Forgot you password?",
+            "paragraph": "Don't worry, let's recover it!"
+         },
+         "form": {
+            "title": "Forgot Password",
+            "paragraph": "Just enter your email\n to begin account recovery.",
+            "firstStep": {
+               "button": "Recover Password",
+               "hr": "Let's begin to recover your access"
+            }
+         }
+      },
+      "metaData": {
+         "auth": {
+            "title": "| Login or Sign-up",
+            "description": "Here you can both login or sign-up."
+         }
       }
-    }
-  }
+   }
 }

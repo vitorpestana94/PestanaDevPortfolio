@@ -1,16 +1,14 @@
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
+import { FormType } from "@/components/sections/AuthSection/useAuthSection";
 
-export default function useAuthDivBg(isLogin: boolean) {
-  const login: string = "login";
-  const signUp: string = "signUp";
+export default function useAuthDivBg(formType: FormType) {
+   const [flow, setFlow] = useState<string>(formType);
+   const t = useTranslations();
 
-  const [flow, setFlow] = useState<string>(isLogin ? login : signUp);
-  const t = useTranslations();
+   useEffect(() => {
+      setFlow(formType);
+   }, [formType]);
 
-  useEffect(() => {
-    setFlow(isLogin ? login : signUp);
-  }, [isLogin]);
-
-  return { flow, t };
+   return { flow, t };
 }

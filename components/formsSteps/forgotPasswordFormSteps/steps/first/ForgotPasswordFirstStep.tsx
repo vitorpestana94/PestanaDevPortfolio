@@ -1,18 +1,13 @@
-import SignUpFirstStepInterface from "./SignUpFirstStepInterface";
-import SignUpWithPlatform from "@/components/divs/PlatformsLoginDiv/PlatformsLoginDiv";
-import Or from "@/components/hrs/OrHr";
-import Wrapper from "@/components/wrappers/AuthWrapper";
+import Interface from "./ForgotPasswordFirstStepInterface";
 import Email from "@/components/inputs/SignUpEmailFormInput/SignUpEmailFormInput";
-import useSignUpFirstStep from "./useSignUpFirstStep";
-import StartSignUpButton from "@/components/buttons/authButton/AuthButton";
 import Error from "@/components/errors/error/Error";
-import SignUpTitle from "@/components/titles/SignUpTitle";
+import StartSignUpButton from "@/components/buttons/authButton/AuthButton";
+import Wrapper from "@/components/wrappers/AuthWrapper";
+import useForgotPasswordFirstStep from "@/components/formsSteps/signUpFormSteps/steps/first/useSignUpFirstStep";
+import ForgotPassword from "@/components/titles/ForgotPasswordTitle";
+import Line from "@/components/hrs/GenericHr";
 
-export default function SignUpFirstStep({
-   nextStep,
-   email,
-   setEmail,
-}: SignUpFirstStepInterface) {
+export default function FirstStep({ email, setEmail, nextStep }: Interface) {
    const {
       t,
       isEmailError,
@@ -21,13 +16,12 @@ export default function SignUpFirstStep({
       isConfirmationCodeEmailAlreadySent,
       setIsEmaiLError,
       submit,
-   } = useSignUpFirstStep(nextStep, email);
+   } = useForgotPasswordFirstStep(nextStep, email);
 
    return (
       <div className="w-full h-[90%] flex flex-col justify-around items-center">
-         <SignUpTitle />
-         <SignUpWithPlatform />
-         <Or />
+         <ForgotPassword />
+         <Line text={t("auth.forgotPassword.form.firstStep.hr")} />
          <Wrapper>
             <div className="flex flex-col items-center justify-between gap-y-1 lg:gap-y-6">
                <Email setIsEmaiLError={setIsEmaiLError} setEmail={setEmail} />
@@ -42,12 +36,10 @@ export default function SignUpFirstStep({
                   }
                />
                <StartSignUpButton
-                  styles={`w-4/12! lg:w-3/12!
-              ${isEmailError || isEmailVerificationsError ? "mt-1" : "mt-4"}`}
                   submit={submit}
                   isLoading={isLoading}
-                  isFormWithErrors={isEmailError || isEmailVerificationsError}
-                  buttonLabel={t("auth.signUp.form.firstStep.button")}
+                  isFormWithErrors={isEmailError}
+                  buttonLabel={t("auth.forgotPassword.form.firstStep.button")}
                />
             </div>
          </Wrapper>

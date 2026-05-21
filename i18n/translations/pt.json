@@ -1,111 +1,125 @@
 {
-  "home": {
-    "header": {
-      "sobre": "Sobre",
-      "meuTrabalho": "Meu Trabalho",
-      "logar": "Logar"
-    },
-    "segundaSessao": {
-      "titulo": "Um pouco\nsobre mim"
-    },
-    "terceiraSessao": {
-      "titulo": "Meu trabalho"
-    },
-    "quartaSessao": {
-      "copyright": "Todos os direitos reservados",
-      "form": {
-        "titulo": "Contato",
-        "email": "seu email",
-        "nome": "seu nome",
-        "mensagem": "Quer me conhecer melhor?\nVocê pode falar comigo pelas minhas redes sociais ou me mandando um email!",
-        "buttonLabel": "Enviar",
-        "emailSended": "Seu e-mail de contato foi enviado com sucesso! Responderei em breve!",
-        "errors": {
-          "name": "Nome é necessário!",
-          "textArea": "Uma mensagem é necessária!",
-          "button": "Há erros no formulário ou há campos vazios. Verifique-os para continuar!"
-        }
-      }
-    }
-  },
-  "auth": {
-    "common": {
-      "with": "Continuar com",
-      "or": "ou"
-    },
-    "switchButton": {
-      "login": "Logar",
-      "signUp": "Cadastrar"
-    },
-    "login": {
-      "banner": {
-        "title": "É ótimo de ver de volta!",
-        "paragraph": "Quer logar?"
+   "home": {
+      "header": {
+         "sobre": "Sobre",
+         "meuTrabalho": "Meu Trabalho",
+         "logar": "Logar"
       },
-      "form": {
-        "title": "Logar",
-        "email": "email",
-        "password": "senha",
-        "forgot": "esqueceu a senha?",
-        "errors": {
-          "email": "O email está vazio, forneça-o para prosseguir!",
-          "emailFormat": "O formato de email fornecido é invalido. Por favor, digite um formato válido como: email@example.com!",
-          "password": "A senha está vazia, forneça-a para prosseguir!",
-          "invalidCredentials": "Pelo menos uma das suas credenciais está errada!"
-        }
-      }
-    },
-    "signUp": {
-      "banner": {
-        "title": "Quer ver como transformo\n ideias em código?",
-        "paragraph": "Cadastre-se agora!"
+      "segundaSessao": {
+         "titulo": "Um pouco\nsobre mim"
       },
-      "form": {
-        "title": "Cadastrar",
-        "firstStep": {
-          "email": "seu email",
-          "button": "Cadastrar"
-        },
-        "secondStep": {
-          "button": "Checar",
-          "paragraph": "Enviei um email com o código de confirmação para você.\nPor favor, cheque seu email.",
-          "error": {
-            "wrongToken": "Código errado, tente novamente!",
-            "tokenNotSetted": "Por favor, forneça todos os caracteres do código que foram enviados para o seu email."
-          },
-          "thirdStep": {
-            "paragraph": "Agora, por favor, informe seu nome e defina uma senha.",
-            "buttonLabel": "Cadastrar",
-            "placeholders": {
-              "name": "Seu nome",
-              "password": "Defina uma senha"
-            },
-            "error": {
-              "name": "O nome é necessário. Forneça para prosseguir.",
-              "password": {
-                "empty": "A senha é necessária. Forneça para prosseguir.",
-                "wrongFormat": "Sua senha deve ter: \n\n• Pelo menos 8 caracteres\n• Uma letra maiúscula\n• Uma letra minúscula\n• Pelo menos dois números\n• Não pode conter espaços em branco.\n• Deve conter um caractere especial, como @"
-              },
-              "passwordConfirmation": {
-                "empty": "Por favor, confirme sua senha.",
-                "mismatch": "Sua confirmação de senha não corresponde a senha definida."
-              }
+      "terceiraSessao": {
+         "titulo": "Meu trabalho"
+      },
+      "quartaSessao": {
+         "copyright": "Todos os direitos reservados",
+         "form": {
+            "titulo": "Contato",
+            "email": "seu email",
+            "nome": "seu nome",
+            "mensagem": "Quer me conhecer melhor?\nVocê pode falar comigo pelas minhas redes sociais ou me mandando um email!",
+            "buttonLabel": "Enviar",
+            "emailSended": "Seu e-mail de contato foi enviado com sucesso! Responderei em breve!",
+            "errors": {
+               "name": "Nome é necessário!",
+               "textArea": "Uma mensagem é necessária!",
+               "button": "Há erros no formulário ou há campos vazios. Verifique-os para continuar!"
             }
-          },
-          "fourthStep": {
-            "title": "🎉 Sucesso! 🎉\n Dá uma olhada no que eu posso fazer!"
-          },
-          "resendToken": {
-            "havent": "Ainda não recebeu seu código?",
-            "sendNow": "Enviar agora",
-            "waitToSendResetToken": "Aguarde {wait} para reenviar.",
-            "reached": "Você atingiu o número máximo de tentativas. Tente novamente mais tarde."
-          }
-        },
-        "errors": {
-          "alreadyRegistered": "O email fornecido já foi registrado."
-        }
+         }
       }
-    }
-  }
+   },
+   "auth": {
+      "common": {
+         "with": "Continuar com",
+         "or": "ou"
+      },
+      "switchButton": {
+         "login": "Logar",
+         "signUp": "Cadastrar"
+      },
+      "login": {
+         "banner": {
+            "title": "É ótimo de ver de volta!",
+            "paragraph": "Quer logar?"
+         },
+         "form": {
+            "title": "Logar",
+            "email": "email",
+            "password": "senha",
+            "forgot": "esqueceu a senha?",
+            "errors": {
+               "email": "O email está vazio, forneça-o para prosseguir!",
+               "emailFormat": "O formato de email fornecido é invalido. Por favor, digite um formato válido como: email@example.com!",
+               "password": "A senha está vazia, forneça-a para prosseguir!",
+               "invalidCredentials": "Pelo menos uma das suas credenciais está errada!"
+            }
+         }
+      },
+      "signUp": {
+         "banner": {
+            "title": "Quer ver como transformo\n ideias em código?",
+            "paragraph": "Cadastre-se agora!"
+         },
+         "form": {
+            "title": "Cadastrar",
+            "firstStep": {
+               "email": "seu email",
+               "button": "Cadastrar"
+            },
+            "secondStep": {
+               "button": "Checar",
+               "paragraph": "Enviei um email com o código de confirmação para você.\nPor favor, cheque seu email.",
+               "error": {
+                  "wrongToken": "Código errado, tente novamente!",
+                  "tokenNotSetted": "Por favor, forneça todos os caracteres do código que foram enviados para o seu email."
+               },
+               "thirdStep": {
+                  "paragraph": "Agora, por favor, informe seu nome e defina uma senha.",
+                  "buttonLabel": "Cadastrar",
+                  "placeholders": {
+                     "name": "Seu nome",
+                     "password": "Defina uma senha"
+                  },
+                  "error": {
+                     "name": "O nome é necessário. Forneça para prosseguir.",
+                     "password": {
+                        "empty": "A senha é necessária. Forneça para prosseguir.",
+                        "wrongFormat": "Sua senha deve ter: \n\n• Pelo menos 8 caracteres\n• Uma letra maiúscula\n• Uma letra minúscula\n• Pelo menos dois números\n• Não pode conter espaços em branco.\n• Deve conter um caractere especial, como @"
+                     },
+                     "passwordConfirmation": {
+                        "empty": "Por favor, confirme sua senha.",
+                        "mismatch": "Sua confirmação de senha não corresponde a senha definida."
+                     }
+                  }
+               },
+               "fourthStep": {
+                  "title": "🎉 Sucesso! 🎉\n Dá uma olhada no que eu posso fazer!"
+               },
+               "resendToken": {
+                  "havent": "Ainda não recebeu seu código?",
+                  "sendNow": "Enviar agora",
+                  "waitToSendResetToken": "Aguarde {wait} para reenviar.",
+                  "reached": "Você atingiu o número máximo de tentativas. Tente novamente mais tarde."
+               }
+            },
+            "errors": {
+               "alreadyRegistered": "O email fornecido já foi registrado."
+            }
+         }
+      },
+      "forgotPassword": {
+         "banner": {
+            "title": "Esqueceu sua senha?",
+            "paragraph": "Não se preocupe, vamos recupera-la!"
+         },
+         "form": {
+            "title": "Recuperar Senha",
+            "paragraph": "Basta fornecer seu email para começarmos a recuperação do seu acesso.",
+            "firstStep": {
+               "button": "Recuperar Senha",
+               "hr": "Vamos começar a recuperar sua senha"
+            }
+         }
+      }
+   }
 }

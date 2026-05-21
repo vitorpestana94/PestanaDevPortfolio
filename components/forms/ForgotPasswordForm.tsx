@@ -1,9 +1,10 @@
 import AuthForm from "./AuthForm";
+import FormSteps from "../formsSteps/forgotPasswordFormSteps/ForgotPasswordFormSteps";
 
 export default function ForgotPasswordForm() {
    return (
       <AuthForm>
-         <p>oi</p>
+         <FormSteps />
       </AuthForm>
    );
 }
