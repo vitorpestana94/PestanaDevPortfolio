@@ -116,7 +116,7 @@
             "title": "Recuperar Senha",
             "paragraph": "Basta fornecer seu email para começarmos a recuperação do seu acesso.",
             "firstStep": {
-               "button": "Recuperar Senha",
+               "button": "Recuperar",
                "hr": "Vamos começar a recuperar sua senha"
             }
          }

@@ -118,7 +118,7 @@
             "title": "Forgot Password",
             "paragraph": "Just enter your email\n to begin account recovery.",
             "firstStep": {
-               "button": "Recover Password",
+               "button": "Recover",
                "hr": "Let's begin to recover your access"
             }
          }

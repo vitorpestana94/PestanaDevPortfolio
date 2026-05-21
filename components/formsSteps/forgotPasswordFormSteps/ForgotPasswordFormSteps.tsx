@@ -1,5 +1,6 @@
 import useForgotPasswordFormSteps from "./useForgotPasswordFormSteps";
 import FirstStep from "./steps/first/ForgotPasswordFirstStep";
+import SecondStep from "../signUpFormSteps/steps/second/SignUpSecondStep";
 
 export default function ForgotPasswordFormSteps() {
    const { step, formData, nextStep, setEmail, setPassword } =
@@ -16,7 +17,7 @@ export default function ForgotPasswordFormSteps() {
                      setEmail={setEmail}
                   />
                ),
-               2: <p>step 2</p>,
+               2: <SecondStep email={formData.email} nextStep={nextStep} />,
                3: <p>step 3</p>,
                4: <p>step 4</p>,
             }[step]
