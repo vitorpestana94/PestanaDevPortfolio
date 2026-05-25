@@ -12,23 +12,22 @@ export default function ForgotPasswordFormSteps() {
          {
             {
                1: (
+                  <FirstStep
+                     email={formData.email}
+                     nextStep={nextStep}
+                     setEmail={setEmail}
+                  />
+               ),
+               2: <SecondStep email={formData.email} nextStep={nextStep} />,
+               3: (
                   <ThirdStep
                      isLoading={false}
-                     password={formData.password}
+                     password={formData.newPassword}
                      setPassword={setPassword}
                      nextStep={nextStep}
                      submitForm={submitForm}
                   />
                ),
-               // 1: (
-               //    <FirstStep
-               //       email={formData.email}
-               //       nextStep={nextStep}
-               //       setEmail={setEmail}
-               //    />
-               // ),
-               2: <SecondStep email={formData.email} nextStep={nextStep} />,
-               3: <p>step 3</p>,
                4: <p>step 4</p>,
             }[step]
          }
