@@ -1,28 +1,22 @@
-import SignUpThirdStepInterface from "./SignUpThirdStepInterface";
-import useSignUpThirdStep from "./useSignUpThirdStep";
-import Name from "@/components/inputs/NameInput/NameInput";
+import Interface from "./ForgotPasswordThidStepInterface";
+import useForgotPasswordThirdStep from "./useForgotPasswordThirdStep";
 import Password from "@/components/inputs/PasswordInput/PasswordInput";
 import Register from "@/components/buttons/authButton/AuthButton";
-import NowPleaseProvideNameAndPassword from "@/components/paragraphs/SignUpFormParagraph";
+import NowSetNewPassword from "@/components/paragraphs/SignUpFormParagraph";
 
-export default function SignUpThirdStep({
+export default function ForgotPasswordThirdStep({
    isLoading,
    password,
-   setName,
-   setPassword,
    submitForm,
-}: SignUpThirdStepInterface) {
-   const { t, isFormError, setIsFormError } = useSignUpThirdStep();
+   nextStep,
+   setPassword,
+}: Interface) {
+   const { t, isFormError, setIsFormError } = useForgotPasswordThirdStep();
 
    return (
       <section className="flex flex-col flex-1 justify-around sm:items-center w-full">
-         <NowPleaseProvideNameAndPassword text={t("paragraph")} />
+         <NowSetNewPassword text="teste" />
          <div className="flex flex-col w-[50%] gap-y-4 self-center">
-            <Name
-               setName={setName}
-               placeholder={t("placeholders.name")}
-               setIsFormError={setIsFormError}
-            />
             <Password
                password={password}
                setPassword={setPassword}
@@ -37,9 +31,8 @@ export default function SignUpThirdStep({
          </div>
          <Register
             isLoading={isLoading}
-            buttonLabel={t("buttonLabel")}
+            buttonLabel={"teste"}
             isFormWithErrors={
-               isFormError.nameError ||
                isFormError.passwordConfirmationError ||
                isFormError.passwordError
             }

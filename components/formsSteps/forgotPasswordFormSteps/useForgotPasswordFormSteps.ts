@@ -20,5 +20,7 @@ export default function useForgotPasswordFormSteps() {
       setFormData((previous) => ({ ...previous, password: password }));
    }
 
-   return { step, formData, nextStep, setEmail, setPassword };
+   async function submitForm() {}
+
+   return { step, formData, nextStep, setEmail, setPassword, submitForm };
 }
