@@ -6,74 +6,116 @@ import { useCheckConfirmationCodeEmailAlreadySent } from "@/hooks/api/confirmati
 import { useLocale } from "next-intl";
 
 export default function useSignUpFirstStep(
-  nextStep?: () => void,
-  email?: string,
+   nextStep?: () => void,
+   email?: string,
+   isForgotPassword?: boolean,
 ) {
-  const locale = useLocale();
-  const t = useTranslations();
-  const [isEmailError, setIsEmaiLError] = useState<boolean>(false);
-  const [isEmailAlreadyRegistered, setIsEmailAlreadyRegistered] =
-    useState<boolean>(false);
+   const locale = useLocale();
+   const t = useTranslations();
+   const [isEmailError, setIsEmaiLError] = useState<boolean>(false);
+   const [isEmailAlreadyRegistered, setIsEmailAlreadyRegistered] =
+      useState<boolean>(false);
 
-  const [
-    isConfirmationCodeEmailAlreadySent,
-    setIsConfirmationCodeEmailAlreadySent,
-  ] = useState<boolean>(false);
+   const [
+      isConfirmationCodeEmailAlreadySent,
+      setIsConfirmationCodeEmailAlreadySent,
+   ] = useState<boolean>(false);
 
-  const {
-    data: isEmailRegisteredData,
-    refetch: getIsEmailRegistered,
-    isFetching,
-  } = useIsEmailRegistered(email);
+   const {
+      data: isEmailRegisteredData,
+      refetch: getIsEmailRegistered,
+      isFetching,
+   } = useIsEmailRegistered(email);
 
-  const { mutateAsync, isError, isPending } = useSendConfirmationCodeEmail();
+   const { mutateAsync, isError, isSuccess, isPending } =
+      useSendConfirmationCodeEmail();
 
-  const {
-    data: confirmationCodeAlreadySentData,
-    refetch: getConfirmationCodeEmailAlreadySent,
-    isFetching: isFetchingConfirmationCodeAlreadySent,
-  } = useCheckConfirmationCodeEmailAlreadySent(email!);
+   const {
+      data: confirmationCodeAlreadySentData,
+      refetch: getConfirmationCodeEmailAlreadySent,
+      isFetching: isFetchingConfirmationCodeAlreadySent,
+   } = useCheckConfirmationCodeEmailAlreadySent(email!);
 
-  useEffect(() => {
-    if (!isFetching && !isFetchingConfirmationCodeAlreadySent) {
-      if (isEmailRegisteredData && confirmationCodeAlreadySentData) {
-        if (isEmailRegisteredData.isRegistered) {
-          setIsEmailAlreadyRegistered(true);
-        } else if (
-          confirmationCodeAlreadySentData.confirmationCodeAlreadySent
-        ) {
-          setIsConfirmationCodeEmailAlreadySent(true);
-        } else {
-          setIsEmailAlreadyRegistered(false);
-          setIsEmaiLError(false);
-          setIsConfirmationCodeEmailAlreadySent(false);
+   function request() {
+      if (isPending) return;
 
-          mutateAsync({ clientEmail: email!, clientLocale: locale });
+      mutateAsync({ clientEmail: email!, clientLocale: locale });
+   }
 
-          nextStep!();
-        }
+   useEffect(() => {
+      if (!isPending) {
+         if (isSuccess) {
+            nextStep!();
+         }
       }
-    }
-  }, [isEmailRegisteredData, confirmationCodeAlreadySentData]);
+   }, [isSuccess]);
 
-  async function submit(): Promise<void> {
-    if (!email) return;
+   useEffect(() => {
+      if (!isFetchingConfirmationCodeAlreadySent) {
+         if (confirmationCodeAlreadySentData?.confirmationCodeAlreadySent) {
+            setIsConfirmationCodeEmailAlreadySent(true);
+         } else {
+            setIsConfirmationCodeEmailAlreadySent(false);
+         }
+      }
+   }, [confirmationCodeAlreadySentData]);
 
-    await getIsEmailRegistered();
+   useEffect(() => {
+      if (!isForgotPassword) {
+         if (!isFetching && !isFetchingConfirmationCodeAlreadySent) {
+            if (isEmailRegisteredData && confirmationCodeAlreadySentData) {
+               if (
+                  !isEmailRegisteredData.isRegistered &&
+                  !confirmationCodeAlreadySentData.confirmationCodeAlreadySent
+               ) {
+                  request();
+               }
+            }
+         }
+      } else {
+         if (confirmationCodeAlreadySentData) {
+            if (!confirmationCodeAlreadySentData.confirmationCodeAlreadySent) {
+               request();
+            }
+         }
+      }
+   }, [isEmailRegisteredData, confirmationCodeAlreadySentData]);
 
-    await getConfirmationCodeEmailAlreadySent();
-  }
+   useEffect(() => {
+      if (!isForgotPassword) {
+         if (!isFetching) {
+            if (isEmailRegisteredData) {
+               if (isEmailRegisteredData.isRegistered) {
+                  setIsEmailAlreadyRegistered(true);
+               } else {
+                  setIsEmailAlreadyRegistered(false);
+               }
+            }
+         }
+      }
+   }, [isEmailRegisteredData]);
 
-  return {
-    t,
-    isEmailError,
-    isEmailVerificationsError:
-      isEmailAlreadyRegistered || isConfirmationCodeEmailAlreadySent,
-    isEmailAlreadyRegistered,
-    isConfirmationCodeEmailAlreadySent,
-    isLoading: isFetching || isPending,
-    setIsEmaiLError,
-    submit,
-    setIsEmailAlreadyRegistered,
-  };
+   async function submit(): Promise<void> {
+      if (!email) return;
+
+      if (!isForgotPassword) {
+         await getIsEmailRegistered();
+      }
+
+      await getConfirmationCodeEmailAlreadySent();
+   }
+
+   return {
+      t,
+      isEmailError,
+      isEmailVerificationsError:
+         isEmailAlreadyRegistered || isConfirmationCodeEmailAlreadySent,
+      isEmailAlreadyRegistered,
+      isConfirmationCodeEmailAlreadySent,
+      isLoading:
+         isFetching || isPending || isFetchingConfirmationCodeAlreadySent,
+      setIsEmaiLError,
+      submit,
+      setIsEmailAlreadyRegistered,
+   };
 }

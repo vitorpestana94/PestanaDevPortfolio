@@ -7,15 +7,15 @@ import ResponseDto from "@/models/interfaces/dtos/responses/dtos/ResponseDto";
 const requestService = await RequestService();
 
 export default async function apiRequest(
-  request: RequestDto,
+   request: RequestDto,
 ): Promise<ResponseDto> {
-  const response = await requestService.requestApi(request);
+   const response = await requestService.requestApi(request);
 
-  if (!response.ok) {
-    throw new Error("request-failed");
-  }
+   console.log(response);
+   if (!response.ok) {
+      throw new Error("request-failed");
+   }
+   const responseData: ResponseDto = await response.json();
 
-  const responseData: ResponseDto = await response.json();
-
-  return responseData;
+   return responseData;
 }

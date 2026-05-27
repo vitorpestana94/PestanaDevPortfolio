@@ -19,7 +19,7 @@ export default function useForgotPasswordFormSteps() {
    }
 
    function setPassword(password: string) {
-      setFormData((previous) => ({ ...previous, password: password }));
+      setFormData((previous) => ({ ...previous, newPassword: password }));
    }
 
    async function submitForm() {

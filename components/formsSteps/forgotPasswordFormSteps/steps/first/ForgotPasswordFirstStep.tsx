@@ -1,7 +1,7 @@
 import Interface from "./ForgotPasswordFirstStepInterface";
 import Email from "@/components/inputs/SignUpEmailFormInput/SignUpEmailFormInput";
 import Error from "@/components/errors/error/Error";
-import StartSignUpButton from "@/components/buttons/authButton/AuthButton";
+import RecoverButton from "@/components/buttons/authButton/AuthButton";
 import Wrapper from "@/components/wrappers/AuthWrapper";
 import useForgotPasswordFirstStep from "@/components/formsSteps/signUpFormSteps/steps/first/useSignUpFirstStep";
 import ForgotPassword from "@/components/titles/ForgotPasswordTitle";
@@ -13,10 +13,9 @@ export default function FirstStep({ email, setEmail, nextStep }: Interface) {
       isEmailError,
       isEmailVerificationsError,
       isLoading,
-      isConfirmationCodeEmailAlreadySent,
       setIsEmaiLError,
       submit,
-   } = useForgotPasswordFirstStep(nextStep, email);
+   } = useForgotPasswordFirstStep(nextStep, email, true);
 
    return (
       <div className="w-full h-[90%] flex flex-col justify-around items-center">
@@ -27,15 +26,11 @@ export default function FirstStep({ email, setEmail, nextStep }: Interface) {
                <Email setIsEmaiLError={setIsEmaiLError} setEmail={setEmail} />
                <Error
                   shouldRender={isEmailVerificationsError}
-                  message={
-                     isConfirmationCodeEmailAlreadySent
-                        ? t(
-                             "auth.signUp.form.errors.confirmationCodeEmailAlreadySent",
-                          )
-                        : t("auth.signUp.form.errors.alreadyRegistered")
-                  }
+                  message={t(
+                     "auth.signUp.form.errors.confirmationCodeEmailAlreadySent",
+                  )}
                />
-               <StartSignUpButton
+               <RecoverButton
                   submit={submit}
                   isLoading={isLoading}
                   isFormWithErrors={isEmailError}
