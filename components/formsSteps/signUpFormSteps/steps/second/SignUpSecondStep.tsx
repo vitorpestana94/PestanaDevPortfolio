@@ -27,12 +27,8 @@ export default function SignUpSecondStep({ email, nextStep }: Interface) {
          className="flex flex-col flex-1 justify-around sm:items-center"
       >
          <ISentAnEmail text={t("paragraph")} />
-         <div className="flex flex-col gap-y-4 px-6 sm:px-16 md:px-20">
-            <div
-               className="flex select-none w-full justify-center
-          gap-x-3
-          sm:gap-x-5 sm:mt-10"
-            >
+         <div className="flex flex-col gap-y-4 px-6 sm:px-16 md:px-20 items-start">
+            <div className="flex select-none w-full justify-center gap-x-3 sm:gap-x-5 sm:mt-10">
                <ConfirmationCode
                   codeKeys={keys}
                   refs={refs}
