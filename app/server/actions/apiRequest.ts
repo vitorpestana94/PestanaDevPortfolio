@@ -11,10 +11,10 @@ export default async function apiRequest(
 ): Promise<ResponseDto> {
    const response = await requestService.requestApi(request);
 
-   console.log(response);
    if (!response.ok) {
       throw new Error("request-failed");
    }
+
    const responseData: ResponseDto = await response.json();
 
    return responseData;

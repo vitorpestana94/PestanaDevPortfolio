@@ -19,10 +19,15 @@ export default function useAuthSection() {
       setFormType(forgotPassword);
    }
 
+   function switchBackToLogin() {
+      setFormType(login);
+   }
+
    return {
       formType,
       isLogin: formType === login,
       isForgotPassword: formType === forgotPassword,
+      switchBackToLogin,
       switchToForgotPassword,
       switchAuth,
    };

@@ -118,6 +118,10 @@
             "firstStep": {
                "button": "Recuperar",
                "hr": "Vamos começar a recuperar sua senha"
+            },
+            "thirdStep": {
+               "title": "Agora, falta apenas definir \numa nova senha e repeti-la!",
+               "button": "Alterar Senha"
             }
          }
       }

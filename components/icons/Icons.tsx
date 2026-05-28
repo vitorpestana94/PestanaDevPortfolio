@@ -16,28 +16,30 @@ import Padlock from "@public/icons/padlock.svg";
 import EyeOn from "@public/icons/eyeOn.svg";
 import EyeOff from "@public/icons/eyeOff.svg";
 import BadgeCheck from "@public/icons/badgeCheck.svg";
+import LeftArrow from "@public/icons/arrowLeft.svg";
 
 export const icons = {
-  vP: <VP />,
-  instagram: <Instagram />,
-  whatsapp: <Whatsapp />,
-  linkedin: <Linkedin />,
-  email: <Email />,
-  menu: <Menu />,
-  xCross: <XCross />,
-  profile: <Profile />,
-  padlock: <Padlock />,
-  eyeOn: <EyeOn />,
-  eyeOff: <EyeOff />,
-  gitHub: <GitHub />,
-  google: <Google />,
-  badgeCheck: <BadgeCheck />,
+   vP: <VP />,
+   instagram: <Instagram />,
+   whatsapp: <Whatsapp />,
+   linkedin: <Linkedin />,
+   email: <Email />,
+   menu: <Menu />,
+   xCross: <XCross />,
+   profile: <Profile />,
+   padlock: <Padlock />,
+   eyeOn: <EyeOn />,
+   eyeOff: <EyeOff />,
+   gitHub: <GitHub />,
+   google: <Google />,
+   badgeCheck: <BadgeCheck />,
+   leftArrow: <LeftArrow />,
 } as const;
 
 export type IconName = keyof typeof icons;
 
 export default function Icon({ iconName, className }: IconInterface) {
-  const Icon: JSX.Element = icons[iconName];
+   const Icon: JSX.Element = icons[iconName];
 
-  return <Icon.type className={className} />;
+   return <Icon.type className={className} />;
 }

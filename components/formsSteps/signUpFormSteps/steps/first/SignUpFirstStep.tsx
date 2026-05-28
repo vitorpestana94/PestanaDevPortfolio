@@ -42,8 +42,7 @@ export default function SignUpFirstStep({
                   }
                />
                <StartSignUpButton
-                  styles={`w-4/12! lg:w-3/12!
-              ${isEmailError || isEmailVerificationsError ? "mt-1" : "mt-4"}`}
+                  styles={`${isEmailError || isEmailVerificationsError ? "mt-1" : "mt-4"}`}
                   submit={submit}
                   isLoading={isLoading}
                   isFormWithErrors={isEmailError || isEmailVerificationsError}

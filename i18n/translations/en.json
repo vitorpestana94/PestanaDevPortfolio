@@ -120,6 +120,10 @@
             "firstStep": {
                "button": "Recover",
                "hr": "Let's begin to recover your access"
+            },
+            "thirdStep": {
+               "title": "Now, just define a new password\n and repeat it!",
+               "button": "Change Password"
             }
          }
       },
