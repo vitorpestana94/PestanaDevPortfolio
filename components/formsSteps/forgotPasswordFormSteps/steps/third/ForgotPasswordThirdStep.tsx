@@ -15,7 +15,7 @@ export default function ForgotPasswordThirdStep({
 
    return (
       <section className="flex flex-col flex-1 justify-around sm:items-center w-full">
-         <NowSetNewPassword text="teste" />
+         <NowSetNewPassword text={t("title")} />
          <div className="flex flex-col w-[50%] gap-y-4 self-center">
             <Password
                password={password}
@@ -31,7 +31,7 @@ export default function ForgotPasswordThirdStep({
          </div>
          <Register
             isLoading={isLoading}
-            buttonLabel={"teste"}
+            buttonLabel={t("button")}
             isFormWithErrors={
                isFormError.passwordConfirmationError ||
                isFormError.passwordError

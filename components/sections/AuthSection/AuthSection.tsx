@@ -5,7 +5,7 @@ import useAuthSection from "./useAuthSection";
 import LoginForm from "@/components/forms/loginForm/LoginForm";
 import LoginSignUpSwitch from "@/components/buttons/switchAutoButton/SwitchAutoButton";
 import SignUpForm from "@/components/forms/SignUpForm";
-import ForgotPasswordForm from "@/components/forms/ForgotPasswordForm";
+import ForgotPasswordForm from "@/components/forms/forgotPasswordForm/ForgotPasswordForm";
 
 export default function AuthSection() {
    const {
@@ -13,6 +13,7 @@ export default function AuthSection() {
       formType,
       isForgotPassword,
       switchAuth,
+      switchBackToLogin,
       switchToForgotPassword,
    } = useAuthSection();
 
@@ -20,7 +21,9 @@ export default function AuthSection() {
       const form = {
          login: <LoginForm switchToForgotPassword={switchToForgotPassword} />,
          signUp: <SignUpForm />,
-         forgotPassword: <ForgotPasswordForm />,
+         forgotPassword: (
+            <ForgotPasswordForm switchBackToLogin={switchBackToLogin} />
+         ),
       };
 
       return form[formType];

@@ -6,8 +6,14 @@ import Wrapper from "@/components/wrappers/AuthWrapper";
 import useForgotPasswordFirstStep from "@/components/formsSteps/signUpFormSteps/steps/first/useSignUpFirstStep";
 import ForgotPassword from "@/components/titles/ForgotPasswordTitle";
 import Line from "@/components/hrs/GenericHr";
+import BackToLogin from "@/components/buttons/backToLoginButton/BackToLoginButton";
 
-export default function FirstStep({ email, setEmail, nextStep }: Interface) {
+export default function FirstStep({
+   email,
+   setEmail,
+   nextStep,
+   switchBackToLogin,
+}: Interface) {
    const {
       t,
       isEmailError,
@@ -19,10 +25,11 @@ export default function FirstStep({ email, setEmail, nextStep }: Interface) {
 
    return (
       <div className="w-full h-[90%] flex flex-col justify-around items-center">
+         <BackToLogin switchBackToLogin={switchBackToLogin} />
          <ForgotPassword />
          <Line text={t("auth.forgotPassword.form.firstStep.hr")} />
          <Wrapper>
-            <div className="flex flex-col items-center justify-between gap-y-1 lg:gap-y-6">
+            <div className="flex flex-col items-center justify-between gap-y-5 lg:gap-y-6">
                <Email setIsEmaiLError={setIsEmaiLError} setEmail={setEmail} />
                <Error
                   shouldRender={isEmailVerificationsError}

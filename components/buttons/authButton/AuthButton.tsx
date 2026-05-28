@@ -11,7 +11,13 @@ export default function AuthButton({
    isLoading,
    styles,
    submit,
+   buttonLabel,
+   isFormWithErrors,
+   isLoading,
+   styles,
+   submit,
 }: AuthButtonInterface) {
+   const { scale, transition, handleClick } = useAuthButton(submit);
    const { scale, transition, handleClick } = useAuthButton(submit);
 
    return (
