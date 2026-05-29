@@ -1,6 +1,5 @@
-import { Session, Account } from "next-auth";
+import { Session } from "next-auth";
 import { JWT } from "next-auth/jwt";
-import type { SessionStrategy } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
@@ -10,188 +9,191 @@ import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import { signup } from "./authRequestHandlers";
 
 if (!process.env.NEXT_PUBLIC_API_URL) {
-  throw new Error("Api URL is not defined!");
+   throw new Error("Api URL is not defined!");
 }
 
 if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
-  throw new Error("Google's credentials are not defined.");
+   throw new Error("Google's credentials are not defined.");
 }
 
 if (!process.env.GITHUB_CLIENT_ID || !process.env.GITHUB_CLIENT_SECRET) {
-  throw new Error("Github's credentials are not defined.");
+   throw new Error("Github's credentials are not defined.");
 }
 
 if (!process.env.LINKEDIN_CLIENT_ID || !process.env.LINKEDIN_CLIENT_SECRET) {
-  throw new Error("Linkedin's credentials are not defined.");
+   throw new Error("Linkedin's credentials are not defined.");
 }
 
 // Tudo que está comentando deve ser revisado posteriormente, se será mantido e etc.
 
 export const nextAuthOptions = {
-  providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
-    GitHubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      authorization: { params: { scope: "read:user user:email" } },
-    }),
-    LinkedInProvider({
-      clientId: process.env.LINKEDIN_CLIENT_ID,
-      clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
-      issuer: "https://www.linkedin.com/oauth",
-      jwks_endpoint: "https://www.linkedin.com/oauth/openid/jwks",
-      authorization: {
-        params: { scope: "openid profile email" },
+   providers: [
+      GoogleProvider({
+         clientId: process.env.GOOGLE_CLIENT_ID,
+         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      }),
+      GitHubProvider({
+         clientId: process.env.GITHUB_CLIENT_ID,
+         clientSecret: process.env.GITHUB_CLIENT_SECRET,
+         authorization: { params: { scope: "read:user user:email" } },
+      }),
+      LinkedInProvider({
+         clientId: process.env.LINKEDIN_CLIENT_ID,
+         clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+         issuer: "https://www.linkedin.com/oauth",
+         jwks_endpoint: "https://www.linkedin.com/oauth/openid/jwks",
+         authorization: {
+            params: { scope: "openid profile email" },
+         },
+         profile(profile) {
+            return {
+               id: profile.sub,
+               name: profile.name,
+               email: profile.email,
+               image: profile.picture,
+            };
+         },
+      }),
+      CredentialsProvider({
+         id: "credentials",
+         name: "credentials",
+         credentials: {
+            email: { label: "email", type: "text" },
+            password: { label: "password", type: "password" },
+            mode: { label: "mode", type: "text" },
+         },
+         async authorize(credentials) {
+            if (!credentials?.email || !credentials?.password) {
+               return null;
+            }
+
+            return await login(credentials.email, credentials.password);
+         },
+      }),
+      CredentialsProvider({
+         id: "credentials-signup",
+         name: "credentials-signup",
+         credentials: {
+            request: { label: "request", type: "text" },
+         },
+         async authorize(credentials) {
+            if (!credentials?.request) {
+               return null;
+            }
+
+            const request: SignUpRequest = JSON.parse(credentials.request);
+
+            return await signup(request);
+         },
+      }),
+   ],
+   secret: process.env.NEXTAUTH_SECRET,
+   pages: {
+      signIn: `/en`,
+      error: `/en`,
+   },
+   session: {
+      strategy: "jwt",
+      maxAge: 60 * 60 * 48, // Session lifetime: 2 days. After this time, the token expires and the user must log in again.
+      updateAge: 60 * 60, // The session will be updated every hour during user activity. If the user is inactive, it won't be updated; also, if jwt's exp time timeout, it will request our API again.
+   },
+   jwt: {
+      secret: process.env.NEXTAUTH_SECRET,
+   },
+   cookies: {
+      //All the cookies below are fundamnetal to sign in with apple. Dont change it.
+      callbackUrl: {
+         name: `__Secure-next-auth.callback-url`,
+         options: {
+            httpOnly: false,
+            sameSite: "none",
+            path: "/",
+            secure: true,
+         },
       },
-      profile(profile) {
-        return {
-          id: profile.sub,
-          name: profile.name,
-          email: profile.email,
-          image: profile.picture,
-        };
+      pkceCodeVerifier: {
+         name: "next-auth.pkce.code_verifier",
+         options: {
+            httpOnly: true,
+            sameSite: "none",
+            path: "/",
+            secure: true,
+         },
       },
-    }),
-    CredentialsProvider({
-      id: "credentials",
-      name: "credentials",
-      credentials: {
-        email: { label: "email", type: "text" },
-        password: { label: "password", type: "password" },
-        mode: { label: "mode", type: "text" },
+   },
+   callbacks: {
+      async jwt({
+         token,
+         account,
+         user,
+      }: {
+         token: JWT;
+         account?: any | null;
+         user: any;
+      }) {
+         if (
+            (account?.id_token || account?.access_token) &&
+            account?.provider
+         ) {
+            if (account.id_token) {
+               token.id_token = account.id_token;
+            } else if (account.access_token) {
+               token.id_token = account.access_token;
+            }
+
+            token.provider = account.provider;
+
+            const response = await loginOrSignUpWithPlatform(
+               account.id_token ? token.id_token! : account.access_token!,
+               account.provider,
+            );
+
+            token.token = response?.token;
+            token.refreshToken = response?.refreshToken;
+            token.id = response?.id;
+            token.expirationTime = response?.expirationTime;
+         }
+
+         if (user?.token && user?.refreshToken) {
+            token.token = user.token;
+            token.refreshToken = user.refreshToken;
+            token.id = user.id;
+            token.role = user.role;
+            token.expirationTime = user.expirationTime;
+            token.deviceId = user.deviceId;
+            token.provider = "";
+            token.loginFailed = false;
+
+            return token;
+         }
+
+         if (
+            typeof token.expirationTime === "number" &&
+            Date.now() / 1000 < token.expirationTime &&
+            token.token
+         ) {
+            return token;
+         }
+
+         //   if (token.id && token.refreshToken) {
+         //     return await refreshAccessToken(
+         //       token.id as string,
+         //       token.refreshToken as string,
+         //       token.deviceId as string,
+         //       token
+         //     );
+         //   }
+
+         return token;
       },
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          return null;
-        }
+      async session({ session, token }: { session: Session; token: JWT }) {
+         session.id = token.id as string;
+         //   session.provider = token.provider as string;
+         token.loginWithProviderFailed as boolean;
+         session.userNotRegistered = token.userNotRegistered as boolean;
+         session.loginFailed = token.loginFailed as boolean;
 
-        return await login(credentials.email, credentials.password);
+         return session;
       },
-    }),
-    CredentialsProvider({
-      id: "credentials-signup",
-      name: "credentials-signup",
-      credentials: {
-        request: { label: "request", type: "text" },
-      },
-      async authorize(credentials) {
-        if (!credentials?.request) {
-          return null;
-        }
-
-        const request: SignUpRequest = JSON.parse(credentials.request);
-
-        return await signup(request);
-      },
-    }),
-  ],
-  secret: process.env.NEXTAUTH_SECRET,
-  pages: {
-    signIn: `/en`,
-    error: `/en`,
-  },
-  session: {
-    strategy: "jwt" as SessionStrategy,
-    maxAge: 60 * 60 * 48, // Session lifetime: 2 days. After this time, the token expires and the user must log in again.
-    updateAge: 60 * 60, // The session will be updated every hour during user activity. If the user is inactive, it won't be updated; also, if jwt's exp time timeout, it will request our API again.
-  },
-  jwt: {
-    secret: process.env.NEXTAUTH_SECRET,
-  },
-  cookies: {
-    //All the cookies below are fundamnetal to sign in with apple. Dont change it.
-    callbackUrl: {
-      name: `__Secure-next-auth.callback-url`,
-      options: {
-        httpOnly: false,
-        sameSite: "none",
-        path: "/",
-        secure: true,
-      },
-    },
-    pkceCodeVerifier: {
-      name: "next-auth.pkce.code_verifier",
-      options: {
-        httpOnly: true,
-        sameSite: "none",
-        path: "/",
-        secure: true,
-      },
-    },
-  },
-  callbacks: {
-    async jwt({
-      token,
-      account,
-      user,
-    }: {
-      token: JWT;
-      account?: Account | null;
-      user: any;
-    }) {
-      if ((account?.id_token || account?.access_token) && account?.provider) {
-        if (account.id_token) {
-          token.id_token = account.id_token;
-        } else if (account.access_token) {
-          token.id_token = account.access_token;
-        }
-
-        token.provider = account.provider;
-
-        const response = await loginOrSignUpWithPlatform(
-          account.id_token ? token.id_token! : account.access_token!,
-          account.provider,
-        );
-
-        token.token = response?.token;
-        token.refreshToken = response?.refreshToken;
-        token.id = response?.id;
-        token.expirationTime = response?.expirationTime;
-      }
-
-      if (user?.token && user?.refreshToken) {
-        token.token = user.token;
-        token.refreshToken = user.refreshToken;
-        token.id = user.id;
-        token.role = user.role;
-        token.expirationTime = user.expirationTime;
-        token.deviceId = user.deviceId;
-        token.provider = "";
-        token.loginFailed = false;
-
-        return token;
-      }
-
-      if (
-        typeof token.expirationTime === "number" &&
-        Date.now() / 1000 < token.expirationTime &&
-        token.token
-      ) {
-        return token;
-      }
-
-      //   if (token.id && token.refreshToken) {
-      //     return await refreshAccessToken(
-      //       token.id as string,
-      //       token.refreshToken as string,
-      //       token.deviceId as string,
-      //       token
-      //     );
-      //   }
-
-      return token;
-    },
-    async session({ session, token }: { session: Session; token: JWT }) {
-      session.id = token.id as string;
-      //   session.provider = token.provider as string;
-      token.loginWithProviderFailed as boolean;
-      session.userNotRegistered = token.userNotRegistered as boolean;
-      session.loginFailed = token.loginFailed as boolean;
-
-      return session;
-    },
-  },
+   },
 };

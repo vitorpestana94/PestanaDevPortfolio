@@ -10,6 +10,7 @@ export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
    const {
       formErros,
       t,
+      isLoading,
       setEmailError,
       setPasswordError,
       setEmail,
@@ -41,6 +42,7 @@ export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
             }
          </div>
          <LoginButton
+            isLoading={isLoading}
             buttonLabel={t("auth.login.form.title")}
             isFormWithErrors={formErros.email || formErros.email}
             submit={submit}

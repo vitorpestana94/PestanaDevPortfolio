@@ -17,6 +17,7 @@ import EyeOn from "@public/icons/eyeOn.svg";
 import EyeOff from "@public/icons/eyeOff.svg";
 import BadgeCheck from "@public/icons/badgeCheck.svg";
 import LeftArrow from "@public/icons/arrowLeft.svg";
+import Logout from "@public/icons/logout.svg";
 
 export const icons = {
    vP: <VP />,
@@ -34,6 +35,7 @@ export const icons = {
    google: <Google />,
    badgeCheck: <BadgeCheck />,
    leftArrow: <LeftArrow />,
+   logout: <Logout />,
 } as const;
 
 export type IconName = keyof typeof icons;

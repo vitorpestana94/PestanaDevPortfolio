@@ -8,101 +8,106 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 type loginFormErros = {
-  email: boolean;
-  password: boolean;
-  invalidCredentials: boolean;
+   email: boolean;
+   password: boolean;
+   invalidCredentials: boolean;
 };
 
 export default function useLoginInputsDiv() {
-  // #region Declarations
-  const [loginRequest, setLoginRequest] = useState<LoginRequest>({
-    email: "",
-    password: "",
-  });
-  const [formErros, setFormErrors] = useState<loginFormErros>({
-    email: false,
-    password: false,
-    invalidCredentials: false,
-  });
-  const router = useRouter();
-  const { redirectTo } = useRedirectTo();
-  const t = useTranslations();
-  // #endregion
+   const [loginRequest, setLoginRequest] = useState<LoginRequest>({
+      email: "",
+      password: "",
+   });
+   const [formErros, setFormErrors] = useState<loginFormErros>({
+      email: false,
+      password: false,
+      invalidCredentials: false,
+   });
+   const [isLoading, setIsLoading] = useState<boolean>(false);
+   const router = useRouter();
+   const { redirectTo } = useRedirectTo();
+   const t = useTranslations();
 
-  // #region Functions
-  function isFormInputsValids(): boolean {
-    return !formErros.email && !formErros.password;
-  }
+   function isFormInputsValids(): boolean {
+      return !formErros.email && !formErros.password;
+   }
 
-  function isFormInputsEmpty(): boolean {
-    return !loginRequest.email || !loginRequest.password;
-  }
+   function isFormInputsEmpty(): boolean {
+      return !loginRequest.email || !loginRequest.password;
+   }
 
-  function setEmailError(isError: boolean) {
-    setFormErrors((previous) => ({ ...previous, email: isError }));
-  }
+   function setEmailError(isError: boolean) {
+      setFormErrors((previous) => ({ ...previous, email: isError }));
+   }
 
-  function setPasswordError(isError: boolean) {
-    setFormErrors((previous) => ({ ...previous, email: isError }));
-  }
+   function setPasswordError(isError: boolean) {
+      setFormErrors((previous) => ({ ...previous, email: isError }));
+   }
 
-  function setInvalidCredentialsError(isError: boolean) {
-    setFormErrors((previous) => ({ ...previous, invalidCredentials: isError }));
-  }
+   function setInvalidCredentialsError(isError: boolean) {
+      setFormErrors((previous) => ({
+         ...previous,
+         invalidCredentials: isError,
+      }));
+   }
 
-  function setEmail(email: string) {
-    setLoginRequest((previous) => ({ ...previous, email }));
-  }
+   function setEmail(email: string) {
+      setLoginRequest((previous) => ({ ...previous, email }));
+   }
 
-  function setPassword(password: string) {
-    setLoginRequest((previous) => ({ ...previous, password }));
-  }
+   function setPassword(password: string) {
+      setLoginRequest((previous) => ({ ...previous, password }));
+   }
 
-  async function submit() {
-    if (!isFormInputsValids()) return;
+   async function submit() {
+      if (isLoading || !isFormInputsValids() || isFormInputsEmpty()) {
+         return;
+      }
 
-    if (isFormInputsEmpty()) return;
+      setIsLoading(true);
 
-    const result = await signIn("credentials", {
-      email: loginRequest.email,
-      password: loginRequest.password,
-      redirect: false,
-    });
+      const result = await signIn("credentials", {
+         email: loginRequest.email,
+         password: loginRequest.password,
+         redirect: false,
+      });
 
-    if (result?.ok) {
-      router.push(redirectTo);
-    } else {
-      setFormErrors((prev) => ({ ...prev, invalidCredentials: true }));
-    }
-  }
-  // #endregion
+      if (result?.ok) {
+         router.push(redirectTo);
+      } else {
+         setFormErrors((prev) => ({ ...prev, invalidCredentials: true }));
+      }
 
-  // #region useEffects
-  useEffect(() => {
-    if (formErros.email) {
-      setEmailError(
-        loginRequest.email ? true : false || isEmailValid(loginRequest.email),
-      );
-    }
-  }, [formErros.email]);
+      setIsLoading(false);
+   }
 
-  useEffect(() => {
-    if (formErros.password) {
-      setPasswordError(loginRequest.password ? true : false);
-    }
-  }, [formErros.password]);
-  // #endregion
+   useEffect(() => {
+      if (formErros.email) {
+         setEmailError(
+            loginRequest.email
+               ? true
+               : false || isEmailValid(loginRequest.email),
+         );
+      }
+   }, [formErros.email]);
 
-  return {
-    loginRequest,
-    formErros,
-    t,
-    submit,
-    isFormInputsValids,
-    setEmail,
-    setPassword,
-    setEmailError,
-    setPasswordError,
-    setInvalidCredentialsError,
-  };
+   useEffect(() => {
+      if (formErros.password) {
+         setPasswordError(loginRequest.password ? true : false);
+      }
+   }, [formErros.password]);
+
+   return {
+      isLoading,
+      loginRequest,
+      formErros,
+      t,
+      submit,
+      isFormInputsValids,
+      setEmail,
+      setPassword,
+      setEmailError,
+      setPasswordError,
+      setInvalidCredentialsError,
+   };
 }

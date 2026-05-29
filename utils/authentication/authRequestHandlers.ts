@@ -8,73 +8,73 @@ import SignUpService from "@/services/SignUpService";
 import getDeviceId from "../strings/getDeviceId";
 
 export async function login(email: string, password: string) {
-  const deviceId = getDeviceId();
+   const deviceId = getDeviceId();
 
-  let response: ApiToken | null = null;
+   let response: ApiToken | null = null;
 
-  try {
-    response = await LoginService.login({
-      email,
-      password,
-      deviceId: deviceId,
-    });
-  } catch (error: any) {
-    return null;
-  }
+   try {
+      response = await LoginService.login({
+         email,
+         password,
+         deviceId: deviceId,
+      });
+   } catch (error: any) {
+      return null;
+   }
 
-  return await handleLoginResponse(response, deviceId);
+   return await handleLoginResponse(response, deviceId);
 }
 
 export async function signup(request: SignUpRequest) {
-  let response: ApiToken | null = null;
+   let response: ApiToken | null = null;
 
-  request.deviceId = getDeviceId();
+   request.deviceId = getDeviceId();
 
-  try {
-    response = await SignUpService.signup(request);
-  } catch (error: any) {
-    return null;
-  }
+   try {
+      response = await SignUpService.signup(request);
+   } catch (error: any) {
+      return null;
+   }
 
-  return await handleLoginResponse(response, request.deviceId);
+   return await handleLoginResponse(response, request.deviceId);
 }
 
 export async function loginOrSignUpWithPlatform(
-  token: string,
-  authPlatform: string,
+   token: string,
+   authPlatform: string,
 ) {
-  const deviceId = crypto.randomUUID();
-  let response: ApiToken | null = null;
+   const deviceId = crypto.randomUUID();
+   let response: ApiToken | null = null;
 
-  try {
-    response = await PlatformService.loginOrSignUpWithPlatform({
-      token,
-      deviceId: deviceId,
-      platform: getPlatform(authPlatform),
-    });
-  } catch (error: any) {
-    return null;
-  }
+   try {
+      response = await PlatformService.loginOrSignUpWithPlatform({
+         token,
+         deviceId: deviceId,
+         platform: getPlatform(authPlatform),
+      });
+   } catch (error: any) {
+      return null;
+   }
 
-  return await handleLoginResponse(response, deviceId);
+   return await handleLoginResponse(response, deviceId);
 }
 
 async function handleLoginResponse(response: ApiToken, deviceId: string) {
-  if (response && response.apiTokens.token) {
-    const decoded: JwtPayload = await jwtDecode(response.apiTokens.token);
-    const userId: string = decoded.sub ?? "";
+   if (response && response.token) {
+      const decoded: JwtPayload = await jwtDecode(response.token);
+      const userId: string = decoded.sub ?? "";
 
-    return {
-      id: userId,
-      expirationTime: decoded?.exp,
-      token: response.apiTokens.token,
-      refreshToken: response.apiTokens.refreshToken,
-      email: decoded.email,
-      name: decoded.name,
-      deviceId: deviceId,
-      loginFailed: false,
-    };
-  } else {
-    return null;
-  }
+      return {
+         id: userId,
+         expirationTime: decoded?.exp,
+         token: response.token,
+         refreshToken: response.refreshToken,
+         email: decoded.email,
+         name: decoded.name,
+         deviceId: deviceId,
+         loginFailed: false,
+      };
+   } else {
+      return null;
+   }
 }
