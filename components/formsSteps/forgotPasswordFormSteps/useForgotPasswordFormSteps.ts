@@ -34,5 +34,13 @@ export default function useForgotPasswordFormSteps() {
       }
    }, [isSuccess]);
 
-   return { step, formData, nextStep, setEmail, setPassword, submitForm };
+   return {
+      step,
+      formData,
+      isPending,
+      nextStep,
+      setEmail,
+      setPassword,
+      submitForm,
+   };
 }

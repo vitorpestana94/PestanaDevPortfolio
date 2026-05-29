@@ -124,6 +124,10 @@
             "thirdStep": {
                "title": "Now, just define a new password\n and repeat it!",
                "button": "Change Password"
+            },
+            "fourthStep": {
+               "title": "Your password was changed!\nNow, try to login again!",
+               "button": "Login"
             }
          }
       },

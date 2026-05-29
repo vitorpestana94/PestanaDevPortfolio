@@ -8,8 +8,15 @@ import Interface from "@/components/forms/forgotPasswordForm/ForgotPasswordFormI
 export default function ForgotPasswordFormSteps({
    switchBackToLogin,
 }: Interface) {
-   const { step, formData, nextStep, setEmail, setPassword, submitForm } =
-      useForgotPasswordFormSteps();
+   const {
+      step,
+      formData,
+      isPending,
+      nextStep,
+      setEmail,
+      setPassword,
+      submitForm,
+   } = useForgotPasswordFormSteps();
 
    return (
       <div className="w-full flex-1 flex flex-col justify-center items-center">
@@ -26,14 +33,19 @@ export default function ForgotPasswordFormSteps({
                2: <SecondStep email={formData.email} nextStep={nextStep} />,
                3: (
                   <ThirdStep
-                     isLoading={false}
+                     isLoading={isPending}
                      password={formData.newPassword}
                      setPassword={setPassword}
                      nextStep={nextStep}
                      submitForm={submitForm}
                   />
                ),
-               4: <FourthStep />,
+               4: (
+                  <FourthStep
+                     isForgotPassword
+                     switchBackToLogin={switchBackToLogin}
+                  />
+               ),
             }[step]
          }
       </div>
