@@ -33,6 +33,7 @@ export default function SignUpFirstStep({
                <Email setIsEmaiLError={setIsEmaiLError} setEmail={setEmail} />
                <Error
                   shouldRender={isEmailVerificationsError}
+                  styles="self-start"
                   message={
                      isConfirmationCodeEmailAlreadySent
                         ? t(

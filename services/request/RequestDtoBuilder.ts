@@ -9,15 +9,38 @@ import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
 
 export default class RequestDtoBuilder {
+   private static _auth: string = "auth";
+   private static _email: string = "email";
+
    static LoginRequest(requestBody: LoginRequest): RequestDto {
-      return { path: "login", httpMethod: "post", requestBody: requestBody };
+      return {
+         path: `${this._auth}`,
+         httpMethod: "post",
+         requestBody: requestBody,
+      };
+   }
+
+   static SignUp(requestBody: SignUpRequest) {
+      return {
+         path: `${this._auth}/signup`,
+         httpMethod: "post" as const,
+         requestBody: requestBody,
+      };
+   }
+
+   static ForgotPassword(requestBody: ForgotPasswordRequest) {
+      return {
+         path: `${this._auth}/forgot-password`,
+         httpMethod: "post" as const,
+         requestBody: requestBody,
+      };
    }
 
    static LoginWithPlatformRequest(
       requestBody: LoginOrSignUpWithPlatformRequest,
    ): RequestDto {
       return {
-         path: "platform/auth",
+         path: `${this._auth}/oauth`,
          httpMethod: "post",
          requestBody: requestBody,
       };
@@ -25,14 +48,14 @@ export default class RequestDtoBuilder {
 
    static IsEmailRegistered(email?: string) {
       return {
-         path: `sign-up/isEmailRegistered/${email}`,
+         path: `${this._auth}/isEmailRegistered/${email}`,
          httpMethod: "get",
       } as const;
    }
 
    static SendContactEmailRequest(requestBody: SendContactEmailRequest) {
       return {
-         path: "email/contact",
+         path: `${this._email}/contact`,
          httpMethod: "post" as const,
          requestBody: requestBody,
       };
@@ -40,7 +63,7 @@ export default class RequestDtoBuilder {
 
    static SendConfirmationCodeEmail(requestBody: SendConfirmationCodeRequest) {
       return {
-         path: "email/confirmation",
+         path: `${this._email}/confirmation`,
          httpMethod: "post" as const,
          requestBody: requestBody,
       };
@@ -50,7 +73,7 @@ export default class RequestDtoBuilder {
       requestBody: ResendConfirmationCodeEmailRequest,
    ) {
       return {
-         path: "email/confirmation/resend",
+         path: `${this._email}/confirmation/resend`,
          httpMethod: "post" as const,
          requestBody: requestBody,
       };
@@ -68,22 +91,6 @@ export default class RequestDtoBuilder {
       return {
          path: `confirmation/sent/${email}`,
          httpMethod: "get" as const,
-      };
-   }
-
-   static SignUp(requestBody: SignUpRequest) {
-      return {
-         path: `sign-up`,
-         httpMethod: "post" as const,
-         requestBody: requestBody,
-      };
-   }
-
-   static ForgotPassword(requestBody: ForgotPasswordRequest) {
-      return {
-         path: `forgot-password`,
-         httpMethod: "post" as const,
-         requestBody: requestBody,
       };
    }
 }

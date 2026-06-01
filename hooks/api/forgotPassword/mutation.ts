@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { MutationDefaultProps } from "@/models/interfaces/api/ApiInterfaces";
 import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
-import ForgotPasswordService from "@/services/ForgotPasswordService";
+import AuthService from "@/services/AuthService";
 
 export function useForgotPassword(): MutationDefaultProps<
    void,
@@ -9,9 +9,7 @@ export function useForgotPassword(): MutationDefaultProps<
 > {
    return useMutation({
       mutationFn: async (ForgotPasswordRequest) => {
-         return await ForgotPasswordService.ForgotPassword(
-            ForgotPasswordRequest,
-         );
+         return await AuthService.ForgotPassword(ForgotPasswordRequest);
       },
       mutationKey: ["forgotPassword"],
       retry: false,

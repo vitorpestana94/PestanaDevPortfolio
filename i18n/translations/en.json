@@ -101,7 +101,7 @@
                }
             },
             "fourthStep": {
-               "title": "🎉 Success! 🎉\nCheckout what i can do!"
+               "title": "Success!\nCheckout what i can do!"
             },
             "errors": {
                "alreadyRegistered": "The provided email is already registered.",

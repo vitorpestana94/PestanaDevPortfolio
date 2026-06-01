@@ -1,10 +1,8 @@
-import LoginService from "@/services/LoginService";
-import PlatformService from "@/services/PlatformService";
+import AuthService from "@/services/AuthService";
 import { jwtDecode, JwtPayload } from "jwt-decode";
 import ApiToken from "@/models/interfaces/dtos/responses/ApiToken";
 import { getPlatform } from "../strings/getPlatform";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
-import SignUpService from "@/services/SignUpService";
 import getDeviceId from "../strings/getDeviceId";
 
 export async function login(email: string, password: string) {
@@ -13,7 +11,7 @@ export async function login(email: string, password: string) {
    let response: ApiToken | null = null;
 
    try {
-      response = await LoginService.login({
+      response = await AuthService.login({
          email,
          password,
          deviceId: deviceId,
@@ -31,7 +29,7 @@ export async function signup(request: SignUpRequest) {
    request.deviceId = getDeviceId();
 
    try {
-      response = await SignUpService.signup(request);
+      response = await AuthService.signup(request);
    } catch (error: any) {
       return null;
    }
@@ -47,7 +45,7 @@ export async function loginOrSignUpWithPlatform(
    let response: ApiToken | null = null;
 
    try {
-      response = await PlatformService.loginOrSignUpWithPlatform({
+      response = await AuthService.loginOrSignUpWithPlatform({
          token,
          deviceId: deviceId,
          platform: getPlatform(authPlatform),
