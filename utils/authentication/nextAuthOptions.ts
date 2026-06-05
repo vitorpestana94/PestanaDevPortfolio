@@ -93,7 +93,7 @@ export const nextAuthOptions = {
       error: `/en`,
    },
    session: {
-      strategy: "jwt",
+      strategy: "jwt" as const,
       maxAge: 60 * 60 * 48, // Session lifetime: 2 days. After this time, the token expires and the user must log in again.
       updateAge: 60 * 60, // The session will be updated every hour during user activity. If the user is inactive, it won't be updated; also, if jwt's exp time timeout, it will request our API again.
    },

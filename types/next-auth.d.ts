@@ -9,6 +9,7 @@ declare module "next-auth" {
       loginWithProviderFailed: boolean;
       userNotRegistered: boolean;
       loginFailed: boolean;
+      user: DefaultSession["user"];
    }
 }
 

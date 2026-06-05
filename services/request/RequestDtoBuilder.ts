@@ -99,6 +99,7 @@ export default class RequestDtoBuilder {
       return {
          path: `${this._user}`,
          httpMethod: "get" as const,
+         useAuth: true,
       };
    }
 }

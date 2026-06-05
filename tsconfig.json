@@ -1,6 +1,7 @@
 {
    "compilerOptions": {
       "target": "ES2017",
+      "allowSyntheticDefaultImports": true,
       "lib": ["dom", "dom.iterable", "esnext"],
       "allowJs": true,
       "skipLibCheck": true,
@@ -27,7 +28,7 @@
       }
    },
    "include": [
-      "next-env.d.ts",
+      "types/next-env.d.ts",
       "**/*.ts",
       "**/*.tsx",
       ".next/types/**/*.ts",
