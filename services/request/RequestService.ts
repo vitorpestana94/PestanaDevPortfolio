@@ -16,13 +16,13 @@ if (!nextAuthSecret) {
 }
 
 export default async function RequestService() {
-   async function requestApi(request?: RequestDto): Promise<Response> {
+   async function requestApi(request: RequestDto): Promise<Response> {
       return await fetch(getUrl(request), {
-         method: request?.httpMethod.toUpperCase(),
+         method: request.httpMethod.toUpperCase(),
          headers: {
             "Content-Type": "application/json",
             ...(request?.useAuth && {
-               Authorization: `Bearer ${await getAuthToken()}`,
+               Authorization: await getJWT(),
             }),
          },
          body: JSON.stringify(request?.requestBody),
@@ -36,13 +36,13 @@ function getUrl(request?: RequestDto) {
    return `${apiUrl}/${getPathWithParams(request)}`;
 }
 
-async function getAuthToken() {
+async function getJWT() {
    const tokens = await getToken({
       req: await getNextAuthCookies(),
       secret: nextAuthSecret,
    });
 
-   return tokens?.token;
+   return `Bearer ${tokens?.token}`;
 }
 
 async function getNextAuthCookies() {
