@@ -6,6 +6,7 @@ import LoginForm from "@/components/forms/loginForm/LoginForm";
 import LoginSignUpSwitch from "@/components/buttons/switchAutoButton/SwitchAutoButton";
 import SignUpForm from "@/components/forms/SignUpForm";
 import ForgotPasswordForm from "@/components/forms/forgotPasswordForm/ForgotPasswordForm";
+import DevidedSection from "../DevidedSection";
 
 export default function AuthSection() {
    const {
@@ -34,10 +35,10 @@ export default function AuthSection() {
    );
 
    return (
-      <section className="w-full flex flex-1 flex-col lg:flex-row relative">
+      <DevidedSection>
          <Banner formType={formType} />
          {loginOrSignUpSwitch}
          {getForm()}
-      </section>
+      </DevidedSection>
    );
 }

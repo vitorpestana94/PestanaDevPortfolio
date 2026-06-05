@@ -7,6 +7,7 @@ import useForgotPasswordFirstStep from "@/components/formsSteps/signUpFormSteps/
 import ForgotPassword from "@/components/titles/ForgotPasswordTitle";
 import Line from "@/components/hrs/GenericHr";
 import BackToLogin from "@/components/buttons/backToLoginButton/BackToLoginButton";
+import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 
 export default function FirstStep({
    email,
@@ -21,7 +22,12 @@ export default function FirstStep({
       isLoading,
       setIsEmaiLError,
       submit,
-   } = useForgotPasswordFirstStep(nextStep, email, true);
+   } = useForgotPasswordFirstStep(
+      nextStep,
+      email,
+      true,
+      ConfirmationCodeEmailKind.ForgotPassword,
+   );
 
    return (
       <div className="w-full h-[90%] flex flex-col justify-around items-center">

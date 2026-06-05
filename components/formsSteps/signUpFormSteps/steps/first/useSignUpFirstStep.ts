@@ -4,11 +4,13 @@ import { useTranslations } from "next-intl";
 import { useSendConfirmationCodeEmail } from "@/hooks/api/email/mutation";
 import { useCheckConfirmationCodeEmailAlreadySent } from "@/hooks/api/confirmationCode/queries";
 import { useLocale } from "next-intl";
+import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 
 export default function useSignUpFirstStep(
    nextStep?: () => void,
    email?: string,
    isForgotPassword?: boolean,
+   confrimationCodeEmailKind?: ConfirmationCodeEmailKind,
 ) {
    const locale = useLocale();
    const t = useTranslations();
@@ -39,7 +41,12 @@ export default function useSignUpFirstStep(
    function request() {
       if (isPending) return;
 
-      mutateAsync({ clientEmail: email!, clientLocale: locale });
+      mutateAsync({
+         clientEmail: email!,
+         clientLocale: locale,
+         confirmationCodeEmailType:
+            confrimationCodeEmailKind ?? ConfirmationCodeEmailKind.SignUp,
+      });
    }
 
    useEffect(() => {

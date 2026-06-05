@@ -11,6 +11,7 @@ import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPassw
 export default class RequestDtoBuilder {
    private static _auth: string = "auth";
    private static _email: string = "email";
+   private static _user: string = "user";
 
    static LoginRequest(requestBody: LoginRequest): RequestDto {
       return {
@@ -90,6 +91,13 @@ export default class RequestDtoBuilder {
    static CheckConfirmationCodeEmailAlreadySent(email: string) {
       return {
          path: `confirmation/sent/${email}`,
+         httpMethod: "get" as const,
+      };
+   }
+
+   static GetUser() {
+      return {
+         path: `${this._user}`,
          httpMethod: "get" as const,
       };
    }

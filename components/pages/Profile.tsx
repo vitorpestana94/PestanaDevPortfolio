@@ -1,3 +1,10 @@
+import ProfileSection from "../sections/profile/ProfileSection";
+import Main from "../mains/DevidedMain";
+
 export default function Profile() {
-   return <main className="homeDefault"></main>;
+   return (
+      <Main>
+         <ProfileSection />
+      </Main>
+   );
 }
