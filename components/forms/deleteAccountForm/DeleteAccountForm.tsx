@@ -2,10 +2,10 @@
 
 import AuthForm from "../DevidedDivFormWrapper";
 
-export default function EditProfileForm() {
+export default function DeleteAccountForm() {
    return (
       <AuthForm>
-         <p>Edit</p>
+         <p>Delete</p>
       </AuthForm>
    );
 }

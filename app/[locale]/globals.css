@@ -89,6 +89,14 @@
    .authFormTitle {
       @apply text-black font-semibold  text-[1.5rem] sm:text-[1.75rem] xl:text-[1.875rem] 3xl:text-[2.125rem];
    }
+
+   .profileNavBarIcons {
+      @apply aspect-square w-4 stroke-black hover:stroke-[#38b6ff] cursor-pointer;
+   }
+
+   .authForm {
+      @apply bg-white flex-[1.5] rounded-t-4xl lg:rounded-t-none lg:flex-[0.7] z-40 flex flex-col justify-around items-center py-5 lg:py-8 relative;
+   }
 }
 
 html,

@@ -1,6 +1,6 @@
 "use client";
 
-import AuthForm from "../AuthForm";
+import AuthForm from "../DevidedDivFormWrapper";
 import Login from "../../titles/LoginTitle";
 import LoginWithEmail from "../../divs/LoginInputsDiv/LoginInputsDiv";
 import LoginWithPlatforms from "../../divs/PlatformsLoginDiv/PlatformsLoginDiv";

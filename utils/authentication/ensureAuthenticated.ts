@@ -3,25 +3,13 @@ import { redirect } from "next/navigation";
 import { getLocale } from "next-intl/server";
 import { Session } from "next-auth";
 
-function redirectToPath(locale: string, redirectTo?: string) {
-  let url = `/${locale}/sign-in/`;
+export default async function ensureAuthenticated(): Promise<Session> {
+   const session = await getSession();
+   const locale = await getLocale();
 
-  if (redirectTo) {
-    url = url.concat(`?redirectTo=${redirectTo}`);
-  }
+   if (!session) {
+      redirect(`/${locale}/authentication`);
+   }
 
-  redirect(url);
-}
-
-export default async function ensureAuthenticated(
-  redirectTo?: string
-): Promise<Session> {
-  const session = await getSession();
-  const locale = await getLocale();
-
-  if (!session) {
-    redirectToPath(locale, redirectTo);
-  }
-
-  return session!;
+   return session!;
 }

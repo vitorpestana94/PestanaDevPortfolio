@@ -1,9 +1,9 @@
-import AuthForm from "../AuthForm";
+import AuthForm from "../DevidedDivFormWrapper";
 
 export default function ChangePasswordForm() {
    return (
       <AuthForm>
-         <p>oi</p>
+         <p>password</p>
       </AuthForm>
    );
 }

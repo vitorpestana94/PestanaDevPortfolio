@@ -130,12 +130,16 @@
                "button": "Login"
             }
          }
+      }
+   },
+   "metaData": {
+      "auth": {
+         "title": "| Login or Sign-up",
+         "description": "Here you can both login or sign-up."
       },
-      "metaData": {
-         "auth": {
-            "title": "| Login or Sign-up",
-            "description": "Here you can both login or sign-up."
-         }
+      "profile": {
+         "title": "| Profile",
+         "description": "Here you can update your profile data, change your credentials and delete your account."
       }
    }
 }

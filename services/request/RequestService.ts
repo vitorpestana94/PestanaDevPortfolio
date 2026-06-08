@@ -46,6 +46,7 @@ async function getJWT() {
 }
 
 async function getNextAuthCookies() {
+   // Getting cookies here because on a server-action it's not possible to use requests.
    return {
       cookies: Object.fromEntries(
          (await cookies())

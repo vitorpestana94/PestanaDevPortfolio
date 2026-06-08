@@ -18,6 +18,10 @@ import EyeOff from "@public/icons/eyeOff.svg";
 import BadgeCheck from "@public/icons/badgeCheck.svg";
 import LeftArrow from "@public/icons/arrowLeft.svg";
 import Logout from "@public/icons/logout.svg";
+import Trash from "@public/icons/trash.svg";
+import User from "@public/icons/user.svg";
+import Pencil from "@public/icons/pencil.svg";
+import Lock from "@public/icons/lock.svg";
 
 export const icons = {
    vP: <VP />,
@@ -36,6 +40,10 @@ export const icons = {
    badgeCheck: <BadgeCheck />,
    leftArrow: <LeftArrow />,
    logout: <Logout />,
+   trash: <Trash />,
+   user: <User />,
+   pencil: <Pencil />,
+   lock: <Lock />,
 } as const;
 
 export type IconName = keyof typeof icons;

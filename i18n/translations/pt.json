@@ -129,5 +129,15 @@
             }
          }
       }
+   },
+   "metaData": {
+      "auth": {
+         "title": "| Logar ou Cadastrar",
+         "description": "Aqui você pode tanto logar ou cadastrar-se"
+      },
+      "profile": {
+         "title": "| Perfil",
+         "description": "Aqui você pode alterar os dados do seu perfil, alterar suas credentiais ou deletar sua conta."
+      }
    }
 }
