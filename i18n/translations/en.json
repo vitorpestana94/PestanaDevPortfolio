@@ -132,6 +132,17 @@
          }
       }
    },
+   "profile": {
+      "showData": {
+         "name": "Name",
+         "email": "Email Address",
+         "signUpType": {
+            "label": "Signup Type",
+            "manual": "Manually",
+            "platform": "Using a provider"
+         }
+      }
+   },
    "metaData": {
       "auth": {
          "title": "| Login or Sign-up",

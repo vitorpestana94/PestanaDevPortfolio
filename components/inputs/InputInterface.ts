@@ -5,6 +5,6 @@ export default interface InputInterface {
     name: string;
     styles?: string;
     setFormData: (data: string) => void;
-    setIsFormWithError: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsFormWithError?: React.Dispatch<React.SetStateAction<boolean>>;
   };
 }

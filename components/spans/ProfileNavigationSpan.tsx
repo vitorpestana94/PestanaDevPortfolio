@@ -28,7 +28,10 @@ function NavBarButton({
          whileHover={scale}
          transition={transition}
       >
-         <Icon iconName={iconName} className="profileNavBarIcons" />
+         <Icon
+            iconName={iconName}
+            className="aspect-square w-5 lg:w-5.5 stroke-black hover:stroke-[#38b6ff] cursor-pointer"
+         />
       </motion.button>
    );
 }
@@ -42,7 +45,7 @@ export default function ProfileNavigationSpan({
    switchFormType: (formType: FormType) => void;
 }) {
    return (
-      <span className="absolute z-50 top-3 right-4 flex gap-x-4">
+      <span className="navSwitchPosition flex gap-x-3 lg:gap-x-4">
          <NavBarButton
             iconName="profile"
             onClick={() => {

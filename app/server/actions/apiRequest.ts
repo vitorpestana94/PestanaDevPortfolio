@@ -2,7 +2,7 @@
 
 import RequestDto from "@/models/interfaces/dtos/requests/RequestDto";
 import RequestService from "@/services/request/RequestService";
-import ResponseDto from "@/models/interfaces/dtos/responses/dtos/ResponseDto";
+import ResponseDto from "@/models/interfaces/dtos/ResponseDto";
 
 const requestService = await RequestService();
 

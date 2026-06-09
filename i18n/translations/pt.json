@@ -130,6 +130,17 @@
          }
       }
    },
+   "profile": {
+      "showData": {
+         "name": "Nome",
+         "email": "Endereço de Email",
+         "signUpType": {
+            "label": "Tipo de Registro",
+            "manual": "Manualmente",
+            "platform": "Usando um provedor"
+         }
+      }
+   },
    "metaData": {
       "auth": {
          "title": "| Logar ou Cadastrar",

@@ -3,75 +3,77 @@ import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { useSendContactEmail } from "@/hooks/api/email/mutation";
 import { useLocale } from "next-intl";
+import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 
 export default function useHomeFooterForm() {
-  const locale = useLocale();
-  const initial = {
-    clientEmail: "",
-    clientName: "",
-    clientMessage: "",
-    clientLocale: locale,
-  };
-  const [isFormWithError, setIsFormWithError] = useState<boolean>(false);
-  const t = useTranslations("home");
-  const { mutateAsync, reset, data, isError, isPending, isSuccess } =
-    useSendContactEmail();
-  const [formData, setFormData] = useState<SendContactEmailRequest>(initial);
+   const locale = useLocale();
+   const initial: SendContactEmailRequest = {
+      clientEmail: "",
+      clientName: "",
+      clientMessage: "",
+      clientLocale: locale,
+      confirmationCodeEmailType: ConfirmationCodeEmailKind.Contact,
+   };
+   const [isFormWithError, setIsFormWithError] = useState<boolean>(false);
+   const t = useTranslations("home");
+   const { mutateAsync, reset, data, isError, isPending, isSuccess } =
+      useSendContactEmail();
+   const [formData, setFormData] = useState<SendContactEmailRequest>(initial);
 
-  function submit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const target = event.currentTarget;
+   function submit(event: React.FormEvent<HTMLFormElement>) {
+      event.preventDefault();
+      const target = event.currentTarget;
 
-    if (
-      !formData.clientEmail ||
-      !formData.clientMessage ||
-      !formData.clientName ||
-      isFormWithError
-    ) {
-      setIsFormWithError(true);
+      if (
+         !formData.clientEmail ||
+         !formData.clientMessage ||
+         !formData.clientName ||
+         isFormWithError
+      ) {
+         setIsFormWithError(true);
 
-      return;
-    }
+         return;
+      }
 
-    mutateAsync(formData, {
-      onSuccess: () => {
-        setFormData(initial);
-        target.reset();
-      },
-    });
-  }
+      mutateAsync(formData, {
+         onSuccess: () => {
+            setFormData(initial);
+            target.reset();
+         },
+      });
+   }
 
-  function setClientEmail(email: string) {
-    setFormData((previous) => ({ ...previous, clientEmail: email }));
-  }
+   function setClientEmail(email: string) {
+      setFormData((previous) => ({ ...previous, clientEmail: email }));
+   }
 
-  function setClientName(name: string) {
-    setFormData((previous) => ({ ...previous, clientName: name }));
-  }
+   function setClientName(name: string) {
+      setFormData((previous) => ({ ...previous, clientName: name }));
+   }
 
-  function setClientMessage(message: string) {
-    setFormData((previous) => ({ ...previous, clientMessage: message }));
-  }
+   function setClientMessage(message: string) {
+      setFormData((previous) => ({ ...previous, clientMessage: message }));
+   }
 
-  useEffect(() => {
-    if (isSuccess) {
-      setTimeout(() => {
-        reset();
-      }, 5000);
-    }
-  }, [isSuccess]);
+   useEffect(() => {
+      if (isSuccess) {
+         setTimeout(() => {
+            reset();
+         }, 5000);
+      }
+   }, [isSuccess]);
 
-  return {
-    t,
-    data,
-    isError,
-    isPending,
-    isSuccess,
-    isFormWithError,
-    setIsFormWithError,
-    submit,
-    setClientEmail,
-    setClientName,
-    setClientMessage,
-  };
+   return {
+      t,
+      data,
+      isError,
+      isPending,
+      isSuccess,
+      isFormWithError,
+      setIsFormWithError,
+      submit,
+      setClientEmail,
+      setClientName,
+      setClientMessage,
+   };
 }

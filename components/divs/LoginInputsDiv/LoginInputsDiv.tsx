@@ -20,7 +20,7 @@ export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
 
    return (
       <div className="flex flex-col gap-y-2 sm:gap-y-6 items-center">
-         <div className="w-full flex flex-col items-center gap-y-1 sm:gap-y-2">
+         <div className="w-full flex flex-col items-center gap-y-2 sm:gap-y-3">
             <Email setEmailError={setEmailError} setEmail={setEmail} />
             <span className="w-full flex flex-col gap-y-3">
                <Password

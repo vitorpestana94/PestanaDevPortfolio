@@ -19,7 +19,7 @@ export default function ForgotPasswordFormSteps({
    } = useForgotPasswordFormSteps();
 
    return (
-      <div className="w-full flex-1 flex flex-col justify-center items-center">
+      <div className="formSteps">
          {
             {
                1: (

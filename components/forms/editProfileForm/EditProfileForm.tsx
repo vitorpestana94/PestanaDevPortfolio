@@ -1,11 +1,13 @@
 "use client";
 
 import AuthForm from "../DevidedDivFormWrapper";
+import FormSteps from "@/components/formsSteps/editProfileForm/EditProfileFormSteps";
+import User from "@/models/interfaces/UI/UserInterface";
 
-export default function EditProfileForm() {
+export default function EditProfileForm({ user }: User) {
    return (
       <AuthForm>
-         <p>Edit</p>
+         <FormSteps user={user} />
       </AuthForm>
    );
 }

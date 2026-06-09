@@ -17,7 +17,7 @@ export default function SignUpFormSteps() {
    } = useSignUpFormSteps();
 
    return (
-      <div className="w-full flex-1 flex flex-col justify-center items-center">
+      <div className="formSteps">
          {
             {
                1: (

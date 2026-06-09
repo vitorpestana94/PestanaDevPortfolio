@@ -1,4 +1,4 @@
-import ResponseDto from "./dtos/ResponseDto";
+import ResponseDto from "../ResponseDto";
 export default interface IsEmailRegisteredResponseDto extends ResponseDto {
-  isRegistered?: boolean;
+   isRegistered?: boolean;
 }

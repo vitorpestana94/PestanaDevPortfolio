@@ -7,6 +7,15 @@ import CheckConfirmationCodeRequest from "@/models/interfaces/dtos/requests/Chec
 import ResendConfirmationCodeEmailRequest from "@/models/interfaces/dtos/requests/ResendConfirmationCodeEmailRequest";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
+import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
+import ChangeUserPasswordRequestDto from "@/models/interfaces/dtos/requests/ChangeUserPasswordRequestDto";
+
+import {
+   post,
+   get,
+   patch,
+   deleteVerb,
+} from "@/models/interfaces/dtos/requests/RequestDto";
 
 export default class RequestDtoBuilder {
    private static _auth: string = "auth";
@@ -16,23 +25,23 @@ export default class RequestDtoBuilder {
    static LoginRequest(requestBody: LoginRequest): RequestDto {
       return {
          path: `${this._auth}`,
-         httpMethod: "post",
+         httpMethod: post,
          requestBody: requestBody,
       };
    }
 
-   static SignUp(requestBody: SignUpRequest) {
+   static SignUp(requestBody: SignUpRequest): RequestDto {
       return {
          path: `${this._auth}/signup`,
-         httpMethod: "post" as const,
+         httpMethod: post,
          requestBody: requestBody,
       };
    }
 
-   static ForgotPassword(requestBody: ForgotPasswordRequest) {
+   static ForgotPassword(requestBody: ForgotPasswordRequest): RequestDto {
       return {
          path: `${this._auth}/forgot-password`,
-         httpMethod: "post" as const,
+         httpMethod: post,
          requestBody: requestBody,
       };
    }
@@ -42,63 +51,97 @@ export default class RequestDtoBuilder {
    ): RequestDto {
       return {
          path: `${this._auth}/oauth`,
-         httpMethod: "post",
+         httpMethod: post,
          requestBody: requestBody,
       };
    }
 
-   static IsEmailRegistered(email?: string) {
+   static IsEmailRegistered(email?: string): RequestDto {
       return {
          path: `${this._auth}/isEmailRegistered/${email}`,
-         httpMethod: "get",
+         httpMethod: get,
       } as const;
    }
 
-   static SendContactEmailRequest(requestBody: SendContactEmailRequest) {
+   static SendContactEmailRequest(
+      requestBody: SendContactEmailRequest,
+   ): RequestDto {
       return {
          path: `${this._email}/contact`,
-         httpMethod: "post" as const,
+         httpMethod: post,
          requestBody: requestBody,
       };
    }
 
-   static SendConfirmationCodeEmail(requestBody: SendConfirmationCodeRequest) {
+   static SendConfirmationCodeEmail(
+      requestBody: SendConfirmationCodeRequest,
+   ): RequestDto {
       return {
          path: `${this._email}/confirmation`,
-         httpMethod: "post" as const,
+         httpMethod: post,
          requestBody: requestBody,
       };
    }
 
    static ResendConfirmationCodeEmail(
       requestBody: ResendConfirmationCodeEmailRequest,
-   ) {
+   ): RequestDto {
       return {
          path: `${this._email}/confirmation/resend`,
-         httpMethod: "post" as const,
+         httpMethod: post,
          requestBody: requestBody,
       };
    }
 
-   static CheckConfirmationCode(requestBody: CheckConfirmationCodeRequest) {
+   static CheckConfirmationCode(
+      requestBody: CheckConfirmationCodeRequest,
+   ): RequestDto {
       return {
          path: "confirmation",
-         httpMethod: "post" as const,
+         httpMethod: post,
          requestBody: requestBody,
       };
    }
 
-   static CheckConfirmationCodeEmailAlreadySent(email: string) {
+   static CheckConfirmationCodeEmailAlreadySent(email: string): RequestDto {
       return {
          path: `confirmation/sent/${email}`,
-         httpMethod: "get" as const,
+         httpMethod: get,
       };
    }
 
-   static GetUser() {
+   static GetUser(): RequestDto {
       return {
          path: `${this._user}`,
-         httpMethod: "get" as const,
+         httpMethod: get,
+         useAuth: true,
+      };
+   }
+
+   static ChangeUserData(requestBody: ChangeUserDataRequestDto): RequestDto {
+      return {
+         path: `${this._user}`,
+         httpMethod: patch,
+         requestBody: requestBody,
+         useAuth: true,
+      };
+   }
+
+   static ChangeUserPassword(
+      requestBody: ChangeUserPasswordRequestDto,
+   ): RequestDto {
+      return {
+         path: `${this._user}/password`,
+         httpMethod: patch,
+         requestBody: requestBody,
+         useAuth: true,
+      };
+   }
+
+   static DeleteUserAccount(): RequestDto {
+      return {
+         path: `${this._user}`,
+         httpMethod: deleteVerb,
          useAuth: true,
       };
    }
