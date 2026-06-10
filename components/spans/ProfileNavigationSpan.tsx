@@ -30,7 +30,7 @@ function NavBarButton({
       >
          <Icon
             iconName={iconName}
-            className="aspect-square w-5 lg:w-5.5 stroke-black hover:stroke-[#38b6ff] cursor-pointer"
+            className="aspect-square w-5 sm:w-5.5 stroke-black hover:stroke-[#38b6ff] cursor-pointer"
          />
       </motion.button>
    );

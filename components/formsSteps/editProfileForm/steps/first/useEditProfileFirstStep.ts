@@ -1,84 +1,50 @@
-import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
-import { useState, useEffect } from "react";
-import useHandleStep from "@/hooks/useStep";
-import { useChangeUserData } from "@/hooks/api/user/mutations";
+import { useEffect } from "react";
 import { useSendConfirmationCodeEmail } from "@/hooks/api/email/mutation";
 import { useLocale } from "next-intl";
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 import Interface from "./EditProfileFirstStepInterface";
+import { useTranslations } from "next-intl";
 
 export default function useEditProfileFirstStep({
+   submit,
+   request,
    nextStep,
-   setIsUpdateEmail,
 }: Interface) {
    const locale = useLocale();
-
-   const { mutateAsync, isError, isPending, isSuccess } = useChangeUserData();
+   const t = useTranslations("profile");
 
    const {
-      mutateAsync: sendConfirmatiomCode,
-      isError: isSendConfirmatiomCodeError,
-      isSuccess: isSendConfirmatiomCodeSuccess,
-      isPending: isSendingConfirmationCode,
+      mutateAsync: mutateAsync,
+      isError,
+      isSuccess,
+      isPending,
    } = useSendConfirmationCodeEmail();
 
-   const [request, setRequest] = useState<ChangeUserDataRequestDto>({
-      email: undefined,
-      name: undefined,
-   });
-
-   const [dataNotChanged, setDataNotChanged] = useState<boolean | null>(null);
-
-   function setEmail(newEmail: string) {
-      setRequest((previous) => ({ ...previous, email: newEmail }));
-   }
-
-   function setName(newName: string) {
-      setRequest((previous) => ({ ...previous, name: newName }));
-   }
-
-   async function submit(): Promise<void> {
-      if (dataNotChanged === null) return;
-
-      if (isPending || isSendingConfirmationCode) return;
-
-      if (request.email === undefined || request.name === undefined) {
-         setDataNotChanged(true);
-      } else {
-         setDataNotChanged(false);
-      }
+   async function submitUpdate(): Promise<void> {
+      if (isPending) return;
 
       if (request.email) {
-         await sendConfirmatiomCode({
+         await mutateAsync({
             clientEmail: request.email,
             clientLocale: locale,
             confirmationCodeEmailType:
                ConfirmationCodeEmailKind.CredentialsChange,
          });
       } else {
-         if (!dataNotChanged) {
-            setIsUpdateEmail(true);
-
-            await mutateAsync(request);
-         }
+         await submit();
       }
    }
 
    useEffect(() => {
-      if (isSuccess || isSendConfirmatiomCodeSuccess) {
+      if (isSuccess) {
          nextStep();
       }
-   }, [isSuccess, isSendConfirmatiomCodeSuccess]);
-
-   useEffect(() => {
-      setDataNotChanged(request.email === null || request.name === null);
-   }, [request]);
+   }, [isSuccess]);
 
    return {
-      dataNotChanged,
-      isLoading: isPending || isSendingConfirmationCode,
-      setEmail,
-      setName,
-      submit,
+      dataNotChanged: request.email === undefined && request.name === undefined,
+      t,
+      submitUpdate,
+      isLoading: isPending,
    };
 }

@@ -107,11 +107,15 @@
    }
 
    .profileDataLabel {
-      @apply self-start text-xs font-medium select-none;
+      @apply self-start text-[0.625rem] font-medium select-none;
    }
 
    .profileDataDiv {
-      @apply w-full bg-gray-200 rounded-md px-4 py-1;
+      @apply w-full text-xs bg-gray-200 rounded-md px-4 py-1 sm:py-1.5 2xl:py-2 3xl:py-3;
+   }
+
+   .formStepfinalDiv {
+      @apply flex flex-col justify-around items-center h-full;
    }
 }
 

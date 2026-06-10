@@ -141,6 +141,13 @@
             "manual": "Manually",
             "platform": "Using a provider"
          }
+      },
+      "editProfile": {
+         "edit": {
+            "button": "Update",
+            "name": "Name",
+            "lastStepTitle": "Your data was updated!"
+         }
       }
    },
    "metaData": {

@@ -5,17 +5,27 @@ import Input from "@/components/inputs/editProfileInput/EditProfileInput";
 import EditButton from "@/components/buttons/authButton/AuthButton";
 
 export default function EditProfileFirstStep({
+   request,
    user,
-   setIsUpdateEmail,
+   isLoadingUpdateRequest,
+   submit,
    nextStep,
-}: Interface & User) {
-   const { dataNotChanged, isLoading, setEmail, setName, submit } =
-      useEditProfileFirstStep({ nextStep, setIsUpdateEmail });
+   setEmail,
+   setName,
+}: Interface & User & { isLoadingUpdateRequest: boolean }) {
+   const { t, isLoading, dataNotChanged, submitUpdate } =
+      useEditProfileFirstStep({
+         request,
+         submit,
+         nextStep,
+         setEmail,
+         setName,
+      });
 
    return (
       <div className="flex flex-col flex-1 gap-y-8 justify-center items-center w-full">
          <Input
-            label="Name"
+            label={t("editProfile.edit.name")}
             autoCompleteType="name"
             props={{
                placeHolder: user.name,
@@ -34,12 +44,12 @@ export default function EditProfileFirstStep({
                setFormData: setEmail,
             }}
          />
-
          <EditButton
-            submit={submit}
-            isLoading={isLoading}
-            isFormWithErrors={dataNotChanged === null ? false : dataNotChanged}
-            buttonLabel={"teste"}
+            submit={submitUpdate}
+            isLoading={isLoading || isLoadingUpdateRequest}
+            isFormWithErrors={dataNotChanged}
+            buttonLabel={t("editProfile.edit.button")}
+            styles={"mt-8"}
          />
       </div>
    );

@@ -1,4 +1,9 @@
+import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
+
 export default interface EditProfileFirstStepInterface {
-   setIsUpdateEmail: (isEmailUpdate: boolean) => void;
+   request: ChangeUserDataRequestDto;
    nextStep: () => void;
+   setEmail: (value: string) => void;
+   setName: (value: string) => void;
+   submit(): Promise<void>;
 }

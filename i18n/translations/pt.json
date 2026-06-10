@@ -139,6 +139,13 @@
             "manual": "Manualmente",
             "platform": "Usando um provedor"
          }
+      },
+      "editProfile": {
+         "edit": {
+            "button": "Atualizar",
+            "name": "Nome",
+            "lastStepTitle": "Seus dados foram atualizados!"
+         }
       }
    },
    "metaData": {

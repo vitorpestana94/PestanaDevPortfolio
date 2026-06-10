@@ -12,6 +12,7 @@ export default async function apiRequest(
    const response = await requestService.requestApi(request);
 
    if (!response.ok) {
+      console.log(response);
       throw new Error("request-failed");
    }
 
