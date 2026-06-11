@@ -8,6 +8,7 @@ export default function usePasswordInput(
    setIsFormError: Dispatch<SetStateAction<FormErrors>>,
    isPasswordConfirmation: boolean,
    password?: string,
+   isCurrentPasswordInput?: boolean,
 ) {
    const [isPasswordEmpty, setIsPasswordEmpty] = useState<boolean>(false);
    const [isPasswordConfirmationEmpty, setIsPasswordConfirmationEmpty] =
@@ -21,10 +22,14 @@ export default function usePasswordInput(
 
    function verifyPassword(event: React.FocusEvent<HTMLInputElement, Element>) {
       const password: string = event.target.value;
-      const isValid: boolean = schema.validate(password) as boolean;
 
       setIsPasswordEmpty(!password);
-      setIsPasswordFormatWrong(!isValid);
+
+      if (!isCurrentPasswordInput) {
+         const isValid: boolean = schema.validate(password) as boolean;
+
+         setIsPasswordFormatWrong(!isValid);
+      }
    }
 
    function verifyPasswordConfirmation(

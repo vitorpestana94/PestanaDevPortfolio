@@ -5,7 +5,7 @@ import DevidedSection from "../DevidedSection";
 import EditProfileForm from "@/components/forms/editProfileForm/EditProfileForm";
 import useProfileSection from "./useProfileSection";
 import Navigation from "@/components/spans/ProfileNavigationSpan";
-import ProfileDiv from "@/components/divs/ProfileDataDiv/ProfileDataDiv";
+import Profile from "@/components/divs/ProfileDataDiv/ProfileDataDiv";
 import DeleteAccountForm from "@/components/forms/deleteAccountForm/DeleteAccountForm";
 import ChangePasswordForm from "@/components/forms/changePasswordForm/ChangePasswordForm";
 
@@ -23,10 +23,10 @@ export default function ProfileSection() {
 
    function getForm() {
       const form = {
-         show: <ProfileDiv user={data!} />,
+         show: <Profile user={data!} />,
          edit: <EditProfileForm user={data!} />,
-         deleteAccount: <DeleteAccountForm />,
          credentials: <ChangePasswordForm user={data!} />,
+         deleteAccount: <DeleteAccountForm user={data!} />,
       };
 
       return form[formType];

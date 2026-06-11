@@ -5,11 +5,18 @@ import { useSendConfirmationCodeEmail } from "@/hooks/api/email/mutation";
 import { useLocale } from "next-intl";
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 import useStepInterface from "@/models/interfaces/UI/useStepInterface";
+import { useTranslations } from "next-intl";
 
 export default function useChangePasswordFirstStep({
    userEmail,
    nextStep,
 }: { userEmail: string } & useStepInterface) {
+   const style = {
+      mainDiv: {
+         className: "bg-gray-200!",
+      },
+   };
+   const t = useTranslations("profile");
    const locale = useLocale();
    const { mutateAsync, isError, isSuccess, isPending } =
       useSendConfirmationCodeEmail();
@@ -36,5 +43,12 @@ export default function useChangePasswordFirstStep({
       }
    }, [isSuccess]);
 
-   return { isFormError, isLoading: isPending, submit, setIsFormError };
+   return {
+      isFormError,
+      t,
+      style,
+      isLoading: isPending,
+      submit,
+      setIsFormError,
+   };
 }

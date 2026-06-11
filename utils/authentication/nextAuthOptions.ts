@@ -8,7 +8,7 @@ import { login, loginOrSignUpWithPlatform } from "./authRequestHandlers";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import { signup } from "./authRequestHandlers";
 
-if (!process.env.NEXT_PUBLIC_API_URL) {
+if (!process.env.API_URL) {
    throw new Error("Api URL is not defined!");
 }
 
@@ -94,11 +94,10 @@ export const nextAuthOptions = {
    },
    session: {
       strategy: "jwt" as const,
-      maxAge: 30 * 60,
-      updateAge: 30 * 50,
+      maxAge: 60 * 30, // 60 * 60 * 12
+      updateAge: 60 * 15, // 60 *  60
    },
    jwt: {
-      maxAge: 30 * 60,
       secret: process.env.NEXTAUTH_SECRET,
    },
    cookies: {
@@ -185,7 +184,9 @@ export const nextAuthOptions = {
          //     );
          //   }
 
-         return token;
+         // return token;
+
+         return null;
       },
       async session({ session, token }: { session: Session; token: JWT }) {
          session.id = token.id as string;

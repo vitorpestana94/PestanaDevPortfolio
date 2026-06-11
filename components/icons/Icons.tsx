@@ -22,6 +22,8 @@ import Trash from "@public/icons/trash.svg";
 import User from "@public/icons/user.svg";
 import Pencil from "@public/icons/pencil.svg";
 import Lock from "@public/icons/lock.svg";
+import XCircle from "@public/icons/xCircle.svg";
+import Check from "@public/icons/check.svg";
 
 export const icons = {
    vP: <VP />,
@@ -44,6 +46,8 @@ export const icons = {
    user: <User />,
    pencil: <Pencil />,
    lock: <Lock />,
+   xCircle: <XCircle />,
+   check: <Check />,
 } as const;
 
 export type IconName = keyof typeof icons;

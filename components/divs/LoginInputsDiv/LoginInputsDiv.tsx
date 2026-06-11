@@ -1,6 +1,6 @@
 import Email from "@/components/inputs/LoginEmailFormInput/LoginEmailFormInput";
 import Password from "../../inputs/LoginPasswordFormInput/LoginPasswordFormInput";
-import LoginButton from "../../buttons/authButton/AuthButton";
+import LoginButton from "../../buttons/formButton/FormButton";
 import useLoginInputsDiv from "./useLoginInputsDiv";
 import Error from "@/components/errors/error/Error";
 import Interface from "@/components/forms/loginForm/LoginFormInterface";

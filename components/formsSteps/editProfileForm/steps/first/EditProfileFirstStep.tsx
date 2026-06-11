@@ -2,7 +2,8 @@ import useEditProfileFirstStep from "./useEditProfileFirstStep";
 import Interface from "./EditProfileFirstStepInterface";
 import User from "@/models/interfaces/UI/UserInterface";
 import Input from "@/components/inputs/editProfileInput/EditProfileInput";
-import EditButton from "@/components/buttons/authButton/AuthButton";
+import EditButton from "@/components/buttons/formButton/FormButton";
+import ChangeData from "@/components/paragraphs/FormParagraph";
 
 export default function EditProfileFirstStep({
    request,
@@ -23,7 +24,8 @@ export default function EditProfileFirstStep({
       });
 
    return (
-      <div className="flex flex-col flex-1 gap-y-8 justify-center items-center w-full">
+      <div className="profileFormDiv">
+         <ChangeData text={t("editProfile.edit.title")} />
          <Input
             label={t("editProfile.edit.name")}
             autoCompleteType="name"

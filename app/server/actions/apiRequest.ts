@@ -4,11 +4,10 @@ import RequestDto from "@/models/interfaces/dtos/requests/RequestDto";
 import RequestService from "@/services/request/RequestService";
 import ResponseDto from "@/models/interfaces/dtos/ResponseDto";
 
-const requestService = await RequestService();
-
 export default async function apiRequest(
    request: RequestDto,
 ): Promise<ResponseDto> {
+   const requestService = await RequestService();
    const response = await requestService.requestApi(request);
 
    if (!response.ok) {

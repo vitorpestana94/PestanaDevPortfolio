@@ -1,11 +1,11 @@
 "use client";
 
-import useAuthButton from "./useAuthButton";
-import AuthButtonInterface from "./AuthButtonInterface";
+import useAuthButton from "./useFormButton";
+import AuthButtonInterface from "./FormButtonInterface";
 import { motion } from "motion/react";
 import Spinner from "@/components/loaders/Spinner";
 
-export default function AuthButton({
+export default function FormButton({
    buttonLabel,
    isFormWithErrors,
    isLoading,

@@ -1,10 +1,10 @@
 import SignUpFirstStepInterface from "./SignUpFirstStepInterface";
 import SignUpWithPlatform from "@/components/divs/PlatformsLoginDiv/PlatformsLoginDiv";
 import Or from "@/components/hrs/OrHr";
-import Wrapper from "@/components/wrappers/AuthWrapper";
+import Wrapper from "@/components/wrappers/FormWrapper";
 import Email from "@/components/inputs/SignUpEmailFormInput/SignUpEmailFormInput";
 import useSignUpFirstStep from "./useSignUpFirstStep";
-import StartSignUpButton from "@/components/buttons/authButton/AuthButton";
+import StartSignUpButton from "@/components/buttons/formButton/FormButton";
 import Error from "@/components/errors/error/Error";
 import SignUpTitle from "@/components/titles/SignUpTitle";
 

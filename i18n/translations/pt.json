@@ -142,10 +142,24 @@
       },
       "editProfile": {
          "edit": {
+            "title": "Alterar Dados",
             "button": "Atualizar",
             "name": "Nome",
             "lastStepTitle": "Seus dados foram atualizados!"
          }
+      },
+      "changePassword": {
+         "title": "Alterar Senha",
+         "current": "Senha Atual",
+         "new": "Nova Senha",
+         "currentErrorMessage": "Por favor, forneça sua senha atual para prosseguir",
+         "placeholders": {
+            "current": "Informe sua senha atual",
+            "new": "Defina uma nova senha",
+            "confirm": "Confirme sua nova senha"
+         },
+         "button": "Alterar",
+         "finalStep": "Sua senha foi atualizada!"
       }
    },
    "metaData": {

@@ -4,7 +4,7 @@ import AuthForm from "../DevidedDivFormWrapper";
 import Login from "../../titles/LoginTitle";
 import LoginWithEmail from "../../divs/LoginInputsDiv/LoginInputsDiv";
 import LoginWithPlatforms from "../../divs/PlatformsLoginDiv/PlatformsLoginDiv";
-import Wrapper from "../../wrappers/AuthWrapper";
+import Wrapper from "../../wrappers/FormWrapper";
 import Or from "../../hrs/OrHr";
 import Interface from "./LoginFormInterface";
 

@@ -2,8 +2,8 @@ import SignUpThirdStepInterface from "./SignUpThirdStepInterface";
 import useSignUpThirdStep from "./useSignUpThirdStep";
 import Name from "@/components/inputs/NameInput/NameInput";
 import Password from "@/components/inputs/PasswordInput/PasswordInput";
-import Register from "@/components/buttons/authButton/AuthButton";
-import NowPleaseProvideNameAndPassword from "@/components/paragraphs/SignUpFormParagraph";
+import Register from "@/components/buttons/formButton/FormButton";
+import NowPleaseProvideNameAndPassword from "@/components/paragraphs/FormParagraph";
 
 export default function SignUpThirdStep({
    isLoading,

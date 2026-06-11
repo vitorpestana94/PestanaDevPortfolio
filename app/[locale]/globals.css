@@ -111,11 +111,19 @@
    }
 
    .profileDataDiv {
-      @apply w-full text-xs bg-gray-200 rounded-md px-4 py-1 sm:py-1.5 2xl:py-2 3xl:py-3;
+      @apply w-full text-xs bg-gray-200 border border-[#808080] rounded-full px-4 py-1 sm:py-1.5 2xl:py-2 3xl:py-3;
    }
 
    .formStepfinalDiv {
       @apply flex flex-col justify-around items-center h-full;
+   }
+
+   .changePasswordInputDivs {
+      @apply flex flex-col gap-y-2 w-full;
+   }
+
+   .profileFormDiv {
+      @apply flex flex-col flex-1 justify-around items-center w-full;
    }
 }
 

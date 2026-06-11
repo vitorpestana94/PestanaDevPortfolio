@@ -4,7 +4,7 @@ import RequestDto from "@/models/interfaces/dtos/requests/RequestDto";
 import { cookies } from "next/headers";
 import { getToken } from "next-auth/jwt";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+const apiUrl = process.env.API_URL;
 const nextAuthSecret = process.env.NEXTAUTH_SECRET;
 
 if (!apiUrl) {
@@ -41,6 +41,10 @@ async function getJWT() {
       req: await getNextAuthCookies(),
       secret: nextAuthSecret,
    });
+
+   if (!tokens?.token) {
+      throw new Error("Unauthenticated");
+   }
 
    return `Bearer ${tokens?.token}`;
 }

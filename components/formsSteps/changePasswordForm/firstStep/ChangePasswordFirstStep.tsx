@@ -1,7 +1,9 @@
 import Password from "@/components/inputs/PasswordInput/PasswordInput";
 import Interface from "./ChangePasswordFirstStepInterface";
 import useChangePasswordFirstStep from "./useChangePasswordFirstStep";
-import Register from "@/components/buttons/authButton/AuthButton";
+import Register from "@/components/buttons/formButton/FormButton";
+import Wrapper from "@/components/wrappers/FormWrapper";
+import ChangePassword from "@/components/paragraphs/FormParagraph";
 
 export default function ChangePasswordFirstStep({
    request,
@@ -10,38 +12,58 @@ export default function ChangePasswordFirstStep({
    setCurrentPassword,
    setNewPassword,
 }: Interface) {
-   const { isFormError, isLoading, setIsFormError, submit } =
+   const { isFormError, t, style, isLoading, setIsFormError, submit } =
       useChangePasswordFirstStep({
          userEmail,
          nextStep,
       });
 
    return (
-      <section className="flex flex-col flex-1 justify-around items-center w-full">
-         <div className="flex flex-col justify-center items-center gap-y-4 w-1/2 ">
-            <Password
-               placeholder="Provide your current password"
-               password={request.currentPassword}
-               setPassword={setCurrentPassword}
-               setIsFormError={setIsFormError}
-            />
-            <Password
-               placeholder="Define a new password"
-               password={request.newPassword}
-               setPassword={setNewPassword}
-               setIsFormError={setIsFormError}
-            />
-            <Password
-               isPasswordConfirmation
-               placeholder="Confirm your new password"
-               password={request.newPassword}
-               setPassword={setNewPassword}
-               setIsFormError={setIsFormError}
-            />
-         </div>
+      <section className="profileFormDiv">
+         <ChangePassword text={t("changePassword.title")} />
+         <Wrapper className="3xl:w-1/2 max-w-80">
+            <div className="flex flex-col justify-center items-center gap-y-10 w-full">
+               <div className="changePasswordInputDivs">
+                  <p className="profileDataLabel">
+                     {t("changePassword.current")}
+                  </p>
+                  <Password
+                     placeholder={t("changePassword.placeholders.current")}
+                     errorMessage={t("changePassword.currentErrorMessage")}
+                     password={request.currentPassword}
+                     isCurrentPasswordInput
+                     setPassword={setCurrentPassword}
+                     setIsFormError={setIsFormError}
+                     style={style}
+                  />
+               </div>
+               <div className="changePasswordInputDivs gap-y-4!">
+                  <div className="changePasswordInputDivs">
+                     <p className="profileDataLabel">
+                        {t("changePassword.new")}
+                     </p>
+                     <Password
+                        placeholder={t("changePassword.placeholders.new")}
+                        password={request.newPassword}
+                        setPassword={setNewPassword}
+                        setIsFormError={setIsFormError}
+                        style={style}
+                     />
+                  </div>
+                  <Password
+                     isPasswordConfirmation
+                     placeholder={t("changePassword.placeholders.confirm")}
+                     password={request.newPassword}
+                     setPassword={setNewPassword}
+                     setIsFormError={setIsFormError}
+                     style={style}
+                  />
+               </div>
+            </div>
+         </Wrapper>
          <Register
             isLoading={isLoading}
-            buttonLabel={"teste"}
+            buttonLabel={t("changePassword.button")}
             isFormWithErrors={
                isFormError.passwordConfirmationError ||
                isFormError.passwordError

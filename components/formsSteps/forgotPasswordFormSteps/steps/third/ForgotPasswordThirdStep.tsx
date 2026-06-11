@@ -1,8 +1,8 @@
 import Interface from "./ForgotPasswordThidStepInterface";
 import useForgotPasswordThirdStep from "./useForgotPasswordThirdStep";
 import Password from "@/components/inputs/PasswordInput/PasswordInput";
-import Register from "@/components/buttons/authButton/AuthButton";
-import NowSetNewPassword from "@/components/paragraphs/SignUpFormParagraph";
+import Register from "@/components/buttons/formButton/FormButton";
+import NowSetNewPassword from "@/components/paragraphs/FormParagraph";
 
 export default function ForgotPasswordThirdStep({
    isLoading,

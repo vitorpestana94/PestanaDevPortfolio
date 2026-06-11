@@ -1,7 +1,7 @@
 import useFourthStep from "./useFourthStep";
 import Check from "@/components/icons/Icons";
-import Success from "@/components/paragraphs/SignUpFormParagraph";
-import Home from "@/components/buttons/authButton/AuthButton";
+import Success from "@/components/paragraphs/FormParagraph";
+import Home from "@/components/buttons/formButton/FormButton";
 
 export default function FourthStep({
    isForgotPassword,

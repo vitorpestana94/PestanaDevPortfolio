@@ -6,6 +6,7 @@ import ThirdStep from "../finalFormStep/FinalFormStep";
 
 export default function ChangePasswordFormSteps({ user }: User) {
    const {
+      t,
       step,
       request,
       nextStep,
@@ -28,7 +29,7 @@ export default function ChangePasswordFormSteps({ user }: User) {
                   />
                ),
                2: <SecondStep email={user.email} nextStep={submit} />,
-               3: <ThirdStep title="teste" />,
+               3: <ThirdStep title={t("changePassword.finalStep")} />,
             }[step]
          }
       </div>

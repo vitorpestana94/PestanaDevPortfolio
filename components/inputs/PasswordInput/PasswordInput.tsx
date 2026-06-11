@@ -4,8 +4,11 @@ import usePasswordInput from "./usePasswordInput";
 import PasswordInputInterface from "./PasswordInputInterface";
 
 export default function PasswordInput({
+   errorMessage,
    password,
    placeholder,
+   style,
+   isCurrentPasswordInput,
    isPasswordConfirmation,
    setPassword,
    setIsFormError,
@@ -23,11 +26,14 @@ export default function PasswordInput({
       setIsFormError,
       isPasswordConfirmation ?? false,
       password,
+      isCurrentPasswordInput,
    );
 
    return (
       <div className="flex flex-col gap-y-1 w-full">
-         <div className="loginInputsDivs flex justify-between items-center px-4">
+         <div
+            className={`loginInputsDivs flex justify-between items-center px-4 ${style?.mainDiv.className}`}
+         >
             <Icon
                iconName="padlock"
                className="aspect-square w-4 ml-1 mr-2 lg:w-4.5 strokeAzulPestana lg:ml-2 lg:mr-4 shrink-0"
@@ -55,7 +61,10 @@ export default function PasswordInput({
                />
             </span>
          </div>
-         <Error shouldRender={isPasswordError} message={getErrorMessage()} />
+         <Error
+            shouldRender={isPasswordError}
+            message={errorMessage ?? getErrorMessage()}
+         />
       </div>
    );
 }

@@ -1,4 +1,4 @@
-export default function AuthWrapper({
+export default function FormWrapper({
    children,
    className,
 }: {

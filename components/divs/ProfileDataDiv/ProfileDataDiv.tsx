@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import ProfileData from "./subComponents/DataDiv";
 import User from "@/models/interfaces/UI/UserInterface";
+import Profile from "@/components/paragraphs/FormParagraph";
 
 export default function ProfileDataDiv({ user }: User) {
    const t = useTranslations("profile");

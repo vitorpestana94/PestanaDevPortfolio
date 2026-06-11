@@ -144,10 +144,24 @@
       },
       "editProfile": {
          "edit": {
+            "title": "Chande Data",
             "button": "Update",
             "name": "Name",
             "lastStepTitle": "Your data was updated!"
          }
+      },
+      "changePassword": {
+         "title": "Change Password",
+         "current": "Current Password",
+         "new": "New Password",
+         "currentErrorMessage": "Please, provide your current password to proceed",
+         "placeholders": {
+            "current": "Provide your current password",
+            "new": "Define a new password",
+            "confirm": "Confirm your new password"
+         },
+         "button": "Change",
+         "finalStep": "Your password was updated!"
       }
    },
    "metaData": {
