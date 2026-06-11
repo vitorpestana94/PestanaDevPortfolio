@@ -1,7 +1,9 @@
 export default function AuthWrapper({
-  children,
+   children,
+   className,
 }: {
-  children: React.ReactNode;
+   children: React.ReactNode;
+   className?: string;
 }) {
-  return <div className=" w-[70%] sm:w-[60%]">{children}</div>;
+   return <div className={`w-[70%] sm:w-[60%]  ${className}`}>{children}</div>;
 }

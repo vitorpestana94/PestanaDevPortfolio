@@ -4,6 +4,7 @@ import { FormErrors } from "@/components/formsSteps/signUpFormSteps/steps/third/
 export default interface PasswordInputInterface {
    password?: string;
    isPasswordConfirmation?: boolean;
+   placeholder?: string;
    setPassword(value: string): void;
    setIsFormError: Dispatch<SetStateAction<FormErrors>>;
 }

@@ -26,7 +26,7 @@ export default function ProfileSection() {
          show: <ProfileDiv user={data!} />,
          edit: <EditProfileForm user={data!} />,
          deleteAccount: <DeleteAccountForm />,
-         credentials: <ChangePasswordForm />,
+         credentials: <ChangePasswordForm user={data!} />,
       };
 
       return form[formType];
