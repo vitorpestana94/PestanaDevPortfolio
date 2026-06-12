@@ -2,7 +2,7 @@ import Icon from "../icons/Icons";
 
 export default function DeleteAccountParagraph({ text }: { text: string }) {
    return (
-      <span className="flex items-center gap-x-4 w-full px-4">
+      <span className="flex items-center gap-x-3 w-full">
          <Icon
             iconName="xCircle"
             className="aspect-square w-3 sm:w-4 fill-red-900"

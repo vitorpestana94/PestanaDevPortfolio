@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useStepInterface from "@/models/interfaces/UI/useStepInterface";
+import { useTranslations } from "next-intl";
+import { useSendConfirmationCodeEmail } from "@/hooks/api/email/mutation";
+import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
+import { useLocale } from "next-intl";
 
 export default function useDeleteAccountFirstStep({
+   userEmail,
    nextStep,
-}: useStepInterface) {
+}: useStepInterface & { userEmail: string }) {
+   const locale = useLocale();
+   const t = useTranslations("profile.deleteAccount");
+   const { mutateAsync, isError, isSuccess, isPending } =
+      useSendConfirmationCodeEmail();
+
    const [deleteConfirmationWasNotClicked, setDeleteConfirmationWasNotClicked] =
       useState<boolean>(true);
 
@@ -12,10 +22,26 @@ export default function useDeleteAccountFirstStep({
    }
 
    async function submit(): Promise<void> {
-      if (!deleteConfirmationWasNotClicked) {
-         nextStep!();
-      }
+      if (isPending) return;
+
+      await mutateAsync({
+         clientEmail: userEmail,
+         clientLocale: locale,
+         confirmationCodeEmailType: ConfirmationCodeEmailKind.DeleteAccount,
+      });
    }
 
-   return { deleteConfirmationWasNotClicked, handleDeleteClick, submit };
+   useEffect(() => {
+      if (isSuccess) {
+         nextStep!();
+      }
+   }, [isSuccess]);
+
+   return {
+      t,
+      isLoading: isPending,
+      deleteConfirmationWasNotClicked,
+      handleDeleteClick,
+      submit,
+   };
 }

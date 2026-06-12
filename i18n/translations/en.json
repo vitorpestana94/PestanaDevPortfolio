@@ -133,6 +133,24 @@
       }
    },
    "profile": {
+      "banner": {
+         "show": {
+            "title": "So, you want to \ncheck out your profile?",
+            "paragraph": "Go ahead and take a look!"
+         },
+         "edit": {
+            "title": "Want to update\nyour information?",
+            "paragraph": "No problem! You can do it here."
+         },
+         "credentials": {
+            "title": "Want to change\nyour password?",
+            "paragraph": "It's easy. Just do it here."
+         },
+         "deleteAccount": {
+            "title": "Oh, you want to\ndelete your account?",
+            "paragraph": "That's so sad! But you can do it here."
+         }
+      },
       "showData": {
          "name": "Name",
          "email": "Email Address",
@@ -144,7 +162,7 @@
       },
       "editProfile": {
          "edit": {
-            "title": "Chande Data",
+            "title": "Change Information",
             "button": "Update",
             "name": "Name",
             "lastStepTitle": "Your data was updated!"
@@ -162,6 +180,18 @@
          },
          "button": "Change",
          "finalStep": "Your password was updated!"
+      },
+      "deleteAccount": {
+         "title": "Delete Account",
+         "areYouSure": "Are you sure you\nwant to delete your account?\nThe following will happen if you proceed:",
+         "willHappen": {
+            "one": "You will be logged out on all devices",
+            "two": "Your account information will be deleted",
+            "three": "You will no longer have access to this site's services"
+         },
+         "yes": "Yes, I'm sure",
+         "button": "Delete",
+         "lastStep": "I'm so sorry to see you go!\nI hope you'll come back someday!\n You'll always be welcome here!"
       }
    },
    "metaData": {

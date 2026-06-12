@@ -1,24 +1,16 @@
 import { signOut } from "next-auth/react";
-import { motion } from "motion/react";
 import Icon from "../icons/Icons";
-import useButtonMotionEffects from "@/hooks/useButtonMotionEffects";
 
 export default function LogoutButton() {
-   const { scale, transition } = useButtonMotionEffects();
-
    return (
-      <motion.button
-         className="cursor-pointer"
+      <button
+         className="flex gap-x-2 justify-center items-center w-full py-1.5 cursor-pointer
+         stroke-[#3D3D3D] text-[#3D3D3D]"
          type="button"
          onClick={() => signOut()}
-         whileTap={scale}
-         whileHover={scale}
-         transition={transition}
       >
-         <Icon
-            iconName="logout"
-            className="aspect-square w-6 strokeAzulPestana"
-         />
-      </motion.button>
+         <Icon iconName="logout" className="aspect-square w-4.5" />
+         <p className="text-[0.625rem]">Loggout</p>
+      </button>
    );
 }

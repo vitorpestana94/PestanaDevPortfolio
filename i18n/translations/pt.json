@@ -73,34 +73,35 @@
                   "wrongToken": "Código errado, tente novamente!",
                   "tokenNotSetted": "Por favor, forneça todos os caracteres do código que foram enviados para o seu email."
                },
-               "thirdStep": {
-                  "paragraph": "Agora, por favor, informe seu nome e defina uma senha.",
-                  "buttonLabel": "Cadastrar",
-                  "placeholders": {
-                     "name": "Seu nome",
-                     "password": "Defina uma senha"
-                  },
-                  "error": {
-                     "name": "O nome é necessário. Forneça para prosseguir.",
-                     "password": {
-                        "empty": "A senha é necessária. Forneça para prosseguir.",
-                        "wrongFormat": "Sua senha deve ter: \n\n• Pelo menos 8 caracteres\n• Uma letra maiúscula\n• Uma letra minúscula\n• Pelo menos dois números\n• Não pode conter espaços em branco.\n• Deve conter um caractere especial, como @"
-                     },
-                     "passwordConfirmation": {
-                        "empty": "Por favor, confirme sua senha.",
-                        "mismatch": "Sua confirmação de senha não corresponde a senha definida."
-                     }
-                  }
-               },
-               "fourthStep": {
-                  "title": "Sucesso! \n Dá uma olhada no que eu posso fazer!"
-               },
                "resendToken": {
                   "havent": "Ainda não recebeu seu código?",
                   "sendNow": "Enviar agora",
                   "waitToSendResetToken": "Aguarde {wait} para reenviar.",
                   "reached": "Você atingiu o número máximo de tentativas. Tente novamente mais tarde."
                }
+            },
+            "thirdStep": {
+               "paragraph": "Agora, por favor, \ninforme seu nome e defina uma senha.",
+               "buttonLabel": "Cadastrar",
+               "placeholders": {
+                  "name": "Seu nome",
+                  "password": "Defina uma senha",
+                  "passwordConfirmation": "Confirme sua senha"
+               },
+               "error": {
+                  "name": "O nome é necessário. Forneça para prosseguir.",
+                  "password": {
+                     "empty": "A senha é necessária. Forneça para prosseguir.",
+                     "wrongFormat": "Sua senha deve ter: \n\n• Pelo menos 8 caracteres\n• Uma letra maiúscula\n• Uma letra minúscula\n• Pelo menos dois números\n• Não pode conter espaços em branco.\n• Deve conter um caractere especial, como @"
+                  },
+                  "passwordConfirmation": {
+                     "empty": "Por favor, confirme sua senha.",
+                     "mismatch": "Sua confirmação de senha não corresponde a senha definida."
+                  }
+               }
+            },
+            "fourthStep": {
+               "title": "Sucesso! \n Dá uma olhada no que eu posso fazer!"
             },
             "errors": {
                "alreadyRegistered": "O email fornecido já foi registrado."
@@ -131,6 +132,24 @@
       }
    },
    "profile": {
+      "banner": {
+         "show": {
+            "title": "Você quer ver\nseu perfil?",
+            "paragraph": "Dá uma olhada então!"
+         },
+         "edit": {
+            "title": "Quer atualizar\nseus dados?",
+            "paragraph": "Sem problemas! Você pode fazer isso aqui."
+         },
+         "credentials": {
+            "title": "Quer alterar\nsua senha?",
+            "paragraph": "É fácil. Basta fazer isso aqui."
+         },
+         "deleteAccount": {
+            "title": "Ah, então você quer\nexcluir sua conta?",
+            "paragraph": "Que pena! Mas você pode fazer isso aqui."
+         }
+      },
       "showData": {
          "name": "Nome",
          "email": "Endereço de Email",
@@ -160,6 +179,18 @@
          },
          "button": "Alterar",
          "finalStep": "Sua senha foi atualizada!"
+      },
+      "deleteAccount": {
+         "title": "Deletar Conta",
+         "areYouSure": "Tem certeza de que\ndeseja excluir sua conta?\nO seguinte acontecerá se você continuar:",
+         "willHappen": {
+            "one": "Você será desconectado de todos os dispositivos",
+            "two": "As informações da sua conta serão excluídas",
+            "three": "Você não terá mais acesso aos serviços deste site"
+         },
+         "yes": "Sim, tenho certeza",
+         "button": "Deletar",
+         "lastStep": "Lamentamos ver você partir!\nEsperamos que você volte algum dia!\nVocê será sempre bem-vindo(a)!"
       }
    },
    "metaData": {

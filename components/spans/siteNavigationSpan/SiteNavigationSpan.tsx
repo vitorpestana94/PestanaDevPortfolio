@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import useSiteNavigationSpan from "./useSiteNavigationSpan";
-import LogoutButton from "@/components/buttons/LogoutButton";
+import UserButton from "@/components/buttons/userButton/UserButton";
 
 export default function SiteNavigationSpan() {
-   const { t, path, isUserLogged } = useSiteNavigationSpan();
+   const { t, path, isUserLogged, userData } = useSiteNavigationSpan();
 
    return (
       <span
@@ -24,7 +24,7 @@ export default function SiteNavigationSpan() {
             {t("meuTrabalho")}
          </Link>
          {isUserLogged ? (
-            <LogoutButton />
+            <UserButton user={userData.user} />
          ) : (
             <Link className="hoverPestana" href={path}>
                {t("logar")}

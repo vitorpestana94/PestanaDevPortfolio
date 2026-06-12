@@ -34,7 +34,7 @@ export default function ProfileSection() {
 
    return (
       <DevidedSection>
-         <Banner />
+         <Banner formType={formType} />
          <Navigation
             formType={formType}
             shoulShowChangePassword={shoulShowChangePassword}

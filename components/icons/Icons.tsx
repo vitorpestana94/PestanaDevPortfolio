@@ -24,6 +24,7 @@ import Pencil from "@public/icons/pencil.svg";
 import Lock from "@public/icons/lock.svg";
 import XCircle from "@public/icons/xCircle.svg";
 import Check from "@public/icons/check.svg";
+import ProfileCircle from "@public/icons/profileCircle.svg";
 
 export const icons = {
    vP: <VP />,
@@ -48,6 +49,7 @@ export const icons = {
    lock: <Lock />,
    xCircle: <XCircle />,
    check: <Check />,
+   profileCircle: <ProfileCircle />,
 } as const;
 
 export type IconName = keyof typeof icons;

@@ -24,7 +24,7 @@ export default function FormButton({
          disabled={isFormWithErrors}
          transition={transition}
          className={`loginInputsDivs py-2! min-h-9 relative w-4/12 shadow-2xs shadow-black text-shadow-2xs text-shadow-black border-black 
-         text-[0.75rem] bg-[#38b6ff] text-white flex justify-center self-center
+         text-[0.75rem] bg-[#38b6ff] text-white flex justify-center self-center max-w-50
          ${isFormWithErrors ? "buttonDisabled" : "cursor-pointer"} ${styles}`}
          type="submit"
       >

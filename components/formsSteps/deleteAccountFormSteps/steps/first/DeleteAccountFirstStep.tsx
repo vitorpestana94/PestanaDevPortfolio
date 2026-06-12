@@ -5,24 +5,32 @@ import useDeleteAccountFirstStep from "./useDeleteAccountFirstStep";
 import useStepInterface from "@/models/interfaces/UI/useStepInterface";
 import YouReallyWannaDeleteYourAccount from "@/components/divs/deleteAccountDiv/DeleteAccountDiv";
 
-export default function DeleteAccountFirstStep({ nextStep }: useStepInterface) {
-   const { deleteConfirmationWasNotClicked, handleDeleteClick, submit } =
-      useDeleteAccountFirstStep({ nextStep });
+export default function DeleteAccountFirstStep({
+   userEmail,
+   nextStep,
+}: useStepInterface & { userEmail: string }) {
+   const {
+      t,
+      deleteConfirmationWasNotClicked,
+      isLoading,
+      handleDeleteClick,
+      submit,
+   } = useDeleteAccountFirstStep({ userEmail, nextStep });
 
    return (
       <section className="profileFormDiv">
-         <DeleteAccount text="Delete Account" />
-         <Wrapper>
+         <DeleteAccount text={t("title")} />
+         <Wrapper className="flex justify-center items-center">
             <YouReallyWannaDeleteYourAccount
                deleteConfirmationWasNotClicked={deleteConfirmationWasNotClicked}
                handleDeleteClick={handleDeleteClick}
             />
          </Wrapper>
          <Delete
-            isLoading={false}
-            buttonLabel={"teste"}
+            isLoading={isLoading}
+            buttonLabel={t("button")}
             isFormWithErrors={deleteConfirmationWasNotClicked}
-            styles=" w-4/12! lg:w-3/12! max-w-50"
+            styles=" w-4/12! lg:w-3/12!"
             submit={submit}
          />
       </section>
