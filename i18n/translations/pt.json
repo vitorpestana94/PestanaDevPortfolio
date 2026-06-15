@@ -3,7 +3,11 @@
       "header": {
          "sobre": "Sobre",
          "meuTrabalho": "Meu Trabalho",
-         "logar": "Logar"
+         "logar": "Logar",
+         "profile": {
+            "loggout": "Sair",
+            "editProfile": "Editar Perfil"
+         }
       },
       "segundaSessao": {
          "titulo": "Um pouco\nsobre mim"

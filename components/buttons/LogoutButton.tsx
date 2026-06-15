@@ -1,16 +1,23 @@
 import { signOut } from "next-auth/react";
 import Icon from "../icons/Icons";
+import { useTranslations } from "next-intl";
 
 export default function LogoutButton() {
+   const t = useTranslations("home.header");
+
    return (
       <button
-         className="flex gap-x-2 justify-center items-center w-full py-1.5 cursor-pointer
-         stroke-[#3D3D3D] text-[#3D3D3D]"
+         className="flex gap-x-2 self-center items-center cursor-pointer"
          type="button"
          onClick={() => signOut()}
       >
-         <Icon iconName="logout" className="aspect-square w-4.5" />
-         <p className="text-[0.625rem]">Loggout</p>
+         <Icon
+            iconName="logout"
+            className="aspect-square w-4.5 stroke-[#3D3D3D]"
+         />
+         <p className="text-[0.625rem] text-[#3D3D3D]">
+            {t("profile.loggout")}
+         </p>
       </button>
    );
 }
