@@ -7,15 +7,15 @@ export default function LogoutButton() {
 
    return (
       <button
-         className="flex gap-x-2 self-center items-center cursor-pointer"
+         className="flex gap-x-2 justify-center items-center cursor-pointer w-full py-2.5 hover:bg-white/10 group"
          type="button"
          onClick={() => signOut()}
       >
          <Icon
             iconName="logout"
-            className="aspect-square w-4.5 stroke-[#bfbfbf]"
+            className="aspect-square w-4.5 stroke-[#bfbfbf] group-hover:stroke-[#38b6ff]"
          />
-         <p className="text-[0.625rem] text-[#bfbfbf]">
+         <p className="text-[0.625rem] text-[#bfbfbf] group-hover:text-[#38b6ff]">
             {t("profile.loggout")}
          </p>
       </button>

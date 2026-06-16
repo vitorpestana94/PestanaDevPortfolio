@@ -10,7 +10,7 @@ export default function UserMenuSpan({ user, closeMenu, openMenu }: Interface) {
    return (
       <span
          className="bg-[#242424] relative border mt-2 border-black border-t-0 rounded-md flex flex-col items-center z-50
-         lg:absolute lg:top-full lg:mt-1.5 lg:left-1/2 lg:-translate-x-1/2 lg:my-0"
+         lg:absolute lg:top-full lg:mt-1.5 lg:left-1/2 lg:-translate-x-1/2"
          onMouseEnter={() => {
             openMenu();
          }}
@@ -20,7 +20,7 @@ export default function UserMenuSpan({ user, closeMenu, openMenu }: Interface) {
       >
          <Triangle />
          <UserDataDiv user={user} />
-         <div className="flex flex-col justify-between items-center gap-y-5 pt-3 pb-3">
+         <div className="flex flex-col justify-between items-center gap-y-5 w-full pt-2">
             <EditProfile />
             <LogoutButton />
          </div>
