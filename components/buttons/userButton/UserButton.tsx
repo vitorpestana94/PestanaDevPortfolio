@@ -10,7 +10,7 @@ export default function UserButton({ user }: UserDataInterface) {
       useUserButton();
 
    return (
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center relative">
          <button
             type="button"
             onClick={() => {
@@ -25,10 +25,12 @@ export default function UserButton({ user }: UserDataInterface) {
          >
             <Profile
                iconName="profileCircle"
-               className="fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-6 sm:w-7 md:w-8 xl:w-9 3xl:w-13 cursor-pointer"
+               className="fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-7.5 lg:w-8.5 xl:w-9.5 3xl:w-10.5 cursor-pointer"
             />
          </button>
-         {true && <UserMenu user={user} />}
+         {showUserNav && (
+            <UserMenu user={user} openMenu={openMenu} closeMenu={closeMenu} />
+         )}
       </div>
    );
 }

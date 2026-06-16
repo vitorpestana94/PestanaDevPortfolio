@@ -7,7 +7,7 @@ export default function xCross({
 }) {
    return (
       <span onClick={() => setOpen(false)}>
-         <XCross iconName="xCross" className="w-4.5 absolute top-2 left-2" />
+         <XCross iconName="xCross" className="w-6 absolute top-8 right-8" />
       </span>
    );
 }

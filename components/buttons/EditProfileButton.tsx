@@ -14,9 +14,9 @@ export default function EditProfileButton() {
       >
          <Icon
             iconName="profile"
-            className="aspect-square w-4.5 stroke-[#3D3D3D]"
+            className="aspect-square w-4.5 stroke-[#bfbfbf]"
          />
-         <p className="text-[#3D3D3D] text-start text-[0.625rem]">
+         <p className="text-[#bfbfbf] text-start text-[0.625rem]">
             {t("profile.editProfile")}
          </p>
       </Link>

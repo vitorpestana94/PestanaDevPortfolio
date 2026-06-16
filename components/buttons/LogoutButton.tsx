@@ -13,9 +13,9 @@ export default function LogoutButton() {
       >
          <Icon
             iconName="logout"
-            className="aspect-square w-4.5 stroke-[#3D3D3D]"
+            className="aspect-square w-4.5 stroke-[#bfbfbf]"
          />
-         <p className="text-[0.625rem] text-[#3D3D3D]">
+         <p className="text-[0.625rem] text-[#bfbfbf]">
             {t("profile.loggout")}
          </p>
       </button>

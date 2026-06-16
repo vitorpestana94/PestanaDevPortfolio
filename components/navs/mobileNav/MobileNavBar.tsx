@@ -11,7 +11,8 @@ const MobileNavBar = forwardRef<HTMLElement, Props>(({ setOpen }, navRef) => {
    return (
       <nav
          ref={navRef}
-         className="flex flex-col gap-y-10 py-10 text-white h-full px-8"
+         className="fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col gap-y-8 py-8 
+         text-white bg-[#242424] z-50 w-full rounded-t-[50px]"
       >
          <X setOpen={setOpen} />
          <SiteNavigation />

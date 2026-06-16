@@ -6,8 +6,8 @@ import options from "@/data/options.json";
 export default function SocialMediaSpan() {
    return (
       <span
-         className="grid grid-rows-1 grid-cols-2 w-full gap-x-2 gap-y-2 relative
-         sm:w-auto sm:grid-rows-0 sm:grid-cols-0 sm:flex sm:flex-row"
+         className="grid grid-rows-2 grid-cols-2 gap-x-4 self-center gap-y-6 relative
+         md:w-auto md:grid-rows-0 md:grid-cols-0 md:flex md:flex-row md:gap-x-3"
       >
          <SocialMediaIcon
             props={{
@@ -30,7 +30,7 @@ export default function SocialMediaSpan() {
          <Link href={"#email"} className="flex justify-center items-center">
             <Email
                iconName="email"
-               className="w-5.75 sm:w-4.5 md:w-5.5 xl:w-6.5 3xl:w-11.5 stroke-[#bfbfbf] hover:stroke-[#38b6ff]"
+               className="w-7 xl:w-8 3xl:w-9 stroke-[#bfbfbf] hover:stroke-[#38b6ff]"
             />
          </Link>
       </span>
