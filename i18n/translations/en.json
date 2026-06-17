@@ -207,5 +207,11 @@
          "title": "| Profile",
          "description": "Here you can update your profile data, change your credentials and delete your account."
       }
+   },
+   "googleReCaptcha": {
+      "protectedBy": "This site is protected by reCAPTCHA and the Google",
+      "privacy": " \nPrivacy Policy and",
+      "terms": " Terms of Service",
+      "apply": " apply."
    }
 }

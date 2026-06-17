@@ -6,6 +6,7 @@ import { signIn } from "next-auth/react";
 import { useRedirectTo } from "@/hooks/useRedirectTo";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
 
 type loginFormErros = {
    email: boolean;
@@ -17,6 +18,7 @@ export default function useLoginInputsDiv() {
    const [loginRequest, setLoginRequest] = useState<LoginRequest>({
       email: "",
       password: "",
+      captchaToken: "",
    });
    const [formErros, setFormErrors] = useState<loginFormErros>({
       email: false,
@@ -60,6 +62,10 @@ export default function useLoginInputsDiv() {
    }
 
    async function submit() {
+      const captchaToken = await getCaptchaToken();
+
+      if (!captchaToken) throw Error("Captcha token is null or empty");
+
       if (isLoading || !isFormInputsValids() || isFormInputsEmpty()) {
          return;
       }
@@ -69,6 +75,7 @@ export default function useLoginInputsDiv() {
       const result = await signIn("credentials", {
          email: loginRequest.email,
          password: loginRequest.password,
+         captchaToken: captchaToken,
          redirect: false,
       });
 

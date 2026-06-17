@@ -4,7 +4,7 @@ export default function DevidedSection({
    children: React.ReactNode;
 }) {
    return (
-      <section className="w-full flex flex-1 flex-col lg:flex-row relative">
+      <section className="w-full flex flex-1 flex-col lg:flex-row relative z-0">
          {children}
       </section>
    );

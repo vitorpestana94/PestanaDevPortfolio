@@ -2,7 +2,7 @@ import LoginRequest from "@/models/interfaces/dtos/requests/LoginRequest";
 import apiRequest from "@/app/server/actions/apiRequest";
 import builder from "./request/RequestDtoBuilder";
 import QueryHandler from "@/utils/queries/queryHandler";
-import ApiToken from "@/models/interfaces/dtos/responses/ApiToken";
+import ApiToken from "@/models/interfaces/dtos/ApiToken";
 import LoginOrSignUpWithPlatform from "@/models/interfaces/dtos/requests/LoginOrSignUpWithPlatformRequest";
 import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
 import IsEmailRegisteredResponseDto from "@/models/interfaces/dtos/responses/IsEmailRegisteredResponseDto";

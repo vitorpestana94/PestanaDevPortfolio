@@ -5,7 +5,11 @@ import { getPlatform } from "../strings/getPlatform";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import getDeviceId from "../strings/getDeviceId";
 
-export async function login(email: string, password: string) {
+export async function login(
+   email: string,
+   password: string,
+   captchaToken: string,
+) {
    const deviceId = getDeviceId();
 
    let response: ApiToken | null = null;
@@ -15,6 +19,7 @@ export async function login(email: string, password: string) {
          email,
          password,
          deviceId: deviceId,
+         captchaToken: captchaToken,
       });
    } catch (error: any) {
       return null;

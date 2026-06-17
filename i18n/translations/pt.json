@@ -206,5 +206,11 @@
          "title": "| Perfil",
          "description": "Aqui você pode alterar os dados do seu perfil, alterar suas credentiais ou deletar sua conta."
       }
+   },
+   "googleReCaptcha": {
+      "protectedBy": "Este site é protegido por reCAPTCHA",
+      "privacy": " e a Política de Privacidade",
+      "terms": " e os Termos de Serviço da Google",
+      "apply": " se aplicam."
    }
 }

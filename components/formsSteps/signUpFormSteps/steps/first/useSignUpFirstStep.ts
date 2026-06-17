@@ -5,6 +5,7 @@ import { useSendConfirmationCodeEmail } from "@/hooks/api/email/mutation";
 import { useCheckConfirmationCodeEmailAlreadySent } from "@/hooks/api/confirmationCode/queries";
 import { useLocale } from "next-intl";
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
+import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
 
 export default function useSignUpFirstStep(
    nextStep?: () => void,
@@ -38,12 +39,17 @@ export default function useSignUpFirstStep(
       isFetching: isFetchingConfirmationCodeAlreadySent,
    } = useCheckConfirmationCodeEmailAlreadySent(email!);
 
-   function request() {
+   async function request() {
+      const captchaToken = await getCaptchaToken();
+
+      if (!captchaToken) throw Error("Captcha token is null or empty");
+
       if (isPending) return;
 
       mutateAsync({
          clientEmail: email!,
          clientLocale: locale,
+         captchaToken: captchaToken,
          confirmationCodeEmailType:
             confrimationCodeEmailKind ?? ConfirmationCodeEmailKind.SignUp,
       });

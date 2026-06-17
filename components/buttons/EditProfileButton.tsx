@@ -14,7 +14,7 @@ export default function EditProfileButton() {
       >
          <Icon
             iconName="profile"
-            className="aspect-square w-4.5 stroke-[#bfbfbf]  group-hover:stroke-[#38b6ff]"
+            className="aspect-square w-4.5 stroke-[#bfbfbf] group-hover:stroke-[#38b6ff]"
          />
          <p className="text-[#bfbfbf] text-start text-[0.625rem] group-hover:text-[#38b6ff]">
             {t("profile.editProfile")}

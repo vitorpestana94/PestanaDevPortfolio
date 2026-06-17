@@ -60,14 +60,22 @@ export const nextAuthOptions = {
          credentials: {
             email: { label: "email", type: "text" },
             password: { label: "password", type: "password" },
-            mode: { label: "mode", type: "text" },
+            captchaToken: { label: "captchaToken", type: "password" },
          },
          async authorize(credentials) {
-            if (!credentials?.email || !credentials?.password) {
+            if (
+               !credentials?.email ||
+               !credentials?.password ||
+               !credentials?.captchaToken
+            ) {
                return null;
             }
 
-            return await login(credentials.email, credentials.password);
+            return await login(
+               credentials.email,
+               credentials.password,
+               credentials.captchaToken,
+            );
          },
       }),
       CredentialsProvider({
