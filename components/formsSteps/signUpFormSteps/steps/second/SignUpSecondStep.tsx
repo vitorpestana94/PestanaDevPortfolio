@@ -5,6 +5,7 @@ import ResendToken from "@/components/spans/resendTokenSpan/ResendTokenSpan";
 import Error from "@/components/errors/error/Error";
 import ISentAnEmail from "@/components/paragraphs/FormParagraph";
 import ConfirmationCode from "@/components/inputs/confirmationCodeInput/ConfirmationCodeInput";
+import ReCaptcha from "@/components/divs/RecaptchaDiv";
 
 export default function SignUpSecondStep({ email, nextStep }: Interface) {
    const {
@@ -40,13 +41,15 @@ export default function SignUpSecondStep({ email, nextStep }: Interface) {
             <ResendToken email={email!} />
             <Error shouldRender={shouldShowError} message={error} />
          </div>
-         <Check
-            buttonLabel={t("button")}
-            isLoading={isLoading}
-            styles="w-4/12! lg:w-3/12!"
-            isFormWithErrors={isFormEmpty}
-            submit={handleButtonClick}
-         />
+         <ReCaptcha>
+            <Check
+               buttonLabel={t("button")}
+               isLoading={isLoading}
+               styles="w-4/12! lg:w-3/12!"
+               isFormWithErrors={isFormEmpty}
+               submit={handleButtonClick}
+            />
+         </ReCaptcha>
       </section>
    );
 }

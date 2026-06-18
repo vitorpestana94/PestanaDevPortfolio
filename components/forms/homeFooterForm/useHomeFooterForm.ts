@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSendContactEmail } from "@/hooks/api/email/mutation";
 import { useLocale } from "next-intl";
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
+import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
 
 export default function useHomeFooterForm() {
    const locale = useLocale();
@@ -12,6 +13,7 @@ export default function useHomeFooterForm() {
       clientName: "",
       clientMessage: "",
       clientLocale: locale,
+      captchaToken: "",
       confirmationCodeEmailType: ConfirmationCodeEmailKind.Contact,
    };
    const [isFormWithError, setIsFormWithError] = useState<boolean>(false);
@@ -20,9 +22,13 @@ export default function useHomeFooterForm() {
       useSendContactEmail();
    const [formData, setFormData] = useState<SendContactEmailRequest>(initial);
 
-   function submit(event: React.FormEvent<HTMLFormElement>) {
+   async function submit(event: React.FormEvent<HTMLFormElement>) {
       event.preventDefault();
       const target = event.currentTarget;
+
+      const captchaToken = await getCaptchaToken();
+
+      if (!captchaToken) throw Error("Captcha token is null or empty");
 
       if (
          !formData.clientEmail ||
@@ -35,12 +41,22 @@ export default function useHomeFooterForm() {
          return;
       }
 
-      mutateAsync(formData, {
-         onSuccess: () => {
-            setFormData(initial);
-            target.reset();
+      mutateAsync(
+         {
+            clientEmail: formData.clientEmail,
+            clientLocale: formData.clientLocale,
+            clientMessage: formData.clientMessage,
+            clientName: formData.clientName,
+            captchaToken: captchaToken,
+            confirmationCodeEmailType: formData.confirmationCodeEmailType,
          },
-      });
+         {
+            onSuccess: () => {
+               setFormData(initial);
+               target.reset();
+            },
+         },
+      );
    }
 
    function setClientEmail(email: string) {

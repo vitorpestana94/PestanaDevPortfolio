@@ -2,11 +2,17 @@
 
 import { useTranslations } from "next-intl";
 
-export default function GoogleReCaptachaDiv() {
+export default function GoogleReCaptachaDiv({
+   className,
+}: {
+   className?: string;
+}) {
    const t = useTranslations("googleReCaptcha");
 
    return (
-      <p className="recaptcha-text text-[0.43755rem] sm:text-[0.5rem] text-center whitespace-pre-line leading-tight px-3 max-w-xs">
+      <p
+         className={`text-[0.43755rem] text-[#818589] sm:text-[0.5rem] text-center whitespace-pre-line leading-tight px-3 max-w-xs ${className}`}
+      >
          {t("protectedBy")}
          <a
             href="https://policies.google.com/privacy"

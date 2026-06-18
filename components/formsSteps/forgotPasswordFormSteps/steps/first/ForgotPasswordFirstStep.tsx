@@ -8,6 +8,7 @@ import ForgotPassword from "@/components/titles/ForgotPasswordTitle";
 import Line from "@/components/hrs/GenericHr";
 import BackToLogin from "@/components/buttons/backToLoginButton/BackToLoginButton";
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
+import ReCaptcha from "@/components/divs/ReCaptchaDiv";
 
 export default function FirstStep({
    email,
@@ -43,12 +44,16 @@ export default function FirstStep({
                      "auth.signUp.form.errors.confirmationCodeEmailAlreadySent",
                   )}
                />
-               <RecoverButton
-                  submit={submit}
-                  isLoading={isLoading}
-                  isFormWithErrors={isEmailError}
-                  buttonLabel={t("auth.forgotPassword.form.firstStep.button")}
-               />
+               <ReCaptcha>
+                  <RecoverButton
+                     submit={submit}
+                     isLoading={isLoading}
+                     isFormWithErrors={isEmailError}
+                     buttonLabel={t(
+                        "auth.forgotPassword.form.firstStep.button",
+                     )}
+                  />
+               </ReCaptcha>
             </div>
          </Wrapper>
       </div>
