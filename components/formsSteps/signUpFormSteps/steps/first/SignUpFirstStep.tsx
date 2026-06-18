@@ -7,6 +7,7 @@ import useSignUpFirstStep from "./useSignUpFirstStep";
 import StartSignUpButton from "@/components/buttons/formButton/FormButton";
 import Error from "@/components/errors/error/Error";
 import SignUpTitle from "@/components/titles/SignUpTitle";
+import ReCaptcha from "@/components/divs/RecaptchaDiv";
 
 export default function SignUpFirstStep({
    nextStep,
@@ -42,13 +43,17 @@ export default function SignUpFirstStep({
                         : t("auth.signUp.form.errors.alreadyRegistered")
                   }
                />
-               <StartSignUpButton
-                  styles={`${isEmailError || isEmailVerificationsError ? "mt-1" : "mt-4"}`}
-                  submit={submit}
-                  isLoading={isLoading}
-                  isFormWithErrors={isEmailError || isEmailVerificationsError}
-                  buttonLabel={t("auth.signUp.form.firstStep.button")}
-               />
+               <ReCaptcha>
+                  <StartSignUpButton
+                     styles={`${isEmailError || isEmailVerificationsError ? "mt-1" : "mt-4"}`}
+                     submit={submit}
+                     isLoading={isLoading}
+                     isFormWithErrors={
+                        isEmailError || isEmailVerificationsError
+                     }
+                     buttonLabel={t("auth.signUp.form.firstStep.button")}
+                  />
+               </ReCaptcha>
             </div>
          </Wrapper>
       </div>

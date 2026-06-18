@@ -5,7 +5,7 @@ import useLoginInputsDiv from "./useLoginInputsDiv";
 import Error from "@/components/errors/error/Error";
 import Interface from "@/components/forms/loginForm/LoginFormInterface";
 import ForgotPassword from "@/components/paragraphs/forgotPassword/ForgotPasswordParagraph";
-import ThisSiteIsProtectedByGoogle from "../GoogleReCaptachaDiv";
+import ReCaptcha from "@/components/divs/RecaptchaDiv";
 
 export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
    const {
@@ -42,15 +42,14 @@ export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
                />
             }
          </div>
-         <div className="flex flex-col gap-y-3">
+         <ReCaptcha>
             <LoginButton
                isLoading={isLoading}
                buttonLabel={t("auth.login.form.title")}
                isFormWithErrors={formErros.email || formErros.email}
                submit={submit}
             />
-            <ThisSiteIsProtectedByGoogle />
-         </div>
+         </ReCaptcha>
       </div>
    );
 }

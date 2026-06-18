@@ -51,7 +51,7 @@
    }
 
    .loginInputsDivs {
-      @apply flex border w-full py-1.5 rounded-3xl border-[#808080] text-black px-4;
+      @apply flex border w-full text-[0.5rem] sm:text-[1rem] xxs:py-0.5 xs:py-1.5! rounded-3xl border-[#808080] text-black px-4;
    }
 
    .hoverPestana {
@@ -91,15 +91,15 @@
    }
 
    .authFormTitle {
-      @apply text-black font-semibold  text-[1.5rem] sm:text-[1.75rem] xl:text-[1.875rem] 3xl:text-[2.125rem];
+      @apply text-black font-semibold xxs:text-[1.2rem] xs:text-[1.75rem] xl:text-[1.875rem] 3xl:text-[2.125rem];
    }
 
    .authForm {
-      @apply bg-white flex-[1.5] rounded-t-4xl lg:rounded-t-none lg:flex-[0.7] z-40 flex flex-col justify-around items-center py-5 lg:py-6 xl:py-7 relative;
+      @apply bg-white flex-2 rounded-t-4xl lg:rounded-t-none lg:flex-[0.7] z-40 flex flex-col justify-around items-center xxs:py-1.5 xs:py-5 lg:py-6 xl:py-7 relative;
    }
 
    .navSwitchPosition {
-      @apply absolute z-50 top-[40%] right-[3%] lg:top-[2%] lg:right-[0.5%];
+      @apply absolute z-50 xxs:top-[35%] xxs:right-[3%] xs:top-[34%] right-[3%] lg:top-[2%] lg:right-[0.5%];
    }
 
    .formSteps {

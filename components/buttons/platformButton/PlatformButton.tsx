@@ -5,28 +5,28 @@ import usePlatformButton from "./usePlatformButton";
 import { motion } from "motion/react";
 
 export default function PlatformButton({
-  iconName,
-  signInFunction,
+   iconName,
+   signInFunction,
 }: PlatformButtonInterface) {
-  const { t, buttonColors, transition, scale } = usePlatformButton();
+   const { t, buttonColors, transition, scale } = usePlatformButton();
 
-  return (
-    <motion.button
-      onClick={() => {
-        signInFunction();
-      }}
-      whileTap={scale}
-      whileHover={scale}
-      transition={transition}
-      type="button"
-      className={`flex items-center justify-center gap-x-5 border py-1.5
-        rounded-3xl border-[#808080] cursor-pointer 3xl:py-2
+   return (
+      <motion.button
+         onClick={() => {
+            signInFunction();
+         }}
+         whileTap={scale}
+         whileHover={scale}
+         transition={transition}
+         type="button"
+         className={`flex items-center justify-center xxs:gap-x-3 xxs:py-0.5 xs:gap-x-5 xs:py-1.5 px-2
+        rounded-3xl border border-[#808080] cursor-pointer 3xl:py-2
         ${buttonColors[iconName]}`}
-    >
-      <Icon iconName={iconName} className={`h-4 w-4 fill-white`} />
-      <span className={`text-[0.625rem] xl:text-[0.75rem] text-nowrap`}>
-        {`${t("with")} ${capitalizeWord(iconName)}`}
-      </span>
-    </motion.button>
-  );
+      >
+         <Icon iconName={iconName} className={`h-4 w-4 fill-white`} />
+         <span className={`xxs:text-[0.5rem] xs:text-[0.75rem] text-nowrap`}>
+            {`${t("with")} ${capitalizeWord(iconName)}`}
+         </span>
+      </motion.button>
+   );
 }

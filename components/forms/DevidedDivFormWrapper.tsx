@@ -1,3 +1,9 @@
-export default function AuthDiv({ children }: { children: React.ReactNode }) {
-   return <form className="authForm">{children}</form>;
+export default function AuthDiv({
+   children,
+   className,
+}: {
+   children: React.ReactNode;
+   className?: string;
+}) {
+   return <form className={`authForm ${className}`}>{children}</form>;
 }

@@ -10,13 +10,11 @@ export default function SwitchAutoButton({
 
    return (
       <div
-         className="navSwitchPosition flex rounded-2xl p-1 text-black bg-gray-800 
-        text-[0.5rem] w-[25%] h-[4%] 
-        sm:text-[0.625rem]
-        md:text-[0.75rem]
-        lg:w-[10%] lg:h-[7%]
-        xl:h-[5%] 
-        3xl:h-[4.5%]"
+         className="navSwitchPosition flex rounded-2xl p-1 text-black bg-gray-800
+         text-[0.5rem] w-[25%]
+         sm:text-[0.625rem]
+         md:text-[0.75rem]
+         lg:w-[10%] lg:min-w-[28.75] lg:min-h-[8.5]"
       >
          <Button
             buttonLabel={t("signUp")}

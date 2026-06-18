@@ -6,7 +6,7 @@ export default function GoogleReCaptachaDiv() {
    const t = useTranslations("googleReCaptcha");
 
    return (
-      <p className="recaptcha-text text-[0.625rem] text-center whitespace-pre-line leading-3.5 px-3">
+      <p className="recaptcha-text text-[0.43755rem] sm:text-[0.5rem] text-center whitespace-pre-line leading-tight px-3 max-w-xs">
          {t("protectedBy")}
          <a
             href="https://policies.google.com/privacy"

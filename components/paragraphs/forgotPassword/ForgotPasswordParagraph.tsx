@@ -6,7 +6,7 @@ export default function ForgotPasswordParagraph({
 }: Interface) {
    return (
       <p
-         className="ml-auto text-[0.5rem] lg:text-[0.625rem] underline underline-offset-4 cursor-pointer hover:text-[#30b6ff]"
+         className="ml-auto xxs:text-[0.5rem] xs:text-[0.625rem] underline underline-offset-4 cursor-pointer hover:text-[#30b6ff]"
          onClick={() => switchToForgotPassword()}
       >
          {text}

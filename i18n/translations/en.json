@@ -209,9 +209,9 @@
       }
    },
    "googleReCaptcha": {
-      "protectedBy": "This site is protected by reCAPTCHA and the Google",
-      "privacy": " \nPrivacy Policy and",
-      "terms": " Terms of Service",
+      "protectedBy": "This site is protected by reCAPTCHA",
+      "privacy": " \n and the Google Privacy Policy",
+      "terms": " and Terms of Service",
       "apply": " apply."
    }
 }
