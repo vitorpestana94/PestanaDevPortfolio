@@ -13,7 +13,7 @@ export default function Error({
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
                transition={{ duration: 1.5 }}
-               className={`text-red-600 between100And250:text-[0.46rem] text-[0.625rem] lg:text-[0.625rem] my-1 ml-4 whitespace-pre-line ${styles}`}
+               className={`text-red-600 xxs:text-[0.375rem] xs:text-[0.5rem] lg:text-[0.625rem] text-center mx-auto whitespace-pre-line ${styles}`}
             >
                {message}
             </motion.p>

@@ -11,7 +11,8 @@ export default function FormButton({
    isLoading,
    styles,
    submit,
-}: AuthButtonInterface) {
+   ...props
+}: AuthButtonInterface & React.ComponentProps<"button">) {
    const { scale, transition, handleClick } = useAuthButton(submit);
 
    return (

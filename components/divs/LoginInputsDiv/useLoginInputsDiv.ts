@@ -7,11 +7,15 @@ import { useRedirectTo } from "@/hooks/useRedirectTo";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
+import { forbidden, unauthorized } from "@/utils/strings/getErrorMessage";
 
 type loginFormErros = {
    email: boolean;
    password: boolean;
    invalidCredentials: boolean;
+   invalidLoginEndpoint: boolean;
+   unexpected: boolean;
+   badRequest: boolean;
 };
 
 export default function useLoginInputsDiv() {
@@ -24,6 +28,9 @@ export default function useLoginInputsDiv() {
       email: false,
       password: false,
       invalidCredentials: false,
+      invalidLoginEndpoint: false,
+      unexpected: false,
+      badRequest: false,
    });
    const [isLoading, setIsLoading] = useState<boolean>(false);
    const router = useRouter();
@@ -61,6 +68,47 @@ export default function useLoginInputsDiv() {
       setLoginRequest((previous) => ({ ...previous, password }));
    }
 
+   function launchInvalidCredentials() {
+      setFormErrors((prev) => ({
+         ...prev,
+         invalidCredentials: true,
+         unexpected: false,
+         invalidLoginEndpoint: false,
+      }));
+   }
+
+   function launcForbidden() {
+      setFormErrors((prev) => ({
+         ...prev,
+         invalidLoginEndpoint: true,
+         invalidCredentials: false,
+         unexpected: false,
+      }));
+   }
+
+   function launcheUnexpected() {
+      setFormErrors((prev) => ({
+         ...prev,
+         unexpected: true,
+         invalidLoginEndpoint: false,
+         invalidCredentials: false,
+      }));
+   }
+
+   function handleRequestError(error: string) {
+      switch (error) {
+         case unauthorized:
+            launchInvalidCredentials();
+            break;
+         case forbidden:
+            launcForbidden();
+            break;
+         default:
+            launcheUnexpected();
+            break;
+      }
+   }
+
    async function submit() {
       const captchaToken = await getCaptchaToken();
 
@@ -82,7 +130,7 @@ export default function useLoginInputsDiv() {
       if (result?.ok) {
          router.push(redirectTo);
       } else {
-         setFormErrors((prev) => ({ ...prev, invalidCredentials: true }));
+         handleRequestError(result?.error ?? "");
       }
 
       setIsLoading(false);
@@ -105,6 +153,7 @@ export default function useLoginInputsDiv() {
    }, [formErros.password]);
 
    return {
+      isError: formErros.unexpected,
       isLoading,
       loginRequest,
       formErros,

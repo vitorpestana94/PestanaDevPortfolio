@@ -17,19 +17,28 @@ if (!nextAuthSecret) {
 
 export default async function RequestService() {
    async function requestApi(request: RequestDto): Promise<Response> {
-      return await fetch(getUrl(request), {
-         method: request.httpMethod.toUpperCase(),
-         headers: {
-            "Content-Type": "application/json",
-            ...(request?.useAuth && {
-               Authorization: await getJWT(),
-            }),
-         },
-         body: JSON.stringify(request?.requestBody),
-      });
+      return await fetch(getUrl(request), await getOptions(request));
    }
 
    return { requestApi };
+}
+
+async function getOptions(request: RequestDto) {
+   const options: RequestInit = {
+      method: request.httpMethod.toUpperCase(),
+      headers: {
+         "Content-Type": "application/json",
+         ...(request.useAuth && {
+            Authorization: await getJWT(),
+         }),
+      },
+   };
+
+   if (request.requestBody) {
+      options.body = JSON.stringify(request.requestBody);
+   }
+
+   return options;
 }
 
 function getUrl(request?: RequestDto) {

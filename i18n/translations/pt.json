@@ -55,7 +55,8 @@
                "email": "O email está vazio, forneça-o para prosseguir!",
                "emailFormat": "O formato de email fornecido é invalido. Por favor, digite um formato válido como: email@example.com!",
                "password": "A senha está vazia, forneça-a para prosseguir!",
-               "invalidCredentials": "Pelo menos uma das suas credenciais está errada!"
+               "invalidCredentials": "Pelo menos uma das suas credenciais está errada!",
+               "invalidLoginEndpoint": "Você se cadastrou usando uma rede social.\n Por favor, logue using a mesma rede."
             }
          }
       },
@@ -212,5 +213,10 @@
       "privacy": " \ne a Política de Privacidade",
       "terms": " e os Termos de Serviço da Google",
       "apply": " se aplicam."
+   },
+   "error": {
+      "ops": "Ooooopa!",
+      "something": "Algo deu errado!",
+      "buttonLabel": "Recarregar"
    }
 }

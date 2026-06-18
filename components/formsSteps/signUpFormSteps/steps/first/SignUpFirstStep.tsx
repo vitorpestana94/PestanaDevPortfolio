@@ -7,7 +7,7 @@ import useSignUpFirstStep from "./useSignUpFirstStep";
 import StartSignUpButton from "@/components/buttons/formButton/FormButton";
 import Error from "@/components/errors/error/Error";
 import SignUpTitle from "@/components/titles/SignUpTitle";
-import ReCaptcha from "@/components/divs/RecaptchaDiv";
+import ReCaptcha from "@/components/divs/ReCaptchaDiv";
 
 export default function SignUpFirstStep({
    nextStep,

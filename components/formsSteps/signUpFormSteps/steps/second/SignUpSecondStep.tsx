@@ -5,7 +5,7 @@ import ResendToken from "@/components/spans/resendTokenSpan/ResendTokenSpan";
 import Error from "@/components/errors/error/Error";
 import ISentAnEmail from "@/components/paragraphs/FormParagraph";
 import ConfirmationCode from "@/components/inputs/confirmationCodeInput/ConfirmationCodeInput";
-import ReCaptcha from "@/components/divs/RecaptchaDiv";
+import ReCaptcha from "@/components/divs/ReCaptchaDiv";
 
 export default function SignUpSecondStep({ email, nextStep }: Interface) {
    const {

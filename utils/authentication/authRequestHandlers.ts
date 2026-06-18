@@ -4,6 +4,7 @@ import ApiToken from "@/models/interfaces/dtos/ApiToken";
 import { getPlatform } from "../strings/getPlatform";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import getDeviceId from "../strings/getDeviceId";
+import getErrorMessage from "../strings/getErrorMessage";
 
 export async function login(
    email: string,
@@ -12,32 +13,24 @@ export async function login(
 ) {
    const deviceId = getDeviceId();
 
-   let response: ApiToken | null = null;
+   const response: ApiToken | null = await AuthService.login({
+      email,
+      password,
+      deviceId: deviceId,
+      captchaToken: captchaToken,
+   });
 
-   try {
-      response = await AuthService.login({
-         email,
-         password,
-         deviceId: deviceId,
-         captchaToken: captchaToken,
-      });
-   } catch (error: any) {
-      return null;
-   }
+   checkResponse(response);
 
    return await handleLoginResponse(response, deviceId);
 }
 
 export async function signup(request: SignUpRequest) {
-   let response: ApiToken | null = null;
-
    request.deviceId = getDeviceId();
 
-   try {
-      response = await AuthService.signup(request);
-   } catch (error: any) {
-      return null;
-   }
+   const response = await AuthService.signup(request);
+
+   checkResponse(response);
 
    return await handleLoginResponse(response, request.deviceId);
 }
@@ -47,17 +40,14 @@ export async function loginOrSignUpWithPlatform(
    authPlatform: string,
 ) {
    const deviceId = crypto.randomUUID();
-   let response: ApiToken | null = null;
 
-   try {
-      response = await AuthService.loginOrSignUpWithPlatform({
-         token,
-         deviceId: deviceId,
-         platform: getPlatform(authPlatform),
-      });
-   } catch (error: any) {
-      return null;
-   }
+   const response = await AuthService.loginOrSignUpWithPlatform({
+      token,
+      deviceId: deviceId,
+      platform: getPlatform(authPlatform),
+   });
+
+   checkResponse(response);
 
    return await handleLoginResponse(response, deviceId);
 }
@@ -115,3 +105,9 @@ async function handleLoginResponse(
 //       name: user.name,
 //    };
 // }
+
+function checkResponse(response: ApiToken | null) {
+   if (!response || response.message != "Ok") {
+      throw new Error(getErrorMessage(response?.message ?? ""));
+   }
+}

@@ -5,13 +5,15 @@ import useLoginInputsDiv from "./useLoginInputsDiv";
 import Error from "@/components/errors/error/Error";
 import Interface from "@/components/forms/loginForm/LoginFormInterface";
 import ForgotPassword from "@/components/paragraphs/forgotPassword/ForgotPasswordParagraph";
-import ReCaptcha from "@/components/divs/RecaptchaDiv";
+import ReCaptcha from "@/components/divs/ReCaptchaDiv";
+import ErrorModal from "@/components/modals/ErrorModal";
 
 export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
    const {
       formErros,
       t,
       isLoading,
+      isError,
       setEmailError,
       setPasswordError,
       setEmail,
@@ -20,8 +22,8 @@ export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
    } = useLoginInputsDiv();
 
    return (
-      <div className="flex flex-col gap-y-2 sm:gap-y-6 items-center">
-         <div className="w-full flex flex-col items-center gap-y-2 sm:gap-y-3">
+      <div className="flex flex-col gap-y-2 items-center">
+         <div className="w-full flex flex-col items-center gap-y-2">
             <Email setEmailError={setEmailError} setEmail={setEmail} />
             <span className="w-full flex flex-col gap-y-3">
                <Password
@@ -36,8 +38,15 @@ export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
             </span>
             {
                <Error
-                  shouldRender={formErros.invalidCredentials}
-                  message={t("auth.login.form.errors.invalidCredentials")}
+                  shouldRender={
+                     formErros.invalidCredentials ||
+                     formErros.invalidLoginEndpoint
+                  }
+                  message={
+                     formErros.invalidCredentials
+                        ? t("auth.login.form.errors.invalidCredentials")
+                        : t("auth.login.form.errors.invalidLoginEndpoint")
+                  }
                   styles="self-start"
                />
             }
@@ -50,6 +59,7 @@ export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
                submit={submit}
             />
          </ReCaptcha>
+         <ErrorModal isError={isError} />
       </div>
    );
 }

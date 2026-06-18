@@ -55,7 +55,8 @@
                "email": "The email is empty, please provide it to proceed!",
                "emailFormat": "The provided email format is invalid; please, enter a valid format like: email@example.com!",
                "password": "The password is empty, please provide it to proceed!",
-               "invalidCredentials": "At least one of your credentials is incorrect!"
+               "invalidCredentials": "At least, one of your credentials is incorrect!",
+               "invalidLoginEndpoint": "You signed up using a social login provider.\n Please sign in using the same provider."
             }
          }
       },
@@ -213,5 +214,10 @@
       "privacy": " \n and the Google Privacy Policy",
       "terms": " and Terms of Service",
       "apply": " apply."
+   },
+   "error": {
+      "ops": "Ooooops!",
+      "something": "Something went wrong!",
+      "buttonLabel": "Reload"
    }
 }
