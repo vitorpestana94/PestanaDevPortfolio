@@ -107,6 +107,10 @@ async function handleLoginResponse(
 // }
 
 function checkResponse(response: ApiToken | null) {
+   if (response?.token) {
+      return;
+   }
+
    if (!response || response.message != "Ok") {
       throw new Error(getErrorMessage(response?.message ?? ""));
    }
