@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Providers } from "./providers";
 import { title, description, imageForMetaData } from "@/constants/metaData";
+import "react-toastify/dist/ReactToastify.css";
 
 if (!process.env.NEXTAUTH_URL) {
    throw Error("Next Auth secret not defined!");

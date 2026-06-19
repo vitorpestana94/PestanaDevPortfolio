@@ -25,6 +25,7 @@ export default function EditProfileFormSteps({ user }: User) {
             {
                1: (
                   <FirstStep
+                     isSignUpWithPlatform={user.registerType === "Platform"}
                      isLoadingUpdateRequest={isLoadingUpdateRequest}
                      request={request}
                      user={user}

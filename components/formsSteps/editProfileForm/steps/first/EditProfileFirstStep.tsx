@@ -9,12 +9,14 @@ import ErrorModal from "@/components/modals/ErrorModal";
 export default function EditProfileFirstStep({
    request,
    user,
+   isSignUpWithPlatform,
    isLoadingUpdateRequest,
    submit,
    nextStep,
    setEmail,
    setName,
-}: Interface & User & { isLoadingUpdateRequest: boolean }) {
+}: Interface &
+   User & { isLoadingUpdateRequest: boolean; isSignUpWithPlatform: boolean }) {
    const { t, isLoading, isError, dataNotChanged, submitUpdate } =
       useEditProfileFirstStep({
          request,
@@ -37,16 +39,18 @@ export default function EditProfileFirstStep({
                setFormData: setName,
             }}
          />
-         <Input
-            label="Email"
-            autoCompleteType="email"
-            props={{
-               placeHolder: user.email,
-               type: "email",
-               name: "email",
-               setFormData: setEmail,
-            }}
-         />
+         {!isSignUpWithPlatform && (
+            <Input
+               label="Email"
+               autoCompleteType="email"
+               props={{
+                  placeHolder: user.email,
+                  type: "email",
+                  name: "email",
+                  setFormData: setEmail,
+               }}
+            />
+         )}
          <EditButton
             submit={submitUpdate}
             isLoading={isLoading || isLoadingUpdateRequest}

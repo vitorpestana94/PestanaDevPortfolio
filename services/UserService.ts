@@ -16,7 +16,7 @@ export default class UserService {
    static async ChangeUserData(
       request: ChangeUserDataRequestDto,
    ): Promise<ChangeUserDataResponseDto> {
-      return await QueryHandler(apiRequest(builder.ChangeUserData(request)));
+      return await apiRequest(builder.ChangeUserData(request));
    }
 
    static async ChangeUserPassword(

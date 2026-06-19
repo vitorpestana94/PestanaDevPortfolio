@@ -9,7 +9,7 @@ export default function ErrorModal({ isError }: { isError: boolean }) {
 
    return (
       <>
-         {isError && (
+         {/* {isError && (
             <div className="fixed flex items-center justify-center p-4 top-0 bottom-0 right-0 left-0  bg-black/30 z-50 text-white">
                <div className="max-w-md text-center flex flex-col items-center bg-[#242424] aspect-square w-[80%] lg:w-[22%] rounded-2xl">
                   <span className="w-full bgAzulPestana h-[40%] flex items-center justify-center rounded-t-2xl">
@@ -37,7 +37,7 @@ export default function ErrorModal({ isError }: { isError: boolean }) {
                   </span>
                </div>
             </div>
-         )}
+         )} */}
       </>
    );
 }

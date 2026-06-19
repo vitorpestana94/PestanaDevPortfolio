@@ -4,14 +4,14 @@ import ConfirmationCodeService from "@/services/ConfirmationCodeService";
 import CheckConfirmationCodeRequest from "@/models/interfaces/dtos/requests/CheckConfirmationCodeRequest";
 
 export function useCheckConfirmationCode(): MutationDefaultProps<
-  void,
-  CheckConfirmationCodeRequest
+   void,
+   CheckConfirmationCodeRequest
 > {
-  return useMutation({
-    mutationFn: async (request) => {
-      return await ConfirmationCodeService.CheckConfirmationCode(request);
-    },
-    mutationKey: ["checkConfirmationCode"],
-    retry: false,
-  });
+   return useMutation({
+      mutationFn: async (request) => {
+         return await ConfirmationCodeService.CheckConfirmationCode(request);
+      },
+      mutationKey: ["checkConfirmationCode"],
+      retry: false,
+   });
 }
