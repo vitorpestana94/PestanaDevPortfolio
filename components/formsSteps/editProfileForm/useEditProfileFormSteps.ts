@@ -49,6 +49,7 @@ export default function useEditProfileFormSteps() {
    }, [isSuccess]);
 
    return {
+      isError,
       isLoadingUpdateRequest: isPending,
       isEmailUpdate: request.email !== undefined,
       request,

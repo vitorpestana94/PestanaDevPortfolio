@@ -52,7 +52,7 @@ async function getJWT() {
    });
 
    if (!tokens?.token) {
-      throw new Error("Unauthenticated");
+      throw new Error("401");
    }
 
    return `Bearer ${tokens?.token}`;

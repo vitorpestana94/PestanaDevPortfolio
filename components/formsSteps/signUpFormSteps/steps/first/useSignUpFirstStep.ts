@@ -119,6 +119,7 @@ export default function useSignUpFirstStep(
    }
 
    return {
+      isError,
       t,
       isEmailError,
       isEmailVerificationsError:

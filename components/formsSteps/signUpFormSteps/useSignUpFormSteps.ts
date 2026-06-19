@@ -2,9 +2,11 @@ import useHandleStep from "@/hooks/useStep";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import { useState } from "react";
 import { signIn as signUp } from "next-auth/react";
+import useRequesthErros from "@/hooks/useRequestErros";
 
 export default function useSignUpFormSteps() {
    const [isLoading, setIsLoading] = useState<boolean>(false);
+   const [isRequestError, setIsRequestError] = useState(false);
    const [formData, setFormData] = useState<SignUpRequest>({
       email: "",
       name: "",
@@ -14,6 +16,16 @@ export default function useSignUpFormSteps() {
 
    const { step, nextStep, previousStep, setStep } = useHandleStep({
       maxSteps: 4,
+   });
+
+   function setErrorTrue() {
+      setIsRequestError(true);
+   }
+
+   const { handleRequestError } = useRequesthErros({
+      unexpected: setErrorTrue,
+      badRequest: setErrorTrue,
+      forbidden: setErrorTrue,
    });
 
    function setEmail(emailProvided: string) {
@@ -36,16 +48,22 @@ export default function useSignUpFormSteps() {
          redirect: false,
       });
 
-      if (response) {
-         setIsLoading(false);
+      setIsLoading(false);
+
+      if (!response) {
+         handleRequestError("500");
+         return;
       }
 
-      if (response!.ok) {
+      if (response.ok) {
          nextStep();
+      } else {
+         handleRequestError(response?.error ?? "500");
       }
    }
 
    return {
+      isRequestError,
       isLoading,
       formData,
       step,

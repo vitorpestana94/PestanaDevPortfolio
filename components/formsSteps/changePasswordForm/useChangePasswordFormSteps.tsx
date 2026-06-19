@@ -35,6 +35,7 @@ export default function useChangePasswordFormSteps() {
 
    return {
       t,
+      isError,
       step,
       request,
       nextStep,

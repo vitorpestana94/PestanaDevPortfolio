@@ -4,6 +4,7 @@ import { useLocale } from "next-intl";
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 import Interface from "./EditProfileFirstStepInterface";
 import { useTranslations } from "next-intl";
+import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
 
 export default function useEditProfileFirstStep({
    submit,
@@ -24,11 +25,16 @@ export default function useEditProfileFirstStep({
       if (isPending) return;
 
       if (request.email) {
+         const captchaToken = await getCaptchaToken();
+
+         if (!captchaToken) throw Error("Captcha token is null or empty");
+
          await mutateAsync({
             clientEmail: request.email,
             clientLocale: locale,
             confirmationCodeEmailType:
                ConfirmationCodeEmailKind.CredentialsChange,
+            captchaToken: captchaToken,
          });
       } else {
          await submit();
@@ -44,6 +50,7 @@ export default function useEditProfileFirstStep({
    return {
       dataNotChanged: request.email === undefined && request.name === undefined,
       t,
+      isError,
       submitUpdate,
       isLoading: isPending,
    };

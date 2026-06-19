@@ -8,6 +8,7 @@ import StartSignUpButton from "@/components/buttons/formButton/FormButton";
 import Error from "@/components/errors/error/Error";
 import SignUpTitle from "@/components/titles/SignUpTitle";
 import ReCaptcha from "@/components/divs/ReCaptchaDiv";
+import ErrorModal from "@/components/modals/ErrorModal";
 
 export default function SignUpFirstStep({
    nextStep,
@@ -16,6 +17,7 @@ export default function SignUpFirstStep({
 }: SignUpFirstStepInterface) {
    const {
       t,
+      isError,
       isEmailError,
       isEmailVerificationsError,
       isLoading,
@@ -56,6 +58,7 @@ export default function SignUpFirstStep({
                </ReCaptcha>
             </div>
          </Wrapper>
+         <ErrorModal isError={isError} />
       </div>
    );
 }

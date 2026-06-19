@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { useSendConfirmationCodeEmail } from "@/hooks/api/email/mutation";
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 import { useLocale } from "next-intl";
+import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
 
 export default function useDeleteAccountFirstStep({
    userEmail,
@@ -22,12 +23,17 @@ export default function useDeleteAccountFirstStep({
    }
 
    async function submit(): Promise<void> {
+      const captchaToken = await getCaptchaToken();
+
+      if (!captchaToken) throw Error("Captcha token is null or empty");
+
       if (isPending) return;
 
       await mutateAsync({
          clientEmail: userEmail,
          clientLocale: locale,
          confirmationCodeEmailType: ConfirmationCodeEmailKind.DeleteAccount,
+         captchaToken: captchaToken,
       });
    }
 
@@ -38,6 +44,7 @@ export default function useDeleteAccountFirstStep({
    }, [isSuccess]);
 
    return {
+      isError,
       t,
       isLoading: isPending,
       deleteConfirmationWasNotClicked,

@@ -35,6 +35,7 @@ export default function useForgotPasswordFormSteps() {
    }, [isSuccess]);
 
    return {
+      isError,
       step,
       formData,
       isPending,

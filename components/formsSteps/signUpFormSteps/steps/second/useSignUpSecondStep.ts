@@ -3,7 +3,6 @@ import { useCheckConfirmationCode } from "@/hooks/api/confirmationCode/mutation"
 import { useTranslations } from "next-intl";
 import Inteface from "./SignUpSecondStepInterface";
 import { keys, ValidationKey } from "@/models/types/ConfirmationCodeTypes";
-import { useCheckConfirmationCodeEmailAlreadySent } from "@/hooks/api/confirmationCode/queries";
 
 export default function useSignUpSecondStep({ email, nextStep }: Inteface) {
    const defaultValue: string = "-1";
@@ -12,11 +11,6 @@ export default function useSignUpSecondStep({ email, nextStep }: Inteface) {
    const t = useTranslations("auth.signUp.form.secondStep");
    const { mutateAsync, isError, isPending, isSuccess } =
       useCheckConfirmationCode();
-   const {
-      data,
-      refetch,
-      isFetching: isCheckingConfirmationCodeAlreadySent,
-   } = useCheckConfirmationCodeEmailAlreadySent(email);
 
    const [validationCode, setValidationCode] = useState<{
       [key: string]: string;
@@ -141,10 +135,6 @@ export default function useSignUpSecondStep({ email, nextStep }: Inteface) {
       }
    }
 
-   async function checkConfirmationCodeAlreadySent(): Promise<void> {
-      refetch();
-   }
-
    useEffect(() => {
       if (verifyIfAllNumbersAreSetted()) {
          setEmptyError();
@@ -171,7 +161,7 @@ export default function useSignUpSecondStep({ email, nextStep }: Inteface) {
       refs,
       keys,
       error,
-      isLoading: isCheckingConfirmationCodeAlreadySent || isPending,
+      isLoading: isPending,
       isError,
       shouldShowError: isError || error === t("error.tokenNotSetted"),
       isFormEmpty: error === t("error.tokenNotSetted"),

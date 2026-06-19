@@ -95,7 +95,7 @@
    }
 
    .authForm {
-      @apply bg-white flex-2 rounded-t-4xl lg:rounded-t-none lg:flex-[0.7] z-40 flex flex-col justify-around items-center xxs:py-1.5 xs:py-5 lg:py-6 xl:py-7 relative;
+      @apply bg-white flex-2 rounded-t-4xl lg:rounded-t-none lg:flex-[0.7] z-40 flex flex-col justify-around items-center xxs:py-1.5 xs:py-5 xl:py-7 relative;
    }
 
    .navSwitchPosition {

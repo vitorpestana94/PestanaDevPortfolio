@@ -40,5 +40,5 @@ export default function useDeleteAccountFormSteps() {
       return () => clearTimeout(timer);
    }, [isSuccess]);
 
-   return { t, step, nextStep, submit, signOut, redirectCallBack };
+   return { t, isError, step, nextStep, submit, signOut, redirectCallBack };
 }

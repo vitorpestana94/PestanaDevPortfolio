@@ -12,6 +12,7 @@ export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
    const {
       formErros,
       t,
+      shouldRenderExpectedError,
       isLoading,
       isError,
       setEmailError,
@@ -38,10 +39,8 @@ export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
             </span>
             {
                <Error
-                  shouldRender={
-                     formErros.invalidCredentials ||
-                     formErros.invalidLoginEndpoint
-                  }
+                  position="left"
+                  shouldRender={shouldRenderExpectedError}
                   message={
                      formErros.invalidCredentials
                         ? t("auth.login.form.errors.invalidCredentials")

@@ -6,6 +6,7 @@ import FourthStep from "./steps/fourth/FourthStep";
 
 export default function SignUpFormSteps() {
    const {
+      isRequestError,
       isLoading,
       step,
       formData,
@@ -30,6 +31,7 @@ export default function SignUpFormSteps() {
                2: <SecondStep email={formData.email!} nextStep={nextStep} />,
                3: (
                   <ThirdStep
+                     isRequestErro={isRequestError}
                      isLoading={isLoading}
                      password={formData.password}
                      submitForm={submitForm}

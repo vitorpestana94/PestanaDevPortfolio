@@ -4,6 +4,13 @@ import useChangePasswordFirstStep from "./useChangePasswordFirstStep";
 import Register from "@/components/buttons/formButton/FormButton";
 import Wrapper from "@/components/wrappers/FormWrapper";
 import ChangePassword from "@/components/paragraphs/FormParagraph";
+import Script from "next/script";
+import ReCaptcha from "@/components/divs/ReCaptchaDiv";
+import ErrorModal from "@/components/modals/ErrorModal";
+
+if (!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+   throw Error("BUILD ERROR: RECAPTCHA PUBLIC KEY NOT SETTED");
+}
 
 export default function ChangePasswordFirstStep({
    request,
@@ -12,7 +19,7 @@ export default function ChangePasswordFirstStep({
    setCurrentPassword,
    setNewPassword,
 }: Interface) {
-   const { isFormError, t, style, isLoading, setIsFormError, submit } =
+   const { isFormError, isError, t, style, isLoading, setIsFormError, submit } =
       useChangePasswordFirstStep({
          userEmail,
          nextStep,
@@ -61,15 +68,22 @@ export default function ChangePasswordFirstStep({
                </div>
             </div>
          </Wrapper>
-         <Register
-            isLoading={isLoading}
-            buttonLabel={t("changePassword.button")}
-            isFormWithErrors={
-               isFormError.passwordConfirmationError ||
-               isFormError.passwordError
-            }
-            styles=" w-4/12! lg:w-3/12! max-w-50"
-            submit={submit}
+         <ReCaptcha>
+            <Register
+               isLoading={isLoading}
+               buttonLabel={t("changePassword.button")}
+               isFormWithErrors={
+                  isFormError.passwordConfirmationError ||
+                  isFormError.passwordError
+               }
+               styles=" w-4/12! lg:w-3/12! max-w-50"
+               submit={submit}
+            />
+         </ReCaptcha>
+         <ErrorModal isError={isError} />
+         <Script
+            strategy="afterInteractive"
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
          />
       </section>
    );

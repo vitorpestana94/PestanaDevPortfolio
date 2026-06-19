@@ -4,7 +4,6 @@ import ApiToken from "@/models/interfaces/dtos/ApiToken";
 import { getPlatform } from "../strings/getPlatform";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import getDeviceId from "../strings/getDeviceId";
-import getErrorMessage from "../strings/getErrorMessage";
 
 export async function login(
    email: string,
@@ -107,11 +106,11 @@ async function handleLoginResponse(
 // }
 
 function checkResponse(response: ApiToken | null) {
-   if (response?.token) {
-      return;
+   if (!response) {
+      return new Error("500");
    }
 
-   if (!response || response.message != "Ok") {
-      throw new Error(getErrorMessage(response?.message ?? ""));
+   if (!response.isSuccess) {
+      throw new Error(response!.statusCode.toString());
    }
 }

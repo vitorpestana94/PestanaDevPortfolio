@@ -6,6 +6,7 @@ import { useLocale } from "next-intl";
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 import useStepInterface from "@/models/interfaces/UI/useStepInterface";
 import { useTranslations } from "next-intl";
+import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
 
 export default function useChangePasswordFirstStep({
    userEmail,
@@ -28,12 +29,17 @@ export default function useChangePasswordFirstStep({
    });
 
    async function submit(): Promise<void> {
+      const captchaToken = await getCaptchaToken();
+
+      if (!captchaToken) throw Error("Captcha token is null or empty");
+
       if (isPending) return;
 
       await mutateAsync({
          clientEmail: userEmail,
          clientLocale: locale,
          confirmationCodeEmailType: ConfirmationCodeEmailKind.CredentialsChange,
+         captchaToken: captchaToken,
       });
    }
 
@@ -44,6 +50,7 @@ export default function useChangePasswordFirstStep({
    }, [isSuccess]);
 
    return {
+      isError,
       isFormError,
       t,
       style,
