@@ -8,12 +8,10 @@ import useHomeFooterForm from "./useHomeFooterForm";
 import EmailSended from "@/components/spans/EmailSendedSpan";
 import ReCaptcha from "@components/divs/ReCaptchaDiv";
 import Script from "next/script";
-import ErrorModal from "@/components/modals/ErrorModal";
 
 export default function HomeFooterForm() {
    const {
       t,
-      isError,
       isPending,
       isSuccess,
       isFormWithError,
@@ -86,7 +84,6 @@ export default function HomeFooterForm() {
             strategy="afterInteractive"
             src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
          />
-         <ErrorModal isError={isError} />
       </form>
    );
 }

@@ -3,13 +3,11 @@ import FirstStep from "./steps/first/EditProfileFirstStep";
 import SecondStep from "./steps/second/EditProfileSecondtStep";
 import User from "@/models/interfaces/UI/UserInterface";
 import ThirdStep from "./steps/third/EditProfileThirdStep";
-import ErrorModal from "@/components/modals/ErrorModal";
 
 export default function EditProfileFormSteps({ user }: User) {
    const {
       request,
       step,
-      isError,
       isEmailUpdate,
       isLoadingUpdateRequest,
       setEmail,
@@ -45,7 +43,6 @@ export default function EditProfileFormSteps({ user }: User) {
                3: <ThirdStep />,
             }[step]
          }
-         <ErrorModal isError={isError} />
       </div>
    );
 }

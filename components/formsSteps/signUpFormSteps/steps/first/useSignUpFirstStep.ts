@@ -30,8 +30,7 @@ export default function useSignUpFirstStep(
       isFetching,
    } = useIsEmailRegistered(email);
 
-   const { mutateAsync, isError, isSuccess, isPending } =
-      useSendConfirmationCodeEmail();
+   const { mutateAsync, isSuccess, isPending } = useSendConfirmationCodeEmail();
 
    const {
       data: confirmationCodeAlreadySentData,
@@ -119,7 +118,6 @@ export default function useSignUpFirstStep(
    }
 
    return {
-      isError,
       t,
       isEmailError,
       isEmailVerificationsError:

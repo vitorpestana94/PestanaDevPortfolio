@@ -18,7 +18,7 @@ export default function useHomeFooterForm() {
    };
    const [isFormWithError, setIsFormWithError] = useState<boolean>(false);
    const t = useTranslations("home");
-   const { mutateAsync, reset, data, isError, isPending, isSuccess } =
+   const { mutateAsync, reset, data, isPending, isSuccess } =
       useSendContactEmail();
    const [formData, setFormData] = useState<SendContactEmailRequest>(initial);
 
@@ -82,7 +82,6 @@ export default function useHomeFooterForm() {
    return {
       t,
       data,
-      isError,
       isPending,
       isSuccess,
       isFormWithError,

@@ -11,7 +11,7 @@ export default function useResendTokenSpan({ email }: Interface) {
    const thirtySeconds = 30;
    const t = useTranslations("auth.signUp.form.secondStep.resendToken");
    const locale = useLocale();
-   const { mutateAsync, isError, isPending, isSuccess, data } =
+   const { mutateAsync, isPending, isSuccess, data } =
       useResendConfirmationCodeEmail();
 
    const [seconds, setSeconds] = useState<number>(thirtySeconds);
@@ -55,7 +55,6 @@ export default function useResendTokenSpan({ email }: Interface) {
    return {
       t,
       resendings,
-      isError,
       isPending,
       isSuccess,
       data,

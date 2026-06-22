@@ -1,6 +1,4 @@
-import ResponseDto from "./responses/ResponseDto";
-
-export default interface ApiToken extends ResponseDto {
+export default interface ApiToken {
    token?: string;
    refreshToken?: string;
 }

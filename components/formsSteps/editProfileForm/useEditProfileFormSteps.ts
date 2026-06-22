@@ -11,7 +11,7 @@ export default function useEditProfileFormSteps() {
       maxSteps: 3,
    });
 
-   const { mutateAsync, isError, isPending, isSuccess } = useChangeUserData();
+   const { mutateAsync, isPending, isSuccess } = useChangeUserData();
 
    const [request, setRequest] = useState<ChangeUserDataRequestDto>({
       email: undefined,
@@ -49,7 +49,6 @@ export default function useEditProfileFormSteps() {
    }, [isSuccess]);
 
    return {
-      isError,
       isLoadingUpdateRequest: isPending,
       isEmailUpdate: request.email !== undefined,
       request,

@@ -7,8 +7,7 @@ import { signOut } from "next-auth/react";
 export default function useDeleteAccountFormSteps() {
    const t = useTranslations("profile.deleteAccount");
    const { step, nextStep } = useHandleStep();
-   const { mutateAsync, isError, isPending, isSuccess } =
-      useDeleteUserAccount();
+   const { mutateAsync, isPending, isSuccess } = useDeleteUserAccount();
 
    async function submit(): Promise<void> {
       if (isPending) return;
@@ -40,5 +39,5 @@ export default function useDeleteAccountFormSteps() {
       return () => clearTimeout(timer);
    }, [isSuccess]);
 
-   return { t, isError, step, nextStep, submit, signOut, redirectCallBack };
+   return { t, step, nextStep, submit, signOut, redirectCallBack };
 }

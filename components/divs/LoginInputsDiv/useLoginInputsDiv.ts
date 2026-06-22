@@ -8,14 +8,12 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
 import useAuthErros from "@/hooks/useRequestErros";
+import { toastError } from "@/utils/errors/toastHandlers";
+import { getErrorStatusCode } from "@/utils/errors/errorMessagesHandlers";
 
 type loginFormErros = {
    email: boolean;
    password: boolean;
-   invalidCredentials: boolean;
-   invalidLoginEndpoint: boolean;
-   unexpected: boolean;
-   badRequest: boolean;
 };
 
 export default function useLoginInputsDiv() {
@@ -27,56 +25,22 @@ export default function useLoginInputsDiv() {
    const [formErros, setFormErrors] = useState<loginFormErros>({
       email: false,
       password: false,
-      invalidCredentials: false,
-      invalidLoginEndpoint: false,
-      unexpected: false,
-      badRequest: false,
    });
    const [isLoading, setIsLoading] = useState<boolean>(false);
+
    const router = useRouter();
    const { redirectTo } = useRedirectTo();
    const t = useTranslations();
-
-   function launchInvalidCredentials() {
-      setFormErrors((prev) => ({
-         ...prev,
-         invalidCredentials: true,
-         unexpected: false,
-         invalidLoginEndpoint: false,
-      }));
-   }
-
-   function launcForbidden() {
-      setFormErrors((prev) => ({
-         ...prev,
-         invalidLoginEndpoint: true,
-         invalidCredentials: false,
-         unexpected: false,
-      }));
-   }
-
-   function resetRequestErros() {
-      setFormErrors((prev) => ({
-         ...prev,
-         unexpected: false,
-         invalidLoginEndpoint: false,
-         invalidCredentials: false,
-      }));
-   }
-
-   function launcheUnexpected() {
-      setFormErrors((prev) => ({
-         ...prev,
-         unexpected: true,
-         invalidLoginEndpoint: false,
-         invalidCredentials: false,
-      }));
-   }
-
    const { handleRequestError } = useAuthErros({
-      unauthorized: launchInvalidCredentials,
-      forbidden: launcForbidden,
-      unexpected: launcheUnexpected,
+      unauthorized: () => {
+         toastError(t("auth.login.form.errors.invalidCredentials"));
+      },
+      forbidden: () => {
+         toastError(t("auth.login.form.errors.invalidLoginEndpoint")); // Only users that registered manually should use this form.
+      },
+      unexpected: () => {
+         toastError("error.unexpected");
+      },
    });
 
    function isFormInputsValids(): boolean {
@@ -128,12 +92,10 @@ export default function useLoginInputsDiv() {
          redirect: false,
       });
 
-      resetRequestErros();
-
       if (result?.ok) {
          router.push(redirectTo);
       } else {
-         handleRequestError(result?.error ?? "");
+         handleRequestError(getErrorStatusCode(result?.error ?? ""));
       }
 
       setIsLoading(false);
@@ -156,9 +118,6 @@ export default function useLoginInputsDiv() {
    }, [formErros.password]);
 
    return {
-      shouldRenderExpectedError:
-         formErros.invalidCredentials || formErros.invalidLoginEndpoint,
-      isError: formErros.unexpected,
       isLoading,
       loginRequest,
       formErros,

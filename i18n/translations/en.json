@@ -102,7 +102,10 @@
                   "passwordConfirmation": {
                      "empty": "please, confirm your password.",
                      "mismatch": "Your password confirmation doest not match the defined password."
-                  }
+                  },
+                  "emailFormatInvalid": "The email that you provided do not have valid format.",
+                  "emailAlreadyInUse": "The email that you are trying to sign up with is already in use.",
+                  "emailNotConfirmed": "The email that you are trying to register with was not confirmed yet."
                }
             },
             "fourthStep": {
@@ -218,6 +221,7 @@
    "error": {
       "ops": "Ooooops!",
       "something": "Something went wrong!",
-      "buttonLabel": "Reload"
+      "buttonLabel": "Reload",
+      "unexpected": "An unexpected error ocurred; please, try again later."
    }
 }

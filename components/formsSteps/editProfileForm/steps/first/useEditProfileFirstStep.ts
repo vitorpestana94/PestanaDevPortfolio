@@ -16,7 +16,6 @@ export default function useEditProfileFirstStep({
 
    const {
       mutateAsync: mutateAsync,
-      isError,
       isSuccess,
       isPending,
    } = useSendConfirmationCodeEmail();
@@ -50,7 +49,6 @@ export default function useEditProfileFirstStep({
    return {
       dataNotChanged: request.email === undefined && request.name === undefined,
       t,
-      isError,
       submitUpdate,
       isLoading: isPending,
    };

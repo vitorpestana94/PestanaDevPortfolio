@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 export default function useChangePasswordFormSteps() {
    const t = useTranslations("profile");
-   const { mutateAsync, isError, isPending, isSuccess } = useChangePassword();
+   const { mutateAsync, isPending, isSuccess } = useChangePassword();
    const { step, nextStep } = useHandleStep();
    const [request, setRequest] = useState<ChangeUserPasswordRequestDto>({
       newPassword: "",
@@ -35,7 +35,6 @@ export default function useChangePasswordFormSteps() {
 
    return {
       t,
-      isError,
       step,
       request,
       nextStep,

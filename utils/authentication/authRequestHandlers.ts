@@ -27,7 +27,7 @@ export async function login(
 export async function signup(request: SignUpRequest) {
    request.deviceId = getDeviceId();
 
-   const response = await AuthService.signup(request);
+   const response: ApiToken | null = await AuthService.signup(request);
 
    checkResponse(response);
 
@@ -40,11 +40,12 @@ export async function loginOrSignUpWithPlatform(
 ) {
    const deviceId = crypto.randomUUID();
 
-   const response = await AuthService.loginOrSignUpWithPlatform({
-      token,
-      deviceId: deviceId,
-      platform: getPlatform(authPlatform),
-   });
+   const response: ApiToken | null =
+      await AuthService.loginOrSignUpWithPlatform({
+         token,
+         deviceId: deviceId,
+         platform: getPlatform(authPlatform),
+      });
 
    checkResponse(response);
 
@@ -107,10 +108,6 @@ async function handleLoginResponse(
 
 function checkResponse(response: ApiToken | null) {
    if (!response) {
-      return new Error("500");
-   }
-
-   if (!response.isSuccess) {
-      throw new Error(response!.statusCode.toString());
+      throw Error("500");
    }
 }

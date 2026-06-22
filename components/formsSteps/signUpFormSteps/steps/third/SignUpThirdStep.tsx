@@ -4,10 +4,8 @@ import Name from "@/components/inputs/NameInput/NameInput";
 import Password from "@/components/inputs/PasswordInput/PasswordInput";
 import Register from "@/components/buttons/formButton/FormButton";
 import NowPleaseProvideNameAndPassword from "@/components/paragraphs/FormParagraph";
-import ErrorModal from "@/components/modals/ErrorModal";
 
 export default function SignUpThirdStep({
-   isRequestErro,
    isLoading,
    password,
    setName,
@@ -48,7 +46,6 @@ export default function SignUpThirdStep({
             styles=" w-4/12! lg:w-3/12!"
             submit={submitForm}
          />
-         <ErrorModal isError={isRequestErro} />
       </section>
    );
 }

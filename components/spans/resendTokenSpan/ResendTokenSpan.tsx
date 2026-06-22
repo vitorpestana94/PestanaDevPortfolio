@@ -4,7 +4,7 @@ import Interface from "./ResendTokenSpanInterface";
 import useResendTokenSpan from "./useResendTokenSpan";
 
 export default function ResendTokenSpan({ email, setLoading }: Interface) {
-   const { t, isError, seconds, resendings, handleClick } = useResendTokenSpan({
+   const { t, seconds, resendings, handleClick } = useResendTokenSpan({
       email,
       setLoading,
    });

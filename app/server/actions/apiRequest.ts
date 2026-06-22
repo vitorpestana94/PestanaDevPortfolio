@@ -2,24 +2,19 @@
 
 import RequestDto from "@/models/interfaces/dtos/requests/RequestDto";
 import RequestService from "@/services/request/RequestService";
-import ResponseDto from "@/models/interfaces/dtos/responses/ResponseDto";
+import { errorMessageHandler } from "@/utils/errors/errorMessagesHandlers";
 
-export default async function apiRequest(
-   request: RequestDto,
-): Promise<ResponseDto> {
+export default async function apiRequest(request: RequestDto): Promise<any> {
    const requestService = await RequestService();
-   let response = null;
+   const res = await requestService.requestApi(request);
 
-   try {
-      response = await requestService.requestApi(request);
-   } catch (error: any) {
-      throw new Error("500");
+   if (!res.ok) {
+      const error = await res.json().catch(() => null);
+
+      throw new Error(
+         errorMessageHandler(res.status, error?.message ?? "Request failed"),
+      );
    }
 
-   const responseData: ResponseDto = await response.json();
-
-   responseData.statusCode = response.status;
-   responseData.isSuccess = response.ok;
-
-   return responseData;
+   return res.json();
 }

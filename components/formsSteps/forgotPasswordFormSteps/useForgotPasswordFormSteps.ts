@@ -4,7 +4,7 @@ import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPassw
 import { useForgotPassword } from "@/hooks/api/forgotPassword/mutation";
 
 export default function useForgotPasswordFormSteps() {
-   const { mutateAsync, isError, isPending, isSuccess } = useForgotPassword();
+   const { mutateAsync, isPending, isSuccess } = useForgotPassword();
    const { step, nextStep } = useHandleStep({
       maxSteps: 4,
    });
@@ -35,7 +35,6 @@ export default function useForgotPasswordFormSteps() {
    }, [isSuccess]);
 
    return {
-      isError,
       step,
       formData,
       isPending,

@@ -19,8 +19,7 @@ export default function useChangePasswordFirstStep({
    };
    const t = useTranslations("profile");
    const locale = useLocale();
-   const { mutateAsync, isError, isSuccess, isPending } =
-      useSendConfirmationCodeEmail();
+   const { mutateAsync, isSuccess, isPending } = useSendConfirmationCodeEmail();
 
    const [isFormError, setIsFormError] = useState<FormErrors>({
       nameError: false,
@@ -50,7 +49,6 @@ export default function useChangePasswordFirstStep({
    }, [isSuccess]);
 
    return {
-      isError,
       isFormError,
       t,
       style,

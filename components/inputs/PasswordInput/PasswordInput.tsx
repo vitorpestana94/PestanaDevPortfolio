@@ -30,7 +30,7 @@ export default function PasswordInput({
    );
 
    return (
-      <div className="flex flex-col gap-y-1 w-full">
+      <div className="flex flex-col gap-y-1.5 w-full">
          <div
             className={`loginInputsDivs flex justify-between items-center px-4 ${style?.mainDiv.className}`}
          >

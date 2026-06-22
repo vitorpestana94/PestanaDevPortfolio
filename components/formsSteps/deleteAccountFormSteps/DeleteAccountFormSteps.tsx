@@ -3,10 +3,9 @@ import useDeleteAccountFormSteps from "./useDeleteAccountFormSteps";
 import FirstStep from "./steps/first/DeleteAccountFirstStep";
 import SecondStep from "../signUpFormSteps/steps/second/SignUpSecondStep";
 import ThirdStep from "../finalFormStep/FinalFormStep";
-import ErrorModal from "@/components/modals/ErrorModal";
 
 export default function DeleteAccountFormSteps({ user }: User) {
-   const { t, step, isError, nextStep, submit, redirectCallBack } =
+   const { t, step, nextStep, submit, redirectCallBack } =
       useDeleteAccountFormSteps();
 
    return (
@@ -23,7 +22,6 @@ export default function DeleteAccountFormSteps({ user }: User) {
                ),
             }[step]
          }
-         <ErrorModal isError={isError} />
       </div>
    );
 }

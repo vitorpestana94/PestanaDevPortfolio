@@ -12,8 +12,7 @@ export default function useDeleteAccountFirstStep({
 }: useStepInterface & { userEmail: string }) {
    const locale = useLocale();
    const t = useTranslations("profile.deleteAccount");
-   const { mutateAsync, isError, isSuccess, isPending } =
-      useSendConfirmationCodeEmail();
+   const { mutateAsync, isSuccess, isPending } = useSendConfirmationCodeEmail();
 
    const [deleteConfirmationWasNotClicked, setDeleteConfirmationWasNotClicked] =
       useState<boolean>(true);
@@ -44,7 +43,6 @@ export default function useDeleteAccountFirstStep({
    }, [isSuccess]);
 
    return {
-      isError,
       t,
       isLoading: isPending,
       deleteConfirmationWasNotClicked,

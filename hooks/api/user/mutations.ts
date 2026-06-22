@@ -2,13 +2,10 @@ import { useMutation } from "@tanstack/react-query";
 import { MutationDefaultProps } from "@/models/interfaces/api/ApiInterfaces";
 import UserService from "@/services/UserService";
 import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
-import ChangeUserDataResponseDto from "@/models/interfaces/dtos/responses/ChangeUserDataResponseDto";
 import ChangeUserPasswordRequestDto from "@/models/interfaces/dtos/requests/ChangeUserPasswordRequestDto";
-import ChangeUserPasswordResponseDto from "@/models/interfaces/dtos/responses/ChangeUserPasswordResponseDto";
-import DeleteUserResponseDto from "@/models/interfaces/dtos/responses/DeleteUserResponseDto";
 
 export function useChangeUserData(): MutationDefaultProps<
-   ChangeUserDataResponseDto,
+   void,
    ChangeUserDataRequestDto
 > {
    return useMutation({
@@ -21,7 +18,7 @@ export function useChangeUserData(): MutationDefaultProps<
 }
 
 export function useChangePassword(): MutationDefaultProps<
-   ChangeUserPasswordResponseDto,
+   void,
    ChangeUserPasswordRequestDto
 > {
    return useMutation({
@@ -35,10 +32,7 @@ export function useChangePassword(): MutationDefaultProps<
    });
 }
 
-export function useDeleteUserAccount(): MutationDefaultProps<
-   DeleteUserResponseDto,
-   void
-> {
+export function useDeleteUserAccount(): MutationDefaultProps<void, void> {
    return useMutation({
       mutationFn: async () => {
          return await UserService.DeleteUserAccount();

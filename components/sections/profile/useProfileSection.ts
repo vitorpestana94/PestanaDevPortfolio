@@ -15,7 +15,7 @@ export type FormType =
    | typeof credentials;
 
 export default function useProfileSection() {
-   const { data, isLoading, isError } = useGetUser();
+   const { data, isLoading } = useGetUser();
    const [formType, setFormType] = useState<FormType>(show);
 
    function switchFormType(formType: FormType) {
@@ -26,7 +26,6 @@ export default function useProfileSection() {
       formType,
       data,
       isLoading,
-      isError,
       shoulShowChangePassword: data?.registerType === "Manual",
       switchFormType,
    };

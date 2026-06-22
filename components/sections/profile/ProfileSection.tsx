@@ -18,7 +18,6 @@ export default function ProfileSection() {
    const {
       data,
       isLoading,
-      isError,
       formType,
       shoulShowChangePassword,
       switchFormType,

@@ -26,6 +26,7 @@ import XCircle from "@public/icons/xCircle.svg";
 import Check from "@public/icons/check.svg";
 import ProfileCircle from "@public/icons/profileCircle.svg";
 import Error from "@public/icons/error.svg";
+import ErrorToast from "@public/icons/errorToast.svg";
 
 export const icons = {
    vP: <VP />,
@@ -52,6 +53,7 @@ export const icons = {
    check: <Check />,
    profileCircle: <ProfileCircle />,
    error: <Error />,
+   errorToast: <ErrorToast />,
 } as const;
 
 export type IconName = keyof typeof icons;

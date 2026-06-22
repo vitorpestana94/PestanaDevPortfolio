@@ -6,44 +6,44 @@ import { MutationDefaultProps } from "@/models/interfaces/api/ApiInterfaces";
 import EmailService from "@/services/EmailService";
 
 export function useSendContactEmail(): MutationDefaultProps<
-  void,
-  SendContactEmailRequest
+   void,
+   SendContactEmailRequest
 > {
-  return useMutation({
-    mutationFn: async (sendContactEmaiLRequest) => {
-      return await EmailService.SendContactEmail(sendContactEmaiLRequest);
-    },
-    mutationKey: ["sendContactEmail"],
-    retry: false,
-  });
+   return useMutation({
+      mutationFn: async (sendContactEmaiLRequest) => {
+         return await EmailService.SendContactEmail(sendContactEmaiLRequest);
+      },
+      mutationKey: ["sendContactEmail"],
+      retry: false,
+   });
 }
 
 export function useSendConfirmationCodeEmail(): MutationDefaultProps<
-  void,
-  SendConfirmationCodeRequest
+   void,
+   SendConfirmationCodeRequest
 > {
-  return useMutation({
-    mutationFn: async (sendConfirmationCodeRequest) => {
-      return await EmailService.SendConfirmationCodeEmail(
-        sendConfirmationCodeRequest,
-      );
-    },
-    mutationKey: ["sendConfirmationCode"],
-    retry: false,
-  });
+   return useMutation({
+      mutationFn: async (sendConfirmationCodeRequest) => {
+         return await EmailService.SendConfirmationCodeEmail(
+            sendConfirmationCodeRequest,
+         );
+      },
+      mutationKey: ["sendConfirmationCode"],
+      retry: false,
+   });
 }
 
 export function useResendConfirmationCodeEmail(): MutationDefaultProps<
-  void,
-  ResendConfirmationCodeEmailRequest
+   void,
+   ResendConfirmationCodeEmailRequest
 > {
-  return useMutation({
-    mutationFn: async (resendConfirmationCodeRequest) => {
-      return await EmailService.ResendConfirmationCodeEmail(
-        resendConfirmationCodeRequest,
-      );
-    },
-    mutationKey: ["resendConfirmationCode"],
-    retry: false,
-  });
+   return useMutation({
+      mutationFn: async (resendConfirmationCodeRequest) => {
+         return await EmailService.ResendConfirmationCodeEmail(
+            resendConfirmationCodeRequest,
+         );
+      },
+      mutationKey: ["resendConfirmationCode"],
+      retry: false,
+   });
 }

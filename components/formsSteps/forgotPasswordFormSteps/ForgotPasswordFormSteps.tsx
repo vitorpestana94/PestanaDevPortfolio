@@ -4,13 +4,11 @@ import SecondStep from "../signUpFormSteps/steps/second/SignUpSecondStep";
 import ThirdStep from "./steps/third/ForgotPasswordThirdStep";
 import FourthStep from "../signUpFormSteps/steps/fourth/FourthStep";
 import Interface from "@/components/forms/forgotPasswordForm/ForgotPasswordFormInterface";
-import ErrorModal from "@/components/modals/ErrorModal";
 
 export default function ForgotPasswordFormSteps({
    switchBackToLogin,
 }: Interface) {
    const {
-      isError,
       step,
       formData,
       isPending,
@@ -50,7 +48,6 @@ export default function ForgotPasswordFormSteps({
                ),
             }[step]
          }
-         <ErrorModal isError={isError} />
       </div>
    );
 }

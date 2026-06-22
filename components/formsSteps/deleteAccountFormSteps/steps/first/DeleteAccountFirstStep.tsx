@@ -4,7 +4,6 @@ import Delete from "@/components/buttons/formButton/FormButton";
 import useDeleteAccountFirstStep from "./useDeleteAccountFirstStep";
 import useStepInterface from "@/models/interfaces/UI/useStepInterface";
 import YouReallyWannaDeleteYourAccount from "@/components/divs/deleteAccountDiv/DeleteAccountDiv";
-import ErrorModal from "@/components/modals/ErrorModal";
 
 export default function DeleteAccountFirstStep({
    userEmail,
@@ -12,7 +11,6 @@ export default function DeleteAccountFirstStep({
 }: useStepInterface & { userEmail: string }) {
    const {
       t,
-      isError,
       deleteConfirmationWasNotClicked,
       isLoading,
       handleDeleteClick,
@@ -35,7 +33,6 @@ export default function DeleteAccountFirstStep({
             styles=" w-4/12! lg:w-3/12!"
             submit={submit}
          />
-         <ErrorModal isError={isError} />
       </section>
    );
 }

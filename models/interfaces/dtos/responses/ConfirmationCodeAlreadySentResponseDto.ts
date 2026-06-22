@@ -1,5 +1,3 @@
-import ResponseDto from "./ResponseDto";
-
-export default interface ConfirmationCodeAlreadySentResponseDto extends ResponseDto {
+export default interface ConfirmationCodeAlreadySentResponseDto {
    confirmationCodeAlreadySent: boolean;
 }

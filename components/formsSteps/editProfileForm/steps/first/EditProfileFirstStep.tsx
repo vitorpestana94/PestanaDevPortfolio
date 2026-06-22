@@ -4,7 +4,6 @@ import User from "@/models/interfaces/UI/UserInterface";
 import Input from "@/components/inputs/editProfileInput/EditProfileInput";
 import EditButton from "@/components/buttons/formButton/FormButton";
 import ChangeData from "@/components/paragraphs/FormParagraph";
-import ErrorModal from "@/components/modals/ErrorModal";
 
 export default function EditProfileFirstStep({
    request,
@@ -17,7 +16,7 @@ export default function EditProfileFirstStep({
    setName,
 }: Interface &
    User & { isLoadingUpdateRequest: boolean; isSignUpWithPlatform: boolean }) {
-   const { t, isLoading, isError, dataNotChanged, submitUpdate } =
+   const { t, isLoading, dataNotChanged, submitUpdate } =
       useEditProfileFirstStep({
          request,
          submit,
@@ -58,7 +57,6 @@ export default function EditProfileFirstStep({
             buttonLabel={t("editProfile.edit.button")}
             styles={"mt-8"}
          />
-         <ErrorModal isError={isError} />
       </div>
    );
 }
