@@ -29,8 +29,6 @@ if (!process.env.LINKEDIN_CLIENT_ID || !process.env.LINKEDIN_CLIENT_SECRET) {
    throw new Error("Linkedin's credentials are not defined.");
 }
 
-// Tudo que está comentando deve ser revisado posteriormente, se será mantido e etc.
-
 export const nextAuthOptions = {
    providers: [
       GoogleProvider({

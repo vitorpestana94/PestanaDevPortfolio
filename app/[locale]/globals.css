@@ -51,7 +51,7 @@
    }
 
    .loginInputsDivs {
-      @apply flex border w-full text-[0.5rem] sm:text-[1rem] xxs:py-0.5 xs:py-1.5! rounded-3xl border-[#808080] text-black px-4;
+      @apply flex border w-full text-[0.5rem] sm:text-[0.625rem] xxs:py-0.5 xs:py-1.5 xl:py-2 3xl:py-2.5 lg:text-[1rem]  rounded-3xl border-[#808080] text-black px-4;
    }
 
    .hoverPestana {
