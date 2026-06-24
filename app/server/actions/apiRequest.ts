@@ -3,18 +3,21 @@
 import RequestDto from "@/models/interfaces/dtos/requests/RequestDto";
 import RequestService from "@/services/request/RequestService";
 import { errorMessageHandler } from "@/utils/errors/errorMessagesHandlers";
+import { hasJson, getErrorMessage } from "@/utils/http/httpHelpers";
 
 export default async function apiRequest(request: RequestDto): Promise<any> {
    const requestService = await RequestService();
    const res = await requestService.requestApi(request);
+   const theresJson = hasJson(res);
 
    if (!res.ok) {
-      const error = await res.json().catch(() => null);
-
       throw new Error(
-         errorMessageHandler(res.status, error?.message ?? "Request failed"),
+         errorMessageHandler(
+            res.status,
+            await getErrorMessage(theresJson, res),
+         ),
       );
    }
 
-   return res.json();
+   return theresJson ? res.json() : null;
 }
