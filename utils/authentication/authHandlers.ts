@@ -5,19 +5,19 @@ import { getServerSession } from "next-auth";
 import { Session } from "next-auth";
 
 export async function getSession(): Promise<Session | null> {
-    const session = await getServerSession(nextAuthOptions);
+   const session = await getServerSession(nextAuthOptions);
 
-    return session;
-};
+   return session;
+}
 
 export async function getIsUserLogged(): Promise<boolean> {
-    const session: Session | null = await getSession();
+   const session: Session | null = await getSession();
 
-    return session !== null;
+   return session !== null;
 }
 
 export async function getIsUserLoggedAndRegistered() {
-    const session: Session | null = await getSession();
+   const session: Session | null = await getSession();
 
-    return session && !session?.userNotRegistered;
+   return session;
 }

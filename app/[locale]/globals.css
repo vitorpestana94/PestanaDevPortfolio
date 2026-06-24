@@ -23,7 +23,7 @@
 
 @layer components {
    .homeSocialMediaIcons {
-      @apply fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-7 lg:w-6 xl:w-8 3xl:w-9;
+      @apply fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-7 lg:w-7.5 xl:w-8 3xl:w-9;
    }
 
    .bgAzulPestana {

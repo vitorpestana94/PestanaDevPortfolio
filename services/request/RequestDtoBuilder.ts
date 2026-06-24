@@ -16,6 +16,7 @@ import {
    patch,
    deleteVerb,
 } from "@/models/interfaces/dtos/requests/RequestDto";
+import RefreshTokenRequest from "@/models/interfaces/dtos/requests/RefreshTokenRequest";
 
 export default class RequestDtoBuilder {
    private static _auth: string = "auth";
@@ -141,6 +142,23 @@ export default class RequestDtoBuilder {
    static DeleteUserAccount(): RequestDto {
       return {
          path: `${this._user}`,
+         httpMethod: deleteVerb,
+         useAuth: true,
+      };
+   }
+
+   static RefreshToken(requestBody: RefreshTokenRequest): RequestDto {
+      return {
+         path: `${this._auth}/refresh-token`,
+         requestBody: requestBody,
+         httpMethod: post,
+         useAuth: false,
+      };
+   }
+
+   static DeleteUser(): RequestDto {
+      return {
+         path: `${this._auth}`,
          httpMethod: deleteVerb,
          useAuth: true,
       };

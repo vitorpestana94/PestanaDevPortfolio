@@ -17,7 +17,6 @@ export default function useSignUpFormSteps() {
       email: "",
       name: "",
       password: "",
-      deviceId: "",
    });
 
    const { step, nextStep, previousStep, setStep } = useHandleStep({

@@ -4,7 +4,12 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import LinkedInProvider from "next-auth/providers/linkedin";
-import { login, loginOrSignUpWithPlatform } from "./authRequestHandlers";
+import {
+   login,
+   loginOrSignUpWithPlatform,
+   refreshAccessToken,
+   logoutUser,
+} from "./authRequestHandlers";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import { signup } from "./authRequestHandlers";
 
@@ -95,6 +100,11 @@ export const nextAuthOptions = {
          },
       }),
    ],
+   events: {
+      async signOut() {
+         await logoutUser();
+      },
+   },
    secret: process.env.NEXTAUTH_SECRET,
    pages: {
       signIn: `/`,
@@ -143,16 +153,16 @@ export const nextAuthOptions = {
             (account?.id_token || account?.access_token) &&
             account?.provider
          ) {
-            if (account.id_token) {
-               token.id_token = account.id_token;
-            } else if (account.access_token) {
-               token.id_token = account.access_token;
+            const providerToken = account?.id_token ?? account?.access_token;
+
+            if (providerToken && account?.provider) {
+               token.provider = account.provider;
+               token.id_token = providerToken;
+               token.deviceId = account.deviceId;
             }
 
-            token.provider = account.provider;
-
             const response = await loginOrSignUpWithPlatform(
-               account.id_token ? token.id_token! : account.access_token!,
+               providerToken,
                account.provider,
             );
 
@@ -160,48 +170,40 @@ export const nextAuthOptions = {
             token.refreshToken = response?.refreshToken;
             token.id = response?.id;
             token.expirationTime = response?.expirationTime;
+            token.deviceId = response?.deviceId!;
          }
 
          if (user?.token && user?.refreshToken) {
             token.token = user.token;
             token.refreshToken = user.refreshToken;
             token.id = user.id;
-            token.role = user.role;
             token.expirationTime = user.expirationTime;
             token.deviceId = user.deviceId;
-            token.provider = "";
-            token.loginFailed = false;
 
             return token;
          }
 
-         if (
+         const now = Math.floor(Date.now() / 1000);
+
+         const shouldRefresh =
             typeof token.expirationTime === "number" &&
-            Date.now() / 1000 < token.expirationTime &&
-            token.token
-         ) {
-            return token;
+            token.expirationTime - now < 60;
+
+         if (shouldRefresh && token.refreshToken && token.id) {
+            return await refreshAccessToken(
+               {
+                  token: token.refreshToken as string,
+                  userid: token.id as string,
+                  deviceId: token.deviceId as string,
+               },
+               token,
+            );
          }
-
-         //   if (token.id && token.refreshToken) {
-         //     return await refreshAccessToken(
-         //       token.id as string,
-         //       token.refreshToken as string,
-         //       token.deviceId as string,
-         //       token
-         //     );
-         //   }
-
-         // return token;
-
-         return null;
+         return token;
       },
       async session({ session, token }: { session: Session; token: JWT }) {
          session.id = token.id as string;
-         //   session.provider = token.provider as string;
-         token.loginWithProviderFailed as boolean;
-         session.userNotRegistered = token.userNotRegistered as boolean;
-         session.loginFailed = token.loginFailed as boolean;
+         session.provider = token.provider as string;
 
          return session;
       },

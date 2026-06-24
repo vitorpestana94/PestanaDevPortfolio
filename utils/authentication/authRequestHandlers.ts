@@ -1,61 +1,51 @@
 import AuthService from "@/services/AuthService";
 import { jwtDecode, JwtPayload } from "jwt-decode";
 import ApiToken from "@/models/interfaces/dtos/ApiToken";
+import { JWT } from "next-auth/jwt";
 import { getPlatform } from "../strings/getPlatform";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
-import getDeviceId from "../strings/getDeviceId";
+import RefreshTokenRequest from "@/models/interfaces/dtos/requests/RefreshTokenRequest";
 
 export async function login(
    email: string,
    password: string,
    captchaToken: string,
 ) {
-   const deviceId = getDeviceId();
-
    const response: ApiToken | null = await AuthService.login({
       email,
       password,
-      deviceId: deviceId,
       captchaToken: captchaToken,
    });
 
    checkResponse(response);
 
-   return await handleLoginResponse(response, deviceId);
+   return await handleLoginResponse(response);
 }
 
 export async function signup(request: SignUpRequest) {
-   request.deviceId = getDeviceId();
-
    const response: ApiToken | null = await AuthService.signup(request);
 
    checkResponse(response);
 
-   return await handleLoginResponse(response, request.deviceId);
+   return await handleLoginResponse(response);
 }
 
 export async function loginOrSignUpWithPlatform(
    token: string,
    authPlatform: string,
 ) {
-   const deviceId = crypto.randomUUID();
-
    const response: ApiToken | null =
       await AuthService.loginOrSignUpWithPlatform({
          token,
-         deviceId: deviceId,
          platform: getPlatform(authPlatform),
       });
 
    checkResponse(response);
 
-   return await handleLoginResponse(response, deviceId);
+   return await handleLoginResponse(response);
 }
 
-async function handleLoginResponse(
-   response: ApiToken | null,
-   deviceId: string,
-) {
+async function handleLoginResponse(response: ApiToken | null) {
    if (response && response.token) {
       const decoded: JwtPayload = await jwtDecode(response.token);
       const userId: string = decoded.sub ?? "";
@@ -67,44 +57,38 @@ async function handleLoginResponse(
          refreshToken: response.refreshToken,
          email: decoded.email,
          name: decoded.name,
-         deviceId: deviceId,
-         loginFailed: false,
+         deviceId: decoded.sid,
       };
    } else {
       return null;
    }
 }
 
-// export async function refreshAccessToken(
-//    id: string,
-//    token: string,
-//    deviceId: string,
-//    oldToken: JWT,
-// ) {
-//    const response = await userService.refreshToken(
-//       builder.createRefresToken(id, token, deviceId),
-//    );
-//    const decoded: JwtPayload = jwtDecode(response.token);
-//    const userId: string = decoded.sub ?? "";
+export async function refreshAccessToken(
+   request: RefreshTokenRequest,
+   oldToken: JWT,
+) {
+   const response = await AuthService.refreshToken(request);
 
-//    const user: User = await userService.getUserServerSide(
-//       userId,
-//       response.token,
-//    );
+   checkResponse(response);
 
-//    return {
-//       ...oldToken,
-//       token: response.token,
-//       refreshToken: response.refreshToken,
-//       id: userId,
-//       role: decoded.role,
-//       expirationTime: decoded.exp,
-//       deviceId: deviceId,
-//       image: user.picture,
-//       email: user.email,
-//       name: user.name,
-//    };
-// }
+   const decoded: JwtPayload = jwtDecode(response.token!);
+
+   return {
+      ...oldToken,
+      token: response.token,
+      refreshToken: response.refreshToken,
+      id: decoded.sub,
+      expirationTime: decoded.exp,
+      deviceId: decoded.sid,
+      email: decoded.email,
+      name: decoded.name,
+   };
+}
+
+export async function logoutUser() {
+   await AuthService.LogouUser();
+}
 
 function checkResponse(response: ApiToken | null) {
    if (!response) {

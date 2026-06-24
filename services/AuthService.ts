@@ -6,6 +6,7 @@ import LoginOrSignUpWithPlatform from "@/models/interfaces/dtos/requests/LoginOr
 import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
 import IsEmailRegisteredResponseDto from "@/models/interfaces/dtos/responses/IsEmailRegisteredResponseDto";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
+import RefreshTokenRequest from "@/models/interfaces/dtos/requests/RefreshTokenRequest";
 
 export default class AuthService {
    static async login(request: LoginRequest): Promise<ApiToken> {
@@ -30,5 +31,15 @@ export default class AuthService {
 
    static async signup(requestBody: SignUpRequest): Promise<ApiToken> {
       return await apiRequest(builder.SignUp(requestBody));
+   }
+
+   static async refreshToken(
+      requestBody: RefreshTokenRequest,
+   ): Promise<ApiToken> {
+      return await apiRequest(builder.RefreshToken(requestBody));
+   }
+
+   static async LogouUser(): Promise<void> {
+      return await apiRequest(builder.DeleteUser());
    }
 }
