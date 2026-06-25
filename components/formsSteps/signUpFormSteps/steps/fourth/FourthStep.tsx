@@ -5,12 +5,10 @@ import Home from "@/components/buttons/formButton/FormButton";
 
 export default function FourthStep({
    isForgotPassword,
-   switchBackToLogin,
 }: {
    isForgotPassword?: boolean;
-   switchBackToLogin?: () => void;
 }) {
-   const { t, redirect } = useFourthStep(isForgotPassword, switchBackToLogin);
+   const { t, redirect } = useFourthStep(isForgotPassword);
 
    return (
       <section className="formStepfinalDiv">

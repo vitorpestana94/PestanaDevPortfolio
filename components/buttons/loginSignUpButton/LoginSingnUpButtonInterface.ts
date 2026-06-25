@@ -1,5 +1,6 @@
 export default interface LoginSingnUpButtonInterface {
-  buttonLabel: string;
-  buttonStyle: string;
-  buttonClick: () => void;
+   buttonLabel: string;
+   buttonStyle: string;
+   href: string;
+   buttonClick: () => void;
 }

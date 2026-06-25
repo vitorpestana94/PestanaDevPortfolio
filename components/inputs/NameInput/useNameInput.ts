@@ -5,30 +5,30 @@ import { Dispatch, SetStateAction } from "react";
 import { FormErrors } from "@/components/formsSteps/signUpFormSteps/steps/third/useSignUpThirdStep";
 
 export default function useNameInput(
-  setIsFormError: Dispatch<SetStateAction<FormErrors>>,
+   setIsFormError: Dispatch<SetStateAction<FormErrors>>,
 ) {
-  const [isError, setIsError] = useState<boolean>(false);
-  const t = useTranslations("auth.signUp.form.thirdStep.error");
+   const [isError, setIsError] = useState<boolean>(false);
+   const t = useTranslations("auth.sign-up.form.thirdStep.error");
 
-  function verifyName(event: FocusEvent<HTMLInputElement, Element>) {
-    const name = event.currentTarget.value;
+   function verifyName(event: FocusEvent<HTMLInputElement, Element>) {
+      const name = event.currentTarget.value;
 
-    setIsError(!name);
-  }
+      setIsError(!name);
+   }
 
-  function getErrorMessage() {
-    let errorMessage: string = "";
+   function getErrorMessage() {
+      let errorMessage: string = "";
 
-    if (isError) {
-      errorMessage = t("name");
-    }
+      if (isError) {
+         errorMessage = t("name");
+      }
 
-    return errorMessage;
-  }
+      return errorMessage;
+   }
 
-  useEffect(() => {
-    setIsFormError((previous) => ({ ...previous, nameError: isError }));
-  }, [isError]);
+   useEffect(() => {
+      setIsFormError((previous) => ({ ...previous, nameError: isError }));
+   }, [isError]);
 
-  return { isError, verifyName, getErrorMessage };
+   return { isError, verifyName, getErrorMessage };
 }

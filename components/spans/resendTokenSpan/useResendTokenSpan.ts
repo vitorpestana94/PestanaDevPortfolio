@@ -9,7 +9,7 @@ import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
 
 export default function useResendTokenSpan({ email }: Interface) {
    const thirtySeconds = 30;
-   const t = useTranslations("auth.signUp.form.secondStep.resendToken");
+   const t = useTranslations("auth.sign-up.form.secondStep.resendToken");
    const locale = useLocale();
    const { mutateAsync, isPending, isSuccess, data } =
       useResendConfirmationCodeEmail();

@@ -3,5 +3,5 @@ export default function DevidedMain({
 }: {
    children: React.ReactNode;
 }) {
-   return <main className="homeDefault z-0 flex lg:p-10">{children}</main>;
+   return <main className="z-0 flex flex-2 lg:flex-1">{children}</main>;
 }

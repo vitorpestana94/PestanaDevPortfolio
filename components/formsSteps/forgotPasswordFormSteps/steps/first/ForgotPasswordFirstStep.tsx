@@ -10,12 +10,7 @@ import BackToLogin from "@/components/buttons/backToLoginButton/BackToLoginButto
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 import ReCaptcha from "@/components/divs/ReCaptchaDiv";
 
-export default function FirstStep({
-   email,
-   setEmail,
-   nextStep,
-   switchBackToLogin,
-}: Interface) {
+export default function FirstStep({ email, setEmail, nextStep }: Interface) {
    const {
       t,
       isEmailError,
@@ -31,26 +26,26 @@ export default function FirstStep({
    );
 
    return (
-      <div className="w-full h-[90%] flex flex-col justify-around items-center">
-         <BackToLogin switchBackToLogin={switchBackToLogin} />
+      <div className="w-full h-full flex flex-col justify-around items-center">
+         <BackToLogin />
          <ForgotPassword />
-         <Line text={t("auth.forgotPassword.form.firstStep.hr")} />
+         <Line text={t("auth.forgot-password.form.firstStep.hr")} />
          <Wrapper>
             <div className="flex flex-col items-center justify-between gap-y-5 lg:gap-y-6">
                <Email setIsEmaiLError={setIsEmaiLError} setEmail={setEmail} />
                <Error
                   shouldRender={isEmailVerificationsError}
                   message={t(
-                     "auth.signUp.form.errors.confirmationCodeEmailAlreadySent",
+                     "auth.sign-up.form.errors.confirmationCodeEmailAlreadySent",
                   )}
                />
-               <ReCaptcha>
+               <ReCaptcha styles={{ mainDiv: { className: "mt-5" } }}>
                   <RecoverButton
                      submit={submit}
                      isLoading={isLoading}
                      isFormWithErrors={isEmailError}
                      buttonLabel={t(
-                        "auth.forgotPassword.form.firstStep.button",
+                        "auth.forgot-password.form.firstStep.button",
                      )}
                   />
                </ReCaptcha>

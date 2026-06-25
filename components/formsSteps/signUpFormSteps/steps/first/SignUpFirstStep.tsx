@@ -38,9 +38,9 @@ export default function SignUpFirstStep({
                   message={
                      isConfirmationCodeEmailAlreadySent
                         ? t(
-                             "auth.signUp.form.errors.confirmationCodeEmailAlreadySent",
+                             "auth.sign-up.form.errors.confirmationCodeEmailAlreadySent",
                           )
-                        : t("auth.signUp.form.errors.alreadyRegistered")
+                        : t("auth.sign-up.form.errors.alreadyRegistered")
                   }
                />
                <ReCaptcha>
@@ -51,7 +51,7 @@ export default function SignUpFirstStep({
                      isFormWithErrors={
                         isEmailError || isEmailVerificationsError
                      }
-                     buttonLabel={t("auth.signUp.form.firstStep.button")}
+                     buttonLabel={t("auth.sign-up.form.firstStep.button")}
                   />
                </ReCaptcha>
             </div>

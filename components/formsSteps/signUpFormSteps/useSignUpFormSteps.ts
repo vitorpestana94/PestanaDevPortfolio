@@ -33,11 +33,11 @@ export default function useSignUpFormSteps() {
          if (typeof error === "string") {
             if (error.includes("0cee")) {
                toastError(
-                  t("auth.signUp.form.thirdStep.error.emailNotConfirmed"),
+                  t("auth.sign-up.form.thirdStep.error.emailNotConfirmed"),
                );
             } else if (error.includes("a0b5")) {
                toastError(
-                  t("auth.signUp.form.thirdStep.error.emailFormatInvalid"),
+                  t("auth.sign-up.form.thirdStep.error.emailFormatInvalid"),
                );
             } else {
                toastError(t("error.unexpected"));
@@ -45,7 +45,7 @@ export default function useSignUpFormSteps() {
          }
       },
       forbidden: () => {
-         toastError(t("auth.signUp.form.thirdStep.error.emailNotConfirmed"));
+         toastError(t("auth.sign-up.form.thirdStep.error.emailNotConfirmed"));
       },
    });
 

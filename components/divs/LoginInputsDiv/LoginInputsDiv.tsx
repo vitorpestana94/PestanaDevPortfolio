@@ -2,11 +2,10 @@ import Email from "@/components/inputs/LoginEmailFormInput/LoginEmailFormInput";
 import Password from "../../inputs/LoginPasswordFormInput/LoginPasswordFormInput";
 import LoginButton from "../../buttons/formButton/FormButton";
 import useLoginInputsDiv from "./useLoginInputsDiv";
-import Interface from "@/components/forms/loginForm/LoginFormInterface";
 import ForgotPassword from "@/components/paragraphs/forgotPassword/ForgotPasswordParagraph";
 import ReCaptcha from "@/components/divs/ReCaptchaDiv";
 
-export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
+export default function loginInputsDiv() {
    const {
       formErros,
       t,
@@ -28,10 +27,7 @@ export default function loginInputsDiv({ switchToForgotPassword }: Interface) {
                   setPasswordError={setPasswordError}
                   setPassword={setPassword}
                />
-               <ForgotPassword
-                  switchToForgotPassword={switchToForgotPassword}
-                  text={t("auth.login.form.forgot")}
-               />
+               <ForgotPassword text={t("auth.login.form.forgot")} />
             </span>
          </div>
          <ReCaptcha>

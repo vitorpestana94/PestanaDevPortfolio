@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import useSiteNavigationSpan from "./useSiteNavigationSpan";
 import UserButton from "@/components/buttons/userButton/UserButton";
 
@@ -25,7 +25,7 @@ export default function SiteNavigationSpan() {
          {isUserLogged ? (
             <UserButton user={userData.user} />
          ) : (
-            <Link className="hoverPestana" href={path}>
+            <Link className="hoverPestana" href={"/authentication/login"}>
                {t("logar")}
             </Link>
          )}

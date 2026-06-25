@@ -60,7 +60,7 @@
             }
          }
       },
-      "signUp": {
+      "sign-up": {
          "banner": {
             "title": "Would you like to see how \nI turn ideas into code?",
             "paragraph": "Sign up right now!"
@@ -117,7 +117,7 @@
             }
          }
       },
-      "forgotPassword": {
+      "forgot-password": {
          "banner": {
             "title": "Forgot you password?",
             "paragraph": "Don't worry, let's recover it!"

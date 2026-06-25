@@ -43,26 +43,26 @@ export default function usePasswordInput(
 
    function getPlaceholder() {
       return isPasswordConfirmation
-         ? t("auth.signUp.form.thirdStep.placeholders.passwordConfirmation")
-         : t("auth.signUp.form.thirdStep.placeholders.password");
+         ? t("auth.sign-up.form.thirdStep.placeholders.passwordConfirmation")
+         : t("auth.sign-up.form.thirdStep.placeholders.password");
    }
 
    function getErrorMessage() {
       let errorMessage = "";
 
       if (isPasswordEmpty) {
-         errorMessage = t("auth.signUp.form.thirdStep.error.password.empty");
+         errorMessage = t("auth.sign-up.form.thirdStep.error.password.empty");
       } else if (isPasswordFormatWrong) {
          errorMessage = t(
-            "auth.signUp.form.thirdStep.error.password.wrongFormat",
+            "auth.sign-up.form.thirdStep.error.password.wrongFormat",
          );
       } else if (isPasswordConfirmationEmpty) {
          errorMessage = t(
-            "auth.signUp.form.thirdStep.error.passwordConfirmation.empty",
+            "auth.sign-up.form.thirdStep.error.passwordConfirmation.empty",
          );
       } else if (isPasswordConfirmationMisMatch) {
          errorMessage = t(
-            "auth.signUp.form.thirdStep.error.passwordConfirmation.mismatch",
+            "auth.sign-up.form.thirdStep.error.passwordConfirmation.mismatch",
          );
       }
 

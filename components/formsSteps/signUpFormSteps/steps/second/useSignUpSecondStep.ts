@@ -8,7 +8,7 @@ export default function useSignUpSecondStep({ email, nextStep }: Inteface) {
    const defaultValue: string = "-1";
 
    const [error, setError] = useState<string>("");
-   const t = useTranslations("auth.signUp.form.secondStep");
+   const t = useTranslations("auth.sign-up.form.secondStep");
    const { mutateAsync, isError, isPending, isSuccess } =
       useCheckConfirmationCode();
 
