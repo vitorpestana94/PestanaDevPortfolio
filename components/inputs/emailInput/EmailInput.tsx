@@ -1,14 +1,19 @@
 import Profile from "../../icons/Icons";
 import Error from "@/components/errors/error/Error";
 import EmailInputInterface from "./EmailInputIntertace";
+import { emailValidationPattern } from "@/utils/strings/verifyEmailFormat";
+import { useTranslations } from "next-intl";
 
 export default function EmailInput({
-   verifyEmail,
-   setEmail,
-   getErrorMessage,
-   shoudlRenderError,
+   register,
+   errors,
    emailInputPlaceHolder,
 }: EmailInputInterface) {
+   if (!errors) return;
+
+   const t = useTranslations("");
+   const emailError: string = errors.email?.message as string;
+
    return (
       <div className="flex flex-col w-10/12 gap-y-1.5">
          <div className="loginInputsDivs">
@@ -17,12 +22,13 @@ export default function EmailInput({
                className="aspect-square w-4 strokeAzulPestana mr-2"
             />
             <input
-               onBlur={(event) => {
-                  verifyEmail(event);
-               }}
-               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                  setEmail(event.target.value)
-               }
+               {...register!("email", {
+                  required: t("auth.login.form.errors.email"),
+                  pattern: {
+                     value: emailValidationPattern,
+                     message: t("auth.login.form.errors.emailFormat"),
+                  },
+               })}
                type={"email"}
                placeholder={emailInputPlaceHolder}
                className={`mr-6 loginInputs`}
@@ -30,7 +36,7 @@ export default function EmailInput({
                autoComplete={"username"}
             />
          </div>
-         <Error shouldRender={shoudlRenderError} message={getErrorMessage()} />
+         <Error shouldRender={!!emailError} message={emailError ?? ""} />
       </div>
    );
 }

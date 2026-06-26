@@ -1,7 +1,5 @@
-export default interface EmailInputInterface {
-  verifyEmail: (event: React.FocusEvent<HTMLInputElement, Element>) => void;
-  getErrorMessage: () => string;
-  setEmail: (email: string) => void;
-  shoudlRenderError: boolean;
-  emailInputPlaceHolder: string;
+import ReactHookFormPros from "@/models/interfaces/forms/ReactHookFormPros";
+
+export default interface EmailInputInterface extends ReactHookFormPros {
+   emailInputPlaceHolder: string;
 }

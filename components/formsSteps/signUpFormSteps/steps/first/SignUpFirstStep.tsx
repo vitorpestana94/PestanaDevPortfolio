@@ -10,17 +10,18 @@ import SignUpTitle from "@/components/titles/SignUpTitle";
 import ReCaptcha from "@/components/divs/ReCaptchaDiv";
 
 export default function SignUpFirstStep({
+   errors,
+   handleSubmit,
+   register,
    nextStep,
    email,
    setEmail,
 }: SignUpFirstStepInterface) {
    const {
       t,
-      isEmailError,
-      isEmailVerificationsError,
       isLoading,
+      isRequestError,
       isConfirmationCodeEmailAlreadySent,
-      setIsEmaiLError,
       submit,
    } = useSignUpFirstStep(nextStep, email);
 
@@ -31,9 +32,13 @@ export default function SignUpFirstStep({
          <Or />
          <Wrapper>
             <div className="flex flex-col items-center justify-between gap-y-1 lg:gap-y-6">
-               <Email setIsEmaiLError={setIsEmaiLError} setEmail={setEmail} />
+               <Email
+                  errors={errors}
+                  register={register}
+                  emailInputPlaceHolder={t("auth.sign-up.form.firstStep.email")}
+               />
                <Error
-                  shouldRender={isEmailVerificationsError}
+                  shouldRender={isRequestError}
                   styles="self-start"
                   message={
                      isConfirmationCodeEmailAlreadySent
@@ -45,12 +50,10 @@ export default function SignUpFirstStep({
                />
                <ReCaptcha>
                   <StartSignUpButton
-                     styles={`${isEmailError || isEmailVerificationsError ? "mt-1" : "mt-4"}`}
-                     submit={submit}
+                     styles={`${isRequestError ? "mt-1" : "mt-4"}`}
+                     submit={handleSubmit!(submit)}
                      isLoading={isLoading}
-                     isFormWithErrors={
-                        isEmailError || isEmailVerificationsError
-                     }
+                     isFormWithErrors={errors?.email != undefined}
                      buttonLabel={t("auth.sign-up.form.firstStep.button")}
                   />
                </ReCaptcha>

@@ -15,7 +15,6 @@ export default function useSignUpFirstStep(
 ) {
    const locale = useLocale();
    const t = useTranslations();
-   const [isEmailError, setIsEmaiLError] = useState<boolean>(false);
    const [isEmailAlreadyRegistered, setIsEmailAlreadyRegistered] =
       useState<boolean>(false);
 
@@ -118,15 +117,13 @@ export default function useSignUpFirstStep(
    }
 
    return {
-      t,
-      isEmailError,
-      isEmailVerificationsError:
+      isRequestError:
          isEmailAlreadyRegistered || isConfirmationCodeEmailAlreadySent,
+      t,
       isEmailAlreadyRegistered,
       isConfirmationCodeEmailAlreadySent,
       isLoading:
          isFetching || isPending || isFetchingConfirmationCodeAlreadySent,
-      setIsEmaiLError,
       submit,
       setIsEmailAlreadyRegistered,
    };

@@ -9,16 +9,23 @@ import {
    getErrorStatusCode,
    getErrorMessage,
 } from "@/utils/errors/errorMessagesHandlers";
+import { useForm } from "react-hook-form";
 
 export default function useSignUpFormSteps() {
    const [isLoading, setIsLoading] = useState<boolean>(false);
-   const [isRequestError, setIsRequestError] = useState(false);
    const [formData, setFormData] = useState<SignUpRequest>({
       email: "",
       name: "",
       password: "",
    });
+   const {
+      watch,
+      register,
+      handleSubmit,
+      formState: { errors },
+   } = useForm<SignUpRequest>({ mode: "onBlur" });
 
+   const email = watch("email");
    const { step, nextStep, previousStep, setStep } = useHandleStep({
       maxSteps: 4,
    });
@@ -88,10 +95,13 @@ export default function useSignUpFormSteps() {
    }
 
    return {
-      isRequestError,
+      email,
       isLoading,
       formData,
       step,
+      errors,
+      register,
+      handleSubmit,
       nextStep,
       previousStep,
       setStep,

@@ -1,5 +1,5 @@
-import IsEmailRegisteredInterface from "@/components/formsSteps/signUpFormSteps/steps/first/EmailRegisteredInterface";
+import ReactHookFormPros from "@/models/interfaces/forms/ReactHookFormPros";
 
-export default interface SignUpEmailFormatInputInterface extends IsEmailRegisteredInterface {
-  setEmail: (email: string) => void;
+export default interface SignUpEmailFormatInputInterface extends ReactHookFormPros {
+   emailInputPlaceHolder: string;
 }
