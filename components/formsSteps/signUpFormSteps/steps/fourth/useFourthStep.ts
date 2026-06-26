@@ -7,7 +7,7 @@ import { useLocale } from "next-intl";
 export default function useFourthStep(isForgotPassword?: boolean) {
    const locale = useLocale();
    const t = useTranslations(
-      `auth.${isForgotPassword ? "forgotPassword" : "signUp"}.form.fourthStep`,
+      `auth.${isForgotPassword ? "forgot-password" : "sign-up"}.form.fourthStep`,
    );
    const router = useRouter();
 

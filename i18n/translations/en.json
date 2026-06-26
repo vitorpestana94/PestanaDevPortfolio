@@ -101,7 +101,7 @@
                   },
                   "passwordConfirmation": {
                      "empty": "please, confirm your password.",
-                     "mismatch": "Your password confirmation doest not match the defined password."
+                     "mismatch": "Your password confirmation does not match the defined password."
                   },
                   "emailFormatInvalid": "The email that you provided do not have valid format.",
                   "emailAlreadyInUse": "The email that you are trying to sign up with is already in use.",

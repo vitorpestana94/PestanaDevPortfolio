@@ -11,6 +11,7 @@ export default function usePasswordInput(
    isCurrentPasswordInput?: boolean,
 ) {
    const [isPasswordEmpty, setIsPasswordEmpty] = useState<boolean>(false);
+   const [passwordConfirmation, setPasswordConfirmation] = useState<string>("");
    const [isPasswordConfirmationEmpty, setIsPasswordConfirmationEmpty] =
       useState<boolean>(false);
    const [isPasswordConfirmationMisMatch, setIsPasswordConfirmationMisMatch] =
@@ -35,8 +36,11 @@ export default function usePasswordInput(
    function verifyPasswordConfirmation(
       event: React.FocusEvent<HTMLInputElement, Element>,
    ) {
-      const passwordConfirmation: string = event.target.value;
+      verifyPC(event.target.value);
+   }
 
+   function verifyPC(passwordConfirmation: string) {
+      setPasswordConfirmation(passwordConfirmation);
       setIsPasswordConfirmationEmpty(!passwordConfirmation);
       setIsPasswordConfirmationMisMatch(password !== passwordConfirmation);
    }
@@ -50,20 +54,26 @@ export default function usePasswordInput(
    function getErrorMessage() {
       let errorMessage = "";
 
-      if (isPasswordEmpty) {
-         errorMessage = t("auth.sign-up.form.thirdStep.error.password.empty");
-      } else if (isPasswordFormatWrong) {
-         errorMessage = t(
-            "auth.sign-up.form.thirdStep.error.password.wrongFormat",
-         );
-      } else if (isPasswordConfirmationEmpty) {
-         errorMessage = t(
-            "auth.sign-up.form.thirdStep.error.passwordConfirmation.empty",
-         );
-      } else if (isPasswordConfirmationMisMatch) {
-         errorMessage = t(
-            "auth.sign-up.form.thirdStep.error.passwordConfirmation.mismatch",
-         );
+      if (!isPasswordConfirmation) {
+         if (isPasswordEmpty) {
+            errorMessage = t(
+               "auth.sign-up.form.thirdStep.error.password.empty",
+            );
+         } else if (isPasswordFormatWrong) {
+            errorMessage = t(
+               "auth.sign-up.form.thirdStep.error.password.wrongFormat",
+            );
+         }
+      } else {
+         if (isPasswordConfirmationEmpty) {
+            errorMessage = t(
+               "auth.sign-up.form.thirdStep.error.passwordConfirmation.empty",
+            );
+         } else if (isPasswordConfirmationMisMatch) {
+            errorMessage = t(
+               "auth.sign-up.form.thirdStep.error.passwordConfirmation.mismatch",
+            );
+         }
       }
 
       return errorMessage;
@@ -83,6 +93,12 @@ export default function usePasswordInput(
             isPasswordConfirmationEmpty || isPasswordConfirmationMisMatch,
       }));
    }, [isPasswordConfirmationEmpty, isPasswordConfirmationMisMatch]);
+
+   useEffect(() => {
+      if (password && passwordConfirmation) {
+         verifyPC(passwordConfirmation);
+      }
+   }, [password, passwordConfirmation]);
 
    return {
       isPasswordError:

@@ -5,11 +5,11 @@ import useSubRoute from "@/hooks/useSubRoute";
 export default function useSwitchAutoButton() {
    const login = "login";
    const signUp = "sign-up";
-   const t = useTranslations("auth.switchButton");
-   const { subRoute } = useSubRoute();
-
    const activeStyle: string = "bg-[#38b6ff] text-white";
    const inactiveStyle: string = "text-white";
+
+   const t = useTranslations("auth.switchButton");
+   const { subRoute } = useSubRoute();
 
    const [isLogin, setIsLogin] = useState(subRoute === login);
 
