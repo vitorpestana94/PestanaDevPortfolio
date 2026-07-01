@@ -1,8 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
 import { FormErrors } from "@/components/formsSteps/signUpFormSteps/steps/third/useSignUpThirdStep";
+import ReactHookFormPros from "@/models/interfaces/forms/ReactHookFormPros";
 
-export default interface NameInputInterface {
-  placeholder: string;
-  setName(value: string): void;
-  setIsFormError: Dispatch<SetStateAction<FormErrors>>;
-}
+export default interface NameInputInterface extends ReactHookFormPros {}

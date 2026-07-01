@@ -9,15 +9,12 @@ export default function SignUpFormSteps() {
       email,
       isLoading,
       step,
-      formData,
+      password,
       errors,
       register,
       handleSubmit,
-      setEmail,
       nextStep,
       submitForm,
-      setName,
-      setPassword,
    } = useSignUpFormSteps();
 
    return (
@@ -31,17 +28,17 @@ export default function SignUpFormSteps() {
                      handleSubmit={handleSubmit}
                      register={register}
                      nextStep={nextStep}
-                     setEmail={setEmail}
                   />
                ),
                2: <SecondStep email={email!} nextStep={nextStep} />,
                3: (
                   <ThirdStep
                      isLoading={isLoading}
-                     password={formData.password}
+                     password={password}
+                     errors={errors}
+                     register={register}
+                     handleSubmit={handleSubmit}
                      submitForm={submitForm}
-                     setName={setName}
-                     setPassword={setPassword}
                   />
                ),
                4: <FourthStep />,

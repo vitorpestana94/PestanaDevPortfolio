@@ -11,14 +11,15 @@ export default function FormButton({
    isLoading,
    styles,
    submit,
-   ...props
-}: AuthButtonInterface & React.ComponentProps<"button">) {
-   const { scale, transition, handleClick } = useAuthButton(submit);
+}: AuthButtonInterface) {
+   const { scale, transition } = useAuthButton();
 
    return (
       <motion.button
-         onClick={(event) => {
-            handleClick(event);
+         onClick={() => {
+            if (submit) {
+               submit();
+            }
          }}
          whileTap={scale}
          whileHover={scale}

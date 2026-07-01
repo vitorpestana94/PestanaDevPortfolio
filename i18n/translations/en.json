@@ -100,7 +100,7 @@
                      "wrongFormat": "Your password must have: \n\n• At least 8 characters\n• One capital letter\n• One small letter\n• At least two digits\n• Must not have empty spaces.\n• Must have one special character, like @"
                   },
                   "passwordConfirmation": {
-                     "empty": "please, confirm your password.",
+                     "empty": "Please, confirm your password.",
                      "mismatch": "Your password confirmation does not match the defined password."
                   },
                   "emailFormatInvalid": "The email that you provided do not have valid format.",

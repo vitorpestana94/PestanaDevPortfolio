@@ -1,16 +1,15 @@
 import Icon from "../../icons/Icons";
-import useLoginPasswordFormInput from "./useLoginPasswordFormInput";
 import LoginPasswordFormInputInterface from "./LoginPasswordFormInputInterface";
 import Error from "@/components/errors/error/Error";
+import usePasswordProps from "../Common/usePasswordProps";
 
 export default function LoginPasswordFormInput({
-   setPassword,
-   setPasswordError,
+   register,
+   errors,
 }: LoginPasswordFormInputInterface) {
-   const { t, isPasswordEmpty, eye, eyeOn, switchEye, verifyPassword } =
-      useLoginPasswordFormInput({
-         setPasswordError,
-      });
+   const { t, eye, eyeOn, switchEye } = usePasswordProps();
+
+   const passwordError: string = errors?.password?.message as string;
 
    return (
       <div className="flex flex-col items-center gap-y-1.5 w-full">
@@ -20,13 +19,13 @@ export default function LoginPasswordFormInput({
                className="aspect-square w-[10%] max-w-4 shrink-0 strokeAzulPestana"
             />
             <input
-               onBlur={(event) => verifyPassword(event)}
+               {...register!("password", {
+                  required: t("auth.login.form.errors.password"),
+               })}
                type={eye === eyeOn ? "password" : "text"}
                placeholder={t("auth.login.form.password")}
                className={`loginInputs mx-2`}
-               name={"password"}
                autoComplete={"current-password"}
-               onChange={(event) => setPassword(event.target.value)}
             />
             <span onClick={() => switchEye()}>
                <Icon
@@ -35,10 +34,7 @@ export default function LoginPasswordFormInput({
                />
             </span>
          </div>
-         <Error
-            shouldRender={isPasswordEmpty}
-            message={t("auth.login.form.errors.password")}
-         />
+         <Error shouldRender={!!passwordError} message={passwordError ?? ""} />
       </div>
    );
 }

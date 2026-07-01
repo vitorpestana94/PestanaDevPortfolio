@@ -1,5 +1,3 @@
-import useFormError from "@/models/interfaces/UI/useLoginFormError";
+import ReactHookFormPros from "@/models/interfaces/forms/ReactHookFormPros";
 
-export default interface LoginPasswordFormInputInterface extends useFormError {
-  setPassword: (password: string) => void;
-}
+export default interface LoginPasswordFormInputInterface extends ReactHookFormPros {}

@@ -2,30 +2,27 @@ import useHandleStep from "@/hooks/useStep";
 import { useState, useEffect } from "react";
 import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
 import { useForgotPassword } from "@/hooks/api/forgotPassword/mutation";
+import { useForm } from "react-hook-form";
 
 export default function useForgotPasswordFormSteps() {
    const { mutateAsync, isPending, isSuccess } = useForgotPassword();
+   const {
+      watch,
+      register,
+      handleSubmit,
+      formState: { errors },
+   } = useForm<ForgotPasswordRequest>({ mode: "onBlur" });
+
+   const email = watch("email");
+
    const { step, nextStep } = useHandleStep({
       maxSteps: 4,
    });
 
-   const [formData, setFormData] = useState<ForgotPasswordRequest>({
-      email: "",
-      newPassword: "",
-   });
+   async function submitForm(data: ForgotPasswordRequest) {
+      if (isPending) return;
 
-   function setEmail(emailProvided: string) {
-      setFormData((previous) => ({ ...previous, email: emailProvided }));
-   }
-
-   function setPassword(password: string) {
-      setFormData((previous) => ({ ...previous, newPassword: password }));
-   }
-
-   async function submitForm() {
-      if (isPending || !formData.email || !formData.newPassword) return;
-
-      await mutateAsync(formData);
+      await mutateAsync(data);
    }
 
    useEffect(() => {
@@ -35,12 +32,13 @@ export default function useForgotPasswordFormSteps() {
    }, [isSuccess]);
 
    return {
+      email,
       step,
-      formData,
       isPending,
+      errors,
+      register,
+      handleSubmit,
       nextStep,
-      setEmail,
-      setPassword,
       submitForm,
    };
 }

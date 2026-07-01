@@ -9,16 +9,16 @@ import Line from "@/components/hrs/GenericHr";
 import BackToLogin from "@/components/buttons/backToLoginButton/BackToLoginButton";
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 import ReCaptcha from "@/components/divs/ReCaptchaDiv";
+import Form from "@/components/forms/DefaultForm/DefaultForm";
 
-export default function FirstStep({ email, setEmail, nextStep }: Interface) {
-   const {
-      t,
-      isEmailError,
-      isEmailVerificationsError,
-      isLoading,
-      setIsEmaiLError,
-      submit,
-   } = useForgotPasswordFirstStep(
+export default function FirstStep({
+   email,
+   errors,
+   register,
+   handleSubmit,
+   nextStep,
+}: Interface) {
+   const { t, isLoading, isRequestError, submit } = useForgotPasswordFirstStep(
       nextStep,
       email,
       true,
@@ -26,15 +26,23 @@ export default function FirstStep({ email, setEmail, nextStep }: Interface) {
    );
 
    return (
-      <div className="w-full h-full flex flex-col justify-around items-center">
+      <Form
+         handleSubmit={handleSubmit!}
+         onSubmit={submit}
+         className="w-full h-full flex flex-col justify-around items-center"
+      >
          <BackToLogin />
          <ForgotPassword />
          <Line text={t("auth.forgot-password.form.firstStep.hr")} />
          <Wrapper>
             <div className="flex flex-col items-center justify-between gap-y-5 lg:gap-y-6">
-               <Email setIsEmaiLError={setIsEmaiLError} setEmail={setEmail} />
+               <Email
+                  errors={errors}
+                  register={register}
+                  emailInputPlaceHolder={t("auth.sign-up.form.firstStep.email")}
+               />
                <Error
-                  shouldRender={isEmailVerificationsError}
+                  shouldRender={isRequestError}
                   message={t(
                      "auth.sign-up.form.errors.confirmationCodeEmailAlreadySent",
                   )}
@@ -43,7 +51,7 @@ export default function FirstStep({ email, setEmail, nextStep }: Interface) {
                   <RecoverButton
                      submit={submit}
                      isLoading={isLoading}
-                     isFormWithErrors={isEmailError}
+                     isFormWithErrors={errors?.email !== undefined}
                      buttonLabel={t(
                         "auth.forgot-password.form.firstStep.button",
                      )}
@@ -51,6 +59,6 @@ export default function FirstStep({ email, setEmail, nextStep }: Interface) {
                </ReCaptcha>
             </div>
          </Wrapper>
-      </div>
+      </Form>
    );
 }

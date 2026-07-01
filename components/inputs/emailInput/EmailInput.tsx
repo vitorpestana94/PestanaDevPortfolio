@@ -32,7 +32,6 @@ export default function EmailInput({
                type={"email"}
                placeholder={emailInputPlaceHolder}
                className={`mr-6 loginInputs`}
-               name={"email"}
                autoComplete={"username"}
             />
          </div>

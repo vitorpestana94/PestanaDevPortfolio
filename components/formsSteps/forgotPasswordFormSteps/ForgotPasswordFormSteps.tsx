@@ -7,11 +7,12 @@ import FourthStep from "../signUpFormSteps/steps/fourth/FourthStep";
 export default function ForgotPasswordFormSteps() {
    const {
       step,
-      formData,
       isPending,
+      email,
+      register,
+      errors,
+      handleSubmit,
       nextStep,
-      setEmail,
-      setPassword,
       submitForm,
    } = useForgotPasswordFormSteps();
 
@@ -21,9 +22,11 @@ export default function ForgotPasswordFormSteps() {
             {
                1: (
                   <FirstStep
-                     email={formData.email}
+                     errors={errors}
+                     email={email}
+                     register={register}
+                     handleSubmit={handleSubmit}
                      nextStep={nextStep}
-                     setEmail={setEmail}
                   />
                ),
                2: <SecondStep email={formData.email} nextStep={nextStep} />,

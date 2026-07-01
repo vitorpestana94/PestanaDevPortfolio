@@ -4,48 +4,45 @@ import Name from "@/components/inputs/NameInput/NameInput";
 import Password from "@/components/inputs/PasswordInput/PasswordInput";
 import Register from "@/components/buttons/formButton/FormButton";
 import NowPleaseProvideNameAndPassword from "@/components/paragraphs/FormParagraph";
+import Form from "@/components/forms/DefaultForm/DefaultForm";
 
 export default function SignUpThirdStep({
    isLoading,
    password,
-   setName,
-   setPassword,
+   errors,
+   register,
+   handleSubmit,
    submitForm,
 }: SignUpThirdStepInterface) {
-   const { t, isFormError, setIsFormError } = useSignUpThirdStep();
+   const { t } = useSignUpThirdStep();
 
    return (
-      <section className="flex flex-col flex-1 justify-around sm:items-center w-full">
+      <Form
+         handleSubmit={handleSubmit!}
+         onSubmit={submitForm}
+         className="flex flex-col flex-1 justify-around sm:items-center w-full"
+      >
          <NowPleaseProvideNameAndPassword text={t("paragraph")} />
          <div className="flex flex-col w-[50%] gap-y-4 self-center">
-            <Name
-               setName={setName}
-               placeholder={t("placeholders.name")}
-               setIsFormError={setIsFormError}
-            />
-            <Password
-               password={password}
-               setPassword={setPassword}
-               setIsFormError={setIsFormError}
-            />
+            <Name errors={errors} register={register} />
+            <Password password={password} errors={errors} register={register} />
             <Password
                isPasswordConfirmation
                password={password}
-               setPassword={setPassword}
-               setIsFormError={setIsFormError}
+               errors={errors}
+               register={register}
             />
          </div>
          <Register
             isLoading={isLoading}
             buttonLabel={t("buttonLabel")}
             isFormWithErrors={
-               isFormError.nameError ||
-               isFormError.passwordConfirmationError ||
-               isFormError.passwordError
+               errors?.passwordConfirmation !== undefined ||
+               errors?.password !== undefined ||
+               errors?.name !== undefined
             }
             styles=" w-4/12! lg:w-3/12!"
-            submit={submitForm}
          />
-      </section>
+      </Form>
    );
 }

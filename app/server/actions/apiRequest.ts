@@ -11,8 +11,9 @@ export default async function apiRequest(request: RequestDto): Promise<any> {
    const theresJson = hasJson(res);
 
    if (!res.ok) {
-      // console.log(res);
-      // console.log(await getErrorMessage(theresJson, res));
+      console.log(request);
+      console.log(res);
+      console.log(await getErrorMessage(theresJson, res));
       throw new Error(
          errorMessageHandler(
             res.status,

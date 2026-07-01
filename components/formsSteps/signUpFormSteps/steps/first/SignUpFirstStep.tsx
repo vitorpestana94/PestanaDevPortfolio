@@ -8,6 +8,7 @@ import StartSignUpButton from "@/components/buttons/formButton/FormButton";
 import Error from "@/components/errors/error/Error";
 import SignUpTitle from "@/components/titles/SignUpTitle";
 import ReCaptcha from "@/components/divs/ReCaptchaDiv";
+import Form from "@/components/forms/DefaultForm/DefaultForm";
 
 export default function SignUpFirstStep({
    errors,
@@ -15,7 +16,6 @@ export default function SignUpFirstStep({
    register,
    nextStep,
    email,
-   setEmail,
 }: SignUpFirstStepInterface) {
    const {
       t,
@@ -26,7 +26,11 @@ export default function SignUpFirstStep({
    } = useSignUpFirstStep(nextStep, email);
 
    return (
-      <div className="w-full h-[90%] flex flex-col justify-around items-center">
+      <Form
+         handleSubmit={handleSubmit!}
+         onSubmit={submit}
+         className="w-full h-[90%] flex flex-col justify-around items-center"
+      >
          <SignUpTitle />
          <SignUpWithPlatform />
          <Or />
@@ -51,7 +55,6 @@ export default function SignUpFirstStep({
                <ReCaptcha>
                   <StartSignUpButton
                      styles={`${isRequestError ? "mt-1" : "mt-4"}`}
-                     submit={handleSubmit!(submit)}
                      isLoading={isLoading}
                      isFormWithErrors={errors?.email != undefined}
                      buttonLabel={t("auth.sign-up.form.firstStep.button")}
@@ -59,6 +62,6 @@ export default function SignUpFirstStep({
                </ReCaptcha>
             </div>
          </Wrapper>
-      </div>
+      </Form>
    );
 }

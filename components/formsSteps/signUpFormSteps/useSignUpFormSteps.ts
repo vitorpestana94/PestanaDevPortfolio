@@ -13,19 +13,16 @@ import { useForm } from "react-hook-form";
 
 export default function useSignUpFormSteps() {
    const [isLoading, setIsLoading] = useState<boolean>(false);
-   const [formData, setFormData] = useState<SignUpRequest>({
-      email: "",
-      name: "",
-      password: "",
-   });
+
    const {
       watch,
       register,
       handleSubmit,
       formState: { errors },
    } = useForm<SignUpRequest>({ mode: "onBlur" });
-
    const email = watch("email");
+   const password = watch("password");
+
    const { step, nextStep, previousStep, setStep } = useHandleStep({
       maxSteps: 4,
    });
@@ -56,23 +53,11 @@ export default function useSignUpFormSteps() {
       },
    });
 
-   function setEmail(emailProvided: string) {
-      setFormData((previous) => ({ ...previous, email: emailProvided }));
-   }
-
-   function setPassword(passwordProvided: string) {
-      setFormData((previous) => ({ ...previous, password: passwordProvided }));
-   }
-
-   function setName(nameProvided: string) {
-      setFormData((previous) => ({ ...previous, name: nameProvided }));
-   }
-
-   async function submitForm() {
+   async function submitForm(data: SignUpRequest) {
       setIsLoading(true);
 
       const response = await signUp("credentials-signup", {
-         request: JSON.stringify(formData),
+         request: JSON.stringify(data),
          redirect: false,
       });
 
@@ -96,8 +81,8 @@ export default function useSignUpFormSteps() {
 
    return {
       email,
+      password,
       isLoading,
-      formData,
       step,
       errors,
       register,
@@ -105,9 +90,6 @@ export default function useSignUpFormSteps() {
       nextStep,
       previousStep,
       setStep,
-      setEmail,
-      setPassword,
-      setName,
       submitForm,
    };
 }

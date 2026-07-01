@@ -1,8 +1,13 @@
 import { ReactNode } from "react";
-import { SubmitHandler } from "react-hook-form";
+import {
+   FieldValues,
+   SubmitHandler,
+   UseFormHandleSubmit,
+} from "react-hook-form";
 
-export default interface DefaultFormInterface<T> {
+export default interface DefaultFormInterface<T extends FieldValues> {
    children: ReactNode;
-   className: string;
+   className?: string;
    onSubmit: SubmitHandler<T>;
+   handleSubmit: UseFormHandleSubmit<T>;
 }

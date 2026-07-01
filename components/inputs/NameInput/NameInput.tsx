@@ -3,13 +3,10 @@ import Profile from "../../icons/Icons";
 import Error from "@/components/errors/error/Error";
 import useNameInput from "./useNameInput";
 
-export default function NameInput({
-   placeholder,
-   setName,
-   setIsFormError,
-}: Interface) {
-   const { isError, verifyName, getErrorMessage } =
-      useNameInput(setIsFormError);
+export default function NameInput({ errors, register }: Interface) {
+   const { errorMessage, placeHolder } = useNameInput();
+
+   const nameError: string = errors?.name?.message as string;
 
    return (
       <div className="flex flex-col w-full gap-y-1">
@@ -19,21 +16,16 @@ export default function NameInput({
                className="aspect-square w-4 ml-1 mr-2 lg:w-4.5 strokeAzulPestana lg:ml-2 lg:mr-4"
             />
             <input
-               onBlur={(event) => {
-                  verifyName(event);
-               }}
-               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                  setName(event.target.value)
-               }
+               {...register!("name", {
+                  required: errorMessage,
+               })}
                type={"text"}
-               required
-               placeholder={placeholder}
+               placeholder={placeHolder}
                className={`mr-6 loginInputs`}
-               name="none"
                autoComplete="off"
             />
          </div>
-         <Error shouldRender={isError} message={getErrorMessage()} />
+         <Error shouldRender={!!nameError} message={nameError ?? ""} />
       </div>
    );
 }
