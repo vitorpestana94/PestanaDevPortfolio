@@ -5,6 +5,7 @@ import ForgotPassword from "@/components/paragraphs/forgotPassword/ForgotPasswor
 import ReCaptcha from "@/components/divs/ReCaptchaDiv";
 import Form from "@/components/forms/DefaultForm/DefaultForm";
 import Email from "@/components/inputs/emailInput/EmailInput";
+import LoginSignUpSwitch from "@/components/buttons/switchAutoButton/SwitchAutoButton";
 
 export default function loginInputsDiv() {
    const { t, isLoading, errors, register, handleSubmit, submit } =
@@ -16,6 +17,7 @@ export default function loginInputsDiv() {
          handleSubmit={handleSubmit}
          className="flex flex-col gap-y-2 items-center"
       >
+         <LoginSignUpSwitch />
          <div className="w-full flex flex-col items-center gap-y-2">
             <Email
                errors={errors}

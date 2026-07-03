@@ -23,7 +23,7 @@ export default function SignUpFirstStep({
       isRequestError,
       isConfirmationCodeEmailAlreadySent,
       submit,
-   } = useSignUpFirstStep(nextStep, email);
+   } = useSignUpFirstStep(nextStep, email, false);
 
    return (
       <Form

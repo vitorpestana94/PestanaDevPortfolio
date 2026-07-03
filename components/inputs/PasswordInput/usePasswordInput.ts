@@ -1,17 +1,32 @@
 import usePasswordProps from "../Common/usePasswordProps";
 import validatePassword from "@/utils/strings/validatePassword";
+import {
+   PasswordInputType,
+   passwordConfirmation,
+} from "./PasswordInputInterface";
+import { FieldErrors } from "react-hook-form";
 
 export default function usePasswordInput(
-   isPasswordConfirmation: boolean,
+   errorObject: FieldErrors<any> | undefined,
+   type: PasswordInputType,
    password?: string,
 ) {
    const { t, eye, eyeOn, switchEye } = usePasswordProps();
    const schema = validatePassword();
+   const isPasswordConfirmation = type === passwordConfirmation;
+
    const placeHolders = {
       passwordConfirmation: t(
          "auth.sign-up.form.thirdStep.placeholders.passwordConfirmation",
       ),
       password: t("auth.sign-up.form.thirdStep.placeholders.password"),
+      newPassword: t("auth.forgot-password.placeHolders.newPassword"),
+   };
+
+   const placeHolderPerTye: { [key: string]: string } = {
+      passwordConfirmation: placeHolders.passwordConfirmation,
+      password: placeHolders.password,
+      newPassword: placeHolders.newPassword,
    };
 
    const errors = {
@@ -31,15 +46,18 @@ export default function usePasswordInput(
       },
    };
 
-   function getPlaceholder() {
-      return isPasswordConfirmation
-         ? placeHolders.passwordConfirmation
-         : placeHolders.password;
-   }
+   const errorsObjectPerType: { [key: string]: string } = {
+      passwordConfirmation: errors.required.passwordConfirmation,
+      password: errors.required.password,
+      newPassword: errors.required.password,
+   };
 
-   const passwordFieldName = isPasswordConfirmation
-      ? "passwordConfirmation"
-      : "password";
+   const errosMessagePerType: { [key: string]: string } = {
+      passwordConfirmation: errorObject?.passwordConfirmation
+         ?.message as string,
+      password: errorObject?.password?.message as string,
+      newPassword: errorObject?.newPassword?.message as string,
+   };
 
    const checkPassword = (value: any) =>
       isPasswordConfirmation
@@ -50,12 +68,11 @@ export default function usePasswordInput(
       t,
       eye,
       eyeOn,
-      passwordFieldName,
-      requiredError: isPasswordConfirmation
-         ? errors.required.passwordConfirmation
-         : errors.required.password,
+      passwordFieldName: type,
+      requiredError: errorsObjectPerType[type],
+      passwordError: errosMessagePerType[type],
+      defaultPlaceholder: placeHolderPerTye[type],
       checkPassword,
-      getPlaceholder,
       switchEye,
    };
 }

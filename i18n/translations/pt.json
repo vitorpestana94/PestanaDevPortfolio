@@ -136,6 +136,9 @@
                "title": "Sua senha foi alterada!\nAgora, tente logar novamente!",
                "button": "Logar"
             }
+         },
+         "placeHolders": {
+            "newPassword": "Entre sua nova senha"
          }
       }
    },
@@ -203,7 +206,9 @@
    },
    "metaData": {
       "auth": {
-         "title": "| Logar ou Cadastrar",
+         "login": "| Logar",
+         "signUp": "| Cadastrar",
+         "forgotPassword": "| Esqueceu a senha",
          "description": "Aqui você pode tanto logar ou cadastrar-se"
       },
       "profile": {

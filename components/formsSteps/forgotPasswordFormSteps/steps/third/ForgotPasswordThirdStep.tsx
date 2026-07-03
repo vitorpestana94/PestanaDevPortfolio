@@ -3,41 +3,52 @@ import useForgotPasswordThirdStep from "./useForgotPasswordThirdStep";
 import Password from "@/components/inputs/PasswordInput/PasswordInput";
 import Register from "@/components/buttons/formButton/FormButton";
 import NowSetNewPassword from "@/components/paragraphs/FormParagraph";
+import Form from "@/components/forms/DefaultForm/DefaultForm";
+import {
+   newPassword,
+   passwordConfirmation,
+} from "@/components/inputs/PasswordInput/PasswordInputInterface";
 
 export default function ForgotPasswordThirdStep({
    isLoading,
    password,
+   errors,
+   register,
+   handleSubmit,
    submitForm,
-   nextStep,
-   setPassword,
 }: Interface) {
-   const { t, isFormError, setIsFormError } = useForgotPasswordThirdStep();
+   const { t } = useForgotPasswordThirdStep();
 
    return (
-      <section className="flex flex-col flex-1 justify-around sm:items-center w-full">
+      <Form
+         handleSubmit={handleSubmit!}
+         onSubmit={submitForm}
+         className="flex flex-col flex-1 justify-around sm:items-center w-full"
+      >
          <NowSetNewPassword text={t("title")} />
          <div className="flex flex-col w-[50%] gap-y-4 self-center">
             <Password
+               type={newPassword}
+               errors={errors}
                password={password}
-               setPassword={setPassword}
-               setIsFormError={setIsFormError}
+               register={register}
             />
             <Password
-               isPasswordConfirmation
+               type={passwordConfirmation}
+               errors={errors}
                password={password}
-               setPassword={setPassword}
-               setIsFormError={setIsFormError}
+               register={register}
             />
          </div>
          <Register
             isLoading={isLoading}
             buttonLabel={t("button")}
             isFormWithErrors={
-               isFormError.passwordConfirmationError ||
-               isFormError.passwordError
+               errors?.password !== undefined ||
+               errors?.newPassword !== undefined ||
+               errors?.cunrretPassword !== undefined
             }
-            submit={submitForm}
          />
-      </section>
+      </Form>
    );
 }

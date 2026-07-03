@@ -49,7 +49,6 @@ export default function FirstStep({
                />
                <ReCaptcha styles={{ mainDiv: { className: "mt-5" } }}>
                   <RecoverButton
-                     submit={submit}
                      isLoading={isLoading}
                      isFormWithErrors={errors?.email !== undefined}
                      buttonLabel={t(

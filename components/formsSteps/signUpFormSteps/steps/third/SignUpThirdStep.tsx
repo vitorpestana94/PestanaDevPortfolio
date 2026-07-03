@@ -5,6 +5,11 @@ import Password from "@/components/inputs/PasswordInput/PasswordInput";
 import Register from "@/components/buttons/formButton/FormButton";
 import NowPleaseProvideNameAndPassword from "@/components/paragraphs/FormParagraph";
 import Form from "@/components/forms/DefaultForm/DefaultForm";
+import {
+   password as passwordType,
+   passwordConfirmation,
+} from "@/components/inputs/PasswordInput/PasswordInputInterface";
+import BaitInput from "@/components/inputs/BaitInput";
 
 export default function SignUpThirdStep({
    isLoading,
@@ -24,10 +29,16 @@ export default function SignUpThirdStep({
       >
          <NowPleaseProvideNameAndPassword text={t("paragraph")} />
          <div className="flex flex-col w-[50%] gap-y-4 self-center">
+            <BaitInput />
             <Name errors={errors} register={register} />
-            <Password password={password} errors={errors} register={register} />
             <Password
-               isPasswordConfirmation
+               type={passwordType}
+               password={password}
+               errors={errors}
+               register={register}
+            />
+            <Password
+               type={passwordConfirmation}
                password={password}
                errors={errors}
                register={register}

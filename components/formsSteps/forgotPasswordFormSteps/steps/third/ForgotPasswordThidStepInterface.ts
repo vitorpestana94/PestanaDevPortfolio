@@ -1,8 +1,8 @@
-import useStepInterface from "@/models/interfaces/UI/useStepInterface";
+import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
+import ReactHookFormPros from "@/models/interfaces/forms/ReactHookFormPros";
 
-export default interface ForgotPasswordThidStepInterface extends useStepInterface {
+export default interface ForgotPasswordThidStepInterface extends ReactHookFormPros {
    isLoading: boolean;
    password: string;
-   submitForm: () => Promise<void>;
-   setPassword: (password: string) => void;
+   submitForm: (data: ForgotPasswordRequest) => Promise<void>;
 }

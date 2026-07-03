@@ -19,7 +19,7 @@ export default function useSignUpFormSteps() {
       register,
       handleSubmit,
       formState: { errors },
-   } = useForm<SignUpRequest>({ mode: "onBlur" });
+   } = useForm<SignUpRequest>({ mode: "onBlur", reValidateMode: "onBlur" });
    const email = watch("email");
    const password = watch("password");
 

@@ -137,6 +137,9 @@
                "title": "Your password was changed!\nNow, try to login again!",
                "button": "Login"
             }
+         },
+         "placeHolders": {
+            "newPassword": "Enter your new password"
          }
       }
    },
@@ -204,8 +207,14 @@
    },
    "metaData": {
       "auth": {
-         "title": "| Login or Sign up",
-         "description": "Here you can both login or sign up."
+         "login": "| Login",
+         "signUp": "| Sign Up",
+         "forgotPassword": "| Forgot Password",
+         "description": {
+            "login": "Here you can login.",
+            "signUp": "Here you can sign up.",
+            "forgotPassword": "Here you can retrieve your password"
+         }
       },
       "profile": {
          "title": "| Profile",

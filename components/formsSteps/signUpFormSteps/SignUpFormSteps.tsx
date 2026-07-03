@@ -3,6 +3,7 @@ import FirstStep from "./steps/first/SignUpFirstStep";
 import SecondStep from "./steps/second/SignUpSecondStep";
 import ThirdStep from "./steps/third/SignUpThirdStep";
 import FourthStep from "./steps/fourth/FourthStep";
+import LoginSignUpSwitch from "@/components/buttons/switchAutoButton/SwitchAutoButton";
 
 export default function SignUpFormSteps() {
    const {
@@ -19,6 +20,7 @@ export default function SignUpFormSteps() {
 
    return (
       <div className="formSteps">
+         <LoginSignUpSwitch hide={step !== 1} />
          {
             {
                1: (

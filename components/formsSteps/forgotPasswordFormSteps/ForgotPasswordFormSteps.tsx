@@ -9,8 +9,9 @@ export default function ForgotPasswordFormSteps() {
       step,
       isPending,
       email,
-      register,
       errors,
+      newPassword,
+      register,
       handleSubmit,
       nextStep,
       submitForm,
@@ -29,13 +30,14 @@ export default function ForgotPasswordFormSteps() {
                      nextStep={nextStep}
                   />
                ),
-               2: <SecondStep email={formData.email} nextStep={nextStep} />,
+               2: <SecondStep email={email} nextStep={nextStep} />,
                3: (
                   <ThirdStep
+                     errors={errors}
                      isLoading={isPending}
-                     password={formData.newPassword}
-                     setPassword={setPassword}
-                     nextStep={nextStep}
+                     password={newPassword}
+                     register={register}
+                     handleSubmit={handleSubmit}
                      submitForm={submitForm}
                   />
                ),

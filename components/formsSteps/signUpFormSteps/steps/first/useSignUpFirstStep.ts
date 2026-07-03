@@ -74,7 +74,10 @@ export default function useSignUpFirstStep(
    useEffect(() => {
       if (!isForgotPassword) {
          if (!isFetching && !isFetchingConfirmationCodeAlreadySent) {
-            if (isEmailRegisteredData && confirmationCodeAlreadySentData) {
+            if (
+               isEmailRegisteredData !== undefined &&
+               confirmationCodeAlreadySentData
+            ) {
                if (
                   !isEmailRegisteredData.isRegistered &&
                   !confirmationCodeAlreadySentData.confirmationCodeAlreadySent

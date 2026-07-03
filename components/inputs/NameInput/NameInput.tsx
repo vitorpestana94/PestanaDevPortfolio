@@ -22,7 +22,7 @@ export default function NameInput({ errors, register }: Interface) {
                type={"text"}
                placeholder={placeHolder}
                className={`mr-6 loginInputs`}
-               autoComplete="off"
+               autoComplete="name"
             />
          </div>
          <Error shouldRender={!!nameError} message={nameError ?? ""} />

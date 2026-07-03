@@ -7,23 +7,20 @@ export default function PasswordInput({
    errors,
    password,
    placeholder,
+   type,
    style,
-   isPasswordConfirmation,
    register,
 }: PasswordInputInterface) {
    const {
       eye,
       eyeOn,
       requiredError,
+      passwordFieldName,
+      passwordError,
+      defaultPlaceholder,
       switchEye,
       checkPassword,
-      passwordFieldName,
-      getPlaceholder,
-   } = usePasswordInput(isPasswordConfirmation ?? false, password);
-
-   const passwordError: string = isPasswordConfirmation
-      ? (errors?.passwordConfirmation?.message as string)
-      : (errors?.password?.message as string);
+   } = usePasswordInput(errors, type, password);
 
    return (
       <div className="flex flex-col gap-y-1.5 w-full">
@@ -40,7 +37,7 @@ export default function PasswordInput({
                   validate: (value) => checkPassword(value),
                })}
                type={eye === eyeOn ? "password" : "text"}
-               placeholder={placeholder ?? getPlaceholder()}
+               placeholder={placeholder ?? defaultPlaceholder}
                className={`loginInputs`}
             />
             <span onClick={() => switchEye()}>

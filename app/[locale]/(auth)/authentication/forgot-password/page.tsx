@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
    const t = await getTranslations(`metaData`);
 
    return {
-      title: `${title} forgot-password`,
-      description: t("auth.description"),
+      title: `${title} ${t("auth.forgotPassword")}`,
+      description: t("auth.description.forgotPassword"),
    };
 }
 
