@@ -25,7 +25,7 @@ export default function UserButton({ user }: UserDataInterface) {
          >
             <Profile
                iconName="profileCircle"
-               className="fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-7.5 lg:w-8.5 xl:w-9.5 3xl:w-10.5 cursor-pointer"
+               className="fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-8 lg:w-8.5 xl:w-9.5 3xl:w-10.5 cursor-pointer"
             />
          </button>
          {showUserNav && (

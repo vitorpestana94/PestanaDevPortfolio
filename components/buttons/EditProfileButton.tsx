@@ -10,7 +10,7 @@ export default function EditProfileButton() {
    return (
       <Link
          href={`${locale}/user/profile`}
-         className="flex gap-x-2 justify-center items-center w-full hover:bg-white/10 py-2 group"
+         className="flex gap-x-2 justify-center items-center w-full hover:bg-white/10 py-2.5 group"
       >
          <Icon
             iconName="profile"
