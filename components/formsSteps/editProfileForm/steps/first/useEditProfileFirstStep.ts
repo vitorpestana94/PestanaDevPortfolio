@@ -12,7 +12,7 @@ export default function useEditProfileFirstStep({
    nextStep,
 }: Interface) {
    const locale = useLocale();
-   const t = useTranslations("profile");
+   const t = useTranslations("user");
 
    const {
       mutateAsync: mutateAsync,

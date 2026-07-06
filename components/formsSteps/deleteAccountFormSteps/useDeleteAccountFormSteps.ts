@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { signOut } from "next-auth/react";
 
 export default function useDeleteAccountFormSteps() {
-   const t = useTranslations("profile.deleteAccount");
+   const t = useTranslations("user.deleteAccount");
    const { step, nextStep } = useHandleStep();
    const { mutateAsync, isPending, isSuccess } = useDeleteUserAccount();
 

@@ -1,7 +1,7 @@
-import ProfilePage from "@/components/pages/Profile";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { title } from "@/constants/metaData";
+import DeleteAccountPage from "@/components/pages/DeleteAccount";
 
 export async function generateMetadata(): Promise<Metadata> {
    const t = await getTranslations(`metaData`);
@@ -13,5 +13,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function DeleteAccount() {
-   return <ProfilePage />;
+   return <DeleteAccountPage />;
 }

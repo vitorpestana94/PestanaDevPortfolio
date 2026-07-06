@@ -5,7 +5,7 @@ import ProfileData from "./subComponents/DataDiv";
 import { useGetUser } from "@/hooks/api/user/queries";
 
 export default function ProfileDataDiv() {
-   const t = useTranslations("profile");
+   const t = useTranslations("user");
    const { data: user } = useGetUser();
 
    if (!user) return;

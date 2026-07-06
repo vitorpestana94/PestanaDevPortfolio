@@ -1,10 +1,10 @@
-import AuthPage from "../wrappers/AuthPage";
+import AuthenticatedPage from "../wrappers/AuthenticatedPage";
 import ChangePasswordForm from "@/components/forms/changePasswordForm/ChangePasswordForm";
 
 export default async function ChangePassword() {
    return (
-      <AuthPage>
+      <AuthenticatedPage>
          <ChangePasswordForm />
-      </AuthPage>
+      </AuthenticatedPage>
    );
 }

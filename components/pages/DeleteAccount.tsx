@@ -1,10 +1,10 @@
-import AuthPage from "../wrappers/AuthPage";
+import AuthenticatedPage from "../wrappers/AuthenticatedPage";
 import DeleteAccountForm from "@/components/forms/deleteAccountForm/DeleteAccountForm";
 
-export default function DeleteAccount() {
+export default function DeleteAccountPage() {
    return (
-      <AuthPage>
+      <AuthenticatedPage>
          <DeleteAccountForm />
-      </AuthPage>
+      </AuthenticatedPage>
    );
 }

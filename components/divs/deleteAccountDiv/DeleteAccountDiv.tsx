@@ -7,7 +7,7 @@ export default function DeleteAccountDiv({
    deleteConfirmationWasNotClicked,
    handleDeleteClick,
 }: Interface) {
-   const t = useTranslations("profile.deleteAccount");
+   const t = useTranslations("user.deleteAccount");
 
    return (
       <div className="flex flex-col gap-y-8 items-center">

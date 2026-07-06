@@ -33,7 +33,7 @@ export default function ChangePasswordFirstStep({
                   <p className="profileDataLabel">
                      {t("changePassword.current")}
                   </p>
-                  <Password
+                  {/* <Password
                      placeholder={t("changePassword.placeholders.current")}
                      errorMessage={t("changePassword.currentErrorMessage")}
                      password={request.currentPassword}
@@ -41,29 +41,29 @@ export default function ChangePasswordFirstStep({
                      setPassword={setCurrentPassword}
                      setIsFormError={setIsFormError}
                      style={style}
-                  />
+                  /> */}
                </div>
                <div className="changePasswordInputDivs gap-y-4!">
                   <div className="changePasswordInputDivs">
                      <p className="profileDataLabel">
                         {t("changePassword.new")}
                      </p>
-                     <Password
+                     {/* <Password
                         placeholder={t("changePassword.placeholders.new")}
                         password={request.newPassword}
                         setPassword={setNewPassword}
                         setIsFormError={setIsFormError}
                         style={style}
-                     />
+                     /> */}
                   </div>
-                  <Password
+                  {/* <Password
                      isPasswordConfirmation
                      placeholder={t("changePassword.placeholders.confirm")}
                      password={request.newPassword}
                      setPassword={setNewPassword}
                      setIsFormError={setIsFormError}
                      style={style}
-                  />
+                  /> */}
                </div>
             </div>
          </Wrapper>

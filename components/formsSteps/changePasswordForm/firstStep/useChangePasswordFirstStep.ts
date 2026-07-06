@@ -17,7 +17,7 @@ export default function useChangePasswordFirstStep({
          className: "bg-gray-200!",
       },
    };
-   const t = useTranslations("profile");
+   const t = useTranslations("user");
    const locale = useLocale();
    const { mutateAsync, isSuccess, isPending } = useSendConfirmationCodeEmail();
 

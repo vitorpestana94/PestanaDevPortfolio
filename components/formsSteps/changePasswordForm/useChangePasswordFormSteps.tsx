@@ -5,7 +5,7 @@ import { useChangePassword } from "@/hooks/api/user/mutations";
 import { useTranslations } from "next-intl";
 
 export default function useChangePasswordFormSteps() {
-   const t = useTranslations("profile");
+   const t = useTranslations("user");
    const { mutateAsync, isPending, isSuccess } = useChangePassword();
    const { step, nextStep } = useHandleStep();
    const [request, setRequest] = useState<ChangeUserPasswordRequestDto>({

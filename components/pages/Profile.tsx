@@ -1,11 +1,10 @@
-import AuthPage from "../wrappers/AuthPage";
-
+import AuthenticatedPage from "../wrappers/AuthenticatedPage";
 import Profile from "@/components/divs/ProfileDataDiv/ProfileDataDiv";
 
 export default async function ProfilePage() {
    return (
-      <AuthPage>
+      <AuthenticatedPage>
          <Profile />
-      </AuthPage>
+      </AuthenticatedPage>
    );
 }

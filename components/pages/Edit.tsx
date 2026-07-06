@@ -1,10 +1,10 @@
 import EditProfileForm from "@/components/forms/editProfileForm/EditProfileForm";
-import AuthPage from "../wrappers/AuthPage";
+import AuthenticatedPage from "../wrappers/AuthenticatedPage";
 
 export default function EditPage() {
    return (
-      <AuthPage>
+      <AuthenticatedPage>
          <EditProfileForm />
-      </AuthPage>
+      </AuthenticatedPage>
    );
 }
