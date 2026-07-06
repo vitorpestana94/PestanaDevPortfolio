@@ -1,10 +1,14 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import ProfileData from "./subComponents/DataDiv";
-import User from "@/models/interfaces/UI/UserInterface";
-import Profile from "@/components/paragraphs/FormParagraph";
+import { useGetUser } from "@/hooks/api/user/queries";
 
-export default function ProfileDataDiv({ user }: User) {
+export default function ProfileDataDiv() {
    const t = useTranslations("profile");
+   const { data: user } = useGetUser();
+
+   if (!user) return;
 
    return (
       <div className="authForm">

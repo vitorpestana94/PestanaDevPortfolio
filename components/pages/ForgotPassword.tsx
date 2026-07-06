@@ -1,4 +1,4 @@
-import AuthPage from "./AuthPage";
+import AuthPage from "../wrappers/AuthPage";
 import ForgotPasswordForm from "@/components/forms/forgotPasswordForm/ForgotPasswordForm";
 
 export default async function ForgotPasswordPage() {

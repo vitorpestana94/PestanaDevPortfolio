@@ -1,13 +1,11 @@
-import ProfileSection from "../sections/profile/ProfileSection";
-import Main from "../mains/DevidedMain";
-import ensureAuthenticated from "@/utils/authentication/ensureAuthenticated";
+import AuthPage from "../wrappers/AuthPage";
 
-export default async function Profile() {
-   await ensureAuthenticated();
+import Profile from "@/components/divs/ProfileDataDiv/ProfileDataDiv";
 
+export default async function ProfilePage() {
    return (
-      <Main>
-         <ProfileSection />
-      </Main>
+      <AuthPage>
+         <Profile />
+      </AuthPage>
    );
 }

@@ -1,5 +1,5 @@
 import SignUpForm from "../forms/SignUpForm";
-import AuthPage from "./AuthPage";
+import AuthPage from "../wrappers/AuthPage";
 
 export default async function SignUpPage() {
    return (

@@ -1,5 +1,5 @@
 import LoginForm from "@/components/forms/loginForm/LoginForm";
-import AuthPage from "./AuthPage";
+import AuthPage from "../wrappers/AuthPage";
 
 export default async function LoginPage() {
    return (

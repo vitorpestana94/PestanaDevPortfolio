@@ -2,9 +2,13 @@
 
 import AuthForm from "../DevidedDivFormWrapper";
 import FormSteps from "@components/formsSteps/deleteAccountFormSteps/DeleteAccountFormSteps";
-import User from "@/models/interfaces/UI/UserInterface";
+import { useGetUser } from "@/hooks/api/user/queries";
 
-export default function DeleteAccountForm({ user }: User) {
+export default function DeleteAccountForm() {
+   const { data: user } = useGetUser();
+
+   if (!user) return;
+
    return (
       <AuthForm>
          <FormSteps user={user} />
