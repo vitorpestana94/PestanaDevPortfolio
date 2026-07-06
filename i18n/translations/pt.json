@@ -142,21 +142,27 @@
          }
       }
    },
-   "profile": {
-      "banner": {
-         "show": {
+   "user": {
+      "profile": {
+         "banner": {
             "title": "Você quer ver\nseu perfil?",
             "paragraph": "Dá uma olhada então!"
-         },
-         "edit": {
+         }
+      },
+      "edit": {
+         "banner": {
             "title": "Quer atualizar\nseus dados?",
             "paragraph": "Sem problemas! Você pode fazer isso aqui."
-         },
-         "credentials": {
+         }
+      },
+      "change-password": {
+         "banner": {
             "title": "Quer alterar\nsua senha?",
             "paragraph": "É fácil. Basta fazer isso aqui."
-         },
-         "deleteAccount": {
+         }
+      },
+      "delete-account": {
+         "banner": {
             "title": "Ah, então você quer\nexcluir sua conta?",
             "paragraph": "Que pena! Mas você pode fazer isso aqui."
          }
