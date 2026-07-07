@@ -38,107 +38,108 @@
          "or": "ou"
       },
       "switchButton": {
-         "login": "Logar",
+         "login": "Entrar",
          "signUp": "Cadastrar"
       },
       "login": {
          "banner": {
-            "title": "É ótimo de ver de volta!",
-            "paragraph": "Quer logar?"
+            "title": "Bom ver você novamente!",
+            "paragraph": "Gostaria de entrar?"
          },
          "form": {
-            "title": "Logar",
-            "email": "email",
+            "title": "Entrar",
+            "email": "e-mail",
             "password": "senha",
-            "forgot": "esqueceu a senha?",
+            "forgot": "esqueceu sua senha?",
             "errors": {
-               "email": "O email está vazio, forneça-o para prosseguir!",
-               "emailFormat": "O formato de email fornecido é invalido. Por favor, digite um formato válido como: email@example.com!",
-               "password": "A senha está vazia, forneça-a para prosseguir!",
-               "invalidCredentials": "Pelo menos uma das suas credenciais está errada!",
-               "invalidLoginEndpoint": "Você se cadastrou usando uma rede social.\n Por favor, logue using a mesma rede."
+               "email": "O e-mail está vazio, por favor, informe-o para continuar!",
+               "emailFormat": "O formato do e-mail informado é inválido; por favor, insira um formato válido como: email@example.com!",
+               "password": "A senha está vazia, por favor, informe-a para continuar!",
+               "invalidCredentials": "Pelo menos uma das suas credenciais está incorreta!",
+               "invalidLoginEndpoint": "Você se cadastrou usando um provedor de login social.\n Por favor, entre usando o mesmo provedor."
             }
          }
       },
-      "signUp": {
+      "sign-up": {
          "banner": {
-            "title": "Quer ver como transformo\n ideias em código?",
+            "title": "Gostaria de ver como \neu transformo ideias em código?",
             "paragraph": "Cadastre-se agora!"
          },
          "form": {
-            "title": "Cadastrar",
+            "title": "Cadastro",
             "firstStep": {
-               "email": "seu email",
+               "email": "seu e-mail",
                "button": "Cadastrar"
             },
             "secondStep": {
-               "button": "Checar",
-               "paragraph": "Enviei um email com o código de confirmação para você.\nPor favor, cheque seu email.",
+               "button": "Verificar",
+               "paragraph": "Enviei um e-mail com um código de confirmação.\n Por favor, verifique seu e-mail.",
                "error": {
-                  "wrongToken": "Código errado, tente novamente!",
-                  "tokenNotSetted": "Por favor, forneça todos os caracteres do código que foram enviados para o seu email."
+                  "wrongToken": "Código incorreto, tente novamente!",
+                  "tokenNotSetted": "Por favor, informe todos os caracteres do código enviado para seu e-mail."
                },
                "resendToken": {
                   "havent": "Ainda não recebeu seu código?",
                   "sendNow": "Enviar agora",
                   "waitToSendResetToken": "Aguarde {wait} para reenviar.",
-                  "reached": "Você atingiu o número máximo de tentativas. Tente novamente mais tarde."
+                  "reached": "Você atingiu o número máximo de tentativas. Tente novamente mais tarde caso ainda não tenha recebido o código."
                }
             },
             "thirdStep": {
-               "paragraph": "Agora, por favor, \ninforme seu nome e defina uma senha.",
-               "buttonLabel": "Cadastrar",
+               "paragraph": "Agora, por favor, informe seu nome\n e defina uma senha.",
+               "buttonLabel": "Registrar",
                "placeholders": {
                   "name": "Seu nome",
                   "password": "Defina uma senha",
                   "passwordConfirmation": "Confirme sua senha"
                },
                "error": {
-                  "name": "O nome é necessário. Forneça para prosseguir.",
+                  "name": "O nome é obrigatório. Informe-o para continuar.",
                   "password": {
-                     "empty": "A senha é necessária. Forneça para prosseguir.",
-                     "wrongFormat": "Sua senha deve ter: \n\n• Pelo menos 8 caracteres\n• Uma letra maiúscula\n• Uma letra minúscula\n• Pelo menos dois números\n• Não pode conter espaços em branco.\n• Deve conter um caractere especial, como @"
+                     "empty": "A senha é obrigatória. Informe-a para continuar.",
+                     "wrongFormat": "Sua senha deve conter:\n\n• Pelo menos 8 caracteres\n• Uma letra maiúscula\n• Uma letra minúscula\n• Pelo menos dois números\n• Não deve conter espaços vazios.\n• Deve possuir um caractere especial, como @"
                   },
                   "passwordConfirmation": {
                      "empty": "Por favor, confirme sua senha.",
-                     "mismatch": "Sua confirmação de senha não corresponde a senha definida."
+                     "mismatch": "A confirmação da senha não corresponde à senha definida."
                   },
-                  "emailFormatInvalid": "O formato do e-mail informado é inválido.",
-                  "emailAlreadyInUse": "Este e-mail já está sendo utilizado.",
-                  "emailNotConfirmed": "Este e-mail ainda não foi confirmado."
+                  "emailFormatInvalid": "O e-mail informado não possui um formato válido.",
+                  "emailAlreadyInUse": "O e-mail que você está tentando cadastrar já está em uso.",
+                  "emailNotConfirmed": "O e-mail que você está tentando cadastrar ainda não foi confirmado."
                }
             },
             "fourthStep": {
-               "title": "Sucesso! \n Dá uma olhada no que eu posso fazer!"
+               "title": "Sucesso!\nConfira o que eu consigo fazer!"
             },
             "errors": {
-               "alreadyRegistered": "O email fornecido já foi registrado."
+               "alreadyRegistered": "O e-mail informado já está cadastrado.",
+               "confirmationCodeEmailAlreadySent": "Um código de confirmação já foi enviado para o e-mail informado. Tente novamente mais tarde."
             }
          }
       },
-      "forgotPassword": {
+      "forgot-password": {
          "banner": {
             "title": "Esqueceu sua senha?",
-            "paragraph": "Não se preocupe, vamos recupera-la!"
+            "paragraph": "Não se preocupe, vamos recuperá-la!"
          },
          "form": {
-            "title": "Recuperar Senha",
-            "paragraph": "Basta fornecer seu email para começarmos a recuperação do seu acesso.",
+            "title": "Recuperar senha",
+            "paragraph": "Digite seu e-mail\n para iniciar a recuperação da conta.",
             "firstStep": {
                "button": "Recuperar",
-               "hr": "Vamos recuperar sua senha!"
+               "hr": "Vamos recuperar seu acesso!"
             },
             "thirdStep": {
-               "title": "Agora, falta apenas definir \numa nova senha e repeti-la!",
-               "button": "Alterar Senha"
+               "title": "Agora, basta definir uma nova senha\n e repeti-la!",
+               "button": "Alterar senha"
             },
             "fourthStep": {
-               "title": "Sua senha foi alterada!\nAgora, tente logar novamente!",
-               "button": "Logar"
+               "title": "Sua senha foi alterada!\nAgora, tente entrar novamente!",
+               "button": "Entrar"
             }
          },
          "placeHolders": {
-            "newPassword": "Entre sua nova senha"
+            "newPassword": "Digite sua nova senha"
          }
       }
    },
