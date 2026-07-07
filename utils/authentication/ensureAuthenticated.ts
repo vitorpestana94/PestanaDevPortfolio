@@ -8,7 +8,7 @@ export default async function ensureAuthenticated(): Promise<Session> {
    const locale = await getLocale();
 
    if (!session) {
-      redirect(`/${locale}/authentication`);
+      redirect(`/${locale}/authentication/login`);
    }
 
    return session!;

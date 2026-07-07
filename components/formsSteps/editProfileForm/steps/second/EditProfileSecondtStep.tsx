@@ -9,7 +9,7 @@ export default function EditProfileSecondtStep({
 }: Interface) {
    useEditProfileSecondtStep({ nextStep, isEmailUpdate });
 
-   if (!isEmailUpdate) return;
+   if (!isEmailUpdate) return null;
 
    return <ConfirmCode nextStep={nextStep} email={userEmail!} />;
 }

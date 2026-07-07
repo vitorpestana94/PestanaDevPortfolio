@@ -1,11 +1,20 @@
 import useHandleStep from "@/hooks/useStep";
 import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useChangeUserData } from "@/hooks/api/user/mutations";
 import { useQueryClient } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
 
 export default function useEditProfileFormSteps() {
    const queryClient = useQueryClient();
+   const {
+      watch,
+      register,
+      handleSubmit,
+      formState: { errors },
+   } = useForm<ChangeUserDataRequestDto>({ mode: "onBlur" });
+   const email = watch("email");
+   const name = watch("name");
 
    const { step, nextStep } = useHandleStep({
       maxSteps: 3,
@@ -13,27 +22,14 @@ export default function useEditProfileFormSteps() {
 
    const { mutateAsync, isPending, isSuccess } = useChangeUserData();
 
-   const [request, setRequest] = useState<ChangeUserDataRequestDto>({
-      email: undefined,
-      name: undefined,
-   });
-
-   function setEmail(newEmail: string) {
-      setRequest((previous) => ({ ...previous, email: newEmail }));
-   }
-
-   function setName(newName: string) {
-      setRequest((previous) => ({ ...previous, name: newName }));
-   }
-
-   async function submit(): Promise<void> {
+   async function submit(data: ChangeUserDataRequestDto): Promise<void> {
       if (isPending) return;
 
-      await mutateAsync(request);
+      await mutateAsync(data);
    }
 
    function submitBeforeNextStep() {
-      submit();
+      submit({ email: email, name: name });
 
       nextStep();
    }
@@ -50,13 +46,15 @@ export default function useEditProfileFormSteps() {
 
    return {
       isLoadingUpdateRequest: isPending,
-      isEmailUpdate: request.email !== undefined,
-      request,
+      isEmailUpdate: email !== undefined && email !== "",
       step,
+      errors,
+      name,
+      email,
+      register,
+      handleSubmit,
       submitBeforeNextStep,
       submit,
       nextStep,
-      setEmail,
-      setName,
    };
 }

@@ -6,13 +6,14 @@ import ThirdStep from "./steps/third/EditProfileThirdStep";
 
 export default function EditProfileFormSteps({ user }: User) {
    const {
-      request,
       step,
       isEmailUpdate,
       isLoadingUpdateRequest,
-      setEmail,
+      name,
+      email,
+      handleSubmit,
+      register,
       submitBeforeNextStep,
-      setName,
       submit,
       nextStep,
    } = useEditProfileFormSteps();
@@ -23,21 +24,23 @@ export default function EditProfileFormSteps({ user }: User) {
             {
                1: (
                   <FirstStep
+                     isEmailUpdate={isEmailUpdate}
+                     name={name}
+                     email={email}
                      isSignUpWithPlatform={user.registerType === "Platform"}
                      isLoadingUpdateRequest={isLoadingUpdateRequest}
-                     request={request}
                      user={user}
                      submit={submit}
                      nextStep={nextStep}
-                     setEmail={setEmail}
-                     setName={setName}
+                     register={register}
+                     handleSubmit={handleSubmit}
                   />
                ),
                2: (
                   <SecondStep
                      nextStep={submitBeforeNextStep}
                      isEmailUpdate={isEmailUpdate}
-                     userEmail={request.email}
+                     userEmail={email}
                   />
                ),
                3: <ThirdStep />,

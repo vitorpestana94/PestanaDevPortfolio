@@ -4,49 +4,55 @@ import User from "@/models/interfaces/UI/UserInterface";
 import Input from "@/components/inputs/editProfileInput/EditProfileInput";
 import EditButton from "@/components/buttons/formButton/FormButton";
 import ChangeData from "@/components/paragraphs/FormParagraph";
+import Form from "@/components/forms/DefaultForm/DefaultForm";
+import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
 
 export default function EditProfileFirstStep({
-   request,
    user,
    isSignUpWithPlatform,
    isLoadingUpdateRequest,
+   name,
+   email,
+   isEmailUpdate,
    submit,
+   register,
+   handleSubmit,
    nextStep,
-   setEmail,
-   setName,
 }: Interface &
    User & { isLoadingUpdateRequest: boolean; isSignUpWithPlatform: boolean }) {
    const { t, isLoading, dataNotChanged, submitUpdate } =
-      useEditProfileFirstStep({
-         request,
-         submit,
-         nextStep,
-         setEmail,
-         setName,
-      });
+      useEditProfileFirstStep({ email, name, isEmailUpdate, submit, nextStep });
 
    return (
-      <div className="profileFormDiv">
+      <Form
+         handleSubmit={handleSubmit!}
+         onSubmit={(data: ChangeUserDataRequestDto) => {
+            !isEmailUpdate ? submit(data) : null;
+         }}
+         className="profileFormDiv"
+      >
          <ChangeData text={t("editProfile.edit.title")} />
          <Input
+            register={register}
+            type="name"
             label={t("editProfile.edit.name")}
             autoCompleteType="name"
             props={{
                placeHolder: user.name,
                type: "text",
                name: "name",
-               setFormData: setName,
             }}
          />
          {!isSignUpWithPlatform && (
             <Input
+               register={register}
+               type="email"
                label="Email"
                autoCompleteType="email"
                props={{
                   placeHolder: user.email,
                   type: "email",
                   name: "email",
-                  setFormData: setEmail,
                }}
             />
          )}
@@ -57,6 +63,6 @@ export default function EditProfileFirstStep({
             buttonLabel={t("editProfile.edit.button")}
             styles={"mt-8"}
          />
-      </div>
+      </Form>
    );
 }

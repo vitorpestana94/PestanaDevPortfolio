@@ -5,5 +5,5 @@ export default function useAuthDivBg() {
    const { subRoute } = useSubRoute();
    const t = useTranslations();
 
-   return { flow: subRoute, t };
+   return { flow: subRoute ?? "profile", t };
 }

@@ -7,8 +7,8 @@ import { useTranslations } from "next-intl";
 import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
 
 export default function useEditProfileFirstStep({
-   submit,
-   request,
+   email,
+   name,
    nextStep,
 }: Interface) {
    const locale = useLocale();
@@ -23,20 +23,18 @@ export default function useEditProfileFirstStep({
    async function submitUpdate(): Promise<void> {
       if (isPending) return;
 
-      if (request.email) {
+      if (email) {
          const captchaToken = await getCaptchaToken();
 
          if (!captchaToken) throw Error("Captcha token is null or empty");
 
          await mutateAsync({
-            clientEmail: request.email,
+            clientEmail: email,
             clientLocale: locale,
             confirmationCodeEmailType:
                ConfirmationCodeEmailKind.CredentialsChange,
             captchaToken: captchaToken,
          });
-      } else {
-         await submit();
       }
    }
 
@@ -47,7 +45,7 @@ export default function useEditProfileFirstStep({
    }, [isSuccess]);
 
    return {
-      dataNotChanged: request.email === undefined && request.name === undefined,
+      dataNotChanged: email === undefined && name === undefined,
       t,
       submitUpdate,
       isLoading: isPending,
