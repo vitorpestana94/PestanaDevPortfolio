@@ -1,21 +1,25 @@
-import User from "@/models/interfaces/UI/UserInterface";
+"use client";
+
 import useChangePasswordFormSteps from "./useChangePasswordFormSteps";
 import FirstStep from "@components/formsSteps/changePasswordForm/firstStep/ChangePasswordFirstStep";
 import SecondStep from "@components/formsSteps/signUpFormSteps/steps/second/SignUpSecondStep";
 import ThirdStep from "../finalFormStep/FinalFormStep";
 
-export default function ChangePasswordFormSteps({ user }: User) {
+export default function ChangePasswordFormSteps() {
    const {
       t,
       step,
       errors,
       newPassword,
       currentPassword,
+      user,
       register,
       handleSubmit,
       nextStep,
       submit,
    } = useChangePasswordFormSteps();
+
+   if (!user) return null;
 
    return (
       <div className="formSteps">

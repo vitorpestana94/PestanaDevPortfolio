@@ -127,7 +127,7 @@
    }
 
    .profileFormDiv {
-      @apply flex flex-col flex-1 justify-around items-center w-full;
+      @apply flex flex-col flex-1 justify-around items-center w-full bg-white;
    }
 }
 

@@ -49,6 +49,7 @@ export default function ChangePasswordFirstStep({
                      password={currentPassword}
                      type={currentPasswordType}
                      style={style}
+                     errors={errors}
                      register={register}
                   />
                </div>
@@ -62,15 +63,17 @@ export default function ChangePasswordFirstStep({
                         password={newPassword}
                         type={newPasswordType}
                         style={style}
+                        errors={errors}
                         register={register}
                      />
                   </div>
                   <Password
                      placeholder={t("changePassword.placeholders.confirm")}
                      password={newPassword}
-                     register={register}
                      type={passwordConfirmation}
                      style={style}
+                     errors={errors}
+                     register={register}
                   />
                </div>
             </div>
@@ -82,7 +85,7 @@ export default function ChangePasswordFirstStep({
                isFormWithErrors={
                   errors?.newPassword?.message !== undefined ||
                   errors?.currentPassword?.message !== undefined ||
-                  errors?.confirmPassword?.message !== undefined
+                  errors?.passwordConfirmation?.message !== undefined
                }
                styles=" w-4/12! lg:w-3/12! max-w-50"
             />

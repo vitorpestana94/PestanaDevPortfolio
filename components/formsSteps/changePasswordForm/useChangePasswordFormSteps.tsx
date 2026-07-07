@@ -1,12 +1,16 @@
 import useHandleStep from "@/hooks/useStep";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ChangeUserPasswordRequestDto from "@/models/interfaces/dtos/requests/ChangeUserPasswordRequestDto";
 import { useChangePassword } from "@/hooks/api/user/mutations";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
+import { useGetUser } from "@/hooks/api/user/queries";
+import { useRouter } from "next/navigation";
 
 export default function useChangePasswordFormSteps() {
    const t = useTranslations("user");
+   const { data: user } = useGetUser();
+   const router = useRouter();
    const {
       watch,
       register,
@@ -32,9 +36,16 @@ export default function useChangePasswordFormSteps() {
       }
    }, [isSuccess]);
 
+   useEffect(() => {
+      if (user?.registerType === "Platform") {
+         router.replace("/");
+      }
+   }, [user, router]);
+
    return {
       t,
       step,
+      user,
       newPassword,
       currentPassword,
       errors,
