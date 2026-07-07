@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-import { FormErrors } from "../../signUpFormSteps/steps/third/useSignUpThirdStep";
 import { useSendConfirmationCodeEmail } from "@/hooks/api/email/mutation";
 import { useLocale } from "next-intl";
 import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKind";
 import useStepInterface from "@/models/interfaces/UI/useStepInterface";
 import { useTranslations } from "next-intl";
 import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
+import ChangeUserPasswordRequestDto from "@/models/interfaces/dtos/requests/ChangeUserPasswordRequestDto";
 
 export default function useChangePasswordFirstStep({
    userEmail,
@@ -21,13 +21,7 @@ export default function useChangePasswordFirstStep({
    const locale = useLocale();
    const { mutateAsync, isSuccess, isPending } = useSendConfirmationCodeEmail();
 
-   const [isFormError, setIsFormError] = useState<FormErrors>({
-      nameError: false,
-      passwordError: false,
-      passwordConfirmationError: false,
-   });
-
-   async function submit(): Promise<void> {
+   async function submit(_: ChangeUserPasswordRequestDto): Promise<void> {
       const captchaToken = await getCaptchaToken();
 
       if (!captchaToken) throw Error("Captcha token is null or empty");
@@ -49,11 +43,9 @@ export default function useChangePasswordFirstStep({
    }, [isSuccess]);
 
    return {
-      isFormError,
       t,
       style,
       isLoading: isPending,
       submit,
-      setIsFormError,
    };
 }

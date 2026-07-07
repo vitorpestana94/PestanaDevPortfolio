@@ -3,28 +3,27 @@ import { useEffect, useState } from "react";
 import ChangeUserPasswordRequestDto from "@/models/interfaces/dtos/requests/ChangeUserPasswordRequestDto";
 import { useChangePassword } from "@/hooks/api/user/mutations";
 import { useTranslations } from "next-intl";
+import { useForm } from "react-hook-form";
 
 export default function useChangePasswordFormSteps() {
    const t = useTranslations("user");
+   const {
+      watch,
+      register,
+      handleSubmit,
+      formState: { errors },
+   } = useForm<ChangeUserPasswordRequestDto>({ mode: "onBlur" });
+
    const { mutateAsync, isPending, isSuccess } = useChangePassword();
+   const newPassword: string = watch("newPassword");
+   const currentPassword: string = watch("currentPassword");
+
    const { step, nextStep } = useHandleStep();
-   const [request, setRequest] = useState<ChangeUserPasswordRequestDto>({
-      newPassword: "",
-      currentPassword: "",
-   });
 
-   function setNewPassword(value: string) {
-      setRequest((previous) => ({ ...previous, newPassword: value }));
-   }
-
-   function setCurrentPassword(value: string) {
-      setRequest((previous) => ({ ...previous, currentPassword: value }));
-   }
-
-   async function submit(): Promise<void> {
+   async function submit(data: ChangeUserPasswordRequestDto): Promise<void> {
       if (isPending) return;
 
-      await mutateAsync(request);
+      await mutateAsync(data);
    }
 
    useEffect(() => {
@@ -36,10 +35,12 @@ export default function useChangePasswordFormSteps() {
    return {
       t,
       step,
-      request,
+      newPassword,
+      currentPassword,
+      errors,
+      register,
+      handleSubmit,
       nextStep,
-      setNewPassword,
-      setCurrentPassword,
       submit,
    };
 }

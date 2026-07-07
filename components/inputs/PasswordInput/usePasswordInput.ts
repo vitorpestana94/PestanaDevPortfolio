@@ -15,18 +15,13 @@ export default function usePasswordInput(
    const schema = validatePassword();
    const isPasswordConfirmation = type === passwordConfirmation;
 
-   const placeHolders = {
+   const placeHolderPerTye: { [key: string]: string } = {
       passwordConfirmation: t(
          "auth.sign-up.form.thirdStep.placeholders.passwordConfirmation",
       ),
       password: t("auth.sign-up.form.thirdStep.placeholders.password"),
       newPassword: t("auth.forgot-password.placeHolders.newPassword"),
-   };
-
-   const placeHolderPerTye: { [key: string]: string } = {
-      passwordConfirmation: placeHolders.passwordConfirmation,
-      password: placeHolders.password,
-      newPassword: placeHolders.newPassword,
+      currentPassword: t("user.changePassword.placeholders.current"),
    };
 
    const errors = {

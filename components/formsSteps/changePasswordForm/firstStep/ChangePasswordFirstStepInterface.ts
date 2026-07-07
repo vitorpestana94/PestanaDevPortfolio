@@ -1,9 +1,9 @@
-import ChangeUserPasswordRequestDto from "@/models/interfaces/dtos/requests/ChangeUserPasswordRequestDto";
 import useStepInterface from "@/models/interfaces/UI/useStepInterface";
+import ReactHookFormPros from "@/models/interfaces/forms/ReactHookFormPros";
 
-export default interface ChangePasswordFirstStepInterface extends useStepInterface {
+export default interface ChangePasswordFirstStepInterface
+   extends useStepInterface, ReactHookFormPros {
    userEmail: string;
-   request: ChangeUserPasswordRequestDto;
-   setNewPassword: (value: string) => void;
-   setCurrentPassword: (value: string) => void;
+   newPassword: string;
+   currentPassword: string;
 }

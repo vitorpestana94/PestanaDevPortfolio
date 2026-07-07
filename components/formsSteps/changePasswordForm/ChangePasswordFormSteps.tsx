@@ -8,10 +8,12 @@ export default function ChangePasswordFormSteps({ user }: User) {
    const {
       t,
       step,
-      request,
+      errors,
+      newPassword,
+      currentPassword,
+      register,
+      handleSubmit,
       nextStep,
-      setNewPassword,
-      setCurrentPassword,
       submit,
    } = useChangePasswordFormSteps();
 
@@ -21,14 +23,21 @@ export default function ChangePasswordFormSteps({ user }: User) {
             {
                1: (
                   <FirstStep
-                     request={request}
                      userEmail={user.email}
+                     newPassword={newPassword}
+                     currentPassword={currentPassword}
+                     errors={errors}
                      nextStep={nextStep}
-                     setNewPassword={setNewPassword}
-                     setCurrentPassword={setCurrentPassword}
+                     register={register}
+                     handleSubmit={handleSubmit}
                   />
                ),
-               2: <SecondStep email={user.email} nextStep={submit} />,
+               2: (
+                  <SecondStep
+                     email={user.email}
+                     nextStep={handleSubmit(submit)}
+                  />
+               ),
                3: <ThirdStep title={t("changePassword.finalStep")} />,
             }[step]
          }

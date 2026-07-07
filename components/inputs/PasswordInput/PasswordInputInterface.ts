@@ -14,7 +14,6 @@ export type PasswordInputType =
 export default interface PasswordInputInterface extends ReactHookFormPros {
    password?: string;
    type: PasswordInputType;
-   isCurrentPasswordInput?: boolean;
    errorMessage?: string;
    placeholder?: string;
    style?: {
