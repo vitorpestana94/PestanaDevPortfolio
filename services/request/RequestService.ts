@@ -17,8 +17,6 @@ if (!nextAuthSecret) {
 
 export default async function RequestService() {
    async function requestApi(request: RequestDto): Promise<Response> {
-      console.log("body");
-      console.log(request.requestBody);
       return await fetch(getUrl(request), await getOptions(request));
    }
 

@@ -45,7 +45,9 @@ export default function useEditProfileFirstStep({
    }, [isSuccess]);
 
    return {
-      dataNotChanged: email === undefined && name === undefined,
+      dataNotChanged:
+         (email === undefined || email === "") &&
+         (name === undefined || name === ""),
       t,
       submitUpdate,
       isLoading: isPending,

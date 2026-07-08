@@ -15,7 +15,7 @@ export default function useEditProfileFormSteps() {
    } = useForm<ChangeUserDataRequestDto>({ mode: "onBlur" });
    const email = watch("email");
    const name = watch("name");
-
+   console.log(email, name);
    const { step, nextStep } = useHandleStep({
       maxSteps: 3,
    });

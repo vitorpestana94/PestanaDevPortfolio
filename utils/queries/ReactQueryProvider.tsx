@@ -9,10 +9,7 @@ import {
 } from "@tanstack/react-query";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
-import {
-   errorObjectMessageHandler,
-   getErrorMessage,
-} from "../errors/errorMessagesHandlers";
+import { getErrorCode } from "../errors/errorMessagesHandlers";
 import { useTranslations } from "next-intl";
 
 interface Props {
@@ -24,7 +21,15 @@ interface Props {
  * */
 export default function ReactQueryProvider({ children }: Props) {
    const t = useTranslations();
-   const errorMessage = `${t("error.ops")} ${t("error.something")}`;
+
+   const getErrorMessage = (message: string) => {
+      const errorMessage = t(`error.${getErrorCode(message)}`);
+
+      return errorMessage !== undefined
+         ? errorMessage
+         : `${t("error.ops")} ${t("error.something")}`;
+   };
+
    const [queryClient] = useState(
       () =>
          new QueryClient({
@@ -36,17 +41,18 @@ export default function ReactQueryProvider({ children }: Props) {
                },
             },
             queryCache: new QueryCache({
-               onError: (_) => {
-                  toastError(errorMessage);
+               onError: (error) => {
+                  toastError(getErrorMessage(error.message));
                },
             }),
             mutationCache: new MutationCache({
-               onError: (_) => {
-                  toastError(errorMessage);
+               onError: (error) => {
+                  toastError(getErrorMessage(error.message));
                },
             }),
          }),
    );
+
    return (
       <QueryClientProvider client={queryClient}>
          <ToastContainer />

@@ -13,8 +13,12 @@ export function getErrorStatusCode(message: string) {
    return splitError(message)[0];
 }
 
+export function getErrorCode(message: string) {
+   return splitError(message)[1].trim();
+}
+
 export function getErrorMessage(message: string) {
-   return splitError(message)[1];
+   return splitError(message)[2];
 }
 
 export function errorObjectMessageHandler(error: Error) {
