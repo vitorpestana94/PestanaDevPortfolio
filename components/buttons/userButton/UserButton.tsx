@@ -1,9 +1,8 @@
 "use client";
 
 import UserDataInterface from "@/models/interfaces/UI/UserDataInterface";
-// import Profile from "@/components/icons/Icons";
+import Profile from "@/components/icons/Icons";
 import useUserButton from "./useUserButton";
-import Profile from "@/components/icons/specificIcons/profilePicture/Profile";
 import UserMenu from "@/components/spans/userMenuSpan/UserMenuSpan";
 
 export default function UserButton({ user }: UserDataInterface) {
@@ -24,7 +23,10 @@ export default function UserButton({ user }: UserDataInterface) {
                closeMenu();
             }}
          >
-            <Profile userName={user.name} />
+            <Profile
+               iconName="profileCircle"
+               className="fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-8 lg:w-8.5 xl:w-9.5 3xl:w-10.5 cursor-pointer"
+            />
          </button>
          {showUserNav && (
             <UserMenu user={user} openMenu={openMenu} closeMenu={closeMenu} />
