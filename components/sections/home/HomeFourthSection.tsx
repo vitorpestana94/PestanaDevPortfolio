@@ -13,7 +13,10 @@ export default function HomeFourthSection() {
       <section id="meuTrabalho" className="bg-[#2c2c2c] py-16 xl:py-20">
          <Wrapper className="conteudoWrapper flex flex-col items-center sm:items-stretch h-full sm:flex-row pr-6 sm:pr-0 justify-between">
             <div className="flex flex-col flex-1 justify-between">
-               <VP iconName="vP" className="homeVp mx-auto sm:mx-0" />
+               <VP
+                  iconName="vP"
+                  className="homeVp mx-auto mb-2 sm:mb-0 sm:mx-0"
+               />
                {!isMobile && <Copyright />}
             </div>
             <Contato />
