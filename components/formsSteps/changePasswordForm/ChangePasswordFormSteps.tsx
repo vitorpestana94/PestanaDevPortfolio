@@ -4,6 +4,7 @@ import useChangePasswordFormSteps from "./useChangePasswordFormSteps";
 import FirstStep from "@components/formsSteps/changePasswordForm/firstStep/ChangePasswordFirstStep";
 import SecondStep from "@components/formsSteps/signUpFormSteps/steps/second/SignUpSecondStep";
 import ThirdStep from "../finalFormStep/FinalFormStep";
+import PorfileNavigation from "@/components/spans/ProfileNavigationSpan";
 
 export default function ChangePasswordFormSteps() {
    const {
@@ -19,10 +20,11 @@ export default function ChangePasswordFormSteps() {
       submit,
    } = useChangePasswordFormSteps();
 
-   if (!user) return null;
+   if (!user || user.registerType === "Platform") return null;
 
    return (
       <div className="formSteps">
+         <PorfileNavigation step={step} user={user} />
          {
             {
                1: (

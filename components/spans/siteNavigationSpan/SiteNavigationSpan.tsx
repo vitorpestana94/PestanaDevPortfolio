@@ -5,7 +5,7 @@ import useSiteNavigationSpan from "./useSiteNavigationSpan";
 import UserButton from "@/components/buttons/userButton/UserButton";
 
 export default function SiteNavigationSpan() {
-   const { t, path, isUserLogged, userData } = useSiteNavigationSpan();
+   const { t, isUserLogged, userData } = useSiteNavigationSpan();
 
    return (
       <span

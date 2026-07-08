@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import ProfileData from "./subComponents/DataDiv";
 import { useGetUser } from "@/hooks/api/user/queries";
+import PorfileNavigation from "@/components/spans/ProfileNavigationSpan";
 
 export default function ProfileDataDiv() {
    const t = useTranslations("user");
@@ -12,6 +13,7 @@ export default function ProfileDataDiv() {
 
    return (
       <div className="authForm">
+         <PorfileNavigation shouldRenderNav user={user} />
          <div className="w-full flex flex-col gap-y-8 items-center">
             <ProfileData label={t("showData.name")} data={user.name} />
             <ProfileData label={t("showData.email")} data={user.email} />

@@ -3,6 +3,7 @@ import FirstStep from "./steps/first/EditProfileFirstStep";
 import SecondStep from "./steps/second/EditProfileSecondtStep";
 import User from "@/models/interfaces/UI/UserInterface";
 import ThirdStep from "./steps/third/EditProfileThirdStep";
+import PorfileNavigation from "@/components/spans/ProfileNavigationSpan";
 
 export default function EditProfileFormSteps({ user }: User) {
    const {
@@ -20,6 +21,7 @@ export default function EditProfileFormSteps({ user }: User) {
 
    return (
       <div className="formSteps">
+         <PorfileNavigation step={step} user={user} />
          {
             {
                1: (

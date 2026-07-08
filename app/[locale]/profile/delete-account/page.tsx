@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
    const t = await getTranslations(`metaData`);
 
    return {
-      title: `${title} ${t("profile.title")}`,
-      description: t("profile.description"),
+      title: `${title} ${t("deleteAccount.title")}`,
+      description: t("deleteAccount.description"),
    };
 }
 

@@ -2,7 +2,6 @@ import ProfilePage from "@/components/pages/Profile";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { title } from "@/constants/metaData";
-import User from "@/models/interfaces/dtos/responses/GetUserResponseDto";
 
 export async function generateMetadata(): Promise<Metadata> {
    const t = await getTranslations(`metaData`);

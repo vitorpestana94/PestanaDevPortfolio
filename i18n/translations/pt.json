@@ -212,15 +212,31 @@
       }
    },
    "metaData": {
+      "home": {
+         "title": "| Full Stack Web Developer",
+         "description": "Olá! Meu nome é Vitor Pestana e sou um Desenvolvedor Web Full Stack especializado em desenvolvimento back-end e aplicações web escaláveis."
+      },
       "auth": {
          "login": "| Logar",
          "signUp": "| Cadastrar",
          "forgotPassword": "| Esqueceu a senha",
          "description": "Aqui você pode tanto logar ou cadastrar-se"
       },
+      "editProfile": {
+         "title": "| Editar Perfil",
+         "description": "Aqui você pode atualizar os dados do seu perfil."
+      },
       "profile": {
          "title": "| Perfil",
-         "description": "Aqui você pode alterar os dados do seu perfil, alterar suas credentiais ou deletar sua conta."
+         "description": "Aqui você pode consultar os dados do seu perfil."
+      },
+      "changePassword": {
+         "title": "| Alterar Senha",
+         "description": "Aqui você pode alterar sua senha."
+      },
+      "delete-account": {
+         "title": "| Excluir Conta",
+         "description": "Aqui você pode excluir sua conta."
       }
    },
    "googleReCaptcha": {

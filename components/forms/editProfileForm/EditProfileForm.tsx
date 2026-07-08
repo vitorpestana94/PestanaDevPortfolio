@@ -7,7 +7,7 @@ import { useGetUser } from "@/hooks/api/user/queries";
 export default function EditProfileForm() {
    const { data: user } = useGetUser();
 
-   if (!user) return;
+   if (!user) return null;
 
    return (
       <AuthForm>
