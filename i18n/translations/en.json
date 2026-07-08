@@ -249,6 +249,7 @@
       "terms": " and Terms of Service",
       "apply": " apply."
    },
+   "loading": "Just a moment! Loading...",
    "error": {
       "ops": "Ooooops!",
       "something": "Something went wrong!",

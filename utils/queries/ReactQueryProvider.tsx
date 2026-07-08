@@ -11,15 +11,13 @@ import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { getErrorCode } from "../errors/errorMessagesHandlers";
 import { useTranslations } from "next-intl";
+import GlobalLoader from "@/components/divs/loaders/GlobalLoader";
 
-interface Props {
+export default function ReactQueryProvider({
+   children,
+}: {
    children: React.ReactNode;
-}
-/**
- * Provides react query client and devtools. Working on client side, so must be
- * created in that component and wrap the app
- * */
-export default function ReactQueryProvider({ children }: Props) {
+}) {
    const t = useTranslations();
 
    const getErrorMessage = (message: string) => {
@@ -56,6 +54,7 @@ export default function ReactQueryProvider({ children }: Props) {
    return (
       <QueryClientProvider client={queryClient}>
          <ToastContainer />
+         <GlobalLoader loadingMessage={t("loading")} />
          {children}
       </QueryClientProvider>
    );
