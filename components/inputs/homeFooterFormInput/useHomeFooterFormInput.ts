@@ -1,56 +1,22 @@
 import isEmailValid from "@/utils/strings/verifyEmailFormat";
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 export default function useHomeFooterFormInput() {
-  const t = useTranslations();
-  const [isEmailEmpty, setIsEmailEmpty] = useState<boolean>(false);
-  const [isNameEmpty, setIsNameEmpty] = useState<boolean>(false);
-  const [isEmailFormatInvalid, setIsEmailFormatInvalid] =
-    useState<boolean>(false);
+   const t = useTranslations();
 
-  function verifyEmail(event: React.FocusEvent<HTMLInputElement, Element>) {
-    const email = event.target.value;
+   function verifyEmail(value: any) {
+      return isEmailValid(value) || t("auth.login.form.errors.emailFormat");
+   }
 
-    if (!email) {
-      setIsEmailEmpty(true);
-      setIsEmailFormatInvalid(false);
-    } else {
-      setIsEmailEmpty(false);
+   function verifyName(value: any) {
+      return value ? true : t("home.quartaSessao.form.errors.name");
+   }
 
-      if (!isEmailValid(email)) {
-        setIsEmailFormatInvalid(true);
-      } else {
-        setIsEmailFormatInvalid(false);
-      }
-    }
-  }
-
-  function verifyName(event: React.FocusEvent<HTMLInputElement, Element>) {
-    const name = event.target.value;
-
-    setIsNameEmpty(name ? false : true);
-  }
-
-  function getErrorMessage(): string {
-    let errordMessage: string = "";
-
-    if (isEmailEmpty || isEmailFormatInvalid) {
-      errordMessage = isEmailFormatInvalid
-        ? t("auth.login.form.errors.emailFormat")
-        : t("auth.login.form.errors.email");
-    }
-
-    return errordMessage;
-  }
-
-  return {
-    t,
-    isNameEmpty,
-    isEmailEmpty,
-    isEmailFormatInvalid,
-    verifyEmail,
-    getErrorMessage,
-    verifyName,
-  };
+   return {
+      t,
+      emailRequired: t("auth.login.form.errors.email"),
+      nameRequired: t("home.quartaSessao.form.errors.name"),
+      verifyEmail,
+      verifyName,
+   };
 }

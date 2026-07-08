@@ -1,10 +1,9 @@
-export default interface InputInterface {
+import ReactHookFormPros from "@/models/interfaces/forms/ReactHookFormPros";
+
+export default interface InputInterface extends ReactHookFormPros {
    props: {
       type: string;
       placeHolder: string;
-      name: string;
       styles?: string;
-      setFormData?: (data: string) => void;
-      setIsFormWithError?: React.Dispatch<React.SetStateAction<boolean>>;
    };
 }

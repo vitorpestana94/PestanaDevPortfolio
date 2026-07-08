@@ -1,5 +1,6 @@
-export default interface HomeTextAreaInterface {
-  placeHolder: string;
-  setFormData: (data: string) => void;
-  setIsFormWithError: React.Dispatch<React.SetStateAction<boolean>>;
+import ReactHookFormPros from "@/models/interfaces/forms/ReactHookFormPros";
+
+export default interface HomeTextAreaInterface extends ReactHookFormPros {
+   placeHolder: string;
+   errorMessage: string;
 }

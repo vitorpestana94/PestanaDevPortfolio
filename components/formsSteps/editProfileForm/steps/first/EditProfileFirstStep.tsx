@@ -40,7 +40,6 @@ export default function EditProfileFirstStep({
             props={{
                placeHolder: user.name,
                type: "text",
-               name: "name",
             }}
          />
          {!isSignUpWithPlatform && (
@@ -52,7 +51,6 @@ export default function EditProfileFirstStep({
                props={{
                   placeHolder: user.email,
                   type: "email",
-                  name: "email",
                }}
             />
          )}

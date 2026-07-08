@@ -14,7 +14,7 @@ export default function HomeFormButton({
    const t = useTranslations();
 
    return (
-      <div className="w-full flex flex-col items-center sm:items-end">
+      <div className="w-full flex flex-col items-center sm:items-end gap-y-2">
          <motion.button
             whileTap={scale}
             whileHover={scale}

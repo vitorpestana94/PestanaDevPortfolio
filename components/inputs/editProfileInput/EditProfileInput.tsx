@@ -26,7 +26,6 @@ export default function EditProfileInput({
             type={props.type}
             placeholder={props.placeHolder}
             className={`profileDataDiv text-xs focus:outline-none ${props.styles}`}
-            name={props.name}
             autoComplete={getAutoComplete()}
          />
       </div>
