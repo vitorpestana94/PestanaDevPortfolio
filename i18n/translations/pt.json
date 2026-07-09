@@ -1,24 +1,284 @@
 {
-  "home": {
-    "header": {
-      "sobre": "Sobre",
-      "meuTrabalho": "Meu Trabalho"
-    },
-    "segundaSessao": {
-      "titulo": "Um pouco\nsobre mim"
-    },
-    "terceiraSessao": {
-      "titulo": "Meu trabalho"
-    },
-    "quartaSessao": {
-      "copyright": "Todos os direitos reservados",
-      "form": {
-        "titulo": "Contato",
-        "email": "seu email",
-        "nome": "seu nome",
-        "mensagem": "Quer me conhecer melhor?\nVocê pode falar comigo pelas minhas redes sociais ou me mandando um email!",
-        "buttonLabel": "Enviar"
+   "home": {
+      "header": {
+         "sobre": "Sobre",
+         "meuTrabalho": "Meu Trabalho",
+         "logar": "Logar",
+         "profile": {
+            "loggout": "Sair",
+            "editProfile": "Editar Perfil"
+         }
+      },
+      "segundaSessao": {
+         "titulo": "Um pouco\nsobre mim"
+      },
+      "terceiraSessao": {
+         "titulo": "Meu trabalho"
+      },
+      "quartaSessao": {
+         "copyright": "Todos os direitos reservados",
+         "form": {
+            "titulo": "Contato",
+            "email": "seu email",
+            "nome": "seu nome",
+            "mensagem": "Quer me conhecer melhor?\nVocê pode falar comigo pelas minhas redes sociais ou me mandando um email!",
+            "buttonLabel": "Enviar",
+            "emailSended": "Seu e-mail de contato foi enviado com sucesso! Responderei em breve!",
+            "errors": {
+               "name": "Nome é necessário!",
+               "textArea": "Uma mensagem é necessária!",
+               "button": "Há erros no formulário ou há campos vazios. Verifique-os para continuar!"
+            }
+         }
       }
-    }
-  }
+   },
+   "auth": {
+      "common": {
+         "with": "Continuar com",
+         "or": "ou"
+      },
+      "switchButton": {
+         "login": "Entrar",
+         "signUp": "Cadastrar"
+      },
+      "login": {
+         "banner": {
+            "title": "Bom ver você novamente!",
+            "paragraph": "Gostaria de entrar?"
+         },
+         "form": {
+            "title": "Entrar",
+            "email": "e-mail",
+            "password": "senha",
+            "forgot": "esqueceu sua senha?",
+            "errors": {
+               "email": "O e-mail está vazio, por favor, informe-o para continuar!",
+               "emailFormat": "O formato do e-mail informado é inválido; por favor, insira um formato válido como: email@example.com!",
+               "password": "A senha está vazia, por favor, informe-a para continuar!",
+               "invalidCredentials": "Pelo menos uma das suas credenciais está incorreta!",
+               "invalidLoginEndpoint": "Você se cadastrou usando um provedor de login social.\n Por favor, entre usando o mesmo provedor."
+            }
+         }
+      },
+      "sign-up": {
+         "banner": {
+            "title": "Gostaria de ver como \neu transformo ideias em código?",
+            "paragraph": "Cadastre-se agora!"
+         },
+         "form": {
+            "title": "Cadastro",
+            "firstStep": {
+               "email": "seu e-mail",
+               "button": "Cadastrar"
+            },
+            "secondStep": {
+               "button": "Verificar",
+               "paragraph": "Enviei um e-mail com um código de confirmação.\n Por favor, verifique seu e-mail.",
+               "error": {
+                  "wrongToken": "Código incorreto, tente novamente!",
+                  "tokenNotSetted": "Por favor, informe todos os caracteres do código enviado para seu e-mail."
+               },
+               "resendToken": {
+                  "havent": "Ainda não recebeu seu código?",
+                  "sendNow": "Enviar agora",
+                  "waitToSendResetToken": "Aguarde {wait} para reenviar.",
+                  "reached": "Você atingiu o número máximo de tentativas. Tente novamente mais tarde caso ainda não tenha recebido o código."
+               }
+            },
+            "thirdStep": {
+               "paragraph": "Agora, por favor, informe seu nome\n e defina uma senha.",
+               "buttonLabel": "Registrar",
+               "placeholders": {
+                  "name": "Seu nome",
+                  "password": "Defina uma senha",
+                  "passwordConfirmation": "Confirme sua senha"
+               },
+               "error": {
+                  "name": "O nome é obrigatório. Informe-o para continuar.",
+                  "password": {
+                     "empty": "A senha é obrigatória. Informe-a para continuar.",
+                     "wrongFormat": "Sua senha deve conter:\n\n• Pelo menos 8 caracteres\n• Uma letra maiúscula\n• Uma letra minúscula\n• Pelo menos dois números\n• Não deve conter espaços vazios.\n• Deve possuir um caractere especial, como @"
+                  },
+                  "passwordConfirmation": {
+                     "empty": "Por favor, confirme sua senha.",
+                     "mismatch": "A confirmação da senha não corresponde à senha definida."
+                  },
+                  "emailFormatInvalid": "O e-mail informado não possui um formato válido.",
+                  "emailAlreadyInUse": "O e-mail que você está tentando cadastrar já está em uso.",
+                  "emailNotConfirmed": "O e-mail que você está tentando cadastrar ainda não foi confirmado."
+               }
+            },
+            "fourthStep": {
+               "title": "Sucesso!\nConfira o que eu consigo fazer!"
+            },
+            "errors": {
+               "alreadyRegistered": "O e-mail informado já está cadastrado.",
+               "confirmationCodeEmailAlreadySent": "Um código de confirmação já foi enviado para o e-mail informado. Tente novamente mais tarde."
+            }
+         }
+      },
+      "forgot-password": {
+         "banner": {
+            "title": "Esqueceu sua senha?",
+            "paragraph": "Não se preocupe, vamos recuperá-la!"
+         },
+         "form": {
+            "title": "Recuperar senha",
+            "paragraph": "Digite seu e-mail\n para iniciar a recuperação da conta.",
+            "firstStep": {
+               "button": "Recuperar",
+               "hr": "Vamos recuperar seu acesso!"
+            },
+            "thirdStep": {
+               "title": "Agora, basta definir uma nova senha\n e repeti-la!",
+               "button": "Alterar senha"
+            },
+            "fourthStep": {
+               "title": "Sua senha foi alterada!\nAgora, tente entrar novamente!",
+               "button": "Entrar"
+            }
+         },
+         "placeHolders": {
+            "newPassword": "Digite sua nova senha"
+         }
+      }
+   },
+   "user": {
+      "profile": {
+         "banner": {
+            "title": "Você quer ver\nseu perfil?",
+            "paragraph": "Dá uma olhada então!"
+         }
+      },
+      "edit": {
+         "banner": {
+            "title": "Quer atualizar\nseus dados?",
+            "paragraph": "Sem problemas! Você pode fazer isso aqui."
+         }
+      },
+      "change-password": {
+         "banner": {
+            "title": "Quer alterar\nsua senha?",
+            "paragraph": "É fácil. Basta fazer isso aqui."
+         }
+      },
+      "delete-account": {
+         "banner": {
+            "title": "Ah, então você quer\nexcluir sua conta?",
+            "paragraph": "Que pena! Mas você pode fazer isso aqui."
+         }
+      },
+      "showData": {
+         "name": "Nome",
+         "email": "Endereço de Email",
+         "signUpType": {
+            "label": "Tipo de Registro",
+            "manual": "Manualmente",
+            "platform": "Usando o {{provider}}"
+         }
+      },
+      "editProfile": {
+         "edit": {
+            "title": "Alterar Dados",
+            "button": "Atualizar",
+            "name": "Nome",
+            "lastStepTitle": "Seus dados foram atualizados!"
+         }
+      },
+      "changePassword": {
+         "title": "Alterar Senha",
+         "current": "Senha Atual",
+         "new": "Nova Senha",
+         "currentErrorMessage": "Por favor, forneça sua senha atual para prosseguir",
+         "placeholders": {
+            "current": "Informe sua senha atual",
+            "new": "Defina uma nova senha",
+            "confirm": "Confirme sua nova senha"
+         },
+         "button": "Alterar",
+         "finalStep": "Sua senha foi atualizada!"
+      },
+      "deleteAccount": {
+         "title": "Deletar Conta",
+         "areYouSure": "Tem certeza de que\ndeseja excluir sua conta?\nO seguinte acontecerá se você continuar:",
+         "willHappen": {
+            "one": "Você será desconectado de todos os dispositivos",
+            "two": "As informações da sua conta serão excluídas",
+            "three": "Você não terá mais acesso aos serviços deste site"
+         },
+         "yes": "Sim, tenho certeza",
+         "button": "Deletar",
+         "lastStep": "Lamentamos ver você partir!\nEsperamos que você volte algum dia!\nVocê será sempre bem-vindo(a)!"
+      }
+   },
+   "metaData": {
+      "home": {
+         "title": "| Full Stack Web Developer",
+         "description": "Olá! Meu nome é Vitor Pestana e sou um Desenvolvedor Web Full Stack especializado em desenvolvimento back-end e aplicações web escaláveis."
+      },
+      "auth": {
+         "login": "| Logar",
+         "signUp": "| Cadastrar",
+         "forgotPassword": "| Esqueceu a senha",
+         "description": "Aqui você pode tanto logar ou cadastrar-se"
+      },
+      "editProfile": {
+         "title": "| Editar Perfil",
+         "description": "Aqui você pode atualizar os dados do seu perfil."
+      },
+      "profile": {
+         "title": "| Perfil",
+         "description": "Aqui você pode consultar os dados do seu perfil."
+      },
+      "changePassword": {
+         "title": "| Alterar Senha",
+         "description": "Aqui você pode alterar sua senha."
+      },
+      "delete-account": {
+         "title": "| Excluir Conta",
+         "description": "Aqui você pode excluir sua conta."
+      }
+   },
+   "googleReCaptcha": {
+      "protectedBy": "Este site é protegido por reCAPTCHA",
+      "privacy": " \ne a Política de Privacidade",
+      "terms": " e os Termos de Serviço da Google",
+      "apply": " se aplicam."
+   },
+   "loading": "Só um momento! Carregando ...",
+   "error": {
+      "ops": "Ooooopa!",
+      "something": "Algo deu errado!",
+      "buttonLabel": "Recarregar",
+      "unexpected": "Um erro inesperado ocorreu; tente de novo mais tarde",
+      "8F2A": "O email fornecido já está em uso.",
+      "D7C1": "O email informado já foi enviado.",
+      "5BE9": "O email informado não foi enviado.",
+      "C8A4": "A solicitação para enviar um novo email com o código de confirmação foi feita muito cedo.",
+      "F19D": "Ocorreu um erro ao se comunicar com o servidor de emails!",
+      "2E6B": "Ocorreu um erro inesperado ao enviar o email!",
+      "91AF": "O email informado não existe em nossa base de dados!",
+      "7D3E": "O email do usuário não foi confirmado!",
+      "4A7F": "Credenciais inválidas.",
+      "9D21": "Você se cadastrou usando uma plataforma. Faça login utilizando a plataforma.",
+      "C5E8": "Você se cadastrou manualmente. Faça login utilizando seu email e senha.",
+      "E31B": "O token da plataforma informado é inválido!.",
+      "7F9C": "A pontuação retornada pelo Google indica que o comportamento do usuário não é humano.",
+      "A2D6": "Ocorreu um erro inesperado ao tentar criar o token de atualização.",
+      "5BC1": "Usuário não encontrado!",
+      "8E4D": "O usuário não pôde ser atualizado devido a erros internos!",
+      "D913": "O usuário não pôde ser excluído devido a erros internos!",
+      "F26A": "Não é possível atualizar os dados do usuário porque nenhuma alteração foi detectada.",
+      "1C7E": "A senha do usuário não pôde ser atualizada devido a erros internos!",
+      "B4F0": "Não é possível atualizar a senha do usuário!",
+      "3F8D": "Código inválido: o código informado não corresponde.",
+      "B71A": "Código expirado: o código informado não é mais válido.",
+      "A19F": "Não foi possível processar a validação do reCAPTCHA.",
+      "E4A9": "Sua solicitação não atende aos requisitos.",
+      "7C2F": "Você não tem permissão para acessar este recurso!",
+      "B8D1": "Algo deu errado!",
+      "F35E": "O recurso não foi encontrado.",
+      "9A6C": "A solicitação foi enviada com um tipo de mídia inválido!",
+      "D2B7": "Ocorreu um erro inesperado."
+   }
 }

@@ -1,0 +1,55 @@
+import useConfirmationCodeInput from "./useSignUpSecondStep";
+import Interface from "./SignUpSecondStepInterface";
+import Check from "@/components/buttons/formButton/FormButton";
+import ResendToken from "@/components/spans/resendTokenSpan/ResendTokenSpan";
+import Error from "@/components/errors/error/Error";
+import ISentAnEmail from "@/components/paragraphs/FormParagraph";
+import ConfirmationCode from "@/components/inputs/confirmationCodeInput/ConfirmationCodeInput";
+import ReCaptcha from "@/components/divs/ReCaptchaDiv";
+
+export default function SignUpSecondStep({ email, nextStep }: Interface) {
+   const {
+      keys,
+      refs,
+      error,
+      shouldShowError,
+      isFormEmpty,
+      isLoading,
+      t,
+      handleInputChange,
+      handleOnKeyDown,
+      handleButtonClick,
+      getRandomDefault,
+   } = useConfirmationCodeInput({ email, nextStep });
+
+   return (
+      <section
+         onSubmit={(event) => event.preventDefault()}
+         className="flex flex-col flex-1 justify-around sm:items-center"
+      >
+         <ISentAnEmail text={t("paragraph")} />
+         <div className="flex flex-col gap-y-4 px-6 sm:px-16 md:px-20 items-start">
+            <div className="flex select-none w-full justify-center gap-x-3 sm:gap-x-5 sm:mt-10">
+               <ConfirmationCode
+                  codeKeys={keys}
+                  refs={refs}
+                  getRandomDefault={getRandomDefault}
+                  handleInputChange={handleInputChange}
+                  handleOnKeyDown={handleOnKeyDown}
+               />
+            </div>
+            <ResendToken email={email!} />
+            <Error shouldRender={shouldShowError} message={error} />
+         </div>
+         <ReCaptcha>
+            <Check
+               buttonLabel={t("button")}
+               isLoading={isLoading}
+               styles="w-4/12! lg:w-3/12!"
+               isFormWithErrors={isFormEmpty}
+               submit={handleButtonClick}
+            />
+         </ReCaptcha>
+      </section>
+   );
+}

@@ -1,24 +1,288 @@
 {
-  "home": {
-    "header": {
-      "sobre": "About",
-      "meuTrabalho": "My Work"
-    },
-    "segundaSessao": {
-      "titulo": "About me"
-    },
-    "terceiraSessao": {
-      "titulo": "My work"
-    },
-    "quartaSessao": {
-      "copyright": "All rights reserverd",
-      "form": {
-        "titulo": "Contact",
-        "email": "your email",
-        "nome": "your name",
-        "mensagem": "Want to get to know me better?\nYou can reach out to me on my social networks or by sending me an email!",
-        "buttonLabel": "Send"
+   "home": {
+      "header": {
+         "sobre": "About",
+         "meuTrabalho": "My Work",
+         "logar": "Login",
+         "profile": {
+            "loggout": "Loggout",
+            "editProfile": "Profile"
+         }
+      },
+      "segundaSessao": {
+         "titulo": "About me"
+      },
+      "terceiraSessao": {
+         "titulo": "My work"
+      },
+      "quartaSessao": {
+         "copyright": "All rights reserverd",
+         "form": {
+            "titulo": "Contact",
+            "email": "your email",
+            "nome": "your name",
+            "mensagem": "Wanna know me better?\nYou can reach out to me on my social networks or by sending me an email!",
+            "buttonLabel": "Send",
+            "emailSended": "Your contact email has been sent successfully! I will answer you shortly!",
+            "errors": {
+               "name": "Name is required!",
+               "textArea": "A message is required!",
+               "button": "There are errors on the form or there are empty fields. Please check it to proceed!"
+            }
+         }
       }
-    }
-  }
+   },
+   "auth": {
+      "common": {
+         "with": "Continue with",
+         "or": "or"
+      },
+      "switchButton": {
+         "login": "Login",
+         "signUp": "Sign Up"
+      },
+      "login": {
+         "banner": {
+            "title": "Good to see you back!",
+            "paragraph": "Would you like to login?"
+         },
+         "form": {
+            "title": "Login",
+            "email": "email",
+            "password": "password",
+            "forgot": "forgot password?",
+            "errors": {
+               "email": "The email is empty, please provide it to proceed!",
+               "emailFormat": "The provided email format is invalid; please, enter a valid format like: email@example.com!",
+               "password": "The password is empty, please provide it to proceed!",
+               "invalidCredentials": "At least, one of your credentials is incorrect!",
+               "invalidLoginEndpoint": "You signed up using a social login provider.\n Please sign in using the same provider."
+            }
+         }
+      },
+      "sign-up": {
+         "banner": {
+            "title": "Would you like to see how \nI turn ideas into code?",
+            "paragraph": "Sign up right now!"
+         },
+         "form": {
+            "title": "Sign Up",
+            "firstStep": {
+               "email": "your email",
+               "button": "Sign Up"
+            },
+            "secondStep": {
+               "button": "Check",
+               "paragraph": "I sent an email with a confirmation code.\n Please, check your email.",
+               "error": {
+                  "wrongToken": "Wrong code, try again!",
+                  "tokenNotSetted": "Please, provide all the characters of the code sended to your email."
+               },
+               "resendToken": {
+                  "havent": "Haven't received your code yet?",
+                  "sendNow": "Send now",
+                  "waitToSendResetToken": "Wait {wait} to resend.",
+                  "reached": "You have reached the maximum number of attempts. Please try again later if you have not yet received the code."
+               }
+            },
+            "thirdStep": {
+               "paragraph": "Now, please, provide your name\n and define a password.",
+               "buttonLabel": "Register",
+               "placeholders": {
+                  "name": "Your name",
+                  "password": "Define a password",
+                  "passwordConfirmation": "Confirm your password"
+               },
+               "error": {
+                  "name": "Name is required. Provide it to continue.",
+                  "password": {
+                     "empty": "Password is required. Provide it to continue",
+                     "wrongFormat": "Your password must have: \n\n• At least 8 characters\n• One capital letter\n• One small letter\n• At least two digits\n• Must not have empty spaces.\n• Must have one special character, like @"
+                  },
+                  "passwordConfirmation": {
+                     "empty": "Please, confirm your password.",
+                     "mismatch": "Your password confirmation does not match the defined password."
+                  },
+                  "emailFormatInvalid": "The email that you provided do not have valid format.",
+                  "emailAlreadyInUse": "The email that you are trying to sign up with is already in use.",
+                  "emailNotConfirmed": "The email that you are trying to register with was not confirmed yet."
+               }
+            },
+            "fourthStep": {
+               "title": "Success!\nCheckout what i can do!"
+            },
+            "errors": {
+               "alreadyRegistered": "The provided email is already registered.",
+               "confirmationCodeEmailAlreadySent": "A confirmation code was already sent to the provided email. Try again later."
+            }
+         }
+      },
+      "forgot-password": {
+         "banner": {
+            "title": "Forgot you password?",
+            "paragraph": "Don't worry, let's recover it!"
+         },
+         "form": {
+            "title": "Forgot Password",
+            "paragraph": "Just enter your email\n to begin account recovery.",
+            "firstStep": {
+               "button": "Recover",
+               "hr": "Let's recover your access!"
+            },
+            "thirdStep": {
+               "title": "Now, just define a new password\n and repeat it!",
+               "button": "Change Password"
+            },
+            "fourthStep": {
+               "title": "Your password was changed!\nNow, try to login again!",
+               "button": "Login"
+            }
+         },
+         "placeHolders": {
+            "newPassword": "Enter your new password"
+         }
+      }
+   },
+   "user": {
+      "profile": {
+         "banner": {
+            "title": "So, you want to \ncheck out your profile?",
+            "paragraph": "Go ahead and take a look!"
+         }
+      },
+      "edit": {
+         "banner": {
+            "title": "Want to update\nyour information?",
+            "paragraph": "No problem! You can do it here."
+         }
+      },
+      "change-password": {
+         "banner": {
+            "title": "Want to change\nyour password?",
+            "paragraph": "It's easy. Just do it here."
+         }
+      },
+      "delete-account": {
+         "banner": {
+            "title": "Oh, you want to\ndelete your account?",
+            "paragraph": "That's so sad! But you can do it here."
+         }
+      },
+      "showData": {
+         "name": "Name",
+         "email": "Email Address",
+         "signUpType": {
+            "label": "Signup Type",
+            "manual": "Manually",
+            "platform": "Using {provider}"
+         }
+      },
+      "editProfile": {
+         "edit": {
+            "title": "Change Information",
+            "button": "Update",
+            "name": "Name",
+            "lastStepTitle": "Your data was updated!"
+         }
+      },
+      "changePassword": {
+         "title": "Change Password",
+         "current": "Current Password",
+         "new": "New Password",
+         "currentErrorMessage": "Please, provide your current password to proceed",
+         "placeholders": {
+            "current": "Provide your current password",
+            "new": "Define a new password",
+            "confirm": "Confirm your new password"
+         },
+         "button": "Change",
+         "finalStep": "Your password was updated!"
+      },
+      "deleteAccount": {
+         "title": "Delete Account",
+         "areYouSure": "Are you sure you\nwant to delete your account?\nThe following will happen if you proceed:",
+         "willHappen": {
+            "one": "You will be logged out on all devices",
+            "two": "Your account information will be deleted",
+            "three": "You will no longer have access to this site's services"
+         },
+         "yes": "Yes, I'm sure",
+         "button": "Delete",
+         "lastStep": "I'm so sorry to see you go!\nI hope you'll come back someday!\n You'll always be welcome here!"
+      }
+   },
+   "metaData": {
+      "home": {
+         "title": "| Full Stack Web Developer",
+         "description": "Hello! My name is Vitor Pestana, and I'm a Full Stack Web Developer specializing in back-end development and scalable web applications."
+      },
+      "auth": {
+         "login": "| Login",
+         "signUp": "| Sign Up",
+         "forgotPassword": "| Forgot Password",
+         "description": {
+            "login": "Here you can login.",
+            "signUp": "Here you can sign up.",
+            "forgotPassword": "Here you can retrieve your password"
+         }
+      },
+      "editProfile": {
+         "title": "| Edit Profile",
+         "description": "Here you can update your profile data."
+      },
+      "profile": {
+         "title": "| Profile",
+         "description": "Here you can check your profile data."
+      },
+      "changePassword": {
+         "title": "| Change Password",
+         "description": "Here you can change your password."
+      },
+      "deleteAccount": {
+         "title": "| Delete Account",
+         "description": "Here you can delete your account."
+      }
+   },
+   "googleReCaptcha": {
+      "protectedBy": "This site is protected by reCAPTCHA",
+      "privacy": " \n and the Google Privacy Policy",
+      "terms": " and Terms of Service",
+      "apply": " apply."
+   },
+   "loading": "Just a moment! Loading...",
+   "error": {
+      "ops": "Ooooops!",
+      "something": "Something went wrong!",
+      "buttonLabel": "Reload",
+      "unexpected": "An unexpected error ocurred; please, try again later.",
+      "8F2A": "The provided email is already in use.",
+      "D7C1": "The provided email was already sended.",
+      "5BE9": "The provided email was not sended.",
+      "C8A4": "The request to send a new confirmation code email was done too soon.",
+      "F19D": "An error occurred when communicating with the email server!",
+      "2E6B": "An unespected error ocurred while sending the email!",
+      "91AF": "The provided email does not exists on our database!",
+      "7D3E": "The user email was not confirmed!",
+      "4A7F": "Invalid Credentials.",
+      "9D21": "You registered using a platform. Please, login using platform.",
+      "C5E8": "You registered manually. Please, login using your email and password.",
+      "E31B": "The provided platform token is invalid!.",
+      "7F9C": "Google's score response indicates that user's behavior is not human.",
+      "A2D6": "An unexpected error ocurred while trying to create the refresh token.",
+      "5BC1": "User was not found!",
+      "8E4D": "User was not updated due internal errors!",
+      "D913": "User was not deleted due internal errors!",
+      "F26A": "Cannot update user data because no changes were detected.",
+      "1C7E": "User password was not deleted due internal errors!",
+      "B4F0": "Can't update user password!",
+      "3F8D": "Invalid Code: the provided code doest not match.",
+      "B71A": "Unfresh Code: the provided code is not fresh.",
+      "A19F": "Was not possible to handle recaptcha.",
+      "E4A9": "Your request does not meet the requirements.",
+      "7C2F": "You do not have permission to access this resource!",
+      "B8D1": "Something went wrong!",
+      "F35E": "The resource was not found.",
+      "9A6C": "You requested with a wrong type of media!",
+      "D2B7": "An unexpected error occurred."
+   }
 }

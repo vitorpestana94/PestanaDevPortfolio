@@ -3,9 +3,9 @@ import Frame from "@/components/divs/frameDiv/FrameDiv";
 import FullStackWebDeveloper from "@/components/paragraphs/FullStackWebDeveloperParagraph";
 
 export default function HomeFirstSectionTextBLock() {
-  return (
-    <section
-      className="flex flex-col
+   return (
+      <section
+         className="flex flex-col
       xxs:ml-10
       xs:ml-14 
       ssm:ml-20
@@ -14,16 +14,17 @@ export default function HomeFirstSectionTextBLock() {
       md:gap-y-12 md:ml-40 md:pt-24 md:pb-10
       xl:ml-60 xl:pb-24
       3xl:ml-96
-      4xl:ml-[600px]"
-    >
-      <VitorPestana />
-      <Frame
-        props={{
-          className: "w-[35%] sm:w-[22%] xl:w-[18%] 3xl:w-[14%] 4xl:w-[12%]",
-        }}
+      4xl:ml-150"
       >
-        <FullStackWebDeveloper />
-      </Frame>
-    </section>
-  );
+         <VitorPestana />
+         <Frame
+            props={{
+               className:
+                  "w-[35%] sm:w-[22%] xl:w-[18%] 3xl:w-[14%] 4xl:w-[12%]",
+            }}
+         >
+            <FullStackWebDeveloper />
+         </Frame>
+      </section>
+   );
 }

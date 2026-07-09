@@ -4,12 +4,12 @@ import BackGround from "@/components/divs/home/firstSession/HomeFirstSectionBgDi
 import Wrapper from "@/components/wrappers/home/HomeWrapper";
 
 export default function HomeFirstSection() {
-  return (
-    <BackGround>
-      <Header />
-      <Wrapper className="mt-1 sm:mt-8 xl:mt-10 xl:mx-[90px]">
-        <VitorPestanaFullStackWebDeveloper />
-      </Wrapper>
-    </BackGround>
-  );
+   return (
+      <BackGround>
+         <Header />
+         <Wrapper className="mt-1 sm:mt-8 xl:mt-10 xl:mx-22.5">
+            <VitorPestanaFullStackWebDeveloper />
+         </Wrapper>
+      </BackGround>
+   );
 }
