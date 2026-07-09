@@ -20,11 +20,11 @@ export default function ChangePasswordFormSteps() {
       submit,
    } = useChangePasswordFormSteps();
 
-   if (!user || user.registerType === "Platform") return null;
+   if (!user || !user.email) return null;
 
    return (
       <div className="formSteps">
-         <PorfileNavigation step={step} user={user} />
+         <PorfileNavigation step={step} isManualSignUp />
          {
             {
                1: (

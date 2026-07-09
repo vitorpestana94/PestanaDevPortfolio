@@ -4,13 +4,11 @@ import ChangeUserPasswordRequestDto from "@/models/interfaces/dtos/requests/Chan
 import { useChangePassword } from "@/hooks/api/user/mutations";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
-import { useGetUser } from "@/hooks/api/user/queries";
-import { useRouter } from "next/navigation";
+import useGetManualUser from "@/hooks/useGetManualUser";
 
 export default function useChangePasswordFormSteps() {
    const t = useTranslations("user");
-   const { data: user } = useGetUser();
-   const router = useRouter();
+   const { user } = useGetManualUser();
    const {
       watch,
       register,
@@ -35,12 +33,6 @@ export default function useChangePasswordFormSteps() {
          nextStep();
       }
    }, [isSuccess]);
-
-   useEffect(() => {
-      if (user?.registerType === "Platform") {
-         router.replace("/");
-      }
-   }, [user, router]);
 
    return {
       t,

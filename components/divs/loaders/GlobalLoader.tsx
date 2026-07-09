@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useIsFetching, useIsMutating } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 
@@ -25,8 +25,12 @@ export default function GlobalLoader({
       }
 
       if (!loading && toastId.current) {
-         toast.dismiss(toastId.current!);
-         toastId.current = null;
+         setTimeout(() => {
+            if (!loading) {
+               toast.dismiss(toastId.current!);
+               toastId.current = null;
+            }
+         }, 500);
       }
    }, [isFetching, isMutating]);
 

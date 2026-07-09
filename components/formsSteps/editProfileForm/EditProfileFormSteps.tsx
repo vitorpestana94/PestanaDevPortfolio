@@ -1,11 +1,11 @@
 import useEditProfileFormSteps from "./useEditProfileFormSteps";
 import FirstStep from "./steps/first/EditProfileFirstStep";
 import SecondStep from "./steps/second/EditProfileSecondtStep";
-import User from "@/models/interfaces/UI/UserInterface";
 import ThirdStep from "./steps/third/EditProfileThirdStep";
+import User from "@/models/interfaces/dtos/SystemUser";
 import PorfileNavigation from "@/components/spans/ProfileNavigationSpan";
 
-export default function EditProfileFormSteps({ user }: User) {
+export default function EditProfileFormSteps({ user }: { user: User }) {
    const {
       step,
       isEmailUpdate,
@@ -21,7 +21,7 @@ export default function EditProfileFormSteps({ user }: User) {
 
    return (
       <div className="formSteps">
-         <PorfileNavigation step={step} user={user} />
+         <PorfileNavigation step={step} isManualSignUp />
          {
             {
                1: (
@@ -29,7 +29,7 @@ export default function EditProfileFormSteps({ user }: User) {
                      isEmailUpdate={isEmailUpdate}
                      name={name}
                      email={email}
-                     isSignUpWithPlatform={user.registerType === "Platform"}
+                     isSignUpWithPlatform={false}
                      isLoadingUpdateRequest={isLoadingUpdateRequest}
                      user={user}
                      submit={submit}

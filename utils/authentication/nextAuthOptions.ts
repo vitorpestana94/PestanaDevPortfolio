@@ -200,8 +200,8 @@ export const nextAuthOptions = {
          return token;
       },
       async session({ session, token }: { session: Session; token: JWT }) {
-         session.id = token.id as string;
-         session.provider = token.provider as string;
+         session.user.id = token.id as string;
+         session.user.provider = token.provider as string;
 
          return session;
       },

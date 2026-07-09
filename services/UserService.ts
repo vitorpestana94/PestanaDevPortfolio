@@ -1,6 +1,6 @@
 import apiRequest from "@/app/server/actions/apiRequest";
 import builder from "./request/RequestDtoBuilder";
-import GetUserResponseDto from "@/models/interfaces/dtos/responses/GetUserResponseDto";
+import GetUserResponseDto from "@/models/interfaces/dtos/SystemUser";
 import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
 import ChangeUserPasswordRequestDto from "@/models/interfaces/dtos/requests/ChangeUserPasswordRequestDto";
 

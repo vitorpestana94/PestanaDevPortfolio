@@ -5,7 +5,7 @@ import Icon, { IconName } from "../icons/Icons";
 import useButtonMotionEffects from "@/hooks/useButtonMotionEffects";
 import { motion } from "motion/react";
 import useSubRoute from "@/hooks/useSubRoute";
-import User from "@/models/interfaces/dtos/responses/GetUserResponseDto";
+import User from "@/models/interfaces/dtos/SystemUser";
 
 function NavBarButton({
    iconName,
@@ -36,14 +36,13 @@ function NavBarButton({
 export default function ProfileNavigationSpan({
    step,
    shouldRenderNav,
-   user,
+   isManualSignUp,
 }: {
    step?: number;
    shouldRenderNav?: boolean;
-   user: User;
+   isManualSignUp?: boolean;
 }) {
    const { subRoute } = useSubRoute();
-   const shouldRenderDeleteOrChangePassword = user.registerType === "Manual";
    const hrefPerButton = {
       profile: "/profile",
       edit: "/profile/edit",
@@ -67,11 +66,11 @@ export default function ProfileNavigationSpan({
                      href={hrefPerButton.profile}
                   />
                )}
-               {shouldRenderButton(hrefPerButton.edit) && (
+               {shouldRenderButton(hrefPerButton.edit) && isManualSignUp && (
                   <NavBarButton iconName="pencil" href={hrefPerButton.edit} />
                )}
                {shouldRenderButton(hrefPerButton.changePassword) &&
-                  shouldRenderDeleteOrChangePassword && (
+                  isManualSignUp && (
                      <NavBarButton
                         iconName="lock"
                         href={hrefPerButton.changePassword}

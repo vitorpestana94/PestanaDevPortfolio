@@ -3,9 +3,10 @@ import { UserRole } from "./models/enums/UserRole";
 
 declare module "next-auth" {
    interface Session {
-      provider: string;
-      id: string;
-      user: DefaultSession["user"];
+      user: {
+         provider: string;
+         id: string;
+      } & DefaultSession["user"];
    }
 }
 

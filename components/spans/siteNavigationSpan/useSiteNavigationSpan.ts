@@ -10,7 +10,11 @@ export default function useSiteNavigationSpan() {
       t,
       isUserLogged: session?.user,
       userData: {
-         user: { name: session?.user?.name, email: session?.user?.email },
+         user: {
+            name: session?.user?.name,
+            email: session?.user?.email,
+            img: session?.user.image,
+         },
       } as UserDataInterface,
    };
 }
