@@ -11,7 +11,7 @@ export default function HomeHeader() {
 
    return (
       <motion.header
-         className="flex justify-between md:mx-10 xl:mx-36 items-center self-center"
+         className="absolute top-0 w-full flex justify-between sm:px-10 xl:px-36 items-center self-center"
          initial={{ opacity: 0 }}
          animate={{ opacity: 1 }}
          transition={{ duration: 0.4 }}

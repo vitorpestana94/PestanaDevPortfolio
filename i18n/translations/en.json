@@ -13,7 +13,11 @@
          "titulo": "About me"
       },
       "terceiraSessao": {
-         "titulo": "My work"
+         "titulo": "My work",
+         "imgs": {
+            "magiPass": "This system is a website and mobile app that offers discounts on restaurants and attractions for travelers visiting Orlando. You can download the app from the Downloads section.\n\nI developed the web application using Next.js and Tailwind for the front end and .NET for the back end. The mobile app was developed using React Native.",
+            "saideira": "This is a website and mobile app that provides local breweries and bars deals in the mountain region of Rio de Janeiro, focused on Nova Friburgo.\n\nIt is currently under development, so the app is not yet available for download. Built with Next.js, Tailwind CSS, .NET, and React Native for mobile version."
+         }
       },
       "quartaSessao": {
          "copyright": "All rights reserverd",

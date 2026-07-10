@@ -27,6 +27,10 @@ import Check from "@public/icons/check.svg";
 import ProfileCircle from "@public/icons/profileCircle.svg";
 import Error from "@public/icons/error.svg";
 import ErrorToast from "@public/icons/errorToast.svg";
+import Next from "@public/icons/next.svg";
+import Tailwind from "@public/icons/tailwind.svg";
+import DotNet from "@public/icons/donet.svg";
+import React from "@public/icons/react.svg";
 
 export const icons = {
    vP: <VP />,
@@ -54,6 +58,10 @@ export const icons = {
    profileCircle: <ProfileCircle />,
    error: <Error />,
    errorToast: <ErrorToast />,
+   next: <Next />,
+   tailwind: <Tailwind />,
+   dotnet: <DotNet />,
+   react: <React />,
 } as const;
 
 export type IconName = keyof typeof icons;

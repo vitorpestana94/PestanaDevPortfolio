@@ -1,17 +1,21 @@
-export type componentType = "gifOrImage" | "link" | "bgColors";
+export type ComponentType = "gifOrImage" | "link" | "bgColors";
+export type ComponetIcon = "next" | "dotnet" | "tailwind";
 
 export default interface HomePortfolioDivInterface {
-  type?: componentType;
-  props: {
-    size: {
-      widthAndHeight: string;
-    };
-    picture?: {
-      pictureUrl: string;
-      routeOrSiteUrl: string;
-      style?: string;
-    };
-    bgColors?: string[];
-    bgImage?: string;
-  };
+   type?: ComponentType;
+   props: {
+      size: {
+         widthAndHeight: string;
+      };
+      picture?: {
+         pictureUrl: string;
+         routeOrSiteUrl: string;
+         style?: string;
+      };
+      bgColors?: string[];
+      bgImage?: string;
+      text?: string;
+      title?: string;
+      icons?: ComponetIcon[];
+   };
 }
