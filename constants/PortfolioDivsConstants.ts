@@ -16,7 +16,7 @@ export const portfolioEsquerda = {
       picture: {
          pictureUrl: "magipass",
          routeOrSiteUrl: "https://www.magipass.com/en",
-         style: " bottom-full rounded-t-2xl",
+         style: " bottom-full rounded-t-2xl -mb-[1px]",
       },
       size: {
          widthAndHeight:

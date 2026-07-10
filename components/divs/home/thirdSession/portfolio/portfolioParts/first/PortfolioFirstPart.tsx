@@ -8,7 +8,7 @@ import usePortfolioFirstPart from "./usePortfolioFirstPart";
 
 export default function PortfolioFirstPart() {
    const { isMobile, imgText } = usePortfolioFirstPart();
-   console.log(imgText.magiPass);
+
    return (
       <HomePortfolioDivsGroups
          initial={{ opacity: 0, x: -20 }}

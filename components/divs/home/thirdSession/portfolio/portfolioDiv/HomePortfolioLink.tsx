@@ -19,7 +19,7 @@ export default function HomePortfolioLink({
          onHoverEnd={() => hoverStart()}
          onHoverStart={() => hoverEnd()}
          transition={{ type: "spring", stiffness: 150, damping: 6 }}
-         className={`${props.size.widthAndHeight} ${style} relative `}
+         className={`${props.size.widthAndHeight} ${style} relative`}
       >
          <Link
             ref={linkRef}
