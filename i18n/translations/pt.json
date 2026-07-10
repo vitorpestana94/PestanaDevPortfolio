@@ -13,7 +13,11 @@
          "titulo": "Um pouco\nsobre mim"
       },
       "terceiraSessao": {
-         "titulo": "Meu trabalho"
+         "titulo": "Meu trabalho",
+         "imgs": {
+            "magiPass": "Este sistema é um site e aplicativo móvel que oferece descontos em restaurantes e atrações para turistas que visitam Orlando. Você pode baixar o aplicativo na seção Downloads.\n\nFiz parte da equipe de desenvolvimento desta aplicação web. Este projeto utiliza Next.js e Tailwind para o front-end, .NET para o back-end e React Native para o aplicativo móvel.",
+            "saideira": "Este é um site e aplicativo móvel que oferece promoções em cervejarias e bares da região serrana do Rio de Janeiro, com foco em Nova Friburgo.\n\nAtualmente está em desenvolvimento, portanto o aplicativo ainda não está disponível para download. A equipe da qual faço parte está desenvolvendo esta plataforma utilizando Next.js, Tailwind CSS, .NET e React Native para a versão mobile."
+         }
       },
       "quartaSessao": {
          "copyright": "Todos os direitos reservados",
