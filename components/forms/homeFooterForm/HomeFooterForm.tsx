@@ -33,7 +33,7 @@ export default function HomeFooterForm() {
          className="relative w-[40%] sm:w-[35%] flex flex-col items-center sm:items-end gap-y-3"
       >
          {isSuccess && <EmailSended />}
-         <Contato title={t("quartaSessao.form.titulo")} />
+         <Contato title={t("ultimaSessao.form.titulo")} />
          <div className="flex flex-col gap-y-4 items-center sm:items-end w-full">
             <span className="flex flex-col gap-y-0.5 items-center sm:items-end w-full">
                <Input
@@ -43,7 +43,7 @@ export default function HomeFooterForm() {
                   props={{
                      type: "text",
                      styles: "w-[90%] sm:w-[15%]",
-                     placeHolder: t("quartaSessao.form.nome"),
+                     placeHolder: t("ultimaSessao.form.nome"),
                   }}
                />
                <Input
@@ -52,7 +52,7 @@ export default function HomeFooterForm() {
                   register={register}
                   props={{
                      type: "text",
-                     placeHolder: t("quartaSessao.form.email"),
+                     placeHolder: t("ultimaSessao.form.email"),
                      styles: "w-[90%] sm:w-[25%]",
                   }}
                />
@@ -61,8 +61,8 @@ export default function HomeFooterForm() {
                <EmailText
                   errors={errors}
                   register={register}
-                  placeHolder={t("quartaSessao.form.mensagem")}
-                  errorMessage={t("quartaSessao.form.errors.textArea")}
+                  placeHolder={t("ultimaSessao.form.mensagem")}
+                  errorMessage={t("ultimaSessao.form.errors.textArea")}
                />
                <ReCaptcha
                   styles={{
@@ -77,7 +77,7 @@ export default function HomeFooterForm() {
                   <Enviar
                      isFormWithErros={isFormWithError}
                      isLoading={isPending}
-                     label={t("quartaSessao.form.buttonLabel")}
+                     label={t("ultimaSessao.form.buttonLabel")}
                   />
                </ReCaptcha>
             </div>

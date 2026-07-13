@@ -9,13 +9,13 @@ export default function useHomeFooterFormInput() {
    }
 
    function verifyName(value: any) {
-      return value ? true : t("home.quartaSessao.form.errors.name");
+      return value ? true : t("home.ultimaSessao.form.errors.name");
    }
 
    return {
       t,
       emailRequired: t("auth.login.form.errors.email"),
-      nameRequired: t("home.quartaSessao.form.errors.name"),
+      nameRequired: t("home.ultimaSessao.form.errors.name"),
       verifyEmail,
       verifyName,
    };

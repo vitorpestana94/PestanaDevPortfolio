@@ -3,6 +3,7 @@
       "header": {
          "sobre": "Sobre",
          "meuTrabalho": "Meu Trabalho",
+         "mySkills": "Minhas Habilidades",
          "logar": "Logar",
          "profile": {
             "loggout": "Sair",
@@ -24,6 +25,9 @@
          }
       },
       "quartaSessao": {
+         "titulo": "Minhas habilidades"
+      },
+      "ultimaSessao": {
          "copyright": "Todos os direitos reservados",
          "form": {
             "titulo": "Contato",

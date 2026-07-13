@@ -31,6 +31,17 @@ import Next from "@public/icons/next.svg";
 import Tailwind from "@public/icons/tailwind.svg";
 import DotNet from "@public/icons/donet.svg";
 import React from "@public/icons/react.svg";
+import CSharp from "@public/icons/csharp.svg";
+import Js from "@public/icons/js.svg";
+import SqlServer from "@public/icons/sqlServer.svg";
+import Sql from "@public/icons/sql.svg";
+import Python from "@public/icons/python.svg";
+import MariaDb from "@public/icons/mariadb.svg";
+import Git from "@public/icons/git.svg";
+import Html from "@public/icons/html.svg";
+import Css from "@public/icons/css.svg";
+import Typescript from "@public/icons/typescript.svg";
+import Bootstrap from "@public/icons/bootstrap.svg";
 
 export const icons = {
    vP: <VP />,
@@ -62,6 +73,17 @@ export const icons = {
    tailwind: <Tailwind />,
    dotnet: <DotNet />,
    react: <React />,
+   csharp: <CSharp />,
+   js: <Js />,
+   sql: <Sql />,
+   sqlServer: <SqlServer />,
+   python: <Python />,
+   mariadb: <MariaDb />,
+   git: <Git />,
+   html: <Html />,
+   css: <Css />,
+   typescript: <Typescript />,
+   bootstrap: <Bootstrap />,
 } as const;
 
 export type IconName = keyof typeof icons;

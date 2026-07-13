@@ -1,7 +1,8 @@
 import FirstSection from "@/components/sections/home/HomeFirstSection";
 import SecondSection from "@/components/sections/home/HomeSecondSection";
-import ThirdSection from "@/components/sections/home/HomeThirdSection";
 import FourthSection from "@/components/sections/home/HomeFourthSection";
+import ThirdSection from "../sections/home/HomeThirdSection";
+import LastSection from "@/components/sections/home/HomeLastSection";
 
 export default function Home() {
    return (
@@ -10,6 +11,7 @@ export default function Home() {
          <SecondSection />
          <ThirdSection />
          <FourthSection />
+         <LastSection />
       </main>
    );
 }

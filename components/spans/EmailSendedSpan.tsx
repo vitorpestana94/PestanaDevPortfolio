@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
 
 export default function EmailSendedSpan() {
-   const t = useTranslations("home.quartaSessao.form");
+   const t = useTranslations("home.ultimaSessao.form");
    return (
       <motion.span
          initial={{ opacity: 0 }}

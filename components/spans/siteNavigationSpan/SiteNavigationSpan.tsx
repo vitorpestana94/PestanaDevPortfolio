@@ -22,6 +22,9 @@ export default function SiteNavigationSpan() {
          <Link className="hoverPestana" href={"#meuTrabalho"}>
             {t("meuTrabalho")}
          </Link>
+         <Link className="hoverPestana" href={"#meuTrabalho"}>
+            {t("mySkills")}
+         </Link>
          {isUserLogged ? (
             <UserButton user={userData.user} />
          ) : (

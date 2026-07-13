@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Abril_Fatface, Montserrat } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -11,9 +11,17 @@ if (!process.env.NEXTAUTH_URL) {
    throw Error("Next Auth secret not defined!");
 }
 
-const roboto = Roboto({
+const abrilFatFace = Abril_Fatface({
    subsets: ["latin"],
-   variable: "--font-roboto",
+   weight: "400",
+   variable: "--font-abril",
+});
+
+const montserrat = Montserrat({
+   subsets: ["latin"],
+   display: "swap",
+   weight: ["300", "400", "500", "700"], // Escolha os pesos que você precisa
+   variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -66,7 +74,9 @@ export default async function RootLayout({
                   content="width=device-width, initial-scale=1.0"
                />
             </head>
-            <body className={roboto.className}>
+            <body
+               className={`${montserrat.className} ${abrilFatFace.className}`}
+            >
                <Providers>{children}</Providers>
             </body>
          </html>

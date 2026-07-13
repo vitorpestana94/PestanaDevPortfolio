@@ -7,6 +7,7 @@
    --breakpoint-ssm: 400px;
    --breakpoint-3xl: 120rem;
    --breakpoint-4xl: 174rem;
+   --font-abril: "Abril Fatface", cursive;
 }
 
 :root {
@@ -75,7 +76,7 @@
    }
 
    .homeSubTitle {
-      @apply text-[2rem] sm:text-[2.5rem] xl:text-[3rem] 2xl:text-[3.75rem] 4xl:text-[4rem] text-start whitespace-pre-line leading-[1.1];
+      @apply text-[2rem] sm:text-[2.5rem] xl:text-[3rem] 2xl:text-[3.75rem] 4xl:text-[4rem] text-start whitespace-pre-line leading-[1.1] font-abril;
    }
 
    .homeSectionMargin {
