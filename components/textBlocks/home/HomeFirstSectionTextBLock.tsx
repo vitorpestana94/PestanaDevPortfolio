@@ -5,7 +5,7 @@ import FullStackWebDeveloper from "@/components/paragraphs/FullStackWebDeveloper
 export default function HomeFirstSectionTextBLock() {
    return (
       <section
-         className="flex flex-col font-abril z-50
+         className="flex flex-col font-abril
       xxs:ml-8
       xs:ml-10 
       ssm:ml-26
