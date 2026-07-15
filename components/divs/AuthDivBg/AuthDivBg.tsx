@@ -11,7 +11,6 @@ export default function AuthDivBg({ root = "auth" }: { root?: Root }) {
 
    return (
       <DivBg
-         bgUrl={options.backgroundImages.authBanner}
          text={{
             title: t(`${root}.${flow}.banner.title`),
             paragraph: t(`${root}.${flow}.banner.paragraph`),

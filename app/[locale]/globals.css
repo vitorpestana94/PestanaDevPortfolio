@@ -88,7 +88,7 @@
    }
 
    .loginInputsDivs {
-      @apply flex border w-full text-[0.5rem] sm:text-[0.625rem] xxs:py-0.5 xs:py-1.5 xl:py-2 3xl:py-2.5 lg:text-[1rem] rounded-3xl border-[#808080] text-black px-4;
+      @apply flex border w-full text-[0.5rem] sm:text-[0.625rem] xxs:py-0.5 xs:py-1.5 xl:py-2 3xl:py-2.5 lg:text-[1rem] rounded-3xl border-[#808080] text-black px-4 bg-white;
    }
 
    .hoverPestana {
@@ -97,6 +97,10 @@
 
    .homeGrayBg {
       @apply bg-[linear-gradient(160deg,#090909_0%,#131313_50%,#1f1f1f_100%)];
+   }
+
+   .homeBg {
+      @apply bg-[linear-gradient(160deg,#020202_0%,#070b10_45%,#11161c_100%)];
    }
 
    .homeDefault {
@@ -140,11 +144,11 @@
    }
 
    .authFormTitle {
-      @apply text-black font-semibold xxs:text-[1.2rem] xs:text-[1.75rem] xl:text-[1.875rem] 3xl:text-[2.125rem];
+      @apply text-white pointer-events-none tracking-widest font-abril font-semibold xxs:text-[1.2rem] xs:text-[1.75rem] xl:text-[1.875rem] 3xl:text-[2.125rem];
    }
 
    .authForm {
-      @apply bg-white flex-1 rounded-t-4xl lg:rounded-t-none z-40 flex flex-col justify-around items-center xxs:py-1.5 xs:py-5 xl:py-7 relative;
+      @apply flex-1 rounded-t-4xl lg:rounded-t-none z-40 flex flex-col justify-around items-center xxs:py-1.5 xs:py-5 xl:py-7 relative;
    }
 
    .navSwitchPosition {

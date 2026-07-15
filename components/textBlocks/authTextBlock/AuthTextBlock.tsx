@@ -3,7 +3,7 @@ import VP from "@/components/icons/Icons";
 
 export default function AuthTextBlock({ props }: Interface) {
    return (
-      <div className="text-white bg-black/20 backdrop-blur-lg h-[70%] w-[70%] rounded-lg">
+      <div className="text-white homeBlur h-[45%] w-[45%] rounded-lg">
          <div className="flex flex-col justify-center items-center w-full h-full pt-2 pb-5 lg:pb-10">
             <VP iconName="vP" className="w-[20%] lg:w-[18%]" />
             <div className="flex flex-col gap-y-2 md:gap-y-4 lg:gap-y-5 items-center whitespace-pre-line">
