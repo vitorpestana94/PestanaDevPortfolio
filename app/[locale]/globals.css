@@ -60,7 +60,7 @@
 
 @layer components {
    .homeSocialMediaIcons {
-      @apply fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-7 lg:w-7.5 xl:w-8 3xl:w-9;
+      @apply fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-6 lg:w-4.5 xl:w-5 3xl:w-6;
    }
 
    .bgAzulPestana {
@@ -104,7 +104,11 @@
    }
 
    .homeVp {
-      @apply aspect-square w-24 md:w-28 xl:w-32 3xl:w-44 4xl:w-60;
+      @apply aspect-square w-14 4xl:w-16;
+   }
+
+   .homeBlur {
+      @apply bg-white/5 backdrop-blur-xs rounded-full;
    }
 
    .homeParagraph {

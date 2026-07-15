@@ -30,7 +30,7 @@ export default function SocialMediaSpan() {
          <Link href={"#email"} className="flex justify-center items-center">
             <Email
                iconName="email"
-               className="w-7 lg:w-7.5 xl:w-8 3xl:w-9 stroke-[#bfbfbf] hover:stroke-[#38b6ff]"
+               className="homeSocialMediaIcons fill-none hover:fill-none stroke-[#bfbfbf]! hover:stroke-[#38b6ff]!"
             />
          </Link>
       </span>
