@@ -20,9 +20,9 @@ export default function FrameDiv({ children, props }: FrameDivInterface) {
          animate={animate}
          transition={{ duration: 1.5, delay: 1.5 }}
       >
-         <span className="absolute top-0 left-0 w-4 4xl:w-5 aspect-square border-t-2 border-l-2 border-white"></span>
+         <span className="absolute top-0 left-0 w-2.5 sm:w-3 md:w-4 4xl:w-5 aspect-square border-t-2 border-l-2 border-white"></span>
          {children}
-         <span className="absolute bottom-0 right-0 w-4 4xl:w-5 aspect-square border-b-2 border-r-2 border-white"></span>
+         <span className="absolute bottom-0 right-0 w-2.5 sm:w-3 md:w-4 4xl:w-5 aspect-square border-b-2 border-r-2 border-white"></span>
       </motion.div>
    );
 }
