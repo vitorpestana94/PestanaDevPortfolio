@@ -7,7 +7,7 @@ export default function HomeFirstSectionBgDiv({
 }) {
    return (
       <div className="w-full relative min-h-dvh flex flex-col justify-center z-40">
-         <div className="absolute inset-0 -z-10 opacity-40">
+         <div className="absolute inset-0 -z-10 opacity-15">
             <Waves
                lineColor="#ffff"
                backgroundColor="transparent"

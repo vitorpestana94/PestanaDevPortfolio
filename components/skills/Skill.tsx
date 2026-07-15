@@ -3,7 +3,7 @@ import { skillPerLabel } from "@/constants/skillsConstants";
 
 export default function Skill({ skill }: { skill: IconName }) {
    return (
-      <div className="flex flex-col items-center gap-y-2 3xl:gap-y-3 pointer-events-none">
+      <div className="flex flex-col justify-center items-center gap-y-2 pointer-events-none">
          <Icon
             iconName={skill}
             className="size-10 sm:size-12 md:size-20 2xl:size-24"

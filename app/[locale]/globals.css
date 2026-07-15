@@ -60,7 +60,7 @@
 
 @layer components {
    .homeSocialMediaIcons {
-      @apply fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-6 lg:w-4.5 xl:w-5 3xl:w-6;
+      @apply fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-6 lg:w-5 xl:w-5.5 3xl:w-6;
    }
 
    .bgAzulPestana {
@@ -95,8 +95,16 @@
       @apply hover:text-[#38b6ff];
    }
 
+   .homeGrayBg {
+      @apply bg-[linear-gradient(160deg,#090909_0%,#131313_50%,#1f1f1f_100%)];
+   }
+
    .homeDefault {
-      @apply min-h-screen bg-black;
+      @apply min-h-screen bg-[linear-gradient(160deg,#020202_0%,#070b10_45%,#11161c_100%)];
+   }
+
+   .portfolioDivsBorders {
+      @apply border-8 border-transparent;
    }
 
    .conteudoWrapper {
@@ -289,9 +297,11 @@ body {
    * {
       @apply border-border outline-ring/50;
    }
+
    body {
       @apply bg-background text-foreground;
    }
+
    html {
       @apply font-sans;
    }

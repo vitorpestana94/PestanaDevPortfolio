@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRef } from "react";
 
 export default function useHomePortfolioDivLink() {
-   const initialStyle: string = "z-0 border-8 border-black";
+   const initialStyle: string = `z-0 portfolioDivsBorders`;
 
    const [style, setStyle] = useState<string>(initialStyle);
    const [show, setShow] = useState<boolean>(false);
