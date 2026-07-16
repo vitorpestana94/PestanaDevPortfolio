@@ -23,8 +23,8 @@ export default function PlatformButton({
         rounded-3xl border border-transparent cursor-pointer
         ${buttonColors[iconName]}`}
       >
-         <Icon iconName={iconName} className={`h-4 w-4 fill-white`} />
-         <span className={`xxs:text-[0.5rem] xs:text-[0.75rem] text-nowrap`}>
+         <Icon iconName={iconName} className={`aspect-square w-4 fill-white`} />
+         <span className={`xxs:text-[0.5rem] xs:text-[0.5625rem] text-nowrap`}>
             {`${t("with")} ${capitalizeWord(iconName)}`}
          </span>
       </motion.button>

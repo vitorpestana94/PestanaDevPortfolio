@@ -84,11 +84,29 @@
    }
 
    .loginInputs {
-      @apply autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] flex-1 focus:outline-none text-[0.5rem] lg:text-[0.75rem];
+      @apply flex-1 focus:outline-none text-[0.5rem] lg:text-[0.75rem];
+
+      background: transparent;
+      color: white;
+      -webkit-text-fill-color: white;
+   }
+
+   .loginInputs:-webkit-autofill,
+   .loginInputs:-webkit-autofill:hover,
+   .loginInputs:-webkit-autofill:focus,
+   .loginInputs:-webkit-autofill:active {
+      -webkit-text-fill-color: #fff;
+      caret-color: #fff;
+
+      /* Cor média do gradiente */
+      -webkit-box-shadow: 0 0 0 1000px #161616 inset;
+      box-shadow: 0 0 0 1000px #161616 inset;
+
+      transition: background-color 999999s ease-in-out 0s;
    }
 
    .loginInputsDivs {
-      @apply flex border w-full text-[0.5rem] sm:text-[0.625rem] xxs:py-0.5 xs:py-1.5 xl:py-2 3xl:py-2.5 lg:text-[1rem] rounded-3xl border-[#808080] text-black px-4 bg-white;
+      @apply flex border w-full text-[0.5rem] sm:text-[0.625rem] xxs:py-0.5 xs:py-1.5 xl:py-2 3xl:py-2.5 lg:text-[1rem] rounded-3xl border-[#808080] text-white px-4;
    }
 
    .hoverPestana {

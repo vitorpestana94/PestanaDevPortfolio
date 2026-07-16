@@ -1,7 +1,6 @@
 "use client";
 
 import useAuthDivBg from "./useAuthDivBg";
-import options from "../../../data/options.json";
 import DivBg from "../DivBg/DivBg";
 
 export type Root = "auth" | "user";
