@@ -11,7 +11,7 @@ export default function DeleteAccountDiv({
 
    return (
       <div className="flex flex-col gap-y-8 items-center">
-         <p className="text-black font-medium text-center text-[0.5rem] sm:text-[0.625rem] lg:text-[0.75rem] 2xl:text-[0.875rem] 3xl:text-[1rem] whitespace-pre-line">
+         <p className="text-white font-medium text-center text-[0.5rem] sm:text-[0.625rem] lg:text-[0.75rem] 2xl:text-[0.875rem] 3xl:text-[1rem] whitespace-pre-line">
             {t("areYouSure")}
          </p>
          <div className="flex flex-col items-center gap-y-3 w-full">

@@ -14,7 +14,7 @@ export default function BackToLoginButton() {
          whileHover={scale}
          transition={transition}
          type="button"
-         className="absolute left-4 top-3 hover:cursor-pointer"
+         className="absolute left-4 top-4 cursor-pointer"
       >
          <Link href={"login"}>
             <Icon

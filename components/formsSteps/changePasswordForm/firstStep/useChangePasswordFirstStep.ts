@@ -12,11 +12,6 @@ export default function useChangePasswordFirstStep({
    userEmail,
    nextStep,
 }: { userEmail: string } & useStepInterface) {
-   const style = {
-      mainDiv: {
-         className: "bg-gray-200!",
-      },
-   };
    const t = useTranslations("user");
    const locale = useLocale();
    const { mutateAsync, isSuccess, isPending } = useSendConfirmationCodeEmail();
@@ -44,7 +39,6 @@ export default function useChangePasswordFirstStep({
 
    return {
       t,
-      style,
       isLoading: isPending,
       submit,
    };

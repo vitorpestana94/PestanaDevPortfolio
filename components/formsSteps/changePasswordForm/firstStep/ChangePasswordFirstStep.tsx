@@ -25,7 +25,7 @@ export default function ChangePasswordFirstStep({
    handleSubmit,
    nextStep,
 }: Interface) {
-   const { t, style, isLoading, submit } = useChangePasswordFirstStep({
+   const { t, isLoading, submit } = useChangePasswordFirstStep({
       userEmail,
       nextStep,
    });
@@ -48,7 +48,6 @@ export default function ChangePasswordFirstStep({
                      errorMessage={t("changePassword.currentErrorMessage")}
                      password={currentPassword}
                      type={currentPasswordType}
-                     style={style}
                      errors={errors}
                      register={register}
                   />
@@ -62,7 +61,6 @@ export default function ChangePasswordFirstStep({
                         placeholder={t("changePassword.placeholders.new")}
                         password={newPassword}
                         type={newPasswordType}
-                        style={style}
                         errors={errors}
                         register={register}
                      />
@@ -71,7 +69,6 @@ export default function ChangePasswordFirstStep({
                      placeholder={t("changePassword.placeholders.confirm")}
                      password={newPassword}
                      type={passwordConfirmation}
-                     style={style}
                      errors={errors}
                      register={register}
                   />

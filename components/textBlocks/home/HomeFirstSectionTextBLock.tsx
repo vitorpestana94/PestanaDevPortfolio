@@ -1,30 +1,26 @@
 import VitorPestana from "@/components/textBlocks/home/VitorPestanaTextBlock";
 import Frame from "@/components/divs/frameDiv/FrameDiv";
 import FullStackWebDeveloper from "@/components/paragraphs/FullStackWebDeveloperParagraph";
+import * as motion from "motion/react-client";
 
 export default function HomeFirstSectionTextBLock() {
    return (
-      <section
-         className="flex flex-col
-      xxs:ml-10
-      xs:ml-14 
-      ssm:ml-20
-      gap-y-8 ml-20 pt-16 pb-5
-      sm:ml-34 sm:pb-7
-      md:gap-y-12 md:ml-40 md:pt-24 md:pb-10
-      xl:ml-60 xl:pb-24
-      3xl:ml-96
-      4xl:ml-150"
-      >
-         <VitorPestana />
-         <Frame
-            props={{
-               className:
-                  "w-[35%] sm:w-[22%] xl:w-[18%] 3xl:w-[14%] 4xl:w-[12%]",
-            }}
+      <section className="flex flex-col font-abril items-center z-50 pointer-events-none">
+         <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.5 }}
+            className="bg-white/5 backdrop-blur-xs rounded-3xl p-5 xl:p-11 space-y-5"
          >
-            <FullStackWebDeveloper />
-         </Frame>
+            <VitorPestana />
+            <Frame
+               props={{
+                  className: "w-25 sm:w-35 xl:w-45 3xl:w-50 4xl:w-65",
+               }}
+            >
+               <FullStackWebDeveloper />
+            </Frame>
+         </motion.div>
       </section>
    );
 }

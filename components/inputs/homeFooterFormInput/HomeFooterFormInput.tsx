@@ -23,7 +23,7 @@ export default function HomeFooterFormInput({
             })}
             onBlur={isEmailInput ? verifyEmail : verifyName}
             placeholder={props.placeHolder}
-            className={`py-1 focus:outline-none border-b text-[0.5rem] text-center sm:text-right 
+            className={`py-1 focus:outline-none border-b text-[0.5rem] 3xl:text-[0.625rem] text-center sm:text-right 
             placeholder:text-center sm:placeholder:text-right autofill:shadow-[0_0_0px_1000px_#2c2c2c_inset]
             autofill:[-webkit-text-fill-color:white]
             border-b-[#808080] text-white ${props.styles}`}

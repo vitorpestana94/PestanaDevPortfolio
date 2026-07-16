@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 @tailwind utilities;
 
 @theme {
@@ -6,24 +10,57 @@
    --breakpoint-xs: 360px;
    --breakpoint-ssm: 400px;
    --breakpoint-3xl: 120rem;
-   --breakpoint-4xl: 175rem;
-}
-
-:root {
-   --background: #000000;
-   --foreground: #000000;
+   --breakpoint-4xl: 174rem;
+   --font-abril: "Abril Fatface", cursive;
 }
 
 @theme inline {
    --color-background: var(--background);
    --color-foreground: var(--foreground);
-   --font-sans: var(--font-geist-sans);
+   --font-sans: var(--font-sans);
    --font-mono: var(--font-geist-mono);
+   --font-heading: var(--font-sans);
+   --color-sidebar-ring: var(--sidebar-ring);
+   --color-sidebar-border: var(--sidebar-border);
+   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+   --color-sidebar-accent: var(--sidebar-accent);
+   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+   --color-sidebar-primary: var(--sidebar-primary);
+   --color-sidebar-foreground: var(--sidebar-foreground);
+   --color-sidebar: var(--sidebar);
+   --color-chart-5: var(--chart-5);
+   --color-chart-4: var(--chart-4);
+   --color-chart-3: var(--chart-3);
+   --color-chart-2: var(--chart-2);
+   --color-chart-1: var(--chart-1);
+   --color-ring: var(--ring);
+   --color-input: var(--input);
+   --color-border: var(--border);
+   --color-destructive: var(--destructive);
+   --color-accent-foreground: var(--accent-foreground);
+   --color-accent: var(--accent);
+   --color-muted-foreground: var(--muted-foreground);
+   --color-muted: var(--muted);
+   --color-secondary-foreground: var(--secondary-foreground);
+   --color-secondary: var(--secondary);
+   --color-primary-foreground: var(--primary-foreground);
+   --color-primary: var(--primary);
+   --color-popover-foreground: var(--popover-foreground);
+   --color-popover: var(--popover);
+   --color-card-foreground: var(--card-foreground);
+   --color-card: var(--card);
+   --radius-sm: calc(var(--radius) * 0.6);
+   --radius-md: calc(var(--radius) * 0.8);
+   --radius-lg: var(--radius);
+   --radius-xl: calc(var(--radius) * 1.4);
+   --radius-2xl: calc(var(--radius) * 1.8);
+   --radius-3xl: calc(var(--radius) * 2.2);
+   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 @layer components {
    .homeSocialMediaIcons {
-      @apply fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-7 lg:w-7.5 xl:w-8 3xl:w-9;
+      @apply fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-6 lg:w-5 xl:w-5.5 3xl:w-6;
    }
 
    .bgAzulPestana {
@@ -47,39 +84,72 @@
    }
 
    .loginInputs {
-      @apply autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] flex-1 focus:outline-none text-[0.5rem] lg:text-[0.75rem];
+      @apply flex-1 focus:outline-none text-[0.5rem] lg:text-[0.75rem];
+
+      background: transparent;
+      color: white;
+      -webkit-text-fill-color: white;
+   }
+
+   .loginInputs:-webkit-autofill,
+   .loginInputs:-webkit-autofill:hover,
+   .loginInputs:-webkit-autofill:focus,
+   .loginInputs:-webkit-autofill:active {
+      -webkit-text-fill-color: #fff;
+      caret-color: #fff;
+
+      -webkit-box-shadow: 0 0 0 1000px #161616 inset;
+      box-shadow: 0 0 0 1000px #161616 inset;
+
+      transition: background-color 999999s ease-in-out 0s;
    }
 
    .loginInputsDivs {
-      @apply flex border w-full text-[0.5rem] sm:text-[0.625rem] xxs:py-0.5 xs:py-1.5 xl:py-2 3xl:py-2.5 lg:text-[1rem]  rounded-3xl border-[#808080] text-black px-4;
+      @apply flex border w-full text-[0.5rem] sm:text-[0.625rem] xxs:py-0.5 xs:py-1.5 xl:py-2 3xl:py-2.5 lg:text-[1rem] rounded-3xl border-[#808080] text-white px-4;
    }
 
    .hoverPestana {
       @apply hover:text-[#38b6ff];
    }
 
+   .homeGrayBg {
+      @apply bg-[linear-gradient(160deg,#090909_0%,#131313_50%,#1f1f1f_100%)];
+   }
+
+   .homeBg {
+      @apply bg-[linear-gradient(160deg,#020202_0%,#070b10_45%,#11161c_100%)];
+   }
+
    .homeDefault {
-      @apply min-h-screen bg-black;
+      @apply min-h-screen bg-[linear-gradient(160deg,#020202_0%,#070b10_45%,#11161c_100%)];
+   }
+
+   .portfolioDivsBorders {
+      @apply border-8 border-transparent;
    }
 
    .conteudoWrapper {
-      @apply sm:mx-16 xl:mx-20;
+      @apply sm:mx-16 xl:mx-26 4xl:mx-40;
    }
 
    .homeVp {
-      @apply aspect-square w-24 md:w-28 xl:w-32 3xl:w-44 4xl:w-60;
+      @apply aspect-square w-14 4xl:w-16;
+   }
+
+   .homeBlur {
+      @apply bg-white/5 backdrop-blur-xs rounded-full;
    }
 
    .homeParagraph {
-      @apply text-white text-[0.625rem] sm:text-[0.75rem] xl:text-[1rem] 2xl:text-[1.0625rem] 3xl:text-[1.125rem] 4xl:text-[1.25rem] text-justify;
+      @apply text-white text-[0.625rem] sm:text-[0.75rem] md:text-xs xl:text-[0.9375rem] 3xl:text-[1.125rem] 4xl:text-[1.375rem] text-justify tracking-wide;
    }
 
    .homeSubTitle {
-      @apply text-[2rem] sm:text-[2.5rem] xl:text-[3.75rem] text-start whitespace-pre-line leading-[1.1];
+      @apply text-[2rem] sm:text-[2.5rem] xl:text-[3rem] 2xl:text-[3.75rem] 4xl:text-[4rem] text-start whitespace-pre-line leading-[1.1] font-abril;
    }
 
    .homeSectionMargin {
-      @apply my-10 xl:my-40;
+      @apply my-10 xl:my-20;
    }
 
    .homeMobileDirection {
@@ -91,11 +161,11 @@
    }
 
    .authFormTitle {
-      @apply text-black font-semibold xxs:text-[1.2rem] xs:text-[1.75rem] xl:text-[1.875rem] 3xl:text-[2.125rem];
+      @apply text-white pointer-events-none tracking-widest font-abril font-semibold xxs:text-[1.2rem] xs:text-[1.75rem] xl:text-[1.875rem] 3xl:text-[2.125rem];
    }
 
    .authForm {
-      @apply bg-white flex-1 rounded-t-4xl lg:rounded-t-none z-40 flex flex-col justify-around items-center xxs:py-1.5 xs:py-5 xl:py-7 relative;
+      @apply flex-1 z-40 flex flex-col justify-around items-center xxs:py-1.5 xs:py-5 xl:py-7 relative;
    }
 
    .navSwitchPosition {
@@ -111,11 +181,32 @@
    }
 
    .profileDataLabel {
-      @apply self-start text-[0.625rem] font-medium select-none;
+      @apply self-start text-[0.625rem] font-medium select-none text-white;
    }
 
    .profileDataDiv {
       @apply w-full text-xs bg-gray-200 border border-[#808080] rounded-full px-4 py-1 sm:py-1.5 2xl:py-2 3xl:py-3;
+   }
+
+   .profileDataInputs {
+      @apply focus:outline-none text-[0.5rem] lg:text-[0.75rem] w-full text-xs border border-[#808080] rounded-full px-4 py-1 sm:py-1.5 2xl:py-2 3xl:py-3;
+
+      background: transparent;
+      color: white;
+      -webkit-text-fill-color: white;
+   }
+
+   .profileDataInputs:-webkit-autofill,
+   .profileDataInputs:-webkit-autofill:hover,
+   .profileDataInputs:-webkit-autofill:focus,
+   .profileDataInputs:-webkit-autofill:active {
+      -webkit-text-fill-color: #fff;
+      caret-color: #fff;
+
+      -webkit-box-shadow: 0 0 0 1000px #161616 inset;
+      box-shadow: 0 0 0 1000px #161616 inset;
+
+      transition: background-color 999999s ease-in-out 0s;
    }
 
    .formStepfinalDiv {
@@ -127,7 +218,7 @@
    }
 
    .profileFormDiv {
-      @apply flex flex-col flex-1 justify-around items-center w-full bg-white;
+      @apply flex flex-col flex-1 justify-around items-center w-full bg-inherit;
    }
 }
 
@@ -146,4 +237,114 @@ body {
 
 :root {
    --toastify-color-error: lab(53.23% 80.11 67.22) !important;
+   --background: oklch(1 0 0);
+   --foreground: oklch(0.145 0 0);
+   --card: oklch(1 0 0);
+   --card-foreground: oklch(0.145 0 0);
+   --popover: oklch(1 0 0);
+   --popover-foreground: oklch(0.145 0 0);
+   --primary: oklch(0.205 0 0);
+   --primary-foreground: oklch(0.985 0 0);
+   --secondary: oklch(0.97 0 0);
+   --secondary-foreground: oklch(0.205 0 0);
+   --muted: oklch(0.97 0 0);
+   --muted-foreground: oklch(0.556 0 0);
+   --accent: oklch(0.97 0 0);
+   --accent-foreground: oklch(0.205 0 0);
+   --destructive: oklch(0.577 0.245 27.325);
+   --border: oklch(0.922 0 0);
+   --input: oklch(0.922 0 0);
+   --ring: oklch(0.708 0 0);
+   --chart-1: oklch(0.87 0 0);
+   --chart-2: oklch(0.556 0 0);
+   --chart-3: oklch(0.439 0 0);
+   --chart-4: oklch(0.371 0 0);
+   --chart-5: oklch(0.269 0 0);
+   --radius: 0.625rem;
+   --sidebar: oklch(0.985 0 0);
+   --sidebar-foreground: oklch(0.145 0 0);
+   --sidebar-primary: oklch(0.205 0 0);
+   --sidebar-primary-foreground: oklch(0.985 0 0);
+   --sidebar-accent: oklch(0.97 0 0);
+   --sidebar-accent-foreground: oklch(0.205 0 0);
+   --sidebar-border: oklch(0.922 0 0);
+   --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+   --background: oklch(0.145 0 0);
+   --foreground: oklch(0.985 0 0);
+   --card: oklch(0.205 0 0);
+   --card-foreground: oklch(0.985 0 0);
+   --popover: oklch(0.205 0 0);
+   --popover-foreground: oklch(0.985 0 0);
+   --primary: oklch(0.922 0 0);
+   --primary-foreground: oklch(0.205 0 0);
+   --secondary: oklch(0.269 0 0);
+   --secondary-foreground: oklch(0.985 0 0);
+   --muted: oklch(0.269 0 0);
+   --muted-foreground: oklch(0.708 0 0);
+   --accent: oklch(0.269 0 0);
+   --accent-foreground: oklch(0.985 0 0);
+   --destructive: oklch(0.704 0.191 22.216);
+   --border: oklch(1 0 0 / 10%);
+   --input: oklch(1 0 0 / 15%);
+   --ring: oklch(0.556 0 0);
+   --chart-1: oklch(0.87 0 0);
+   --chart-2: oklch(0.556 0 0);
+   --chart-3: oklch(0.439 0 0);
+   --chart-4: oklch(0.371 0 0);
+   --chart-5: oklch(0.269 0 0);
+   --sidebar: oklch(0.205 0 0);
+   --sidebar-foreground: oklch(0.985 0 0);
+   --sidebar-primary: oklch(0.488 0.243 264.376);
+   --sidebar-primary-foreground: oklch(0.985 0 0);
+   --sidebar-accent: oklch(0.269 0 0);
+   --sidebar-accent-foreground: oklch(0.985 0 0);
+   --sidebar-border: oklch(1 0 0 / 10%);
+   --sidebar-ring: oklch(0.556 0 0);
+}
+
+.waves {
+   position: absolute;
+   top: 0;
+   left: 0;
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+.waves::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 0.5rem;
+   height: 0.5rem;
+   background: #160000;
+   border-radius: 50%;
+   transform: translate3d(calc(var(-0.5rem) - 50%), calc(var(50%) - 50%), 0);
+   will-change: transform;
+}
+
+.waves-canvas {
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+
+@layer base {
+   * {
+      @apply border-border outline-ring/50;
+   }
+
+   body {
+      @apply bg-background text-foreground;
+   }
+
+   html {
+      @apply font-sans;
+   }
 }

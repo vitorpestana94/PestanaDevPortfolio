@@ -30,7 +30,7 @@ export default function HomeFormButton({
          <Error
             shouldRender={isFormWithErros}
             styles=" !text-[0.5rem] text-nowrap"
-            message={t("home.quartaSessao.form.errors.button")}
+            message={t("home.ultimaSessao.form.errors.button")}
          />
       </div>
    );

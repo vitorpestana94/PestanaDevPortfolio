@@ -26,6 +26,7 @@ export default function ProfileDataDiv() {
                <UserProfilePicture
                   userName={user.name!}
                   mainDivClassName="w-[14%]!"
+                  isCursorPointer={false}
                   paragraphStyle="text-base! md:text-2xl!"
                />
             )}
