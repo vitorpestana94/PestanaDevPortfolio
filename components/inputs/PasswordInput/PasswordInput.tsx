@@ -43,7 +43,7 @@ export default function PasswordInput({
             <span onClick={() => switchEye()}>
                <Icon
                   iconName={eye}
-                  className="aspect-square w-4 lg:w-4.5 strokeAzulPestana mx-1 lg:mx-2 shrink-0 strokeAzulPestana cursor-pointer"
+                  className="aspect-square w-4 lg:w-4.5 strokeAzulPestana mx-1 lg:mx-2 shrink-0 cursor-pointer"
                />
             </span>
          </div>

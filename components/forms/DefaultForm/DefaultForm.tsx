@@ -8,7 +8,10 @@ export default function DefaultForm<T extends FieldValues>({
    onSubmit,
 }: Interface<T>) {
    return (
-      <form className={className} onSubmit={handleSubmit(onSubmit)}>
+      <form
+         className={`bg-inherit ${className}`}
+         onSubmit={handleSubmit(onSubmit)}
+      >
          {children}
       </form>
    );

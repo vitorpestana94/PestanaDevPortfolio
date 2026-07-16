@@ -2,10 +2,12 @@ export default function UserProfilePicture({
    userName,
    mainDivClassName,
    paragraphStyle,
+   isCursorPointer = true,
 }: {
    userName: string;
    mainDivClassName?: string;
    paragraphStyle?: string;
+   isCursorPointer?: boolean;
 }) {
    const getInitials = (name: string) => {
       return name
@@ -20,7 +22,7 @@ export default function UserProfilePicture({
 
    return (
       <div
-         className={`relative aspect-square w-8 lg:w-8.5 xl:w-9.5 3xl:w-10.5 cursor-pointer bg-[#38b6ff] rounded-full
+         className={`relative aspect-square w-8 lg:w-8.5 xl:w-9.5 3xl:w-10.5 ${isCursorPointer ? "cursor-pointer" : "pointer-events-none"} bg-[#38b6ff] rounded-full
         flex items-center justify-center ${mainDivClassName}`}
       >
          <p

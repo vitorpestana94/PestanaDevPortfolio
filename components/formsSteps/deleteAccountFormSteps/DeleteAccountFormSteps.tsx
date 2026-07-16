@@ -1,4 +1,3 @@
-import User from "@/models/interfaces/dtos/SystemUser";
 import useDeleteAccountFormSteps from "./useDeleteAccountFormSteps";
 import FirstStep from "./steps/first/DeleteAccountFirstStep";
 import SecondStep from "../signUpFormSteps/steps/second/SignUpSecondStep";

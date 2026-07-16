@@ -26,7 +26,7 @@ function NavBarButton({
          <Link href={href}>
             <Icon
                iconName={iconName}
-               className="aspect-square w-4 sm:w-5 stroke-black hover:stroke-[#38b6ff] cursor-pointer"
+               className="aspect-square w-4 sm:w-5 stroke-white hover:stroke-[#38b6ff] cursor-pointer"
             />
          </Link>
       </motion.button>

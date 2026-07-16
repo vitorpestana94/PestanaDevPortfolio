@@ -10,8 +10,10 @@ export default function DataDiv({
    return (
       <div className={`profileDiv ${className}`}>
          <p className="profileDataLabel">{label}</p>
-         <div className="profileDataDiv">
-            <p className="text-gray-500 text-xs">{data}</p>
+         <div className="profileDataInputs">
+            <p className="text-white text-[0.625rem] py-1 sm:py-0 sm:text-xs">
+               {data}
+            </p>
          </div>
       </div>
    );

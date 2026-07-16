@@ -98,7 +98,6 @@
       -webkit-text-fill-color: #fff;
       caret-color: #fff;
 
-      /* Cor média do gradiente */
       -webkit-box-shadow: 0 0 0 1000px #161616 inset;
       box-shadow: 0 0 0 1000px #161616 inset;
 
@@ -142,7 +141,7 @@
    }
 
    .homeParagraph {
-      @apply text-white text-[0.625rem] sm:text-[0.75rem] md:text-xs xl:text-base 3xl:text-[1.125rem] 4xl:text-[1.375rem] text-justify tracking-wide;
+      @apply text-white text-[0.625rem] sm:text-[0.75rem] md:text-xs xl:text-[0.9375rem] 3xl:text-[1.125rem] 4xl:text-[1.375rem] text-justify tracking-wide;
    }
 
    .homeSubTitle {
@@ -166,7 +165,7 @@
    }
 
    .authForm {
-      @apply flex-1 rounded-t-4xl lg:rounded-t-none z-40 flex flex-col justify-around items-center xxs:py-1.5 xs:py-5 xl:py-7 relative;
+      @apply flex-1 z-40 flex flex-col justify-around items-center xxs:py-1.5 xs:py-5 xl:py-7 relative;
    }
 
    .navSwitchPosition {
@@ -182,11 +181,32 @@
    }
 
    .profileDataLabel {
-      @apply self-start text-[0.625rem] font-medium select-none;
+      @apply self-start text-[0.625rem] font-medium select-none text-white;
    }
 
    .profileDataDiv {
       @apply w-full text-xs bg-gray-200 border border-[#808080] rounded-full px-4 py-1 sm:py-1.5 2xl:py-2 3xl:py-3;
+   }
+
+   .profileDataInputs {
+      @apply focus:outline-none text-[0.5rem] lg:text-[0.75rem] w-full text-xs border border-[#808080] rounded-full px-4 py-1 sm:py-1.5 2xl:py-2 3xl:py-3;
+
+      background: transparent;
+      color: white;
+      -webkit-text-fill-color: white;
+   }
+
+   .profileDataInputs:-webkit-autofill,
+   .profileDataInputs:-webkit-autofill:hover,
+   .profileDataInputs:-webkit-autofill:focus,
+   .profileDataInputs:-webkit-autofill:active {
+      -webkit-text-fill-color: #fff;
+      caret-color: #fff;
+
+      -webkit-box-shadow: 0 0 0 1000px #161616 inset;
+      box-shadow: 0 0 0 1000px #161616 inset;
+
+      transition: background-color 999999s ease-in-out 0s;
    }
 
    .formStepfinalDiv {
@@ -198,7 +218,7 @@
    }
 
    .profileFormDiv {
-      @apply flex flex-col flex-1 justify-around items-center w-full bg-white;
+      @apply flex flex-col flex-1 justify-around items-center w-full bg-inherit;
    }
 }
 
