@@ -128,8 +128,16 @@
       @apply border-8 border-transparent;
    }
 
+   .legalDocumentParagraph {
+      @apply xxs:text-[0.5rem] xs:text-[0.625rem] ssm:text-[0.75rem] text-[0.875rem];
+   }
+
+   .termsCopyPrivacyParagraph {
+      @apply text-white opacity-40 text-[0.5rem] lg:text-[0.625rem];
+   }
+
    .conteudoWrapper {
-      @apply sm:mx-16 xl:mx-26 4xl:mx-40;
+      @apply sm:mx-12 md:mx-12 lg:mx-16 xl:mx-26 4xl:mx-40;
    }
 
    .homeVp {
@@ -141,7 +149,7 @@
    }
 
    .homeParagraph {
-      @apply text-white text-[0.625rem] sm:text-[0.75rem] md:text-xs xl:text-[0.9375rem] 3xl:text-[1.125rem] 4xl:text-[1.375rem] text-justify tracking-wide;
+      @apply text-white text-[0.625rem] sm:text-xs xl:text-[0.9375rem] 3xl:text-[1.125rem] 4xl:text-[1.375rem] text-justify tracking-wide;
    }
 
    .homeSubTitle {
@@ -219,6 +227,10 @@
 
    .profileFormDiv {
       @apply flex flex-col flex-1 justify-around items-center w-full bg-inherit;
+   }
+
+   .legalDocumentTitle {
+      @apply font-abril text-[1.5rem] sm:text-[2.5rem];
    }
 }
 

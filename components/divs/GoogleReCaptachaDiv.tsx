@@ -11,7 +11,7 @@ export default function GoogleReCaptachaDiv({
 
    return (
       <p
-         className={`text-[0.43755rem] text-[#818589] sm:text-[0.5rem] xl:text-[0.5625rem] 3xl:text-[0.625rem] text-center whitespace-pre-line leading-tight px-3 max-w-xs ${className}`}
+         className={`text-[0.4375rem] text-[#818589] sm:text-[0.5rem] xl:text-[0.5625rem] 3xl:text-[0.625rem] text-center whitespace-pre-line leading-tight px-3 max-w-xs ${className}`}
       >
          {t("protectedBy")}
          <a
