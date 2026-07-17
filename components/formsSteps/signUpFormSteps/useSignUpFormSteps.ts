@@ -22,6 +22,7 @@ export default function useSignUpFormSteps() {
    } = useForm<SignUpRequest>({ mode: "onBlur", reValidateMode: "onBlur" });
    const email = watch("email");
    const password = watch("password");
+   const accepted = watch("acceptedTerms");
 
    const { step, nextStep, previousStep, setStep } = useHandleStep({
       maxSteps: 4,
@@ -81,6 +82,7 @@ export default function useSignUpFormSteps() {
 
    return {
       email,
+      accepted,
       password,
       isLoading,
       step,

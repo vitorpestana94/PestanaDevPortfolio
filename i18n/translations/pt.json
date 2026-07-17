@@ -99,6 +99,8 @@
             },
             "thirdStep": {
                "paragraph": "Agora, por favor, informe seu nome\n e defina uma senha.",
+               "acceptTerms": "Eu aceito os ",
+               "and": "e a ",
                "buttonLabel": "Registrar",
                "placeholders": {
                   "name": "Seu nome",
@@ -107,6 +109,7 @@
                },
                "error": {
                   "name": "O nome é obrigatório. Informe-o para continuar.",
+                  "acceptTerms": "Você deve primeiro aceitar os termos e a política de privacidade para se cadastrar!",
                   "password": {
                      "empty": "A senha é obrigatória. Informe-a para continuar.",
                      "wrongFormat": "Sua senha deve conter:\n\n• Pelo menos 8 caracteres\n• Uma letra maiúscula\n• Uma letra minúscula\n• Pelo menos dois números\n• Não deve conter espaços vazios.\n• Deve possuir um caractere especial, como @"

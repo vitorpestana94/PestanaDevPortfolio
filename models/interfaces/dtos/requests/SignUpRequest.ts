@@ -3,4 +3,5 @@ export default interface SignUpRequest {
    name?: string;
    password?: string;
    passwordConfirmation?: string;
+   acceptedTerms?: boolean;
 }
