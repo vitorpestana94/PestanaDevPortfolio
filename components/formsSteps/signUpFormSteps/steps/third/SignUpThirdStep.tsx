@@ -48,8 +48,8 @@ export default function SignUpThirdStep({
          </div>
          <TermsAcception
             accepted={accepted}
-            register={register}
             errors={errors}
+            register={register}
          />
          <Register
             isLoading={isLoading}

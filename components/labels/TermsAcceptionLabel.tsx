@@ -36,7 +36,7 @@ export default function TermsAcceptionLabel({
                )}
             </span>
 
-            <span className="flex items-center gap-x-1 signUpCheckParagraph!">
+            <span className="flex items-center gap-x-1 ">
                <p className="signUpCheckParagraph">
                   {t.rich("acceptTerms", {
                      terms: (chunks) => (
