@@ -14,7 +14,7 @@ export default function TermsOrPrivacyHyperLink({
 
    return (
       <Link
-         href={isTerms ? "terms-and-conditions" : "privacy-policy"}
+         href={isTerms ? "/terms-and-conditions" : "/privacy-policy"}
          target="_blank"
          rel="noopener noreferrer"
       >
