@@ -109,7 +109,7 @@
                },
                "error": {
                   "name": "Name is required. Provide it to continue.",
-                  "acceptTerms": "You must first accep the terms and privacy policy in order to sign up!",
+                  "acceptTerms": "You must first accept to sign up!",
                   "password": {
                      "empty": "Password is required. Provide it to continue",
                      "wrongFormat": "Your password must have: \n\n• At least 8 characters\n• One capital letter\n• One small letter\n• At least two digits\n• Must not have empty spaces.\n• Must have one special character, like @"
@@ -124,7 +124,7 @@
                }
             },
             "fourthStep": {
-               "title": "Success!\nCheckout what i can do!"
+               "title": "Success!\nCheckout what I can do!"
             },
             "errors": {
                "alreadyRegistered": "The provided email is already registered.",

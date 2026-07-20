@@ -46,7 +46,11 @@ export default function SignUpThirdStep({
                register={register}
             />
          </div>
-         <TermsAcception accepted={accepted} register={register} />
+         <TermsAcception
+            accepted={accepted}
+            register={register}
+            errors={errors}
+         />
          <Register
             isLoading={isLoading}
             buttonLabel={t("buttonLabel")}
