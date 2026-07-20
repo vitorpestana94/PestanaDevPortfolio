@@ -13,7 +13,11 @@ export default function TermsOrPrivacyHyperLink({
    const t = useTranslations(`termsAndPrivacy`);
 
    return (
-      <Link href={isTerms ? "terms-and-conditions" : "privacy-policy"}>
+      <Link
+         href={isTerms ? "terms-and-conditions" : "privacy-policy"}
+         target="_blank"
+         rel="noopener noreferrer"
+      >
          <p
             className={`termsCopyPrivacyParagraph hover:text-[#38b6ff] hover:opacity-100 ${className}`}
          >

@@ -4,7 +4,7 @@ import ReactHookFormPros from "@/models/interfaces/forms/ReactHookFormPros";
 import useButtonMotionEffects from "@/hooks/useButtonMotionEffects";
 import Icon from "@/components/icons/Icons";
 import Error from "@/components/errors/error/Error";
-import TermsOrPrivacy from "../hyperLinks/TermsOrPrivacyHyperLink";
+import { Link } from "@/i18n/routing";
 
 export default function TermsAcceptionLabel({
    accepted,
@@ -37,13 +37,30 @@ export default function TermsAcceptionLabel({
             </span>
 
             <span className="flex items-center gap-x-1 signUpCheckParagraph!">
-               <p className="signUpCheckParagraph">{t("acceptTerms")}</p>
-               <TermsOrPrivacy
-                  isTerms
-                  className="signUpCheckParagraph! opacity-100!"
-               />
-               <p className="signUpCheckParagraph">{t("and")}</p>
-               <TermsOrPrivacy className="opacity-100!" />
+               <p className="signUpCheckParagraph">
+                  {t.rich("acceptTerms", {
+                     terms: (chunks) => (
+                        <Link
+                           href="/terms-and-conditions"
+                           className="hoverPestana"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                        >
+                           {chunks}
+                        </Link>
+                     ),
+                     privacy: (chunks) => (
+                        <Link
+                           href="/privacy-policy"
+                           className="hoverPestana"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                        >
+                           {chunks}
+                        </Link>
+                     ),
+                  })}
+               </p>
             </span>
          </label>
          <Error

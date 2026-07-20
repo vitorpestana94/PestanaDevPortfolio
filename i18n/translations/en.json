@@ -46,7 +46,7 @@
    },
    "auth": {
       "common": {
-         "with": "Continue with",
+         "with": "Continue with {platform}",
          "or": "or"
       },
       "switchButton": {
@@ -81,7 +81,13 @@
             "title": "Sign Up",
             "firstStep": {
                "email": "your email",
-               "button": "Sign Up"
+               "button": "Sign Up",
+               "platform": {
+                  "title": "Before continue",
+                  "toCreate": "To create your account with {platform}, we need you to agree to mine <terms>Terms of Use</terms> and <privacy>Privacy Policy</privacy>.",
+                  "acceptContinue": " Accept and continue",
+                  "cancel": "Cancel"
+               }
             },
             "secondStep": {
                "button": "Check",
@@ -100,7 +106,7 @@
             "thirdStep": {
                "paragraph": "Now, please, provide your name\n and define a password.",
                "buttonLabel": "Register",
-               "acceptTerms": "I accept the ",
+               "acceptTerms": "I accept the <terms>Terms of Use</terms> and <privacy>Privacy Policy</privacy>.",
                "and": "and",
                "placeholders": {
                   "name": "Your name",

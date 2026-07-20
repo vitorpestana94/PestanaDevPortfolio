@@ -164,6 +164,10 @@
       @apply aspect-square w-3.5 border border-white rounded-xs flex justify-center items-center cursor-pointer;
    }
 
+   .blurBg {
+      @apply bg-white/5 backdrop-blur-xs;
+   }
+
    .checkButtonIcon {
       @apply aspect-square w-3 stroke-white;
    }

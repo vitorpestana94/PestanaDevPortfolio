@@ -75,7 +75,13 @@
       "sign-up": {
          "banner": {
             "title": "Gostaria de ver como \neu transformo ideias em código?",
-            "paragraph": "Cadastre-se agora!"
+            "paragraph": "Cadastre-se agora!",
+            "platform": {
+               "title": "Antes de continuar",
+               "toCreate": "Para criar sua conta com o {platform}, precisamos que você concorde com os meus <terms>Termos de Uso</terms> e com a minha <privacy>Política de Privacidade</privacy>.",
+               "acceptContinue": " Aceitar e continuar",
+               "cancel": "Cancelar"
+            }
          },
          "form": {
             "title": "Cadastro",
@@ -99,7 +105,7 @@
             },
             "thirdStep": {
                "paragraph": "Agora, por favor, informe seu nome\n e defina uma senha.",
-               "acceptTerms": "Eu aceito os ",
+               "acceptTerms": "Eu aceito os <terms>Termos de Uso</terms> e a <privacy>Política de Privacidade</privacy>.",
                "and": "e a ",
                "buttonLabel": "Registrar",
                "placeholders": {

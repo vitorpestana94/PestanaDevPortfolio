@@ -10,7 +10,7 @@ export default function HomeFirstSectionTextBLock() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.5 }}
-            className="bg-white/5 backdrop-blur-xs rounded-3xl p-5 xl:p-11 space-y-5"
+            className="blurBg rounded-3xl p-5 xl:p-11 space-y-5"
          >
             <VitorPestana />
             <Frame
