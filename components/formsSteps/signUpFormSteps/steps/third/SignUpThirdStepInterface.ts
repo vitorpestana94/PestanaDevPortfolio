@@ -6,5 +6,6 @@ export default interface SignUpThirdStepInterface
    extends useStepInterface, ReactHookFormPros {
    isLoading: boolean;
    password?: string;
+   accepted: boolean;
    submitForm: (data: SignUpRequest) => Promise<void>;
 }

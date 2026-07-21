@@ -5,6 +5,7 @@ import Password from "@/components/inputs/PasswordInput/PasswordInput";
 import Register from "@/components/buttons/formButton/FormButton";
 import NowPleaseProvideNameAndPassword from "@/components/paragraphs/FormParagraph";
 import Form from "@/components/forms/DefaultForm/DefaultForm";
+import TermsAcception from "@/components/labels/TermsAcceptionLabel";
 import {
    password as passwordType,
    passwordConfirmation,
@@ -14,6 +15,7 @@ import BaitInput from "@/components/inputs/BaitInput";
 export default function SignUpThirdStep({
    isLoading,
    password,
+   accepted,
    errors,
    register,
    handleSubmit,
@@ -44,6 +46,11 @@ export default function SignUpThirdStep({
                register={register}
             />
          </div>
+         <TermsAcception
+            accepted={accepted}
+            errors={errors}
+            register={register}
+         />
          <Register
             isLoading={isLoading}
             buttonLabel={t("buttonLabel")}

@@ -2,23 +2,33 @@ import useHandleMouseDownInterface from "./interfaces/useHandleMouseDown";
 import { useEffect } from "react";
 
 export default function useHandleMouseDown({
-  shouldHandleNow,
-  ref,
-  mouseDownCallBack,
+   shouldHandleNow,
+   ref,
+   mouseDownCallBack,
 }: useHandleMouseDownInterface) {
-  useEffect(() => {
-    const handleMouseClick = (event: MouseEvent) => {
-      if (shouldHandleNow) {
-        if (ref.current && !ref.current?.contains(event.target as Node)) {
-          mouseDownCallBack();
-        }
-      }
-    };
+   useEffect(() => {
+      const handleMouseClick = (event: MouseEvent) => {
+         if (shouldHandleNow) {
+            if (ref.current && !ref.current?.contains(event.target as Node)) {
+               mouseDownCallBack();
+            }
+         }
+      };
 
-    document.addEventListener("mousedown", handleMouseClick);
+      const handleEscape = (event: KeyboardEvent) => {
+         if (shouldHandleNow) {
+            if (event.key === "Escape") {
+               mouseDownCallBack();
+            }
+         }
+      };
 
-    return () => {
-      document.removeEventListener("mousedown", handleMouseClick);
-    };
-  }, [shouldHandleNow, ref]);
+      document.addEventListener("mousedown", handleMouseClick);
+      document.addEventListener("keydown", handleEscape);
+
+      return () => {
+         document.removeEventListener("mousedown", handleMouseClick);
+         document.removeEventListener("keydown", handleEscape);
+      };
+   }, [shouldHandleNow, ref]);
 }

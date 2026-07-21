@@ -12,6 +12,7 @@ export default function SignUpFormSteps() {
       step,
       password,
       errors,
+      accepted,
       register,
       handleSubmit,
       nextStep,
@@ -35,6 +36,7 @@ export default function SignUpFormSteps() {
                2: <SecondStep email={email!} nextStep={nextStep} />,
                3: (
                   <ThirdStep
+                     accepted={accepted ?? false}
                      isLoading={isLoading}
                      password={password}
                      errors={errors}

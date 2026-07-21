@@ -46,7 +46,7 @@
    },
    "auth": {
       "common": {
-         "with": "Continue with",
+         "with": "Continue with {platform}",
          "or": "or"
       },
       "switchButton": {
@@ -81,7 +81,13 @@
             "title": "Sign Up",
             "firstStep": {
                "email": "your email",
-               "button": "Sign Up"
+               "button": "Sign Up",
+               "platform": {
+                  "title": "Before continue",
+                  "toCreate": "To create your account with {platform}, we need you to agree to mine <terms>Terms of Use</terms> and <privacy>Privacy Policy</privacy>.",
+                  "acceptContinue": " Accept and continue",
+                  "cancel": "Cancel"
+               }
             },
             "secondStep": {
                "button": "Check",
@@ -100,6 +106,8 @@
             "thirdStep": {
                "paragraph": "Now, please, provide your name\n and define a password.",
                "buttonLabel": "Register",
+               "acceptTerms": "I accept the <terms>Terms of Use</terms> and <privacy>Privacy Policy</privacy>.",
+               "and": "and",
                "placeholders": {
                   "name": "Your name",
                   "password": "Define a password",
@@ -107,6 +115,7 @@
                },
                "error": {
                   "name": "Name is required. Provide it to continue.",
+                  "acceptTerms": "You must first accept to sign up!",
                   "password": {
                      "empty": "Password is required. Provide it to continue",
                      "wrongFormat": "Your password must have: \n\n• At least 8 characters\n• One capital letter\n• One small letter\n• At least two digits\n• Must not have empty spaces.\n• Must have one special character, like @"
@@ -121,7 +130,7 @@
                }
             },
             "fourthStep": {
-               "title": "Success!\nCheckout what i can do!"
+               "title": "Success!\nCheckout what I can do!"
             },
             "errors": {
                "alreadyRegistered": "The provided email is already registered.",
@@ -223,10 +232,210 @@
          "lastStep": "I'm so sorry to see you go!\nI hope you'll come back someday!\n You'll always be welcome here!"
       }
    },
+   "termsAndPrivacy": {
+      "terms": "Terms and Conditions",
+      "privacy": "Privacy Policy"
+   },
+   "termsAndConditions": {
+      "backToHome": "Back to home",
+      "documentTitle": {
+         "title": "Terms & Conditions",
+         "effective": "Effective Date: July 17, 2026",
+         "lcc": "Vitor Pestana · "
+      },
+      "1": {
+         "title": "1. Introduction",
+         "text": "This website provides access to a personal portfolio and related features. These Terms govern your use of the website and any associated services. By accessing or using this website, you agree to these Terms.",
+         "end": "If you do not agree, please do not use the website."
+      },
+      "2": {
+         "title": "2. Accounts",
+         "text": "You may create an account using your email and name, or sign in with Google, GitHub, or LinkedIn.",
+         "list1": {
+            "p": "You are responsible for:",
+            "item1": "Keeping your login credentials secure",
+            "item2": "All activity performed through your account"
+         },
+         "end": "Accounts that violate these Terms or applicable laws may be suspended or permanently removed."
+      },
+      "3": {
+         "title": "3. User Information",
+         "text": "When creating an account, you agree that the information you provide is accurate and belongs to you.",
+         "list1": {
+            "item1": "You will not impersonate another person or provide misleading information",
+            "item2": "You are responsible for keeping your account information up to date"
+         },
+         "end": "We reserve the right to suspend or remove accounts containing false, fraudulent, or abusive information."
+      },
+      "4": {
+         "title": "4. Third-Party Authentication",
+         "text": "This website supports authentication through third-party providers such as Google, GitHub, and LinkedIn.",
+         "list1": {
+            "p": "By using a third-party provider:",
+            "item1": "You authorize the provider to share the basic profile information required to create your account",
+            "item2": "Your use of those services is also subject to the provider's own terms and privacy policies"
+         },
+         "end": "We are not responsible for the availability, security, or operation of third-party authentication services."
+      },
+      "5": {
+         "title": "5. Fees and Payments",
+         "text": "Creating and using an account on this website is currently free of charge.",
+         "list1": {
+            "item1": "No payment is required to register or access the available features",
+            "item2": "If paid features are introduced in the future, they will be clearly identified before any purchase is required",
+            "item3": "Any future payments will be processed through trusted third-party payment providers"
+         },
+         "end": "Any future paid services will be governed by the terms presented at the time they become available."
+      },
+      "6": {
+         "title": "6. Future Services",
+         "text": "Additional features or services may be introduced over time.",
+         "list1": {
+            "item1": "New features may have their own specific terms or requirements",
+            "item2": "Some features may require authentication to access",
+            "item3": "Features may be modified, discontinued, or replaced without prior notice",
+            "item4": "Access to future features may depend on technical or operational requirements",
+            "item5": "Temporary interruptions may occur due to maintenance or technical issues",
+            "item6": "We reserve the right to modify, add, or remove features at any time."
+         }
+      },
+      "7": {
+         "title": "7. Intellectual Property",
+         "text": "All original content on this website, including its design, source code, text, graphics, branding, and other materials, is protected by applicable intellectual property laws.",
+         "end": "You may not copy, reproduce, distribute, modify, or use any part of this website without prior permission, except where permitted by law."
+      },
+      "8": {
+         "title": "8. Acceptable Use",
+         "text": "You agree not to:",
+         "list1": {
+            "item1": "Attempt to interfere with or disrupt the operation of the website",
+            "item2": "Access accounts or data that do not belong to you",
+            "item3": "Provide false or misleading information",
+            "item4": "Use the website in violation of any applicable law or regulation"
+         }
+      },
+      "9": {
+         "title": "9. Disclaimer",
+         "text": "This website is provided \"as is\" and \"as available.\" We do not guarantee uninterrupted availability, security, or error-free operation.",
+         "list1": {
+            "p": "We are not responsible for:",
+            "item1": "Temporary downtime or technical interruptions",
+            "item2": "Failures or unavailability of third-party authentication providers",
+            "item3": "Any indirect, incidental, or consequential damages resulting from the use of this website"
+         }
+      },
+      "10": {
+         "title": "10. Changes to These Terms",
+         "p": "These Terms may be updated from time to time. Continued use of the website after changes are published constitutes acceptance of the revised Terms."
+      },
+      "11": {
+         "title": "11. Contact",
+         "p": "If you have any questions regarding these Terms & Conditions, please contact me at "
+      }
+   },
+   "privacyPolicy": {
+      "backToHome": "Go to Home",
+      "documentTitle": {
+         "title": "Privacy Policy",
+         "effective": "Last Updated: March 27, 2026",
+         "lcc": "Vitor Pestana ·"
+      },
+      "1": {
+         "title": "1. Introduction",
+         "text": "This Privacy Policy explains how this portfolio website collects, uses, and protects your personal information when you use the website or create an account.",
+         "end": "By using this website, you agree to the practices described in this Privacy Policy."
+      },
+      "2": {
+         "title": "2. Information We Collect",
+         "list1": {
+            "p": "We collect information that you voluntarily provide when you:",
+            "item1": "Create an account (name and email address)",
+            "item2": "Sign in using Google, GitHub, or LinkedIn (basic profile information provided by the selected authentication provider)",
+            "item3": "Contact us through the available communication channels"
+         },
+         "list2": {
+            "p": "We may also collect:",
+            "item1": "Technical information such as your IP address, browser type, operating system, and device information",
+            "item1Saideira": "Technical information such as your IP address, browser type, operating system, and device information",
+            "item2": "Usage information to improve the website's functionality and security"
+         },
+         "end": "We do not collect payment information or intentionally collect sensitive personal data."
+      },
+      "3": {
+         "title": "3. Cookies and Similar Technologies",
+         "list1": {
+            "p": "We may use cookies or similar technologies to:",
+            "item1": "Maintain your authenticated session",
+            "item2": "Improve website functionality and performance",
+            "item3": "Analyze website usage, when applicable"
+         },
+         "end": "You can manage or disable cookies through your browser settings."
+      },
+      "4": {
+         "title": "4. How We Use Your Information",
+         "list1": {
+            "p": "We use your information to:",
+            "item1": "Create and manage your account",
+            "item2": "Authenticate users",
+            "item3": "Provide and improve the website",
+            "item4": "Maintain security and prevent abuse",
+            "item5": "Respond to support requests or inquiries"
+         }
+      },
+      "5": {
+         "title": "5. Sharing Your Information",
+         "list1": {
+            "p": "Your information may be shared with:",
+            "item1": "Authentication providers such as Google, GitHub, or LinkedIn",
+            "item2": "Infrastructure or hosting providers required to operate the website",
+            "item3": "Authorities when required by applicable law",
+            "item3Saideira": "Authorities when required by applicable law",
+            "item4": "Service providers that assist in operating the website, when necessary"
+         },
+         "end": "We do not sell, rent, or trade your personal information."
+      },
+      "6": {
+         "title": "6. Your Rights",
+         "list1": {
+            "item1": "You may stop using the website at any time.",
+            "item2": "You may request the deletion of your account by contacting us.",
+            "item3": "You can manage cookies through your browser settings."
+         },
+         "end": "Privacy requests may be submitted using the contact information provided below."
+      },
+      "7": {
+         "title": "7. Legal Basis for Processing Personal Data",
+         "text": "We process your personal information only when there is a valid legal basis to do so, as permitted by applicable data protection laws.",
+         "list1": {
+            "p": "Depending on the circumstances, we may process your data based on:",
+            "item1": "Your consent, when you voluntarily create an account or agree to this Privacy Policy",
+            "item2": "The performance of a contract or the steps necessary to provide the requested services",
+            "item3": "Compliance with legal or regulatory obligations",
+            "item4": "Our legitimate interests, provided that your rights and freedoms are not overridden"
+         },
+         "end": "If we rely on your consent, you may withdraw it at any time. However, this will not affect the lawfulness of any processing carried out before your withdrawal."
+      },
+      "8": {
+         "title": "8. Updates to This Privacy Policy",
+         "p": "This Privacy Policy may be updated periodically. Any changes will be published on this page with an updated revision date."
+      },
+      "9": {
+         "title": "9. Contact",
+         "p": "If you have any questions about this Privacy Policy, please contact us at "
+      }
+   },
    "metaData": {
       "home": {
          "title": "| Full Stack Web Developer",
          "description": "Hello! My name is Vitor Pestana, and I'm a Full Stack Web Developer specializing in back-end development and scalable web applications."
+      },
+      "termsAndConditions": {
+         "title": "| Terms and Conditions",
+         "description": "Review the Terms and Conditions that govern the use of this portfolio website, user accounts, authentication, and related features."
+      },
+      "privacyPolicy": {
+         "title": "| Privacy Policy",
+         "description": "Read our Privacy Policy to learn how we collect, use, store, and protect your personal information when you use this portfolio website."
       },
       "auth": {
          "login": "| Login",
@@ -255,12 +464,7 @@
          "description": "Here you can delete your account."
       }
    },
-   "googleReCaptcha": {
-      "protectedBy": "This site is protected by reCAPTCHA",
-      "privacy": " \n and the Google Privacy Policy",
-      "terms": " and Terms of Service",
-      "apply": " apply."
-   },
+   "googleReCaptcha": "This site is protected by reCAPTCHA\n and the <privacy>Google Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
    "loading": "Just a moment! Loading...",
    "error": {
       "ops": "Ooooops!",
@@ -295,6 +499,7 @@
       "B8D1": "Something went wrong!",
       "F35E": "The resource was not found.",
       "9A6C": "You requested with a wrong type of media!",
+      "4E28": "The email you provided is already confirmed!",
       "D2B7": "An unexpected error occurred."
    }
 }

@@ -46,7 +46,7 @@
    },
    "auth": {
       "common": {
-         "with": "Continuar com",
+         "with": "Continue with {platform}",
          "or": "ou"
       },
       "switchButton": {
@@ -75,7 +75,13 @@
       "sign-up": {
          "banner": {
             "title": "Gostaria de ver como \neu transformo ideias em código?",
-            "paragraph": "Cadastre-se agora!"
+            "paragraph": "Cadastre-se agora!",
+            "platform": {
+               "title": "Antes de continuar",
+               "toCreate": "Para criar sua conta com o {platform}, precisamos que você concorde com os meus <terms>Termos de Uso</terms> e com a minha <privacy>Política de Privacidade</privacy>.",
+               "acceptContinue": " Aceitar e continuar",
+               "cancel": "Cancelar"
+            }
          },
          "form": {
             "title": "Cadastro",
@@ -99,6 +105,8 @@
             },
             "thirdStep": {
                "paragraph": "Agora, por favor, informe seu nome\n e defina uma senha.",
+               "acceptTerms": "Eu aceito os <terms>Termos de Uso</terms> e a <privacy>Política de Privacidade</privacy>.",
+               "and": "e a ",
                "buttonLabel": "Registrar",
                "placeholders": {
                   "name": "Seu nome",
@@ -107,6 +115,7 @@
                },
                "error": {
                   "name": "O nome é obrigatório. Informe-o para continuar.",
+                  "acceptTerms": "Você deve primeiro aceitar para se cadastrar!",
                   "password": {
                      "empty": "A senha é obrigatória. Informe-a para continuar.",
                      "wrongFormat": "Sua senha deve conter:\n\n• Pelo menos 8 caracteres\n• Uma letra maiúscula\n• Uma letra minúscula\n• Pelo menos dois números\n• Não deve conter espaços vazios.\n• Deve possuir um caractere especial, como @"
@@ -223,16 +232,220 @@
          "lastStep": "Lamentamos ver você partir!\nEsperamos que você volte algum dia!\nVocê será sempre bem-vindo(a)!"
       }
    },
+   "termsAndPrivacy": {
+      "terms": "Termos e Condições",
+      "privacy": "Política de Privacidade"
+   },
+   "termsAndConditions": {
+      "backToHome": "Voltar para home",
+      "documentTitle": {
+         "title": "Termos e Condições",
+         "effective": "Data de Vigência: 17 de julho de 2026",
+         "lcc": "Vitor Pestana · "
+      },
+      "1": {
+         "title": "1. Introdução",
+         "text": "Este site fornece acesso a um portfólio pessoal e aos recursos relacionados. Estes Termos regem o uso deste site e de quaisquer serviços associados. Ao acessar ou utilizar este site, você concorda com estes Termos.",
+         "end": "Caso não concorde, por favor, não utilize este site."
+      },
+      "2": {
+         "title": "2. Contas",
+         "text": "Você pode criar uma conta utilizando seu nome e e-mail ou entrar com Google, GitHub ou LinkedIn.",
+         "list1": {
+            "p": "Você é responsável por:",
+            "item1": "Manter suas credenciais de acesso em segurança",
+            "item2": "Todas as atividades realizadas por meio da sua conta"
+         },
+         "end": "Contas que violarem estes Termos ou a legislação aplicável poderão ser suspensas ou removidas permanentemente."
+      },
+      "3": {
+         "title": "3. Informações do Usuário",
+         "text": "Ao criar uma conta, você declara que as informações fornecidas são verdadeiras e pertencem a você.",
+         "list1": {
+            "item1": "Não se passar por outra pessoa nem fornecer informações falsas ou enganosas",
+            "item2": "Manter as informações da sua conta atualizadas"
+         },
+         "end": "Reservamo-nos o direito de suspender ou remover contas que contenham informações falsas, fraudulentas ou abusivas."
+      },
+      "4": {
+         "title": "4. Autenticação por Terceiros",
+         "text": "Este site oferece suporte à autenticação por provedores terceirizados, como Google, GitHub e LinkedIn.",
+         "list1": {
+            "p": "Ao utilizar um provedor de terceiros:",
+            "item1": "Você autoriza o provedor a compartilhar as informações básicas do seu perfil necessárias para a criação da sua conta",
+            "item2": "O uso desses serviços também está sujeito aos termos e políticas de privacidade do respectivo provedor"
+         },
+         "end": "Não nos responsabilizamos pela disponibilidade, segurança ou funcionamento dos serviços de autenticação de terceiros."
+      },
+      "5": {
+         "title": "5. Taxas e Pagamentos",
+         "text": "Atualmente, a criação e utilização de uma conta neste site são gratuitas.",
+         "list1": {
+            "item1": "Nenhum pagamento é necessário para se cadastrar ou utilizar os recursos disponíveis",
+            "item2": "Caso recursos pagos sejam disponibilizados no futuro, eles serão claramente identificados antes de qualquer cobrança",
+            "item3": "Quaisquer pagamentos futuros serão processados por provedores de pagamento confiáveis"
+         },
+         "end": "Quaisquer serviços pagos que venham a ser oferecidos serão regidos pelos termos apresentados no momento de sua disponibilização."
+      },
+      "6": {
+         "title": "6. Recursos Futuros",
+         "text": "Novos recursos ou serviços poderão ser adicionados ao site ao longo do tempo.",
+         "list1": {
+            "item1": "Novos recursos poderão possuir termos ou requisitos específicos",
+            "item2": "Alguns recursos poderão exigir autenticação para serem acessados",
+            "item3": "Recursos poderão ser modificados, descontinuados ou substituídos sem aviso prévio",
+            "item4": "O acesso a recursos futuros poderá depender de requisitos técnicos ou operacionais",
+            "item5": "Interrupções temporárias poderão ocorrer devido à manutenção ou problemas técnicos",
+            "item6": "Reservamo-nos o direito de modificar, adicionar ou remover recursos a qualquer momento."
+         }
+      },
+      "7": {
+         "title": "7. Propriedade Intelectual",
+         "text": "Todo o conteúdo original deste site, incluindo seu design, código-fonte, textos, imagens, identidade visual e demais materiais, é protegido pelas leis de propriedade intelectual aplicáveis.",
+         "end": "Você não pode copiar, reproduzir, distribuir, modificar ou utilizar qualquer parte deste site sem autorização prévia, exceto quando permitido por lei."
+      },
+      "8": {
+         "title": "8. Uso Aceitável",
+         "text": "Ao utilizar este site, você concorda em não:",
+         "list1": {
+            "item1": "Tentar interferir ou prejudicar o funcionamento do site",
+            "item2": "Acessar contas ou dados que não pertençam a você",
+            "item3": "Fornecer informações falsas ou enganosas",
+            "item4": "Utilizar o site em desacordo com a legislação aplicável"
+         }
+      },
+      "9": {
+         "title": "9. Isenção de Responsabilidade",
+         "text": "Este site é fornecido \"no estado em que se encontra\" e \"conforme disponível\". Não garantimos disponibilidade ininterrupta, segurança ou funcionamento livre de erros.",
+         "list1": {
+            "p": "Não nos responsabilizamos por:",
+            "item1": "Indisponibilidades temporárias ou interrupções técnicas",
+            "item2": "Falhas ou indisponibilidade dos provedores de autenticação de terceiros",
+            "item3": "Quaisquer danos indiretos, incidentais ou consequentes decorrentes do uso deste site"
+         }
+      },
+      "10": {
+         "title": "10. Alterações nestes Termos",
+         "p": "Estes Termos poderão ser atualizados periodicamente. O uso contínuo do site após a publicação das alterações será considerado como aceitação da versão revisada."
+      },
+      "11": {
+         "title": "11. Contato",
+         "p": "Caso tenha dúvidas sobre estes Termos e Condições, entre em contato pelo e-mail "
+      }
+   },
+   "privacyPolicy": {
+      "backToHome": "Ir para a Home",
+      "documentTitle": {
+         "title": "Política de Privacidade",
+         "effective": "Última atualização: 27 de março de 2026",
+         "lcc": "Vitor Pestana ·"
+      },
+      "1": {
+         "title": "1. Introdução",
+         "text": "Esta Política de Privacidade explica como este portfólio coleta, utiliza e protege suas informações pessoais ao utilizar o site ou criar uma conta.",
+         "end": "Ao utilizar este site, você concorda com as práticas descritas nesta Política de Privacidade."
+      },
+      "2": {
+         "title": "2. Informações que Coletamos",
+         "list1": {
+            "p": "Coletamos as informações que você fornece voluntariamente quando:",
+            "item1": "Cria uma conta (nome e endereço de e-mail)",
+            "item2": "Entra utilizando Google, GitHub ou LinkedIn (informações básicas do perfil fornecidas pelo provedor de autenticação escolhido)",
+            "item3": "Entra em contato conosco pelos canais disponíveis"
+         },
+         "list2": {
+            "p": "Também poderemos coletar:",
+            "item1": "Informações técnicas, como endereço IP, navegador, sistema operacional e informações do dispositivo",
+            "item1Saideira": "Informações técnicas, como endereço IP, navegador, sistema operacional e informações do dispositivo",
+            "item2": "Informações de uso para melhorar o funcionamento e a segurança do site"
+         },
+         "end": "Não coletamos informações de pagamento nem dados pessoais sensíveis de forma intencional."
+      },
+      "3": {
+         "title": "3. Cookies e Tecnologias Semelhantes",
+         "list1": {
+            "p": "Poderemos utilizar cookies ou tecnologias semelhantes para:",
+            "item1": "Manter sua sessão autenticada",
+            "item2": "Melhorar o funcionamento e o desempenho do site",
+            "item3": "Analisar a utilização do site, quando aplicável"
+         },
+         "end": "Você pode gerenciar ou desativar os cookies por meio das configurações do seu navegador."
+      },
+      "4": {
+         "title": "4. Como Utilizamos suas Informações",
+         "list1": {
+            "p": "Utilizamos suas informações para:",
+            "item1": "Criar e gerenciar sua conta",
+            "item2": "Autenticar usuários",
+            "item3": "Fornecer e aprimorar o site",
+            "item4": "Garantir a segurança e prevenir abusos",
+            "item5": "Responder a solicitações de suporte ou contato"
+         }
+      },
+      "5": {
+         "title": "5. Compartilhamento de Informações",
+         "list1": {
+            "p": "Suas informações poderão ser compartilhadas com:",
+            "item1": "Provedores de autenticação, como Google, GitHub e LinkedIn",
+            "item2": "Provedores de infraestrutura ou hospedagem necessários para operar o site",
+            "item3": "Autoridades competentes, quando exigido por lei",
+            "item3Saideira": "Autoridades competentes, quando exigido por lei",
+            "item4": "Prestadores de serviço que auxiliem na operação do site, quando necessário"
+         },
+         "end": "Não vendemos, alugamos ou comercializamos suas informações pessoais."
+      },
+      "6": {
+         "title": "6. Seus Direitos",
+         "list1": {
+            "item1": "Você pode deixar de utilizar o site a qualquer momento.",
+            "item2": "Você pode solicitar a exclusão da sua conta entrando em contato conosco.",
+            "item3": "Você pode gerenciar os cookies nas configurações do seu navegador."
+         },
+         "end": "Solicitações relacionadas à privacidade podem ser realizadas por meio das informações de contato disponibilizadas abaixo."
+      },
+      "7": {
+         "title": "7. Base Legal para o Tratamento de Dados Pessoais",
+         "text": "Tratamos seus dados pessoais apenas quando houver uma base legal válida, conforme permitido pela legislação aplicável de proteção de dados.",
+         "list1": {
+            "p": "Dependendo da situação, o tratamento poderá ocorrer com base em:",
+            "item1": "Seu consentimento, quando você cria uma conta voluntariamente ou concorda com esta Política de Privacidade",
+            "item2": "A execução de um contrato ou das medidas necessárias para fornecer os serviços solicitados",
+            "item3": "O cumprimento de obrigações legais ou regulatórias",
+            "item4": "Nosso legítimo interesse, desde que não prevaleçam os seus direitos e liberdades fundamentais"
+         },
+         "end": "Quando o tratamento for baseado no seu consentimento, você poderá revogá-lo a qualquer momento. A revogação, entretanto, não afetará a legalidade do tratamento realizado antes dessa solicitação."
+      },
+      "8": {
+         "title": "8. Alterações nesta Política",
+         "p": "Esta Política de Privacidade poderá ser atualizada periodicamente. Quaisquer alterações serão publicadas nesta página acompanhadas da data da última atualização."
+      },
+      "9": {
+         "title": "9. Contato",
+         "p": "Caso tenha dúvidas sobre esta Política de Privacidade, entre em contato pelo e-mail "
+      }
+   },
    "metaData": {
       "home": {
-         "title": "| Full Stack Web Developer",
+         "title": "| Desenvolvedor Web Full Stack",
          "description": "Olá! Meu nome é Vitor Pestana e sou um Desenvolvedor Web Full Stack especializado em desenvolvimento back-end e aplicações web escaláveis."
       },
+      "termsAndConditions": {
+         "title": "| Termos e Condições",
+         "description": "Revise os Termos e Condições que regem o uso deste site de portfólio, contas de usuário, autenticação e recursos relacionados."
+      },
+      "privacyPolicy": {
+         "title": "| Política de Privacidade",
+         "description": "Leia nossa Política de Privacidade para saber como coletamos, usamos, armazenamos e protegemos suas informações pessoais ao utilizar este site de portfólio."
+      },
       "auth": {
-         "login": "| Logar",
-         "signUp": "| Cadastrar",
-         "forgotPassword": "| Esqueceu a senha",
-         "description": "Aqui você pode tanto logar ou cadastrar-se"
+         "login": "| Entrar",
+         "signUp": "| Criar Conta",
+         "forgotPassword": "| Esqueci a Senha",
+         "description": {
+            "login": "Aqui você pode fazer login.",
+            "signUp": "Aqui você pode criar uma conta.",
+            "forgotPassword": "Aqui você pode recuperar sua senha."
+         }
       },
       "editProfile": {
          "title": "| Editar Perfil",
@@ -240,23 +453,18 @@
       },
       "profile": {
          "title": "| Perfil",
-         "description": "Aqui você pode consultar os dados do seu perfil."
+         "description": "Aqui você pode verificar os dados do seu perfil."
       },
       "changePassword": {
          "title": "| Alterar Senha",
          "description": "Aqui você pode alterar sua senha."
       },
-      "delete-account": {
+      "deleteAccount": {
          "title": "| Excluir Conta",
          "description": "Aqui você pode excluir sua conta."
       }
    },
-   "googleReCaptcha": {
-      "protectedBy": "Este site é protegido por reCAPTCHA",
-      "privacy": " \ne a Política de Privacidade",
-      "terms": " e os Termos de Serviço da Google",
-      "apply": " se aplicam."
-   },
+   "googleReCaptcha": "Este site é protegido pelo reCAPTCHA\ne a <privacy>Política de Privacidade</privacy>\ne os <terms>Termos de Serviço</terms> do Google se aplicam.",
    "loading": "Só um momento! Carregando ...",
    "error": {
       "ops": "Ooooopa!",
@@ -291,6 +499,7 @@
       "B8D1": "Algo deu errado!",
       "F35E": "O recurso não foi encontrado.",
       "9A6C": "A solicitação foi enviada com um tipo de mídia inválido!",
+      "4E28": "O email que você forneceu já foi confirmado!.",
       "D2B7": "Ocorreu um erro inesperado."
    }
 }

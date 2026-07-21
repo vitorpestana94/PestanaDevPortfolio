@@ -6,7 +6,7 @@ export default function SeuZeLeiteiro() {
 
    return (
       <motion.div
-         className="mx-auto aspect-4/3 w-[70%] 3xl:w-[65%] relative z-0"
+         className="mx-auto aspect-4/3 w-[75%] sm:w-[70%] 3xl:w-[65%] relative z-0"
          whileTap={effect}
          whileHover={effect}
       >
