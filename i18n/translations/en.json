@@ -464,12 +464,7 @@
          "description": "Here you can delete your account."
       }
    },
-   "googleReCaptcha": {
-      "protectedBy": "This site is protected by reCAPTCHA",
-      "privacy": " \n and the Google Privacy Policy",
-      "terms": " and Terms of Service",
-      "apply": " apply."
-   },
+   "googleReCaptcha": "This site is protected by reCAPTCHA\n and the <privacy>Google Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
    "loading": "Just a moment! Loading...",
    "error": {
       "ops": "Ooooops!",

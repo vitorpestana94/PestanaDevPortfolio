@@ -46,7 +46,7 @@
    },
    "auth": {
       "common": {
-         "with": "Continuar com",
+         "with": "Continue with {platform}",
          "or": "ou"
       },
       "switchButton": {
@@ -426,14 +426,26 @@
    },
    "metaData": {
       "home": {
-         "title": "| Full Stack Web Developer",
+         "title": "| Desenvolvedor Web Full Stack",
          "description": "Olá! Meu nome é Vitor Pestana e sou um Desenvolvedor Web Full Stack especializado em desenvolvimento back-end e aplicações web escaláveis."
       },
+      "termsAndConditions": {
+         "title": "| Termos e Condições",
+         "description": "Revise os Termos e Condições que regem o uso deste site de portfólio, contas de usuário, autenticação e recursos relacionados."
+      },
+      "privacyPolicy": {
+         "title": "| Política de Privacidade",
+         "description": "Leia nossa Política de Privacidade para saber como coletamos, usamos, armazenamos e protegemos suas informações pessoais ao utilizar este site de portfólio."
+      },
       "auth": {
-         "login": "| Logar",
-         "signUp": "| Cadastrar",
-         "forgotPassword": "| Esqueceu a senha",
-         "description": "Aqui você pode tanto logar ou cadastrar-se"
+         "login": "| Entrar",
+         "signUp": "| Criar Conta",
+         "forgotPassword": "| Esqueci a Senha",
+         "description": {
+            "login": "Aqui você pode fazer login.",
+            "signUp": "Aqui você pode criar uma conta.",
+            "forgotPassword": "Aqui você pode recuperar sua senha."
+         }
       },
       "editProfile": {
          "title": "| Editar Perfil",
@@ -441,31 +453,18 @@
       },
       "profile": {
          "title": "| Perfil",
-         "description": "Aqui você pode consultar os dados do seu perfil."
+         "description": "Aqui você pode verificar os dados do seu perfil."
       },
       "changePassword": {
          "title": "| Alterar Senha",
          "description": "Aqui você pode alterar sua senha."
       },
-      "delete-account": {
+      "deleteAccount": {
          "title": "| Excluir Conta",
          "description": "Aqui você pode excluir sua conta."
-      },
-      "termsAndConditions": {
-         "title": "| Termos e Condições",
-         "description": "Consulte os Termos e Condições que regem o uso deste portfólio, das contas de usuário, da autenticação e dos recursos relacionados."
-      },
-      "privacyPolicy": {
-         "title": "| Política de Privacidade",
-         "description": "Consulte nossa Política de Privacidade para entender como coletamos, utilizamos, armazenamos e protegemos seus dados pessoais ao utilizar este portfólio."
       }
    },
-   "googleReCaptcha": {
-      "protectedBy": "Este site é protegido por reCAPTCHA",
-      "privacy": " \ne a Política de Privacidade",
-      "terms": " e os Termos de Serviço da Google",
-      "apply": " se aplicam."
-   },
+   "googleReCaptcha": "Este site é protegido pelo reCAPTCHA\ne a <privacy>Política de Privacidade</privacy>\ne os <terms>Termos de Serviço</terms> do Google se aplicam.",
    "loading": "Só um momento! Carregando ...",
    "error": {
       "ops": "Ooooopa!",
