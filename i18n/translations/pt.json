@@ -75,19 +75,19 @@
       "sign-up": {
          "banner": {
             "title": "Gostaria de ver como \neu transformo ideias em código?",
-            "paragraph": "Cadastre-se agora!",
-            "platform": {
-               "title": "Antes de continuar",
-               "toCreate": "Para criar sua conta com o {platform}, precisamos que você concorde com os meus <terms>Termos de Uso</terms> e com a minha <privacy>Política de Privacidade</privacy>.",
-               "acceptContinue": " Aceitar e continuar",
-               "cancel": "Cancelar"
-            }
+            "paragraph": "Cadastre-se agora!"
          },
          "form": {
             "title": "Cadastro",
             "firstStep": {
                "email": "seu e-mail",
-               "button": "Cadastrar"
+               "button": "Cadastrar",
+                 "platform": {
+               "title": "Antes de continuar",
+               "toCreate": "Para criar sua conta com o {platform}, precisamos que você concorde com os meus <terms>Termos de Uso</terms> e com a minha <privacy>Política de Privacidade</privacy>.",
+               "acceptContinue": " Aceitar e continuar",
+               "cancel": "Cancelar"
+            }
             },
             "secondStep": {
                "button": "Verificar",
