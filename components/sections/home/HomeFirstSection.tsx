@@ -4,6 +4,7 @@ import BackGround from "@/components/divs/home/firstSession/HomeFirstSectionBgDi
 import Wrapper from "@/components/wrappers/home/HomeWrapper";
 
 export default function HomeFirstSection() {
+      throw Error()
    return (
       <BackGround>
          <Header />

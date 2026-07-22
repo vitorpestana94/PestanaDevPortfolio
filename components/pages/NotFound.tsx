@@ -1,12 +1,13 @@
 import { getTranslations } from 'next-intl/server';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import BackToHome from "../buttons/BackToHome";
+import ExceptionSection from '../sections/ExceptionSection';
 
 export default async function NotFound(){
     const t = await getTranslations("notFound");
 
     return (
-        <section className="homeBg w-full min-h-screen flex flex-col items-center justify-center">
+        <ExceptionSection>
             <div className="flex flex-col items-center text-white w-full xl:w-1/2 relative">
                 <BackToHome  buttonLabel={t("backToHome")} className='absolute top-[20%] left-[10%]' />
                 <div className='absolute space-y-2
@@ -21,6 +22,6 @@ export default async function NotFound(){
                 <DotLottieReact src="/lotties/404.json" autoplay loop
                 className='aspect-square w-full sm:w-[80%]'/>
             </div>
-        </section>
+        </ExceptionSection>
     )
 }
