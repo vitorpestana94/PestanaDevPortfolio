@@ -2,7 +2,7 @@
 
 "use client";
 
-import ErrorModal from "@/components/modals/ErrorModal";
+import ErrorModal from "@/components/pages/Error";
 export default function GlobalError({
    reset,
 }: {
