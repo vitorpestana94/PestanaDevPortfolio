@@ -466,6 +466,7 @@
    },
    "googleReCaptcha": "This site is protected by reCAPTCHA\n and the <privacy>Google Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
    "loading": "Just a moment! Loading...",
+   "notFound": "Page\nNot\nFound",
    "error": {
       "ops": "Ooooops!",
       "something": "Something went wrong!",
