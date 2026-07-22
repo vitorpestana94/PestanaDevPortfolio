@@ -237,7 +237,7 @@
       "privacy": "Privacy Policy"
    },
    "termsAndConditions": {
-      "backToHome": "Back to home",
+      "backToHome": "Go to home",
       "documentTitle": {
          "title": "Terms & Conditions",
          "effective": "Effective Date: July 17, 2026",
@@ -466,7 +466,10 @@
    },
    "googleReCaptcha": "This site is protected by reCAPTCHA\n and the <privacy>Google Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
    "loading": "Just a moment! Loading...",
-   "notFound": "Page\nNot\nFound",
+   "notFound": {
+      "title": "Page\nNot\nFound",
+      "backToHome": "Go to home"
+   },
    "error": {
       "ops": "Ooooops!",
       "something": "Something went wrong!",
