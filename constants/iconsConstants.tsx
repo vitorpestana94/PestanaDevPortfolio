@@ -11,7 +11,6 @@ import Profile from "@public/icons/profile.svg";
 import Padlock from "@public/icons/padlock.svg";
 import EyeOn from "@public/icons/eyeOn.svg";
 import EyeOff from "@public/icons/eyeOff.svg";
-import BadgeCheck from "@public/icons/badgeCheck.svg";
 import LeftArrow from "@public/icons/arrowLeft.svg";
 import Logout from "@public/icons/logout.svg";
 import Trash from "@public/icons/trash.svg";
@@ -21,7 +20,6 @@ import Lock from "@public/icons/lock.svg";
 import XCircle from "@public/icons/xCircle.svg";
 import Check from "@public/icons/check.svg";
 import ProfileCircle from "@public/icons/profileCircle.svg";
-import Error from "@public/icons/error.svg";
 import ErrorToast from "@public/icons/errorToast.svg";
 import Next from "@public/icons/next.svg";
 import Tailwind from "@public/icons/tailwind.svg";
@@ -53,7 +51,6 @@ export const icons = {
    eyeOff: <EyeOff />,
    gitHub: <GitHub />,
    google: <Google />,
-   badgeCheck: <BadgeCheck />,
    leftArrow: <LeftArrow />,
    logout: <Logout />,
    trash: <Trash />,
@@ -63,7 +60,6 @@ export const icons = {
    xCircle: <XCircle />,
    check: <Check />,
    profileCircle: <ProfileCircle />,
-   error: <Error />,
    errorToast: <ErrorToast />,
    next: <Next />,
    tailwind: <Tailwind />,

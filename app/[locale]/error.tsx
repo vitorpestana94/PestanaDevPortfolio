@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import ErrorModal from "@/components/modals/ErrorModal";
+import ErrorModal from "@/components/pages/Error";
 
 export default function RootError({
    reset,

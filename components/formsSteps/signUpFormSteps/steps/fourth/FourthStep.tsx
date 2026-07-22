@@ -2,6 +2,7 @@ import useFourthStep from "./useFourthStep";
 import Check from "@/components/icons/Icons";
 import Success from "@/components/paragraphs/FormParagraph";
 import Home from "@/components/buttons/formButton/FormButton";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function FourthStep({
    isForgotPassword,
@@ -13,7 +14,7 @@ export default function FourthStep({
    return (
       <section className="formStepfinalDiv">
          <Success text={t("title")} />
-         <Check iconName="badgeCheck" className="aspect-square w-5/12" />
+         <DotLottieReact src="/lotties/success.json" className="aspect-square w-6/12 xl:w-8/12" autoplay />
          <Home
             buttonLabel={isForgotPassword ? t("button") : "Home"}
             submit={redirect}

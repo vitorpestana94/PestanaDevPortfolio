@@ -1,7 +1,7 @@
-import Check from "@/components/icons/Icons";
 import Success from "@/components/paragraphs/FormParagraph";
 import Home from "@/components/buttons/formButton/FormButton";
 import useFinalFormStep from "./useFinalFormStep";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function FinalFormStep({
    redirectCallBack,
@@ -15,7 +15,7 @@ export default function FinalFormStep({
    return (
       <section className="formStepfinalDiv">
          <Success text={title} />
-         <Check iconName="badgeCheck" className="aspect-square w-5/12" />
+         <DotLottieReact src="/lotties/success.json" className="aspect-square w-5/12" autoplay loop />
          <Home
             buttonLabel={"Home"}
             submit={redirect}
