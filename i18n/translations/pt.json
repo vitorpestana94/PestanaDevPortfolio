@@ -475,6 +475,12 @@
       "something": "Algo deu errado!",
       "buttonLabel": "Recarregar",
       "unexpected": "Um erro inesperado ocorreu; tente de novo mais tarde",
+      "password": {
+         "copyPasting": "Copiar e colar não é permitido.",
+         "newPassword": "\nPor favor, defina sua nova senha manualmente.",
+         "password": "\nPor favor, digite sua senha manualmente.",
+         "confirmPassword": "\nPor favor, confirme sua senha manualmente."
+      },
       "8F2A": "O email fornecido já está em uso.",
       "D7C1": "O email informado já foi enviado.",
       "5BE9": "O email informado não foi enviado.",

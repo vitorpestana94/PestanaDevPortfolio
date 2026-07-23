@@ -11,7 +11,7 @@ export default function usePasswordInput(
    type: PasswordInputType,
    password?: string,
 ) {
-   const { t, eye, eyeOn, switchEye } = usePasswordProps();
+   const { t, eye, eyeOn, switchEye, blockCopyOrPaste } = usePasswordProps(type);
    const schema = validatePassword();
    const isPasswordConfirmation = type === passwordConfirmation;
 
@@ -69,5 +69,6 @@ export default function usePasswordInput(
       defaultPlaceholder: placeHolderPerTye[type],
       checkPassword,
       switchEye,
+      blockCopyOrPaste
    };
 }
