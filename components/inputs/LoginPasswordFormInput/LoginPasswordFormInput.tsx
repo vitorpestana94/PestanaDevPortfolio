@@ -7,7 +7,7 @@ export default function LoginPasswordFormInput({
    register,
    errors,
 }: LoginPasswordFormInputInterface) {
-   const { t, eye, eyeOn, switchEye } = usePasswordProps();
+   const { t, eye, eyeOn, switchEye, blockCopyOrPaste } = usePasswordProps("password");
 
    const passwordError: string = errors?.password?.message as string;
 
@@ -19,6 +19,8 @@ export default function LoginPasswordFormInput({
                className="aspect-square w-[10%] max-w-4 shrink-0 strokeAzulPestana"
             />
             <input
+               onCopy={blockCopyOrPaste}
+               onPaste={blockCopyOrPaste}
                {...register!("password", {
                   required: t("auth.login.form.errors.password"),
                })}

@@ -475,6 +475,12 @@
       "something": "Something went wrong!",
       "buttonLabel": "Reload",
       "unexpected": "An unexpected error ocurred; please, try again later.",
+      "password": {
+         "copyPasting": "Copying and pasting is not allowed.",
+         "newPassword": "\nPlease, define your new password manually.",
+         "password": "\nPlease type your password manually.",
+         "confirmPassword": "\nPlease confirm your password manually."
+      },
       "8F2A": "The provided email is already in use.",
       "D7C1": "The provided email was already sended.",
       "5BE9": "The provided email was not sended.",
