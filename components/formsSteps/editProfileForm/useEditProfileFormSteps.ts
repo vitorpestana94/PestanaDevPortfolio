@@ -1,9 +1,10 @@
 import useHandleStep from "@/hooks/useStep";
 import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useChangeUserData } from "@/hooks/api/user/mutations";
 import { useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
+import { useSession } from "next-auth/react";
 
 export default function useEditProfileFormSteps() {
    const queryClient = useQueryClient();
@@ -15,10 +16,10 @@ export default function useEditProfileFormSteps() {
    } = useForm<ChangeUserDataRequestDto>({ mode: "onBlur" });
    const email = watch("email");
    const name = watch("name");
-   console.log(email, name);
    const { step, nextStep } = useHandleStep({
       maxSteps: 3,
    });
+   const { update } = useSession();
 
    const { mutateAsync, isPending, isSuccess } = useChangeUserData();
 
@@ -30,6 +31,12 @@ export default function useEditProfileFormSteps() {
 
    function submitBeforeNextStep() {
       submit({ email: email, name: name });
+      update({
+         user: {
+            name: name,
+            email: email
+         },
+      });
 
       nextStep();
    }

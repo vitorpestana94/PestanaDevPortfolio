@@ -22,14 +22,14 @@ export default function EditProfileFirstStep({
    isLoadingUpdateRequest: boolean;
    isSignUpWithPlatform: boolean;
 }) {
-   const { t, isLoading, dataNotChanged, submitUpdate } =
+   const { t, isLoading, dataNotChanged, submitUpdate, updateNameOnly } =
       useEditProfileFirstStep({ email, name, isEmailUpdate, submit, nextStep });
 
    return (
       <Form
          handleSubmit={handleSubmit!}
-         onSubmit={(data: ChangeUserDataRequestDto) => {
-            !isEmailUpdate ? submit(data) : null;
+         onSubmit={async (data: ChangeUserDataRequestDto) => {
+            !isEmailUpdate ? updateNameOnly(data) : null;
          }}
          className="profileFormDiv"
       >
