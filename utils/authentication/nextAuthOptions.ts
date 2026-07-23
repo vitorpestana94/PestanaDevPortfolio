@@ -142,11 +142,25 @@ export const nextAuthOptions = {
          token,
          account,
          user,
+         trigger,
+         session
       }: {
          token: JWT;
          account?: any | null;
          user: any;
+         trigger: string;
+         session: Session;
       }) {
+         if (trigger === "update") {
+            if (session?.user?.name) {
+               token.name = session.user.name;
+            }
+
+            if (session?.user?.email) {
+               token.email = session.user.email;
+            }
+         }
+
          if (
             (account?.id_token || account?.access_token) &&
             account?.provider

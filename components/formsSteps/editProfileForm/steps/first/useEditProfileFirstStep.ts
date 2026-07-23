@@ -5,14 +5,18 @@ import { ConfirmationCodeEmailKind } from "@/models/enums/CofirmationCodeEmailKi
 import Interface from "./EditProfileFirstStepInterface";
 import { useTranslations } from "next-intl";
 import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
+import { useSession } from "next-auth/react";
+import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
 
 export default function useEditProfileFirstStep({
    email,
    name,
+   submit,
    nextStep,
 }: Interface) {
    const locale = useLocale();
    const t = useTranslations("user");
+   const { update } = useSession();
 
    const {
       mutateAsync: mutateAsync,
@@ -38,6 +42,15 @@ export default function useEditProfileFirstStep({
       }
    }
 
+   async function updateNameOnly(data: ChangeUserDataRequestDto){
+      await submit(data);
+      await update({
+         user: {
+            name: data.name,
+         },
+      });
+   }
+
    useEffect(() => {
       if (isSuccess) {
          nextStep();
@@ -49,7 +62,8 @@ export default function useEditProfileFirstStep({
          (email === undefined || email === "") &&
          (name === undefined || name === ""),
       t,
-      submitUpdate,
       isLoading: isPending,
+      submitUpdate,
+      updateNameOnly
    };
 }

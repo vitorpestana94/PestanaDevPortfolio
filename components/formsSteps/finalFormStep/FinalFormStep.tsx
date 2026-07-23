@@ -15,7 +15,7 @@ export default function FinalFormStep({
    return (
       <section className="formStepfinalDiv">
          <Success text={title} />
-         <DotLottieReact src="/lotties/success.json" className="aspect-square w-5/12" autoplay loop />
+         <DotLottieReact src="/lotties/success.json" className="aspect-square w-5/12" autoplay />
          <Home
             buttonLabel={"Home"}
             submit={redirect}

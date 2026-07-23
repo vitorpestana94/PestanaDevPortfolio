@@ -225,7 +225,7 @@
 
       background: transparent;
       color: white;
-      -webkit-text-fill-color: white;
+      -webkit-text-fill-color: #B2BEB5;
    }
 
    .profileDataInputs:-webkit-autofill,
