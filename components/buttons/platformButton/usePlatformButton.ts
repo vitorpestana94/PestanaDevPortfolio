@@ -3,7 +3,7 @@ import useButtonMotionEffects from "@/hooks/useButtonMotionEffects";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
-export default function usePlatformButton(signInFunction: () => void) {
+export default function usePlatformButton(signInFunction: () => void, isSignUp?: boolean) {
    const t = useTranslations();
    const [accepteded, setAccepteded] = useState(false);
    const [show, setShow] = useState(false);
@@ -14,24 +14,33 @@ export default function usePlatformButton(signInFunction: () => void) {
       linkedin: "bg-[#0077B5] text-white",
    };
 
-   function accepteTerms(accepte: boolean) {
-      setAccepteded(accepte);
+   function accepteTerms(accepteded: boolean) {
+      setAccepteded(accepteded);
+   }
+
+   function signIn(){
+      signInFunction();
+
+      toast.loading(t("loading"), {
+         style: {
+            backgroundColor: "#38b6ff",
+            color: "#ffff",
+         },
+      });
    }
 
    function showTermsPolicyModal() {
-      setShow(true);
+      if (isSignUp){
+         setShow(true);
+      }else {
+         signIn();
+      }
    }
+
 
    useEffect(() => {
       if (accepteded) {
-         signInFunction();
-
-         toast.loading(t("loading"), {
-            style: {
-               backgroundColor: "#38b6ff",
-               color: "#ffff",
-            },
-         });
+         signIn();
       }
    }, [accepteded]);
 

@@ -32,7 +32,7 @@ export default function SignUpFirstStep({
          className="w-full h-[90%] flex flex-col justify-around items-center"
       >
          <SignUpTitle />
-         <SignUpWithPlatform />
+         <SignUpWithPlatform isSignUp/>
          <Or />
          <Wrapper>
             <div className="flex flex-col items-center justify-between gap-y-1 lg:gap-y-6">
