@@ -7,6 +7,7 @@ import TermsAndPrivacyModal from "@/components/modals/TermsAndPrivacyModal";
 
 export default function PlatformButton({
    iconName,
+   isSignUp = false,
    signInFunction,
 }: PlatformButtonInterface) {
    const {
@@ -17,7 +18,7 @@ export default function PlatformButton({
       show,
       showTermsPolicyModal,
       accepteTerms,
-   } = usePlatformButton(signInFunction);
+   } = usePlatformButton(signInFunction, isSignUp);
 
    return (
       <>
@@ -43,7 +44,7 @@ export default function PlatformButton({
                {`${t("auth.common.with", { platform: capitalizeWord(iconName) })}`}
             </span>
          </motion.button>
-         {show && (
+         {(show && isSignUp) && (
             <TermsAndPrivacyModal
                accepteTerms={accepteTerms}
                provider={iconName}

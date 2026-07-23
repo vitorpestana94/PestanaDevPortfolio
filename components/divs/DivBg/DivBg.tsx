@@ -1,6 +1,6 @@
 import Interface from "./DivBgInterface";
 import Text from "../../textBlocks/authTextBlock/AuthTextBlock";
-import PixelBlast from "@components/PixelBlast";
+import PixelBlast from "@/components/backgrounds/PixelBlast";
 
 export default function DivBg({ text }: Interface) {
    return (
