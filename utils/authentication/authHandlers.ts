@@ -9,15 +9,3 @@ export async function getSession(): Promise<Session | null> {
 
    return session;
 }
-
-export async function getIsUserLogged(): Promise<boolean> {
-   const session: Session | null = await getSession();
-
-   return session !== null;
-}
-
-export async function getIsUserLoggedAndRegistered() {
-   const session: Session | null = await getSession();
-
-   return session;
-}

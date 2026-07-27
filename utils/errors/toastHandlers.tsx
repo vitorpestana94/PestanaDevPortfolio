@@ -12,3 +12,16 @@ export function toastError(message: string) {
       ),
    });
 }
+
+export function toastLoading(message: string){
+   toast.loading(message, {
+      style: {
+         backgroundColor: "#38b6ff",
+         color: "#ffff",
+      },
+   });
+}
+
+export function toastDimiss(){
+   toast.dismiss();
+}

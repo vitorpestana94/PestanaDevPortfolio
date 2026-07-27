@@ -1,17 +1,17 @@
-import AuthService from "@/services/AuthService";
 import { jwtDecode, JwtPayload } from "jwt-decode";
 import ApiToken from "@/models/interfaces/dtos/ApiToken";
 import { JWT } from "next-auth/jwt";
 import { getPlatform } from "../strings/getPlatform";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import RefreshTokenRequest from "@/models/interfaces/dtos/requests/RefreshTokenRequest";
+import AuthServiceServer from "@/services/AuthServiceServer";
 
 export async function login(
    email: string,
    password: string,
    captchaToken: string,
 ) {
-   const response: ApiToken | null = await AuthService.login({
+   const response: ApiToken | null = await AuthServiceServer.login({
       email,
       password,
       captchaToken: captchaToken,
@@ -23,7 +23,7 @@ export async function login(
 }
 
 export async function signup(request: SignUpRequest) {
-   const response: ApiToken | null = await AuthService.signup(request);
+   const response: ApiToken | null = await AuthServiceServer.signup(request);
 
    checkResponse(response);
 
@@ -35,7 +35,7 @@ export async function loginOrSignUpWithPlatform(
    authPlatform: string,
 ) {
    const response: ApiToken | null =
-      await AuthService.loginOrSignUpWithPlatform({
+      await AuthServiceServer.loginOrSignUpWithPlatform({
          token,
          platform: getPlatform(authPlatform),
       });
@@ -68,7 +68,7 @@ export async function refreshAccessToken(
    request: RefreshTokenRequest,
    oldToken: JWT,
 ) {
-   const response = await AuthService.refreshToken(request);
+   const response = await AuthServiceServer.refreshToken(request);
 
    checkResponse(response);
 
@@ -84,10 +84,6 @@ export async function refreshAccessToken(
       email: decoded.email,
       name: decoded.name,
    };
-}
-
-export async function logoutUser() {
-   await AuthService.LogouUser();
 }
 
 function checkResponse(response: ApiToken | null) {

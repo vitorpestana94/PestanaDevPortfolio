@@ -13,6 +13,7 @@ import { getErrorCode } from "../errors/errorMessagesHandlers";
 import { useTranslations } from "next-intl";
 import GlobalLoader from "@/components/divs/loaders/GlobalLoader";
 
+
 export default function ReactQueryProvider({
    children,
 }: {

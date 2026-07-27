@@ -17,7 +17,7 @@ export default function ConfirmationCodeInput({
                type="text"
                maxLength={1}
                className={`aspect-74/50 text-white placeholder:text-gray-500 select-none text-center rounded-[5px] bg-gray-800
-              w-[20%] text-sm`}
+              w-[20%] sm:w-[15%] lg:w-[20%] text-sm`}
                placeholder={getRandomDefault()}
                onChange={(event) => handleInputChange(event, key)}
                onKeyDown={(event) => handleOnKeyDown(event, key)}

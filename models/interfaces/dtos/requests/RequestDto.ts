@@ -13,7 +13,6 @@ export type HttpMethod =
 
 export default interface RequestDto {
    path: string;
-   httpMethod: HttpMethod;
    requestBody?: any;
    queryParams?: string[];
    pathParams?: string[];

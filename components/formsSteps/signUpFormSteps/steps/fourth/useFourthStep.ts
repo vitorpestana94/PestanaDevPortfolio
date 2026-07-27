@@ -13,7 +13,7 @@ export default function useFourthStep(isForgotPassword?: boolean) {
 
    async function redirect(): Promise<void> {
       if (isForgotPassword) {
-         router.push(`${locale}/authentication/login`);
+         router.push(`/${locale}/authentication/login`);
       } else {
          router.push("/");
       }

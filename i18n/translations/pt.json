@@ -195,7 +195,7 @@
          "signUpType": {
             "label": "Tipo de Registro",
             "manual": "Manualmente",
-            "platform": "Usando o {{provider}}"
+            "platform": "Usando {provider}"
          }
       },
       "editProfile": {
@@ -229,7 +229,7 @@
          },
          "yes": "Sim, tenho certeza",
          "button": "Deletar",
-         "lastStep": "Lamentamos ver você partir!\nEsperamos que você volte algum dia!\nVocê será sempre bem-vindo(a)!"
+         "lastStep": "Lamentamo ver você partir!\nEspero que você volte algum dia!\nVocê será sempre bem-vindo(a)!"
       }
    },
    "termsAndPrivacy": {
@@ -475,12 +475,17 @@
       "something": "Algo deu errado!",
       "buttonLabel": "Recarregar",
       "unexpected": "Um erro inesperado ocorreu; tente de novo mais tarde",
+      "emailInvalid": "O email que você forneceu é inválido! Por favor, tente novamente com um email válido.",
       "password": {
          "copyPasting": "Copiar e colar não é permitido.",
          "newPassword": "\nPor favor, defina sua nova senha manualmente.",
          "password": "\nPor favor, digite sua senha manualmente.",
          "confirmPassword": "\nPor favor, confirme sua senha manualmente."
       },
+      "0CEE": "O email fornecido ainda não foi confirmado!",
+      "FC13": "Desuclpe, o servidor não está disponível",
+      "G36E": "Desculpe, você não tem acesso a este recurso.",
+      "A0B5": "O formato do email que você forneceu é inválido.",
       "8F2A": "O email fornecido já está em uso.",
       "D7C1": "O email informado já foi enviado.",
       "5BE9": "O email informado não foi enviado.",
@@ -510,6 +515,7 @@
       "F35E": "O recurso não foi encontrado.",
       "9A6C": "A solicitação foi enviada com um tipo de mídia inválido!",
       "4E28": "O email que você forneceu já foi confirmado!.",
-      "D2B7": "Ocorreu um erro inesperado."
+      "D2B7": "Ocorreu um erro inesperado.",
+      "3G5F": "Você se cadastrou usando uma plataforma e não pode redefinir sua senha.\nPor favor, faça login usando um provedor."
    }
 }

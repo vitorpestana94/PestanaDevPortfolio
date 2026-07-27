@@ -2,14 +2,10 @@ import useHandleStep from "@/hooks/useStep";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import { useState } from "react";
 import { signIn as signUp } from "next-auth/react";
-import useRequesthErros from "@/hooks/useRequestErros";
 import { toastError } from "@/utils/errors/toastHandlers";
 import { useTranslations } from "next-intl";
-import {
-   getErrorStatusCode,
-   getErrorMessage,
-} from "@/utils/errors/errorMessagesHandlers";
 import { useForm } from "react-hook-form";
+import { getErrorCode } from "@/utils/errors/errorMessagesHandlers";
 
 export default function useSignUpFormSteps() {
    const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -30,30 +26,6 @@ export default function useSignUpFormSteps() {
 
    const t = useTranslations();
 
-   const { handleRequestError } = useRequesthErros({
-      unexpected: () => {
-         toastError(t("error.unexpected"));
-      },
-      badRequest: (error) => {
-         if (typeof error === "string") {
-            if (error.includes("0cee")) {
-               toastError(
-                  t("auth.sign-up.form.thirdStep.error.emailNotConfirmed"),
-               );
-            } else if (error.includes("a0b5")) {
-               toastError(
-                  t("auth.sign-up.form.thirdStep.error.emailFormatInvalid"),
-               );
-            } else {
-               toastError(t("error.unexpected"));
-            }
-         }
-      },
-      forbidden: () => {
-         toastError(t("auth.sign-up.form.thirdStep.error.emailNotConfirmed"));
-      },
-   });
-
    async function submitForm(data: SignUpRequest) {
       setIsLoading(true);
 
@@ -65,7 +37,7 @@ export default function useSignUpFormSteps() {
       setIsLoading(false);
 
       if (!response) {
-         handleRequestError("500");
+         toastError(t(`error.unexpected`))
 
          return;
       }
@@ -73,10 +45,7 @@ export default function useSignUpFormSteps() {
       if (response.ok) {
          nextStep();
       } else {
-         handleRequestError(
-            getErrorStatusCode(response?.error ?? "500"),
-            getErrorMessage(response?.error ?? ""),
-         );
+         toastError(t(`error.${getErrorCode(response?.error ?? "unexpected")}`))
       }
    }
 

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import AuthService from "@/services/AuthService";
+import AuthService from "@/services/AuthServiceClient";
 
 export function useIsEmailRegistered(email?: string) {
    return useQuery({

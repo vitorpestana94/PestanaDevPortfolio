@@ -26,7 +26,6 @@ export default class RequestDtoBuilder {
    static LoginRequest(requestBody: LoginRequest): RequestDto {
       return {
          path: `${this._auth}`,
-         httpMethod: post,
          requestBody: requestBody,
       };
    }
@@ -34,7 +33,6 @@ export default class RequestDtoBuilder {
    static SignUp(requestBody: SignUpRequest): RequestDto {
       return {
          path: `${this._auth}/signup`,
-         httpMethod: post,
          requestBody: requestBody,
       };
    }
@@ -42,7 +40,6 @@ export default class RequestDtoBuilder {
    static ForgotPassword(requestBody: ForgotPasswordRequest): RequestDto {
       return {
          path: `${this._auth}/forgot-password`,
-         httpMethod: post,
          requestBody: requestBody,
       };
    }
@@ -52,15 +49,14 @@ export default class RequestDtoBuilder {
    ): RequestDto {
       return {
          path: `${this._auth}/oauth`,
-         httpMethod: post,
          requestBody: requestBody,
       };
    }
 
    static IsEmailRegistered(email?: string): RequestDto {
       return {
-         path: `${this._auth}/isEmailRegistered/${email}`,
-         httpMethod: get,
+         path: `${this._auth}/isEmailRegistered`,
+         pathParams: [email!],
       } as const;
    }
 
@@ -69,7 +65,6 @@ export default class RequestDtoBuilder {
    ): RequestDto {
       return {
          path: `${this._email}/contact`,
-         httpMethod: post,
          requestBody: requestBody,
       };
    }
@@ -79,7 +74,6 @@ export default class RequestDtoBuilder {
    ): RequestDto {
       return {
          path: `${this._email}/confirmation`,
-         httpMethod: post,
          requestBody: requestBody,
       };
    }
@@ -89,7 +83,6 @@ export default class RequestDtoBuilder {
    ): RequestDto {
       return {
          path: `${this._email}/confirmation/resend`,
-         httpMethod: post,
          requestBody: requestBody,
       };
    }
@@ -99,22 +92,20 @@ export default class RequestDtoBuilder {
    ): RequestDto {
       return {
          path: "confirmation",
-         httpMethod: post,
          requestBody: requestBody,
       };
    }
 
    static CheckConfirmationCodeEmailAlreadySent(email: string): RequestDto {
       return {
-         path: `confirmation/sent/${email}`,
-         httpMethod: get,
+         path: `confirmation/sent`,
+         pathParams: [email],
       };
    }
 
    static GetUser(): RequestDto {
       return {
          path: `${this._user}`,
-         httpMethod: get,
          useAuth: true,
       };
    }
@@ -122,7 +113,6 @@ export default class RequestDtoBuilder {
    static ChangeUserData(requestBody: ChangeUserDataRequestDto): RequestDto {
       return {
          path: `${this._user}`,
-         httpMethod: patch,
          requestBody: requestBody,
          useAuth: true,
       };
@@ -133,7 +123,6 @@ export default class RequestDtoBuilder {
    ): RequestDto {
       return {
          path: `${this._user}/password`,
-         httpMethod: patch,
          requestBody: requestBody,
          useAuth: true,
       };
@@ -142,7 +131,6 @@ export default class RequestDtoBuilder {
    static DeleteUserAccount(): RequestDto {
       return {
          path: `${this._user}`,
-         httpMethod: deleteVerb,
          useAuth: true,
       };
    }
@@ -151,7 +139,6 @@ export default class RequestDtoBuilder {
       return {
          path: `${this._auth}/refresh-token`,
          requestBody: requestBody,
-         httpMethod: post,
          useAuth: false,
       };
    }
@@ -159,7 +146,6 @@ export default class RequestDtoBuilder {
    static DeleteUser(): RequestDto {
       return {
          path: `${this._auth}`,
-         httpMethod: deleteVerb,
          useAuth: true,
       };
    }
