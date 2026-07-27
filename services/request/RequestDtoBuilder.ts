@@ -9,13 +9,6 @@ import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
 import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
 import ChangeUserPasswordRequestDto from "@/models/interfaces/dtos/requests/ChangeUserPasswordRequestDto";
-
-import {
-   post,
-   get,
-   patch,
-   deleteVerb,
-} from "@/models/interfaces/dtos/requests/RequestDto";
 import RefreshTokenRequest from "@/models/interfaces/dtos/requests/RefreshTokenRequest";
 
 export default class RequestDtoBuilder {
@@ -106,7 +99,6 @@ export default class RequestDtoBuilder {
    static GetUser(): RequestDto {
       return {
          path: `${this._user}`,
-         useAuth: true,
       };
    }
 
@@ -114,7 +106,6 @@ export default class RequestDtoBuilder {
       return {
          path: `${this._user}`,
          requestBody: requestBody,
-         useAuth: true,
       };
    }
 
@@ -124,14 +115,12 @@ export default class RequestDtoBuilder {
       return {
          path: `${this._user}/password`,
          requestBody: requestBody,
-         useAuth: true,
       };
    }
 
    static DeleteUserAccount(): RequestDto {
       return {
          path: `${this._user}`,
-         useAuth: true,
       };
    }
 
@@ -139,14 +128,12 @@ export default class RequestDtoBuilder {
       return {
          path: `${this._auth}/refresh-token`,
          requestBody: requestBody,
-         useAuth: false,
       };
    }
 
    static DeleteUser(): RequestDto {
       return {
          path: `${this._auth}`,
-         useAuth: true,
       };
    }
 }
