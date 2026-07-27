@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { MutationDefaultProps } from "@/models/interfaces/api/ApiInterfaces";
 import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
-import AuthService from "@/services/AuthService";
+import AuthService from "@/services/AuthServiceClient";
 
 export function useForgotPassword(): MutationDefaultProps<
    void,

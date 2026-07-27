@@ -8,7 +8,6 @@ import {
    login,
    loginOrSignUpWithPlatform,
    refreshAccessToken,
-   logoutUser,
 } from "./authRequestHandlers";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import { signup } from "./authRequestHandlers";
@@ -98,11 +97,6 @@ export const nextAuthOptions = {
          },
       }),
    ],
-   events: {
-      async signOut() {
-         await logoutUser();
-      },
-   },
    secret: process.env.NEXTAUTH_SECRET,
    pages: {
       signIn: `/`,

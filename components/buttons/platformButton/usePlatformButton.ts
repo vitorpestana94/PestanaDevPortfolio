@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import useButtonMotionEffects from "@/hooks/useButtonMotionEffects";
 import { useState, useEffect } from "react";
-import { toast } from "react-toastify";
+import { toastLoading } from "@/utils/errors/toastHandlers";
 
 export default function usePlatformButton(signInFunction: () => void, isSignUp?: boolean) {
    const t = useTranslations();
@@ -21,12 +21,7 @@ export default function usePlatformButton(signInFunction: () => void, isSignUp?:
    function signIn(){
       signInFunction();
 
-      toast.loading(t("loading"), {
-         style: {
-            backgroundColor: "#38b6ff",
-            color: "#ffff",
-         },
-      });
+      toastLoading(t("loading"));
    }
 
    function showTermsPolicyModal() {

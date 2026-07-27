@@ -474,6 +474,7 @@
       "ops": "Ooooops!",
       "something": "Something went wrong!",
       "buttonLabel": "Reload",
+      "emailInvalid": "The email you provided is invalid! please, try again with a valid email.",
       "unexpected": "An unexpected error ocurred; please, try again later.",
       "password": {
          "copyPasting": "Copying and pasting is not allowed.",
@@ -510,6 +511,7 @@
       "F35E": "The resource was not found.",
       "9A6C": "You requested with a wrong type of media!",
       "4E28": "The email you provided is already confirmed!",
-      "D2B7": "An unexpected error occurred."
+      "D2B7": "An unexpected error occurred.",
+      "3G5F": "You signed up using a platform and can not redifine your password.\nPlease, login using a provider."
    }
 }

@@ -1,14 +1,13 @@
 import LoginRequest from "@/models/interfaces/dtos/requests/LoginRequest";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
-import { useRedirectTo } from "@/hooks/useRedirectTo";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
 import useAuthErros from "@/hooks/useRequestErros";
-import { toastError } from "@/utils/errors/toastHandlers";
-import { getErrorStatusCode } from "@/utils/errors/errorMessagesHandlers";
+import { toastError, toastLoading, toastDimiss } from "@/utils/errors/toastHandlers";
 import { useForm } from "react-hook-form";
+import { useRedirectTo } from "@/hooks/useRedirectTo";
+import { useRouter } from "next/navigation";
 
 export default function useLoginInputsDiv() {
    const {
@@ -18,7 +17,6 @@ export default function useLoginInputsDiv() {
    } = useForm<LoginRequest>({ mode: "onBlur" });
 
    const [isLoading, setIsLoading] = useState<boolean>(false);
-
    const router = useRouter();
    const { redirectTo } = useRedirectTo();
    const t = useTranslations();
@@ -43,6 +41,7 @@ export default function useLoginInputsDiv() {
       }
 
       setIsLoading(true);
+      toastLoading(t("loading"));
 
       const result = await signIn("credentials", {
          email: data.email,
@@ -50,14 +49,15 @@ export default function useLoginInputsDiv() {
          captchaToken: captchaToken,
          redirect: false,
       });
-
+      
+      setIsLoading(false);
+      toastDimiss();
+      
       if (result?.ok) {
          router.push(redirectTo);
       } else {
-         handleRequestError(getErrorStatusCode(result?.error ?? ""));
+         handleRequestError(result?.error ?? "500");
       }
-
-      setIsLoading(false);
    }
 
    return {

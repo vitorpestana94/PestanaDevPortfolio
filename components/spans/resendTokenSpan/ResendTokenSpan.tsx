@@ -35,7 +35,7 @@ export default function ResendTokenSpan({ email, setLoading }: Interface) {
          className="flex text-white
       text-[0.625rem] whitespace-pre-line ml-4 max-w-70
       sm:self-start
-      sm:text-[0.75rem] 
+      lg:text-[0.75rem] 
       xl:max-w-112.5"
       >
          {getLabel(resendings > 3)}
