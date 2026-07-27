@@ -482,6 +482,10 @@
          "password": "\nPlease type your password manually.",
          "confirmPassword": "\nPlease confirm your password manually."
       },
+      "0CEE": "The provided was not confirmed yet!",
+      "FC13": "Sorry, the server it's not available",
+      "G36E": " Sorry, you don't have permission to access this resource.",
+      "A0B5": "The email format that you provided is invalid",
       "8F2A": "The provided email is already in use.",
       "D7C1": "The provided email was already sended.",
       "5BE9": "The provided email was not sended.",

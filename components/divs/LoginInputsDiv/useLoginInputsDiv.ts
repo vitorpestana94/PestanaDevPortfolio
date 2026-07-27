@@ -3,11 +3,11 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { getCaptchaToken } from "@/utils/captcha/getCaptchaToken";
-import useAuthErros from "@/hooks/useRequestErros";
 import { toastError, toastLoading, toastDimiss } from "@/utils/errors/toastHandlers";
 import { useForm } from "react-hook-form";
 import { useRedirectTo } from "@/hooks/useRedirectTo";
 import { useRouter } from "next/navigation";
+import { getErrorCode } from "@/utils/errors/errorMessagesHandlers";
 
 export default function useLoginInputsDiv() {
    const {
@@ -20,17 +20,6 @@ export default function useLoginInputsDiv() {
    const router = useRouter();
    const { redirectTo } = useRedirectTo();
    const t = useTranslations();
-   const { handleRequestError } = useAuthErros({
-      unauthorized: () => {
-         toastError(t("auth.login.form.errors.invalidCredentials"));
-      },
-      forbidden: () => {
-         toastError(t("auth.login.form.errors.invalidLoginEndpoint")); // Only users that registered manually should use this form.
-      },
-      unexpected: () => {
-         toastError("error.unexpected");
-      },
-   });
 
    async function submit(data: LoginRequest) {
       const captchaToken = await getCaptchaToken();
@@ -52,11 +41,11 @@ export default function useLoginInputsDiv() {
       
       setIsLoading(false);
       toastDimiss();
-      
+
       if (result?.ok) {
          router.push(redirectTo);
       } else {
-         handleRequestError(result?.error ?? "500");
+         toastError(t(`error.${getErrorCode(result?.error ?? "")}`))
       }
    }
 

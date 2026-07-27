@@ -482,6 +482,10 @@
          "password": "\nPor favor, digite sua senha manualmente.",
          "confirmPassword": "\nPor favor, confirme sua senha manualmente."
       },
+      "0CEE": "O email fornecido ainda não foi confirmado!",
+      "FC13": "Desuclpe, o servidor não está disponível",
+      "G36E": "Desculpe, você não tem acesso a este recurso.",
+      "A0B5": "O formato do email que você forneceu é inválido.",
       "8F2A": "O email fornecido já está em uso.",
       "D7C1": "O email informado já foi enviado.",
       "5BE9": "O email informado não foi enviado.",

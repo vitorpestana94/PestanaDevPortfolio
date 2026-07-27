@@ -13,13 +13,13 @@ clientApi.interceptors.response.use(
     if (error.response) {
       return Promise.reject({
         status: error.response.status,
-        message: (error.response.data as any)?.message ?? "UNEXPECTED ERROR.",
+        message: (error.response.data as any)?.message ?? "unexpected",
         data: error.response.data,
       });
     }
 
     if (error.request) {
-      return Promise.reject({ status: 0, message: "SERVER UNAVAILABLE",
+      return Promise.reject({ status: 0, message: "FC13",
       });
     }
 

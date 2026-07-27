@@ -2,10 +2,10 @@ import useHandleStep from "@/hooks/useStep";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import { useState } from "react";
 import { signIn as signUp } from "next-auth/react";
-import useRequesthErros from "@/hooks/useRequestErros";
 import { toastError } from "@/utils/errors/toastHandlers";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
+import { getErrorCode } from "@/utils/errors/errorMessagesHandlers";
 
 export default function useSignUpFormSteps() {
    const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -26,18 +26,6 @@ export default function useSignUpFormSteps() {
 
    const t = useTranslations();
 
-   const { handleRequestError } = useRequesthErros({
-      unexpected: () => {
-         toastError(t("error.unexpected"));
-      },
-      badRequest: () => {
-         toastError(t("error.unexpected"));
-      },
-      forbidden: () => {
-         toastError(t("auth.sign-up.form.thirdStep.error.emailNotConfirmed"));
-      },
-   });
-
    async function submitForm(data: SignUpRequest) {
       setIsLoading(true);
 
@@ -49,7 +37,7 @@ export default function useSignUpFormSteps() {
       setIsLoading(false);
 
       if (!response) {
-         handleRequestError("500");
+         toastError(t(`error.unexpected`))
 
          return;
       }
@@ -57,7 +45,7 @@ export default function useSignUpFormSteps() {
       if (response.ok) {
          nextStep();
       } else {
-         handleRequestError(response.error ?? "500");
+         toastError(t(`error.${getErrorCode(response?.error ?? "unexpected")}`))
       }
    }
 
