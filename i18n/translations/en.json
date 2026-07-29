@@ -518,6 +518,7 @@
       "D2B7": "An unexpected error occurred.",
       "3G5F": "You signed up using a platform and can not redifine your password.\nPlease, login using a provider.",
       "81E7": "The provided period is invalid!",
-      "4A41": "The provided date is invalid!!"
+      "4A41": "The provided date is invalid!!",
+      "85ED": "Something wen wrong while requesting Nasa!"
    }
 }
