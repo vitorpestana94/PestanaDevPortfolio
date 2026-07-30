@@ -424,6 +424,12 @@
          "p": "Caso tenha dúvidas sobre esta Política de Privacidade, entre em contato pelo e-mail "
       }
    },
+   "nasa": {
+      "firstSection": {
+         "title": "Imagem\nAstronômica\ndo Dia",
+         "about": "A NASA publica diariamente a \"Imagem Astronômica do Dia\" (APOD). Este projeto consome a API oficial para exibir a imagem, sua descrição e os créditos do autor. Infelizmente, a NASA não oferece uma tradução para o português, mas você pode ler a explicação da NASA em inglês abaixo:"
+      }
+   },
    "metaData": {
       "home": {
          "title": "| Desenvolvedor Web Full Stack",
@@ -464,7 +470,7 @@
          "description": "Aqui você pode excluir sua conta."
       },
       "nasa": {
-         "title": "| Foto Astronômica do Dia",
+         "title": "| Imagem Astronômica do Dia",
          "description": "Recupera a Astronomy Picture of the Day (APOD) da NASA e seus metadados associados."
       }
    },

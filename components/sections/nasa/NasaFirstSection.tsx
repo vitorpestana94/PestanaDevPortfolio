@@ -2,32 +2,25 @@
 
 import { useGetAstronomyPictureOfTheDay } from "@/hooks/api/nasa/queries";
 import Wrapper from "@/components/wrappers/home/HomeWrapper";
-import Image from "next/image";
 import Header from "@/components/headers/home/HomeHeader";
+import NasaHero from "@/components/heros/NasaHero";
+import AstronomyPictureOfTheDay from "@/components/textBlocks/NasaAstronomyPictureOfTheDayTextBlock";
 
 export default function NasaFirstSection(){
-    const { data, isFetching } = useGetAstronomyPictureOfTheDay();
+    const { data } = useGetAstronomyPictureOfTheDay();
 
     if (!data) return null;
 
     return (
-        <section className="h-dvh">
+        <section className="min-h-dvh md:h-dvh">
             <Header />
-            <Wrapper className="conteudoWrapper h-full flex justify-center items-center xl:my-10">
-                {
-                    data &&  
-                    <div className="relative w-[45%] aspect-3/2.5">
-                        <Image
-                            src={data?.url}
-                            alt={data.title}
-                            fill
-                            quality={85}
-                            sizes="(max-width: 768px) 90vw, (max-width: 1024px) 60vw, 45vw"
-                            className="object-cover rounded-3xl"
-                            priority
-                        />
-                    </div>
-                }
+            <Wrapper className="conteudoWrapper h-full gap-y-10 flex flex-col items-center 
+            my-24
+            md:gap-y-0 md:flex-row md:justify-around
+            xl:my-8  
+            3xl:my-12">
+                <AstronomyPictureOfTheDay nasaExplanation={data.explanation} />
+                <NasaHero data={data} />
             </Wrapper>
         </section>
     )

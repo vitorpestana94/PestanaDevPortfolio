@@ -424,6 +424,12 @@
          "p": "If you have any questions about this Privacy Policy, please contact us at "
       }
    },
+   "nasa": {
+      "firstSection": {
+         "title": "Astronomy\nPicture\nOf The Day",
+         "about": "\"Astronomy Picture of the Day\" (APOD) is published daily by NASA. This project uses the official API to display each image, its description, and the author's credits. You can read NASA's explanation below:"
+      }
+   },
    "metaData": {
       "home": {
          "title": "| Full Stack Web Developer",

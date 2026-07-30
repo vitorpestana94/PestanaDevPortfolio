@@ -260,6 +260,14 @@
    .legalDocumentTitle {
       @apply font-abril text-[1.5rem] sm:text-[2.5rem];
    }
+
+   .nasaParagrah {
+      @apply text-gray-500 text-justify text-[0.625rem] xl:text-xs 3xl:text-base
+   }
+
+   .nasaTitle {
+      @apply text-[2rem] sm:text-[2.5rem] xl:text-[3rem] 2xl:text-[3.125rem] 4xl:text-[4rem] text-center md:text-start whitespace-pre-line leading-[1.1] font-abril;
+   }
 }
 
 html,
