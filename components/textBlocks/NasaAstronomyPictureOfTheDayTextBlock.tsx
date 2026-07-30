@@ -8,11 +8,13 @@ export default  function NasaAstronomyPictureOfTheDayTextBlock({ nasaExplanation
     const t = useTranslations("nasa.firstSection");
 
     return (
-        <div className="flex flex-col justify-around  
+        <div className="flex flex-col justify-around 
         w-full px-10 h-full gap-y-8
         md:items-start md:px-0 md:w-[30%] md:h-[70%] mx:gap-y-0">
-            <Title>
-                <h2 className="azulPestana nasaTitle tracking-wider leading-tight font-abril font-bold">{t("title")}</h2>
+            <Title className="gap-y-10 md:gap-y-3">
+                <h2 className="azulPestana nasaTitle tracking-wider leading-tight font-abril font-bold">
+                    {t("title")}
+                </h2>
                 <motion.p className="nasaParagrah"
                     ref={ref}
                     initial={{ opacity: 0, x: -20 }}

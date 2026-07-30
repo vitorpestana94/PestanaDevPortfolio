@@ -31,7 +31,7 @@ export default function NasaPictureOfTheDay({ url, title, copyRight } : Interfac
                     className="object-cover rounded-4xl"
                     priority
                 />
-                <div className="flex flex-col gap-y-0.75 absolute text-gray-500
+                <div className="flex flex-col gap-y-0.75 absolute text-gray-300
                 -bottom-9 text-[0.375rem] text-center right-0 left-0
                 md:-bottom-11 md:text-[0.5625rem] md:text-right md:right-3
                 3xl:text-[0.625rem]">
