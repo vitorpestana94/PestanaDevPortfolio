@@ -9,20 +9,18 @@ export async function handleGetRequest(req: NextRequest) {
         const proxyBody: RequestDto = {
             path: params.get("path") ?? "",
             pathParams: params.getAll("pathParams[]"),
+            queryParams: params.getAll("queryParams[]"),
         };
         const api = await serverApi(req);
 
         const response = await api.request({
             method: "GET",
             url: getPathWithParams(proxyBody),
+            params: getQueryParams(proxyBody.queryParams),
             data: proxyBody.requestBody,
         });
 
-        return NextResponse.json(
-            response.data,
-            {
-                status: response.status,
-            }
+        return NextResponse.json(response.data, { status: response.status }
         );
    } catch (error) {
       return (handleError(error))
@@ -60,4 +58,18 @@ function getPathWithParams(request: RequestDto): string {
    return request.pathParams?.length
       ? `${request.path}/${request.pathParams.join("/")}`
       : request.path;
+}
+
+function getQueryParams(queryParams?: string[]){
+   let params = new URLSearchParams();
+
+   if(queryParams){
+      queryParams.forEach(param => {
+         const keyValue = param.split(":");
+
+         params.append(keyValue[0],  keyValue[1])
+      })
+   }
+   
+   return params;
 }

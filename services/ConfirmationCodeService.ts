@@ -5,10 +5,10 @@ import { clientApi } from "@/lib/api/client";
 import { proxy } from "@/constants/httpConstants";
 
 export default class ConfirmationCodeService {
-   static async CheckConfirmationCode(
-      request: CheckConfirmationCodeRequest,
-   ): Promise<void> {
-      return await clientApi.post(proxy, builder.CheckConfirmationCode(request));
+   static async CheckConfirmationCode(request: CheckConfirmationCodeRequest) {
+      const response = await clientApi.post(proxy, builder.CheckConfirmationCode(request));
+
+      return response.data;
    }
 
    static async CheckConfirmationCodeEmailAlreadySent(email: string): Promise<ConfirmationCodeAlreadySentResponseDto> {

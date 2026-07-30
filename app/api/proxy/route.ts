@@ -13,11 +13,9 @@ export async function PUT(req: NextRequest) {
    return handleRequest(req, "PUT");
 }
 
-
 export async function PATCH(req: NextRequest) {
    return handleRequest(req, "PATCH");
 }
-
 
 export async function DELETE(req: NextRequest) {
    return handleRequest(req, "DELETE");

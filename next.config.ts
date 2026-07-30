@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         hostname: "media.licdn.com",
         pathname: "/**",
       },
+       {
+        protocol: "https",
+        hostname: "apod.nasa.gov",
+        pathname: "/**",
+      },
     ],
   },
   turbopack: {

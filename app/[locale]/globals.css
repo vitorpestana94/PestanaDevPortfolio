@@ -120,6 +120,10 @@
       @apply bg-[linear-gradient(160deg,#020202_0%,#070b10_45%,#11161c_100%)];
    }
 
+   .heroMarginTop {
+      @apply mt-5 sm:mt-16 xl:mt-30;
+   }
+
    .homeDefault {
       @apply min-h-screen bg-[linear-gradient(160deg,#020202_0%,#070b10_45%,#11161c_100%)];
    }

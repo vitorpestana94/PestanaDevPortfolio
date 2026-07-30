@@ -462,6 +462,10 @@
       "deleteAccount": {
          "title": "| Delete Account",
          "description": "Here you can delete your account."
+      },
+      "nasa": {
+         "title": "| Astronomy Picture Of The Day",
+         "description": "Consumes NASA's Astronomy Picture of the Day (APOD) API to retrieve the daily featured astronomy image along with its title, description, and related metadata."
       }
    },
    "googleReCaptcha": "This site is protected by reCAPTCHA\n and the <privacy>Google Privacy Policy</privacy> and <terms>Terms of Service</terms> apply.",
@@ -519,6 +523,6 @@
       "3G5F": "You signed up using a platform and can not redifine your password.\nPlease, login using a provider.",
       "81E7": "The provided period is invalid!",
       "4A41": "The provided date is invalid!!",
-      "85ED": "Something wen wrong while requesting Nasa!"
+      "85ED": "Something went wrong while requesting Nasa!"
    }
 }

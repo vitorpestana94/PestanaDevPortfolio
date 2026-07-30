@@ -462,6 +462,10 @@
       "deleteAccount": {
          "title": "| Excluir Conta",
          "description": "Aqui você pode excluir sua conta."
+      },
+      "nasa": {
+         "title": "| Foto Astronômica do Dia",
+         "description": "Recupera a Astronomy Picture of the Day (APOD) da NASA e seus metadados associados."
       }
    },
    "googleReCaptcha": "Este site é protegido pelo reCAPTCHA\ne a <privacy>Política de Privacidade</privacy>\ne os <terms>Termos de Serviço</terms> do Google se aplicam.",
@@ -519,6 +523,6 @@
       "3G5F": "Você se cadastrou usando uma plataforma e não pode redefinir sua senha.\nPor favor, faça login usando um provedor.",
       "81E7": "O período fornecido é inválido!",
       "4A41": "A data fornecida é inválida!",
-      "85ED": "Algo de errado aconteceu enquanto requistavamos o Nasa!"
+      "85ED": "Algo de errado aconteceu enquanto requisitavamos o Nasa!"
    }
 }
