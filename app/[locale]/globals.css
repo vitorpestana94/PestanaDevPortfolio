@@ -262,7 +262,7 @@
    }
 
    .nasaParagrah {
-      @apply text-gray-300 text-justify text-[0.625rem] xl:text-xs 3xl:text-base
+      @apply text-gray-400 text-justify text-[0.625rem] xl:text-xs 3xl:text-base
    }
 
    .nasaTitle {
