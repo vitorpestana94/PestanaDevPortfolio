@@ -1,5 +1,6 @@
 export default interface NasaPictureOfTheDay {
     url: string;
     title: string;
-    copyRight: string;
+    copyRight?: string;
+    isSlider?: boolean ;
 }

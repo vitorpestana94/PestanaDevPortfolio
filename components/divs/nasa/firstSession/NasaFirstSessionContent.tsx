@@ -8,7 +8,7 @@ import { motion } from "motion/react";
 
 export default function NasaFirstSessionContent(){
     const { ref } = useEffetInView();
-    const { data } = useGetAstronomyPictureOfTheDay("2026-07-29");
+    const { data } = useGetAstronomyPictureOfTheDay();
     
     if (!data) return null;
 
