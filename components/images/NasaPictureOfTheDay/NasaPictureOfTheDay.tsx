@@ -4,13 +4,14 @@ import Interface from "./NasaPictureOfTheDayInterface";
 import Image from "next/image";
 import { motion } from "motion/react";
 import useEffetInView from "@/hooks/useEffetInView";
+import TitleAndCopyright from "@/components/textBlocks/nasaMediaCopyrightAndTitle/NasaMediaCopyrightAndTitle";
 
 export default function NasaPictureOfTheDay({ url, title, copyRight } : Interface) {
     const { ref, isInView } = useEffetInView();
-    const effect = { scale: 1.15 };
+    const effect = { scale: 1.2 };
 
     return (
-        <motion.div className="relative w-[75%] md:w-[40%] aspect-4/3"
+        <motion.div className="relative w-[75%] md:w-[50%] lg:w-[40%] aspect-4/3"
             ref={ref}
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -30,16 +31,7 @@ export default function NasaPictureOfTheDay({ url, title, copyRight } : Interfac
                     className="object-cover rounded-3xl"
                     priority
                 />
-                {
-                    copyRight &&
-                    <div className="flex flex-col gap-y-0.5 absolute text-gray-400
-                    -bottom-9 text-[0.375rem] text-center right-0 left-0
-                    md:-bottom-10 md:text-[0.5rem] md:text-right md:right-3
-                    3xl:text-[0.625rem]">
-                        <p>{`Copyright:`}</p>
-                        {`${copyRight}`}
-                    </div>
-                }
+                <TitleAndCopyright copyright={copyRight} title={title} />
             </motion.div>
         </motion.div>
     )

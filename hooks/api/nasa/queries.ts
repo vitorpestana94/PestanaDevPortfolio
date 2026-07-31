@@ -7,6 +7,6 @@ export function useGetAstronomyPictureOfTheDay(date?: string) {
     queryFn: () =>
       NasaService.GetAstronomyPictureOfTheDay(date),
     retry: false,
-    staleTime: 1000 * 60 * 5, // 5 minutes cache
+    staleTime: 1000 * 60 * 60, // one hour cache
   });
 }

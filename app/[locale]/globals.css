@@ -262,11 +262,15 @@
    }
 
    .nasaParagrah {
-      @apply text-gray-400 text-justify text-[0.625rem] xl:text-xs 3xl:text-base
+      @apply text-gray-400 text-justify text-[0.625rem] lg:text-xs 3xl:text-base
    }
 
    .nasaTitle {
-      @apply text-[2rem] sm:text-[2.5rem] xl:text-[2.625rem] 3xl:text-[3.125rem] 4xl:text-[4rem] text-center md:text-start whitespace-pre-line leading-[1.1] font-abril;
+      @apply text-[2rem] lg:text-[2.625rem] 3xl:text-[3.125rem] 4xl:text-[4rem] text-center md:text-start whitespace-pre-line leading-[1.1] font-abril;
+   }
+
+   .nasaText {
+      @apply  text-gray-400 text-justify text-[0.5rem] lg:text-[0.625rem] 3xl:text-[0.875rem]
    }
 }
 

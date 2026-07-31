@@ -5,5 +5,5 @@ export interface NasaAstronomyPictureOfTheDayPageResponseDto {
   title: string;
   url: string;
   hdUrl: string;
-  mediaType: string;
+  media_type: string;
 }

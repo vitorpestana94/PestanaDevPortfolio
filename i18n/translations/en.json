@@ -427,7 +427,7 @@
    "nasa": {
       "firstSection": {
          "title": "Astronomy\nPicture\nOf The Day",
-         "about": "\"Astronomy Picture of the Day\" (APOD) is published daily by NASA. My system uses the official API to display each image, its description, and the author's credits (if provided). You can read NASA's explanation below:"
+         "about": "Data is retrieved from NASA's official \"Astronomy Picture of the Day\" (APOD) API, including the daily image, description, and author credits (when disponible)"
       }
    },
    "metaData": {

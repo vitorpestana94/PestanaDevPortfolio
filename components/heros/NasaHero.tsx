@@ -2,17 +2,16 @@
 
 import { NasaAstronomyPictureOfTheDayPageResponseDto } from "@/models/interfaces/dtos/responses/NasaAstronomyPictureOfTheDayPageResponseDto";
 import NasaPictureOfTheDay from "../images/NasaPictureOfTheDay/NasaPictureOfTheDay";
+import IFrame from "../iframes/IFrame";
 
 export default function NasaHero({ data } : { data: NasaAstronomyPictureOfTheDayPageResponseDto }){
-    return (
+    const getComponent = (d: NasaAstronomyPictureOfTheDayPageResponseDto) => data.media_type === "image" ? 
+        <NasaPictureOfTheDay title={d.title} url={d.url} copyRight={d.copyright} /> : 
+        <IFrame url={d.url} title={d.title} copyRight={d.copyright} />
+
+        return (
         <>
-            {
-                data &&  
-                <NasaPictureOfTheDay 
-                    title={data.title} 
-                    url={data.url}
-                    copyRight={data.copyright} />
-            }
+            { data &&  getComponent(data) }
         </>
     )
 }

@@ -23,14 +23,19 @@ export default  function NasaAstronomyPictureOfTheDayTextBlock({ nasaExplanation
                     {t("about")}
                 </motion.p>
             </Title>
-            <motion.p className="nasaParagrah"
+            <motion.blockquote className="border-l-4 border-[#38b6ff] py-1 pl-5 nasaText"
                 ref={ref}
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 1.2, delay: 1.5 }}
             >
-                {`"${nasaExplanation}"`}
-            </motion.p>
+                <p>
+                    {`"${nasaExplanation}"`}
+                </p>
+                <footer className="mt-3">
+                    — NASA
+                </footer>
+            </motion.blockquote>
         </div>
     )
 }

@@ -427,7 +427,7 @@
    "nasa": {
       "firstSection": {
          "title": "Imagem\nAstronômica\ndo Dia",
-         "about": "A NASA publica diariamente a \"Imagem Astronômica do Dia\" (APOD). Este projeto consome a API oficial para exibir a imagem, sua descrição e os créditos do autor (se fornecido). Infelizmente, a NASA não oferece uma tradução para o português, mas você pode ler a explicação da NASA em inglês abaixo:"
+         "about": "Os dados são obtidos da API oficial \"Astronomy Picture of the Day\" (APOD) da NASA, incluindo a imagem do dia, sua descrição e os créditos do autor (quando disponíveis)."
       }
    },
    "metaData": {
