@@ -13,11 +13,10 @@ export default function NasaFirstSessionContent(){
     if (!data) return null;
 
     return (
-        <motion.div className="h-[90%] flex flex-col items-center blurBg
-        mt-16 py-16 gap-y-10 mx-6
+        <motion.div className="flex flex-col items-center blurBg
+        py-16 gap-y-10 mx-6 my-auto
         md:gap-y-0 md:py-10 md:flex-row md:justify-around conteudoWrapper
-        xl:mt-8 xl:py-6 
-        3xl:mt-12"
+        xl:py-6 "
         ref={ref}
         initial={{ opacity: 0}}
         animate={{ opacity: 1 }}

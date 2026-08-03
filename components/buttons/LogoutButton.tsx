@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { logout } from "@/utils/authentication/logout";
 
 export default function LogoutButton() {
-   const t = useTranslations("home.header");
+   const t = useTranslations("header");
 
    return (
       <button

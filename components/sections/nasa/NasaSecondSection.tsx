@@ -37,7 +37,6 @@ export default function NasaSecondSection(){
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 1.2, delay: 0.5 }}
             >
-                
                 <NasaSlider data={data} locale={locale}/>
             </motion.div>
         </section>

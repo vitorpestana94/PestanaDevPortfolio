@@ -1,8 +1,11 @@
 import Main from "../wrappers/MainLayout";
 import FirstSection from "../sections/nasa/NasaFirstSection";
 import SecondSection from "../sections/nasa/NasaSecondSection";
+import ensureAuthenticated from "@/utils/authentication/ensureAuthenticated";
 
-export default function NasaAstronomyPictureOfTheDayPage(){
+export default async function NasaAstronomyPictureOfTheDayPage(){
+    await ensureAuthenticated();
+    
     return (
         <Main>
             <FirstSection />

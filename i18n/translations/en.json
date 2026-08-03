@@ -1,15 +1,5 @@
 {
    "home": {
-      "header": {
-         "sobre": "About",
-         "meuTrabalho": "My Work",
-         "mySkills": "My Skills",
-         "logar": "Login",
-         "profile": {
-            "loggout": "Loggout",
-            "editProfile": "Profile"
-         }
-      },
       "segundaSessao": {
          "titulo": "About me",
          "about": {
@@ -42,6 +32,22 @@
                "button": "There are errors on the form or there are empty fields. Please check it to proceed!"
             }
          }
+      }
+   },
+   "header": {
+      "logar": "Login",
+      "profile": {
+         "loggout": "Loggout",
+         "editProfile": "Profile"
+      },
+      "home": {
+         "sobre": "About",
+         "meuTrabalho": "My Work",
+         "mySkills": "My Skills"
+      },
+      "nasa": {
+         "today": "Today's Picture",
+         "week": "Week's Pictures"
       }
    },
    "auth": {
@@ -430,7 +436,7 @@
          "about": "Data is retrieved from NASA's official \"Astronomy Picture of the Day\" (APOD) API, including the daily image, description, and author credits (when disponible)"
       },
       "secondSession": {
-         "title": "Astronomies\nPictures\nOf The Week",
+         "title": "Astronomies Pictures\nOf The Week",
          "subTitle": "Here you can view pictures from\n{initialDate} to {finalDate}."
       }
    },

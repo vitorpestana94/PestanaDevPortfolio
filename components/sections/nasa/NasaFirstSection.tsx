@@ -5,7 +5,7 @@ import NasaContent from "@/components/divs/nasa/firstSession/NasaFirstSessionCon
 export default function NasaFirstSection(){
     return (
         <BackGround>
-            <Header className="static!"/>
+            <Header />
             <NasaContent />
         </BackGround>
     )

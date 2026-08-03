@@ -1,15 +1,5 @@
 {
    "home": {
-      "header": {
-         "sobre": "Sobre",
-         "meuTrabalho": "Meu Trabalho",
-         "mySkills": "Minhas Habilidades",
-         "logar": "Logar",
-         "profile": {
-            "loggout": "Sair",
-            "editProfile": "Perfil"
-         }
-      },
       "segundaSessao": {
          "titulo": "Sobre mim",
          "about": {
@@ -42,6 +32,22 @@
                "button": "Há erros no formulário ou há campos vazios. Verifique-os para continuar!"
             }
          }
+      }
+   },
+   "header": {
+      "logar": "Login",
+      "profile": {
+         "loggout": "Loggout",
+         "editProfile": "Profile"
+      },
+      "home": {
+         "sobre": "About",
+         "meuTrabalho": "My Work",
+         "mySkills": "My Skills"
+      },
+      "nasa": {
+         "today": "Imagem de Hoje",
+         "week": "Imagens da Semana"
       }
    },
    "auth": {
@@ -430,7 +436,7 @@
          "about": "Os dados são obtidos da API oficial \"Astronomy Picture of the Day\" (APOD) da NASA, incluindo a imagem do dia, sua descrição e os créditos do autor (quando disponíveis)."
       },
       "secondSession": {
-         "title": "Imagens\nAstronômicas\nda Semana",
+         "title": "Imagens Astronômicas\nda Semana",
          "subTitle": "Aqui você pode visualizar as fotos do dia\n{initialDate} até {finalDate}."
       }
    },

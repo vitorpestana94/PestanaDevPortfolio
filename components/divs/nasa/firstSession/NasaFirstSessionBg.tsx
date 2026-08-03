@@ -4,7 +4,7 @@ import Grainient from "@/components/backgrounds/Grainient";
 
 export default function NasaFirstSessionBg({ children } : { children: React.ReactNode }){
     return (
-        <section className="min-h-dvh relative z-40 pb-16 md:pb-20">
+        <section className="min-h-dvh relative pt-32 lg:pt-16 z-40 flex flex-col">
              <div className="absolute inset-0 -z-10 opacity-60">
                 <Grainient
                     color1="#2B2B2B"

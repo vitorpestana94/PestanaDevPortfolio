@@ -10,7 +10,8 @@ export default  function NasaAstronomyPictureOfTheDayTextBlock({ nasaExplanation
     return (
         <div className="flex flex-col justify-around 
         w-full px-10 h-full gap-y-8
-        md:items-start md:px-0 md:w-[30%] md:h-[70%] mx:gap-y-0">
+        md:items-start md:px-0 md:w-[30%] md:h-[70%] mx:gap-y-0"
+        id="todayPicture">
             <NasaTitleAndSubTitle title={t("title")} subTitle={t("about")} />
             <motion.blockquote className="nasaBorder py-2 pl-5 nasaText"
                 ref={ref}
