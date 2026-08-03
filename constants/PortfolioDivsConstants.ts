@@ -58,9 +58,9 @@ export const portfolioMeio = {
       },
       size: { widthAndHeight: "flex-1" },
    },
-   nutricionista: {
+   nasa: {
       picture: {
-         pictureUrl: "nutricionista",
+         pictureUrl: "nasa",
          routeOrSiteUrl: "",
          style: " bottom-full rounded-t-2xl",
       },

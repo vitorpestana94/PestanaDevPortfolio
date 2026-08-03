@@ -32,7 +32,7 @@ export default function HomePortfolioLink({
                src={`/png/${props.picture?.pictureUrl}.png`}
                alt=""
                fill
-               className="object-cover absolute inset-0"
+               className="object-fill absolute inset-0"
             />
             <DivText
                show={show}
