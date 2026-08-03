@@ -14,7 +14,7 @@ function NasaImage({ url, title, isSlider = false } : Interface ){
             fill
             quality={85}
             sizes="(max-width: 768px) 90vw, (max-width: 1024px) 60vw, 45vw"
-            className="object-cover rounded-3xl"
+            className="object-fill rounded-3xl"
             priority={!isSlider}
         />
     )
