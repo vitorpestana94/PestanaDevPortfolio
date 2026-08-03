@@ -1,7 +1,7 @@
-import Title from "@/components/titles/HomeTitle";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import useEffetInView from "@/hooks/useEffetInView";
+import NasaTitleAndSubTitle from "./NasaTitleAndSubTitle";
 
 export default  function NasaAstronomyPictureOfTheDayTextBlock({ nasaExplanation } : { nasaExplanation: string }){
     const { ref, isInView } = useEffetInView();
@@ -11,19 +11,8 @@ export default  function NasaAstronomyPictureOfTheDayTextBlock({ nasaExplanation
         <div className="flex flex-col justify-around 
         w-full px-10 h-full gap-y-8
         md:items-start md:px-0 md:w-[30%] md:h-[70%] mx:gap-y-0">
-            <Title className="gap-y-10 md:gap-y-3">
-                <h2 className="azulPestana nasaTitle tracking-wider leading-tight font-abril font-bold">
-                    {t("title")}
-                </h2>
-                <motion.p className="nasaParagrah"
-                    ref={ref}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 1.2, delay: 1.5 }}>
-                    {t("about")}
-                </motion.p>
-            </Title>
-            <motion.blockquote className="border-l-4 border-[#38b6ff] py-1 pl-5 nasaText"
+            <NasaTitleAndSubTitle title={t("title")} subTitle={t("about")} />
+            <motion.blockquote className="nasaBorder py-2 pl-5 nasaText"
                 ref={ref}
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -32,9 +21,6 @@ export default  function NasaAstronomyPictureOfTheDayTextBlock({ nasaExplanation
                 <p>
                     {`"${nasaExplanation}"`}
                 </p>
-                <footer className="mt-3">
-                    — NASA
-                </footer>
             </motion.blockquote>
         </div>
     )

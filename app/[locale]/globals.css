@@ -262,7 +262,7 @@
    }
 
    .nasaParagrah {
-      @apply text-gray-400 text-justify text-[0.625rem] lg:text-xs 3xl:text-base
+      @apply text-gray-400 text-justify text-[0.5rem] lg:text-xs 3xl:text-base
    }
 
    .nasaTitle {
@@ -271,6 +271,14 @@
 
    .nasaText {
       @apply  text-gray-400 text-justify text-[0.5rem] lg:text-[0.625rem] 3xl:text-[0.875rem]
+   }
+
+   .nasaBorder {
+      @apply border-l-4 border-[#38b6ff]
+   }
+
+   .nasaTextSlider {
+      @apply text-[0.5rem] xl:text-[0.5625rem] 3xl:text-[0.625rem] text-gray-400 text-justify
    }
 }
 
@@ -399,6 +407,12 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.swiper {
+  --swiper-pagination-color: #38b6ff;
+  --swiper-pagination-bullet-inactive-color: #374151;
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
 }
 
 @layer base {

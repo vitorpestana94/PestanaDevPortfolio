@@ -428,6 +428,10 @@
       "firstSection": {
          "title": "Astronomy\nPicture\nOf The Day",
          "about": "Data is retrieved from NASA's official \"Astronomy Picture of the Day\" (APOD) API, including the daily image, description, and author credits (when disponible)"
+      },
+      "secondSession": {
+         "title": "Astronomies\nPictures\nOf The Week",
+         "subTitle": "Here you can view pictures from\n{initialDate} to {finalDate}."
       }
    },
    "metaData": {
