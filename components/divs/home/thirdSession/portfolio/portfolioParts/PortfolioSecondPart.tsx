@@ -6,10 +6,12 @@ import Aggregation from "../PortfolioDivText/PortfolioDivAggregation";
 import { portfolioMeio } from "@/constants/PortfolioDivsConstants";
 import useIsMobile from "@/hooks/useIsMobile";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 export default function PortfolioSecondPart() {
   const { isMobile } = useIsMobile();
-   const t = useTranslations("home.terceiraSessao.imgs");
+  const t = useTranslations("home.terceiraSessao.imgs");
+  const locale = useLocale();
 
   return (
     <HomePortfolioDivsGroups
@@ -20,7 +22,13 @@ export default function PortfolioSecondPart() {
         <PortfolioDiv type="gifOrImage" props={portfolioMeio.gif} />
         <PortfolioDiv type="link" props={portfolioMeio.casamento} />
       </Aggregation>
-      <PortfolioDiv type="link"  props={{ ...portfolioMeio.nasa, text: t("nasa") }} />
+      <PortfolioDiv type="link"  
+        props={{ ...portfolioMeio.nasa, 
+          text: t("nasa"), 
+          picture: {
+            ...portfolioMeio.nasa.picture, 
+            routeOrSiteUrl: `./${locale}/nasa`
+        }}} />
     </HomePortfolioDivsGroups>
   );
 }

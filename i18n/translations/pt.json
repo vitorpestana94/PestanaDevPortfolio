@@ -11,7 +11,8 @@
          "titulo": "Meu trabalho",
          "imgs": {
             "magiPass": "Este sistema é um site e aplicativo móvel que oferece descontos em restaurantes e atrações para turistas que visitam Orlando. Você pode baixar o aplicativo na seção Downloads.\n\nFiz parte da equipe de desenvolvimento desta aplicação web. Este projeto utiliza Next.js e Tailwind para o front-end, .NET para o back-end e React Native para o aplicativo móvel.",
-            "saideira": "Este é um site e aplicativo móvel que oferece promoções em cervejarias e bares da região serrana do Rio de Janeiro, com foco em Nova Friburgo.\n\nAtualmente está em desenvolvimento, portanto o aplicativo ainda não está disponível para download. A equipe da qual faço parte está desenvolvendo esta plataforma utilizando Next.js, Tailwind CSS, .NET e React Native para a versão mobile."
+            "saideira": "Este é um site e aplicativo móvel que oferece promoções em cervejarias e bares da região serrana do Rio de Janeiro, com foco em Nova Friburgo.\n\nAtualmente está em desenvolvimento, portanto o aplicativo ainda não está disponível para download. A equipe da qual faço parte está desenvolvendo esta plataforma utilizando Next.js, Tailwind CSS, .NET e React Native para a versão mobile.",
+            "nasa": "Este path consome a renomada API Astronomy Picture of the Day (APOD) da NASA para recuperar e exibir tanto o conteúdo em destaque do dia atual quanto as publicações da semana anterior.\n\nEle demonstra minha experiência com integração de APIs de terceiros, estratégias de cache e entrega eficiente de dados para aplicações frontend, garantindo um desempenho confiável e minimizando requisições externas desnecessárias. Este projeto utiliza Next.js e Tailwind para o front-end, .NET para o back-end (assim como o resto deste sistema)."
          }
       },
       "quartaSessao": {

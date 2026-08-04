@@ -62,12 +62,14 @@ export const portfolioMeio = {
       picture: {
          pictureUrl: "nasa",
          routeOrSiteUrl: "",
-         style: " bottom-full rounded-t-2xl",
+         style: " bottom-full rounded-t-2xl -mb-[1px]",
       },
       size: {
          widthAndHeight:
             "max-h-[250px] sm:max-h-none w-full aspect-video sm:flex-1",
       },
+      title: "APOD",
+      icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
    },
    gif: {
       bgImage:
