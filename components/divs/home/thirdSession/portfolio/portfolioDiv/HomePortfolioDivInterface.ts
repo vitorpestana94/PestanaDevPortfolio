@@ -1,5 +1,5 @@
 export type ComponentType = "gifOrImage" | "link" | "bgColors";
-export type ComponetIcon = "next" | "dotnet" | "tailwind";
+export type ComponetIcon = "next" | "dotnet" | "tailwind" | "claude";
 
 export default interface HomePortfolioDivInterface {
    type?: ComponentType;

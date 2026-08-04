@@ -31,7 +31,7 @@ export const portfolioEsquerda = {
          routeOrSiteUrl: "https://saideiraclube.com.br/web",
       },
       size: {
-         widthAndHeight: "w-[65%] aspect-[4/1.8]",
+         widthAndHeight: "w-[70%] aspect-[4/1.8]",
       },
       title: "Saideira",
       icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
@@ -51,11 +51,13 @@ export const portfolioEsquerda = {
 };
 
 export const portfolioMeio = {
-   casamento: {
+   onebridge: {
       picture: {
-         pictureUrl: "casamento",
-         routeOrSiteUrl: "",
+         pictureUrl: "onebridge",
+         routeOrSiteUrl: "https://hub.onebridgestalwart.com/sign-in",
       },
+      title: "Onebridge",
+      icons: ["next", "tailwind", "react", "claude"] as ComponetIcon[],
       size: { widthAndHeight: "flex-1" },
    },
    nasa: {

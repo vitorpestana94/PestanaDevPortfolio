@@ -36,6 +36,7 @@ import Html from "@public/icons/html.svg";
 import Css from "@public/icons/css.svg";
 import Typescript from "@public/icons/typescript.svg";
 import Bootstrap from "@public/icons/bootstrap.svg";
+import Claude from "@public/icons/claude.svg";
 
 export const icons = {
    vP: <VP />,
@@ -76,4 +77,5 @@ export const icons = {
    css: <Css />,
    typescript: <Typescript />,
    bootstrap: <Bootstrap />,
+   claude: <Claude />
 } as const;

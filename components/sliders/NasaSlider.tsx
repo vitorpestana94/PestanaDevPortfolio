@@ -41,7 +41,7 @@ export default function NasaSlider({ data, locale } : { data: NasaAstronomyPictu
             slideShadows: false
         }}
         modules={[EffectCoverflow, Pagination, Keyboard]}
-        className="w-full py-14 lg:py-10!  3xl:px-5!"
+        className="w-full py-14 lg:py-10! 3xl:px-5!"
         id="picturesOfTheWeek">
         {data.map((d, index) => (
             <SwiperSlide className="w-[80%]! sm:w-1/2! lg:w-1/3! my-auto! space-y-4 select-none!" key={index}>

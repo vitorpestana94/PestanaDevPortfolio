@@ -20,7 +20,7 @@ export default function PortfolioSecondPart() {
     >
       <Aggregation>
         <PortfolioDiv type="gifOrImage" props={portfolioMeio.gif} />
-        <PortfolioDiv type="link" props={portfolioMeio.casamento} />
+        <PortfolioDiv type="link" props={{ ...portfolioMeio.onebridge, text: t("onebridge") }} />
       </Aggregation>
       <PortfolioDiv type="link"  
         props={{ ...portfolioMeio.nasa, 

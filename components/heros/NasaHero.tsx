@@ -7,6 +7,5 @@ export default function NasaHero({ data } : { data: NasaAstronomyPictureOfTheDay
     return (
     <>
         { data && <NasaMedia data={data}/> }
-    </>
-    )
+    </>)
 }
