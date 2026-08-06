@@ -163,7 +163,6 @@ const Waves = ({
    ]);
 
    useEffect(() => {
-      console.log("Waves mounted");
       const canvas = canvasRef.current;
       const container = containerRef.current;
       ctxRef.current = canvas.getContext("2d");

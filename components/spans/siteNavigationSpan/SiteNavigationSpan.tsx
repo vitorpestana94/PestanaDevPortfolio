@@ -1,11 +1,45 @@
-"use client";
-
 import { Link } from "@/i18n/routing";
 import useSiteNavigationSpan from "./useSiteNavigationSpan";
 import UserButton from "@/components/buttons/userButton/UserButton";
 
+function getLinks(flow: string, t: (param: string) => string){
+   let links;
+
+   switch (flow){
+      case "nasa":
+         links = (
+            <>
+               <Link className="hoverPestana" href={"#todayPicture"}>
+                  {t("nasa.today")}
+               </Link>
+               <Link className="hoverPestana" href={"#picturesOfTheWeek"}>
+                  {t("nasa.week")}
+               </Link>
+            </>
+         )
+         break;
+      default:
+         links = (
+            <>
+               <Link className="hoverPestana" href={"#sobre"}>
+                  {t("home.sobre")}
+               </Link>
+               <Link className="hoverPestana" href={"#minhasHabilidades"}>
+                  {t("home.mySkills")}
+               </Link>
+               <Link className="hoverPestana" href={"#meuTrabalho"}>
+                  {t("home.meuTrabalho")}
+               </Link>
+            </>
+         )
+         break;
+   }
+   
+   return links
+}
+
 export default function SiteNavigationSpan() {
-   const { t, isUserLogged, userData } = useSiteNavigationSpan();
+   const { t, isUserLogged, userData, flow } = useSiteNavigationSpan();
 
    return (
       <span
@@ -17,15 +51,9 @@ export default function SiteNavigationSpan() {
         xl:gap-x-8 
         4xl:text-[1.125rem] 4xl:gap-x-10"
       >
-         <Link className="hoverPestana" href={"#sobre"}>
-            {t("sobre")}
-         </Link>
-         <Link className="hoverPestana" href={"#meuTrabalho"}>
-            {t("meuTrabalho")}
-         </Link>
-         <Link className="hoverPestana" href={"#minhasHabilidades"}>
-            {t("mySkills")}
-         </Link>
+         {
+            getLinks(flow, t)
+         }
          {isUserLogged ? (
             <UserButton user={userData.user} />
          ) : (

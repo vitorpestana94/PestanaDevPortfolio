@@ -15,6 +15,7 @@ export default class RequestDtoBuilder {
    private static _auth: string = "auth";
    private static _email: string = "email";
    private static _user: string = "user";
+   private static _nasa: string = "nasa";
 
    static LoginRequest(requestBody: LoginRequest): RequestDto {
       return {
@@ -134,6 +135,20 @@ export default class RequestDtoBuilder {
    static DeleteUser(): RequestDto {
       return {
          path: `${this._auth}`,
+      };
+   }
+
+   static GetAstronomyPictureOfTheDay(d?: string): RequestDto {
+      return {
+         path: `${this._nasa}`,
+         queryParams: d ? [`date:${d}`] : undefined
+      };
+   }
+
+   static GetAstronomyPictureOfThePeriod(startDate: string, endDate: string): RequestDto {
+      return {
+         path: `${this._nasa}/period`,
+         queryParams: [`startDate:${startDate}`, `endDate:${endDate}`]
       };
    }
 }

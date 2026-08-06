@@ -76,7 +76,7 @@ export default async function RootLayout({
                />
             </head>
             <body
-               className={`${montserrat.className} ${abrilFatFace.className}`}
+               className={`${montserrat.className} ${abrilFatFace.className} homeBg`}
             >
                <Providers>{children}</Providers>
             </body>

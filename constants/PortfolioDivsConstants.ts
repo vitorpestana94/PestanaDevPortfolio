@@ -31,7 +31,7 @@ export const portfolioEsquerda = {
          routeOrSiteUrl: "https://saideiraclube.com.br/web",
       },
       size: {
-         widthAndHeight: "w-[65%] aspect-[4/1.8]",
+         widthAndHeight: "w-[70%] aspect-[4/1.8]",
       },
       title: "Saideira",
       icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
@@ -51,29 +51,33 @@ export const portfolioEsquerda = {
 };
 
 export const portfolioMeio = {
-   casamento: {
+   onebridge: {
       picture: {
-         pictureUrl: "casamento",
-         routeOrSiteUrl: "",
+         pictureUrl: "onebridge",
+         routeOrSiteUrl: "https://hub.onebridgestalwart.com/sign-in",
       },
+      title: "Onebridge",
+      icons: ["next", "tailwind", "react", "claude"] as ComponetIcon[],
       size: { widthAndHeight: "flex-1" },
    },
-   nutricionista: {
+   nasa: {
       picture: {
-         pictureUrl: "nutricionista",
+         pictureUrl: "nasa",
          routeOrSiteUrl: "",
-         style: " bottom-full rounded-t-2xl",
+         style: " bottom-full rounded-t-2xl -mb-[1px]",
       },
       size: {
          widthAndHeight:
             "max-h-[250px] sm:max-h-none w-full aspect-video sm:flex-1",
       },
+      title: "APOD",
+      icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
    },
    gif: {
       bgImage:
          "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDNpNGtlZXRoY29hZHd3cTl5ejBzYm9pMGt3Z2llY3ZxZThvOW9yOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KVZWZQoS0yqfIiTAKq/giphy.gif",
       size: {
-         widthAndHeight: "w-[20%] sm:w-[25%] aspect-[2/3.8]",
+         widthAndHeight: "w-[20%] sm:w-[25%] aspect-[1/2.2]",
       },
    },
 };

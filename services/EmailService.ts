@@ -9,18 +9,24 @@ export default class EmailService {
    static async SendContactEmail(
       request: SendContactEmailRequest,
    ): Promise<void> {
-      return await clientApi.post(proxy, builder.SendContactEmailRequest(request));
+      const response = await clientApi.post(proxy, builder.SendContactEmailRequest(request));
+      
+      return response.data;
    }
 
    static async SendConfirmationCodeEmail(
       request: SendConfirmationCodeRequest,
    ): Promise<void> {
-      await clientApi.post(proxy, builder.SendConfirmationCodeEmail(request));
+      const response = await clientApi.post(proxy, builder.SendConfirmationCodeEmail(request));
+
+      await response.data;
    }
 
    static async ResendConfirmationCodeEmail(
       request: ResendConfirmationCodeEmailRequest,
    ): Promise<void> {
-      return await clientApi.post(proxy, builder.ResendConfirmationCodeEmail(request));
+      const response = await clientApi.post(proxy, builder.ResendConfirmationCodeEmail(request));
+      
+      return response.data;
    }
 }

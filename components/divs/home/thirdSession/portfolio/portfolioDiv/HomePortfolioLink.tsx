@@ -30,9 +30,11 @@ export default function HomePortfolioLink({
          >
             <Image
                src={`/png/${props.picture?.pictureUrl}.png`}
-               alt=""
+               alt={props.title ?? props.picture?.pictureUrl!}
                fill
-               className="object-cover absolute inset-0"
+               sizes="(max-width: 640px) 100vw, 33vw"
+               quality={85}
+               className="object-fit absolute inset-0"
             />
             <DivText
                show={show}

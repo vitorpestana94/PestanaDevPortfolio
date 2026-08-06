@@ -4,5 +4,5 @@ export default function HomeWrapper({
   children,
   className,
 }: HomeWrapperInterface) {
-  return <section className={`${className}`}>{children}</section>;
+  return <div className={`${className}`}>{children}</div>;
 }

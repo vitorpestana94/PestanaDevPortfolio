@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 
 export default function EditProfileButton() {
    const locale = useLocale();
-   const t = useTranslations("home.header");
+   const t = useTranslations("header");
 
    return (
       <Link

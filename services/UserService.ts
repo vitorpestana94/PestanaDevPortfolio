@@ -6,16 +6,22 @@ import { proxy } from "@/constants/httpConstants";
 
 export default class UserService {
    static async ChangeUserData(request: ChangeUserDataRequestDto) {
-      return await clientApi.patch(proxy, builder.ChangeUserData(request));
+      const response = await clientApi.patch(proxy, builder.ChangeUserData(request));
+
+      return response.data;
    }
 
    static async ChangeUserPassword(request: ChangeUserPasswordRequestDto) {
-      return await clientApi.patch(proxy, builder.ChangeUserPassword(request));
+      const response = await clientApi.patch(proxy, builder.ChangeUserPassword(request));
+
+      return response.data;
    }
    
    static async DeleteUserAccount() {
-      return await clientApi.delete(proxy, {
+      const response = await clientApi.delete(proxy, {
          data: builder.DeleteUserAccount(),
       });
+
+      return response.data;
    }
 }
