@@ -20,7 +20,7 @@ export default function PortfolioDivText({
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
                transition={{ duration: 0.8, delay: 0.5 }}
-               className={`absolute cursor-pointer z-50 px-3 py-2 bg-black/20 backdrop-blur-xl 
+               className={`absolute cursor-pointer z-50 px-3 py-2 bg-black/30 backdrop-blur-xl 
                   ${style ? style : "top-full w-full rounded-b-2xl -mt-px"}`}
             >
                <div className="flex flex-col gap-y-2 p-3">
