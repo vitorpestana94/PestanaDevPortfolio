@@ -33,7 +33,7 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "apod.nasa.gov",
         pathname: "/**",
-      },
+      }
     ],
     qualities: [25, 50, 75, 85, 95, 100],
   },

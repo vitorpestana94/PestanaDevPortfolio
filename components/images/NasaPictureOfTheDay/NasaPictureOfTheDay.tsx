@@ -11,6 +11,7 @@ function NasaImage({ url, title, isSlider = false } : Interface ){
         <Image
             src={url}
             alt={title}
+            unoptimized 
             fill
             quality={85}
             sizes="(max-width: 768px) 90vw, (max-width: 1024px) 60vw, 45vw"
