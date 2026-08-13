@@ -16,6 +16,7 @@ export default class RequestDtoBuilder {
    private static _email: string = "email";
    private static _user: string = "user";
    private static _nasa: string = "nasa";
+   private static _art: string = "metropolitan-museum";
 
    static LoginRequest(requestBody: LoginRequest): RequestDto {
       return {
@@ -144,6 +145,14 @@ export default class RequestDtoBuilder {
          queryParams: d ? [`date:${d}`] : undefined
       };
    }
+
+   static GetArts(s: string): RequestDto {
+      return {
+         path: `${this._art}`,
+         queryParams: [`search:${s}`]
+      };
+   }
+
 
    static GetAstronomyPictureOfThePeriod(startDate: string, endDate: string): RequestDto {
       return {

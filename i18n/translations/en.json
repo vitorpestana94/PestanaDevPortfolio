@@ -465,6 +465,10 @@
             "forgotPassword": "Here you can retrieve your password"
          }
       },
+     "artExhibition": {
+         "title": "Art Exhibition",
+         "description": "Search for artworks from the Art Institute of Chicago and explore what you can find."
+      },
       "editProfile": {
          "title": "| Edit Profile",
          "description": "Here you can update your profile data."
