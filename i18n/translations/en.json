@@ -50,6 +50,9 @@
       "nasa": {
          "today": "Today's Picture",
          "week": "Week's Pictures"
+      },
+      "artExhibition": {
+         "search": "Art Searcher"
       }
    },
    "auth": {
@@ -466,8 +469,8 @@
          }
       },
      "artExhibition": {
-         "title": "Art Exhibition",
-         "description": "Search for artworks from the Art Institute of Chicago and explore what you can find."
+         "title": "| Art Exhibition",
+         "description": "Search for artworks from the Metropolitan Museum of Art and explore what you can find."
       },
       "editProfile": {
          "title": "| Edit Profile",
@@ -545,6 +548,8 @@
       "3G5F": "You signed up using a platform and can not redifine your password.\nPlease, login using a provider.",
       "81E7": "The provided period is invalid!",
       "4A41": "The provided date is invalid!!",
-      "85ED": "Something went wrong while requesting Nasa!"
+      "85ED": "Something went wrong while requesting Nasa!",
+      "8HK1" : "Error while requesting for art works!",
+      "B51A": "Something went wrong while searching for art works!"
    }
 }

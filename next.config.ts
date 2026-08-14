@@ -29,9 +29,14 @@ const nextConfig: NextConfig = {
         hostname: "media.licdn.com",
         pathname: "/**",
       },
-       {
+      {
         protocol: "https",
         hostname: "apod.nasa.gov",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "images.metmuseum.org",
         pathname: "/**",
       }
     ],

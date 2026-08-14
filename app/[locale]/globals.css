@@ -413,6 +413,7 @@ body {
   --swiper-pagination-color: #38b6ff;
   --swiper-pagination-bullet-inactive-color: #374151;
   --swiper-pagination-bullet-inactive-opacity: 0.5;
+  --swiper-pagination-z-index: 10;
 }
 
 @layer base {
