@@ -40,7 +40,11 @@ export default function ReactQueryProvider({
                },
             },
             queryCache: new QueryCache({
-               onError: (error) => {
+               onError: (error, query) => {
+                  if (query.meta?.skipGlobalErrorHandler) {
+                     return;
+                  }
+
                   toastError(getErrorMessage(error.message));
                },
             }),

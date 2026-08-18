@@ -445,9 +445,13 @@
          "subTitle": "Here you can view pictures from\n{initialDate} to {finalDate}."
       }
    },
-   "artWork": {
+   "artExhibition": {
       "title": "Art Exhibition",
-      "subTitle": "Search the Metropolitan Museum of Art and discover incredible artworks." 
+      "subTitle": "Search the Metropolitan Museum of Art and discover incredible artworks.",
+      "notFound": {
+         "title" : "Not Found!",
+         "subTitle": "I'm sorry!\nThe term \"{search}\" could not be found in the Metropolitan Museum Database."
+      } 
    },
    "metaData": {
       "home": {
@@ -554,6 +558,7 @@
       "4A41": "The provided date is invalid!!",
       "85ED": "Something went wrong while requesting Nasa!",
       "8HK1" : "Error while requesting for art works!",
-      "B51A": "Something went wrong while searching for art works!"
+      "B51A": "Something went wrong while searching for art works!",
+      "4D9F": "Art works not found!"
    }
 }

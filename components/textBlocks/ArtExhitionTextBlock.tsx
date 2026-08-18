@@ -3,7 +3,7 @@ import Wrapper from "@/components/wrappers/home/HomeWrapper";
 import Title from "@/components/titles/HomeTitle";
 
 export default function ArtExhitionTextBlock(){
-    const t = useTranslations("artWork")
+    const t = useTranslations("artExhibition")
 
     return (
     <Wrapper className="flex flex-col items-center">

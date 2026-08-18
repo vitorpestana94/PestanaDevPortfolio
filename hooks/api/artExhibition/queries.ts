@@ -8,5 +8,8 @@ export function useGetArts(search: string) {
       ArtExhibitionService.GetArts(search),
     retry: false,
     staleTime: 1000 * 60 * 15,
+    meta: {
+      skipGlobalErrorHandler: true,
+    },
   });
 }

@@ -13,7 +13,7 @@ export default function ArtExhibitionBg({
    children: React.ReactNode;
 }) {
    return (
-      <div className="w-full relative h-full flex flex-col justify-center z-40">
+      <div className="w-full min-h-dvh relative h-full flex flex-col justify-center z-40">
          <div className="absolute inset-0 -z-10 opacity-50">
             <DotFieldAny
                 dotRadius={2.5}

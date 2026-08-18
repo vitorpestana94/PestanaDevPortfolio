@@ -447,7 +447,11 @@
    },
    "artWork": {
       "title": "Exibição Artística",
-      "subTitle": "Pesquise no Metropolitan Museum of Art e descubra obras de arte incríveis." 
+      "subTitle": "Pesquise no Metropolitan Museum of Art e descubra obras de arte incríveis.",
+      "artExhibition": {
+         "title": "Obras de Arte\nNão\nEncontradas!",
+         "subTitle": "Desculpe! O termo '{search}' não foi encontrado no banco de dados do Metropolitan Museum."
+      } 
    },
    "metaData": {
       "home": {
@@ -554,6 +558,7 @@
       "4A41": "A data fornecida é inválida!",
       "85ED": "Algo de errado aconteceu enquanto requisitavamos o Nasa!",
       "8HK1": "Um erro ocorreu enquanto obras de arte eram buscadas!",
-      "B51A": "Algo de errado ocorreu enquanto obras de arte eram buscadas"
+      "B51A": "Algo de errado ocorreu enquanto obras de arte eram buscadas",
+      "4D9F": "Obras de artes não encontradas!"
    }
 }
