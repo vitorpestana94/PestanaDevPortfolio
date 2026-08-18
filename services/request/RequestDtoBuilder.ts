@@ -153,7 +153,6 @@ export default class RequestDtoBuilder {
       };
    }
 
-
    static GetAstronomyPictureOfThePeriod(startDate: string, endDate: string): RequestDto {
       return {
          path: `${this._nasa}/period`,
