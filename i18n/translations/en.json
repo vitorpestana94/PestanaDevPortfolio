@@ -445,6 +445,10 @@
          "subTitle": "Here you can view pictures from\n{initialDate} to {finalDate}."
       }
    },
+   "artWork": {
+      "title": "Art Exhibition",
+      "subTitle": "Search the Metropolitan Museum of Art and discover incredible artworks." 
+   },
    "metaData": {
       "home": {
          "title": "| Full Stack Web Developer",

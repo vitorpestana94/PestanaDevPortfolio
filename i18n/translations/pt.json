@@ -445,6 +445,10 @@
          "subTitle": "Aqui você pode visualizar as fotos do dia\n{initialDate} até {finalDate}."
       }
    },
+   "artWork": {
+      "title": "Exibição Artística",
+      "subTitle": "Pesquise no Metropolitan Museum of Art e descubra obras de arte incríveis." 
+   },
    "metaData": {
       "home": {
          "title": "| Desenvolvedor Web Full Stack",

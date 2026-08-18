@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function ArtWork({url, title, date}: Interface){
     return (
         <div className="w-full flex flex-col gap-y-1">
-            <div className="relative w-full h-30 md:h-37">
+            <div className="relative w-full h-30 md:h-37 lg:h-38.5 xl:h-40 3xl:h-42">
                 <Image
                     src={url}
                     alt={title}
