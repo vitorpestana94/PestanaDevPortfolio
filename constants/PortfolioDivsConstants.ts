@@ -83,14 +83,15 @@ export const portfolioMeio = {
 };
 
 export const portfolioDireita = {
-   advogado: {
+   artExhibition: {
       picture: {
-         pictureUrl: "advogado",
+         pictureUrl: "art-exhibition",
          routeOrSiteUrl: "",
       },
       size: {
          widthAndHeight: "flex-1",
       },
+      icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
    },
    noiteEstrelada: {
       bgImage:

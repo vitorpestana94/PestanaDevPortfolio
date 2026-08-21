@@ -5,7 +5,7 @@ import useHandleEnterKey from "@/hooks/useHandleEnterKey";
 export default function useArtExhibitionFirstSection(){
     const [search, setSearch] = useState<string>("Van Gogh");
     const [debouncedSearch, setDebouncedSearch] = useState("Van Gogh");
-    const { data } = useGetArts(debouncedSearch);
+    const { data, isLoading } = useGetArts(debouncedSearch);
     const setNewSearch = (search: string) => setSearch(search);
     const setDebounce = (search: string) => {
         if(search){
@@ -27,5 +27,5 @@ export default function useArtExhibitionFirstSection(){
         },
     });
 
-    return { data, search, setNewSearch };
+    return { data, search, isLoading, setNewSearch };
 }

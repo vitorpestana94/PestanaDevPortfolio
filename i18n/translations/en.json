@@ -13,7 +13,11 @@
             "magiPass": "This system is a website and mobile app that offers discounts on restaurants and attractions for travelers visiting Orlando. You can download the app from the Downloads section.\n\nI was part of the developement team of this web application. This project uses Next.js and Tailwind for the front end and .NET for the back end. The mobile app was developed using React Native.",
             "saideira": "This is a site and mobile app that provides local breweries and bars deals in the mountain region of Rio de Janeiro, focused on Nova Friburgo.\n\nIt development is stalled for now, so the app is not yet available for download. This system was being developed using Next.js, Tailwind CSS, .NET, and React Native for mobile version.",
             "nasa": "This path consumes the NASA's renowned Astronomy Picture of the Day (APOD) API to retrieve and display both the current day's featured content and the previous week's entries.\n\nIt demonstrates my experience with third-party API integration, response caching strategies, and efficient data delivery for frontend applications, ensuring reliable performance while minimizing unnecessary external requests.This path uses Next.js and Tailwind for the front end and .NET for the back end (just like the rest of the system).",
-            "onebridge": "Onebridge is an international corporate structuring company specializing in asset protection, succession planning, and U.S. expansion strategies for Brazilian businesses.\n\nI am part of the team building a custom platform using Next.js, Tailwind CSS, and AI-assisted development with Claude, complemented by manual engineering and refinements."
+            "onebridge": "Onebridge is an international corporate structuring company specializing in asset protection, succession planning, and U.S. expansion strategies for Brazilian businesses.\n\nI am part of the team building a custom platform using Next.js, Tailwind CSS, and AI-assisted development with Claude, complemented by manual engineering and refinements.",
+            "artExhibiton": {
+               "title": "Art Exhibition",
+               "text": "This path uses the Metropolitan Museum of Art’s API to search its catalog by term.\n\nBy default, it searches for “Van Gogh,” but you can search for anything you’d like. Go ahead and explore — you never know what you might find!"
+            }
          }
       },
       "quartaSessao": {
@@ -450,7 +454,7 @@
       "subTitle": "Search the Metropolitan Museum of Art and discover incredible artworks.",
       "notFound": {
          "title" : "Not Found!",
-         "subTitle": "I'm sorry!\nThe term \"{search}\" could not be found in the Metropolitan Museum Database."
+         "subTitle": "I'm sorry! The term \"{search}\" could not be found in the Metropolitan Museum Database."
       } 
    },
    "metaData": {

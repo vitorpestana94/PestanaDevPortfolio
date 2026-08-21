@@ -13,7 +13,11 @@
             "magiPass": "Este sistema é um site e aplicativo móvel que oferece descontos em restaurantes e atrações para turistas que visitam Orlando. Você pode baixar o aplicativo na seção Downloads.\n\nFiz parte da equipe de desenvolvimento desta aplicação web. Este projeto utiliza Next.js e Tailwind para o front-end, .NET para o back-end e React Native para o aplicativo móvel.",
             "saideira": "Trata-se de um site e aplicativo que oferece promoções em cervejarias e bares da região serrana do Rio de Janeiro, sobretudo em Nova Friburgo.\n\nAtualmente, seu desenvolvimento está paralisado, portanto o app não pode ser baixado. O site estava em desenvolvido usando Next.js, Tailwind CSS, .NET e React Native para a versão mobile.",
             "nasa": "Este path consome a renomada API Astronomy Picture of the Day (APOD) da NASA para recuperar e exibir tanto o conteúdo em destaque do dia atual quanto as publicações da semana anterior.\n\nEle demonstra minha experiência com integração de APIs de terceiros, estratégias de cache e entrega eficiente de dados para aplicações frontend, garantindo um desempenho confiável e minimizando requisições externas desnecessárias. Este projeto utiliza Next.js e Tailwind para o front-end, .NET para o back-end (assim como o resto deste sistema).",
-            "onebridge": "A Onebridge é uma empresa internacional de estruturação corporativa especializada em proteção patrimonial, planejamento sucessório e estratégias de expansão para os Estados Unidos voltadas a empresas brasileiras.\n\nFaço parte da equipe responsável pelo desenvolvimento de uma plataforma personalizada utilizando Next.js, Tailwind CSS e desenvolvimento assistido por IA com Claude, complementado por engenharia e refinamentos manuais."
+            "onebridge": "A Onebridge é uma empresa internacional de estruturação corporativa especializada em proteção patrimonial, planejamento sucessório e estratégias de expansão para os Estados Unidos voltadas a empresas brasileiras.\n\nFaço parte da equipe responsável pelo desenvolvimento de uma plataforma personalizada utilizando Next.js, Tailwind CSS e desenvolvimento assistido por IA com Claude, complementado por engenharia e refinamentos manuais.",
+            "artExhibiton": {
+               "title": "Exibição Artística",
+               "text": "Este path utiliza a API do Metropolitan Museum of Art para pesquisar seu catálogo por termo.\n\nPor padrão, ele busca por “Van Gogh”, mas você pode pesquisar o que quiser. Vá em frente e explore — nunca se sabe o que você pode encontrar!"
+            }
          }
       },
       "quartaSessao": {
@@ -445,12 +449,12 @@
          "subTitle": "Aqui você pode visualizar as fotos do dia\n{initialDate} até {finalDate}."
       }
    },
-   "artWork": {
+   "artExhibition": {
       "title": "Exibição Artística",
       "subTitle": "Pesquise no Metropolitan Museum of Art e descubra obras de arte incríveis.",
-      "artExhibition": {
-         "title": "Obras de Arte\nNão\nEncontradas!",
-         "subTitle": "Desculpe! O termo '{search}' não foi encontrado no banco de dados do Metropolitan Museum."
+      "notFound": {
+         "title" : "Não encontrado",
+         "subTitle": "Perdão! O termo \"{search}\" não foi encontrado na base de dados do Metropolitan Museum."
       } 
    },
    "metaData": {
