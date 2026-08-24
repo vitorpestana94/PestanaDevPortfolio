@@ -3,7 +3,7 @@ import FirstSection from "../sections/artExhibition/ArtExhibitionFirstSection";
 import ensureAuthenticated from "@/utils/authentication/ensureAuthenticated";
 
 export default async function ArtExhibition(){
-    await ensureAuthenticated();
+    await ensureAuthenticated("art-exhibition");
     
     return (
     <Main>

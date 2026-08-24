@@ -4,10 +4,12 @@ import { ReactNode } from "react";
 
 export default async function AuthenticatedPage({
    children,
+   redirectTo
 }: {
    children: ReactNode;
+   redirectTo: string;
 }) {
-   await ensureAuthenticated();
+   await ensureAuthenticated(redirectTo);
 
    return <Main>{children}</Main>;
 }

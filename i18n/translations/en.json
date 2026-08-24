@@ -16,7 +16,7 @@
             "onebridge": "Onebridge is an international corporate structuring company specializing in asset protection, succession planning, and U.S. expansion strategies for Brazilian businesses.\n\nI am part of the team building a custom platform using Next.js, Tailwind CSS, and AI-assisted development with Claude, complemented by manual engineering and refinements.",
             "artExhibiton": {
                "title": "Art Exhibition",
-               "text": "This path uses the Metropolitan Museum of Art’s API to search its catalog by term.\n\nBy default, it searches for “Van Gogh,” but you can search for anything you’d like. Go ahead and explore — you never know what you might find!"
+               "text": "This path uses the Metropolitan Museum of Art’s API to search its catalog by term.\n\nIt demonstrates my experience with integrating external services, managing caching mechanisms, and efficiently delivering data to web interfaces, ensuring stable performance while reducing unnecessary requests to third-party platforms.\n\nBy default, it searches for “Van Gogh,” but you can search for anything you’d like. Go ahead and explore — you never know what you might find!"
             }
          }
       },

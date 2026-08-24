@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { useRedirectTo } from "@/hooks/useRedirectTo";
 import { useRouter } from "next/navigation";
 import { getErrorCode } from "@/utils/errors/errorMessagesHandlers";
+import useLocalePath from "@/hooks/useLocalePath";
 
 export default function useLoginInputsDiv() {
    const {
@@ -19,6 +20,7 @@ export default function useLoginInputsDiv() {
    const [isLoading, setIsLoading] = useState<boolean>(false);
    const router = useRouter();
    const { redirectTo } = useRedirectTo();
+   const { path } = useLocalePath(redirectTo);
    const t = useTranslations();
 
    async function submit(data: LoginRequest) {
@@ -43,7 +45,7 @@ export default function useLoginInputsDiv() {
       toastDimiss();
 
       if (result?.ok) {
-         router.push(redirectTo);
+         router.push(path);
       } else {
          toastError(t(`error.${getErrorCode(result?.error ?? "")}`))
       }

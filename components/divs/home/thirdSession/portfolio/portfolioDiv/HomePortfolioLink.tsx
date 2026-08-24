@@ -13,8 +13,8 @@ export default function HomePortfolioLink({
 
    return (
       <motion.div
-         whileHover={{ scale: 1.15 }}
-         whileTap={{ scale: 1.15 }}
+         whileHover={{ scale: 1.05 }}
+         whileTap={{ scale: 1.05 }}
          onTap={handleTap}
          onHoverEnd={() => hoverStart()}
          onHoverStart={() => hoverEnd()}
@@ -34,7 +34,7 @@ export default function HomePortfolioLink({
                fill
                sizes="(max-width: 640px) 100vw, 33vw"
                quality={85}
-               className="object-fit absolute inset-0"
+               className="object-fill absolute inset-0"
             />
             <DivText
                show={show}

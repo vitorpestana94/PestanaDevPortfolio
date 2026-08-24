@@ -4,7 +4,7 @@ import SecondSection from "../sections/nasa/NasaSecondSection";
 import ensureAuthenticated from "@/utils/authentication/ensureAuthenticated";
 
 export default async function NasaAstronomyPictureOfTheDayPage(){
-    await ensureAuthenticated();
+    await ensureAuthenticated("nasa");
     
     return (
         <Main>

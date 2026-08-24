@@ -1,4 +1,4 @@
-import Header from "@/components/headers/home/HomeHeader";
+import Header from "@/components/headers/home/SiteHeader";
 import BackGround from "@/components/divs/nasa/firstSession/NasaFirstSessionBg";
 import NasaContent from "@/components/divs/nasa/firstSession/NasaFirstSessionContent";
 

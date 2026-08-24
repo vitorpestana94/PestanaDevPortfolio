@@ -5,7 +5,7 @@ import useIsMobile from "@/hooks/useIsMobile";
 import MobileContent from "./subComponents/MobileHeaderContent";
 import DesktopContent from "./subComponents/DesktopHeaderContent";
 
-export default function HomeHeader({ className } : { className?: string }) {
+export default function SiteHeader({ className } : { className?: string }) {
    const { isMobile } = useIsMobile();
 
    return (

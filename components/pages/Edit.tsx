@@ -3,7 +3,7 @@ import AuthenticatedPage from "../wrappers/AuthenticatedPage";
 
 export default function EditPage() {
    return (
-      <AuthenticatedPage>
+      <AuthenticatedPage redirectTo="profile/edit">
          <EditProfileForm />
       </AuthenticatedPage>
    );

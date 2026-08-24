@@ -1,4 +1,4 @@
-import Header from "@/components/headers/home/HomeHeader";
+import Header from "@/components/headers/home/SiteHeader";
 import VitorPestanaFullStackWebDeveloper from "@/components/textBlocks/home/HomeFirstSectionTextBLock";
 import BackGround from "@/components/divs/home/firstSession/HomeFirstSectionBgDiv";
 import Wrapper from "@/components/wrappers/home/HomeWrapper";

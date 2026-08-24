@@ -3,7 +3,7 @@ import DeleteAccountForm from "@/components/forms/deleteAccountForm/DeleteAccoun
 
 export default function DeleteAccountPage() {
    return (
-      <AuthenticatedPage>
+      <AuthenticatedPage redirectTo="profile/delete-account">
          <DeleteAccountForm />
       </AuthenticatedPage>
    );

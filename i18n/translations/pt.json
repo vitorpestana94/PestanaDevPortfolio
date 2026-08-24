@@ -16,7 +16,7 @@
             "onebridge": "A Onebridge é uma empresa internacional de estruturação corporativa especializada em proteção patrimonial, planejamento sucessório e estratégias de expansão para os Estados Unidos voltadas a empresas brasileiras.\n\nFaço parte da equipe responsável pelo desenvolvimento de uma plataforma personalizada utilizando Next.js, Tailwind CSS e desenvolvimento assistido por IA com Claude, complementado por engenharia e refinamentos manuais.",
             "artExhibiton": {
                "title": "Exibição Artística",
-               "text": "Este path utiliza a API do Metropolitan Museum of Art para pesquisar seu catálogo por termo.\n\nPor padrão, ele busca por “Van Gogh”, mas você pode pesquisar o que quiser. Vá em frente e explore — nunca se sabe o que você pode encontrar!"
+               "text": "Este path utiliza a API do Metropolitan Museum of Art para pesquisar seu catálogo por termo.\n\nEle evidencia minha experiência na integração com serviços externos, no gerenciamento de mecanismos de armazenamento temporário e na disponibilização otimizada de informações para interfaces web, mantendo uma operação estável e reduzindo chamadas dispensáveis a plataformas externas.\n\nPor padrão, ele busca por “Van Gogh”, mas você pode pesquisar o que quiser. Vá em frente e explore — nunca se sabe o que você pode encontrar!"
             }
          }
       },
