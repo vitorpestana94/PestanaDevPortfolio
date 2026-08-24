@@ -6,14 +6,14 @@ import useArtExhibitionFirstSection from "./useArtExhibitionFirstSection";
 import Header from "@/components/headers/home/SiteHeader";
 import ArtExhitionTitleAndSubTitle from "@/components/textBlocks/ArtExhitionTextBlock";
 import Bg from "@/components/divs/artExhibitionBg/ArtExhibitionBg";
-import ArtWorkNot from "@/components/textBlocks/ArtWorkNotFoundTextBlock";
+import ArtWorskNotFound from "@/components/textBlocks/ArtWorkNotFoundTextBlock";
 import { GetArtWotkResponseDto } from "@/models/interfaces/dtos/responses/GetArtWotkResponseDto";
 
 function getArtWorkSlider(data: GetArtWotkResponseDto[] | undefined, isLoading:boolean, search: string){
-    if(data) {
+    if (data) {
         return <ArtkWorkSlider data={data} />
     } else if (!data && !isLoading){
-        return <ArtWorkNot searchTerm={search} />
+        return <ArtWorskNotFound searchTerm={search} />
     }
 
     return null;

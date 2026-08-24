@@ -17,7 +17,7 @@ export default function ArtWork({url, title, date}: Interface){
                 />
             </div>
             <div className="w-full flex justify-between text-white text-[0.5rem] px-1">
-                <p className="w-[70%] truncate relative cursor-default">{title}</p>
+                <p title={title} className="w-[70%] truncate relative cursor-default">{title}</p>
                 <p className="text-nowrap">{date}</p>
             </div>
         </div>
