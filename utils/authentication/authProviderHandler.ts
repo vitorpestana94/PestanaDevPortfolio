@@ -4,5 +4,5 @@ import { getPlatformAsString } from "../strings/getPlatform";
 
 export const handleSign = async (platform: Platform, redirectTo: string) =>
   await signIn(getPlatformAsString(platform).toLowerCase(), {
-    callbackUrl: `/${redirectTo}`,
+    callbackUrl: redirectTo,
   });

@@ -31,7 +31,7 @@ export const portfolioEsquerda = {
          routeOrSiteUrl: "https://saideiraclube.com.br/web",
       },
       size: {
-         widthAndHeight: "w-[70%] aspect-[4/1.8]",
+         widthAndHeight: "w-[65%] aspect-[4/2]",
       },
       title: "Saideira",
       icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
@@ -83,14 +83,15 @@ export const portfolioMeio = {
 };
 
 export const portfolioDireita = {
-   advogado: {
+   artExhibition: {
       picture: {
-         pictureUrl: "advogado",
+         pictureUrl: "art-exhibition",
          routeOrSiteUrl: "",
       },
       size: {
          widthAndHeight: "flex-1",
       },
+      icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
    },
    noiteEstrelada: {
       bgImage:

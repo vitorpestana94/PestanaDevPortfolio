@@ -5,7 +5,7 @@ import TitleAndCopyright from "../textBlocks/nasaMediaCopyrightAndTitle/NasaMedi
 function VideoTag({ url } : { url: string }){
     return (
         <video
-            className="w-full h-full object-cover rounded-3xl"
+            className="w-full h-full object-cover rounded-3xl max-h-115"
             src={url}
             autoPlay
             muted
@@ -21,7 +21,7 @@ function HeroVideo({ url, copyRight, title } : Interface){
     <motion.div 
         whileHover={effect}
         whileTap={effect}
-        className="w-[75%] md:w-[50%] lg:w-[40%] relative aspect-3/4">
+        className="w-[75%] md:w-[50%] lg:w-[40%] relative aspect-3/4 max-h-115">
         <VideoTag url={url} />
         <TitleAndCopyright copyright={copyRight} title={title} />
     </motion.div>

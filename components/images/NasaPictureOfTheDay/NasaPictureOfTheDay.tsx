@@ -26,7 +26,7 @@ function HeroPicture({ url, title, copyRight } : Interface ) {
     const effect = { scale: 1.2 };
 
     return (
-         <motion.div className="relative w-[75%] md:w-[50%] lg:w-[40%] aspect-4/3"
+         <motion.div className="relative w-[75%] md:w-[50%] lg:w-[40%] aspect-4/3 max-h-115"
             ref={ref}
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -48,7 +48,7 @@ function HeroPicture({ url, title, copyRight } : Interface ) {
 function SliderPicture({ url, title, copyRight } : Interface) {
     return (
         <>
-            <div className="relative w-full aspect-4/3">
+            <div className="relative w-full aspect-4/3 max-h-115">
                 <div className="w-full h-full">
                     <NasaImage url={url} title={title} isSlider/>
                 </div>

@@ -1,41 +1,16 @@
 import { Link } from "@/i18n/routing";
 import useSiteNavigationSpan from "./useSiteNavigationSpan";
 import UserButton from "@/components/buttons/userButton/UserButton";
+import { DefaultHeaderLinks, NasaHeaderLinks, ArtExhibitionLinks } from "@/components/links/HeaderLinks";
 
 function getLinks(flow: string, t: (param: string) => string){
-   let links;
-
-   switch (flow){
-      case "nasa":
-         links = (
-            <>
-               <Link className="hoverPestana" href={"#todayPicture"}>
-                  {t("nasa.today")}
-               </Link>
-               <Link className="hoverPestana" href={"#picturesOfTheWeek"}>
-                  {t("nasa.week")}
-               </Link>
-            </>
-         )
-         break;
-      default:
-         links = (
-            <>
-               <Link className="hoverPestana" href={"#sobre"}>
-                  {t("home.sobre")}
-               </Link>
-               <Link className="hoverPestana" href={"#minhasHabilidades"}>
-                  {t("home.mySkills")}
-               </Link>
-               <Link className="hoverPestana" href={"#meuTrabalho"}>
-                  {t("home.meuTrabalho")}
-               </Link>
-            </>
-         )
-         break;
+   const flowPerLink: {[key: string]: React.ReactElement} = {
+      "nasa" : <NasaHeaderLinks />,
+      "art-exhibition" : <ArtExhibitionLinks />,
+      "default" : <DefaultHeaderLinks />
    }
-   
-   return links
+
+   return flowPerLink[flow] ?? flowPerLink.default;
 }
 
 export default function SiteNavigationSpan() {

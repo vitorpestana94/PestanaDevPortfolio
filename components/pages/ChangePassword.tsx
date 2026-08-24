@@ -3,7 +3,7 @@ import ChangePasswordForm from "@/components/forms/changePasswordForm/ChangePass
 
 export default async function ChangePassword() {
    return (
-      <AuthenticatedPage>
+      <AuthenticatedPage redirectTo="profile/change-password">
          <ChangePasswordForm />
       </AuthenticatedPage>
    );
