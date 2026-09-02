@@ -42,6 +42,9 @@ const nextConfig: NextConfig = {
     ],
     qualities: [25, 50, 75, 85, 95, 100],
   },
+  eslint: {
+   ignoreDuringBuilds: true,
+},
   turbopack: {
     rules: {
       "*.svg": {

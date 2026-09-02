@@ -142,8 +142,8 @@ export const nextAuthOptions = {
          token: JWT;
          account?: any | null;
          user: any;
-         trigger: string;
-         session: Session;
+         trigger?: "update" | "signIn" | "signUp";
+         session?: Session;
       }) {
          if (trigger === "update") {
             if (session?.user?.name) {
