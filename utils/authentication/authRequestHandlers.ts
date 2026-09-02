@@ -1,10 +1,11 @@
-import { jwtDecode, JwtPayload } from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import ApiToken from "@/models/interfaces/dtos/ApiToken";
 import { JWT } from "next-auth/jwt";
 import { getPlatform } from "../strings/getPlatform";
 import SignUpRequest from "@/models/interfaces/dtos/requests/SignUpRequest";
 import RefreshTokenRequest from "@/models/interfaces/dtos/requests/RefreshTokenRequest";
 import AuthServiceServer from "@/services/AuthServiceServer";
+import ApiJwtPayload from "@/models/interfaces/api/ApiJwtPayload";
 
 export async function login(
    email: string,
@@ -47,7 +48,7 @@ export async function loginOrSignUpWithPlatform(
 
 async function handleLoginResponse(response: ApiToken | null) {
    if (response && response.token) {
-      const decoded: JwtPayload = await jwtDecode(response.token);
+      const decoded: ApiJwtPayload = await jwtDecode(response.token);
       const userId: string = decoded.sub ?? "";
 
       return {
@@ -72,7 +73,7 @@ export async function refreshAccessToken(
 
    checkResponse(response);
 
-   const decoded: JwtPayload = jwtDecode(response.token!);
+   const decoded: ApiJwtPayload = jwtDecode(response.token!);
 
    return {
       ...oldToken,
