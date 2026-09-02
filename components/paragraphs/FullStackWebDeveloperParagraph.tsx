@@ -12,7 +12,7 @@ export default function FullStackWebDeveloperParagraph() {
       3xl:text-[1.25rem] 
       4xl:text-[1.5rem]"
       >
-         {`FULL STACK \nWEB \nDEVELOPER`}
+         {`BACK-END\nWEB\nDEVELOPER`}
       </p>
    );
 }

@@ -1,5 +1,3 @@
-/* eslint-disable @eslint-react/no-serializable-props */
-
 "use client";
 
 import ErrorModal from "@/components/pages/Error";

@@ -3,7 +3,7 @@ import Profile from "@/components/divs/ProfileDataDiv/ProfileDataDiv";
 
 export default async function ProfilePage() {
    return (
-      <AuthenticatedPage>
+      <AuthenticatedPage redirectTo="profile">
          <Profile />
       </AuthenticatedPage>
    );
