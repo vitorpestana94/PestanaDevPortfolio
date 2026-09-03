@@ -61,7 +61,7 @@
    },
    "auth": {
       "common": {
-         "with": "Continue with {platform}",
+         "with": "Continar com {platform}",
          "or": "ou"
       },
       "switchButton": {
