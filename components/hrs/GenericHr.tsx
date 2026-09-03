@@ -11,7 +11,7 @@ export default function GenericHr({
          className={`flex items-center w-[70%] sm:w-[60%] self-center ${className}`}
       >
          <div className="flex w-full border-t border-gray-500"></div>
-         <span className="px-3 text-gray-500 xxs:text-[0.625rem] xs:text-[0.875rem] text-[0.5rem]! font-medium text-nowrap">
+         <span className="px-3 text-gray-500 xxs:text-[0.625rem] xs:text-[0.875rem] text-[0.5rem]! md:text-[0.75rem]! font-medium text-nowrap">
             {text}
          </span>
          <div className="flex w-full border-t border-gray-500"></div>
