@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import BackToHome from "../buttons/BackToHome";
+import BackToHome from "../buttons/backToHomeButton/BackToHome";
 import ExceptionSection from '../sections/ExceptionSection';
 
 export default async function NotFound(){

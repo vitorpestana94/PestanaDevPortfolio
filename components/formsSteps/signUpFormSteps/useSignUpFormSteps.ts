@@ -53,6 +53,7 @@ export default function useSignUpFormSteps() {
       email,
       accepted,
       password,
+      backToHome: t("termsAndConditions.backToHome"),
       isLoading,
       step,
       errors,

@@ -200,12 +200,20 @@
       @apply text-white pointer-events-none tracking-widest font-abril font-semibold xxs:text-[1.2rem] xs:text-[1.75rem] xl:text-[1.875rem] 3xl:text-[2.125rem];
    }
 
+   .authButtonsLabelsSizes {
+      @apply text-[0.375rem] sm:text-[0.625rem] md:text-[0.75rem];
+   }
+
    .authForm {
       @apply flex-1 z-40 flex flex-col justify-around items-center xxs:py-1.5 xs:py-5 xl:py-7 relative;
    }
 
    .navSwitchPosition {
       @apply absolute z-50 xxs:top-3 xxs:right-3 xs:top-4 xs:right-3 top-5 right-2;
+   }
+
+   .backHomeAuth {
+      @apply absolute! z-50! xxs:top-3! xxs:left-3! xs:top-4! xs:left-3! top-5! left-2! text-white! pt-1;
    }
 
    .formSteps {

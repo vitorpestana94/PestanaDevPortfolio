@@ -1,4 +1,4 @@
-import BackToHome from "../buttons/BackToHome";
+import BackToHome from "../buttons/backToHomeButton/BackToHome";
 
 export default async function LegalDocumentTextBlock({
    buttonLabel,

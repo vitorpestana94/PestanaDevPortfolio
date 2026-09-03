@@ -4,6 +4,7 @@ import SecondStep from "./steps/second/SignUpSecondStep";
 import ThirdStep from "./steps/third/SignUpThirdStep";
 import FourthStep from "./steps/fourth/FourthStep";
 import LoginSignUpSwitch from "@/components/buttons/switchAutoButton/SwitchAutoButton";
+import BackToHome from "@/components/buttons/backToHomeButton/BackToHome";
 
 export default function SignUpFormSteps() {
    const {
@@ -13,6 +14,7 @@ export default function SignUpFormSteps() {
       password,
       errors,
       accepted,
+      backToHome,
       register,
       handleSubmit,
       nextStep,
@@ -21,6 +23,14 @@ export default function SignUpFormSteps() {
 
    return (
       <div className="formSteps">
+         {
+            step === 1 &&
+            <BackToHome 
+               buttonLabel={backToHome} 
+               className="backHomeAuth" 
+               iconClassName="w-4! md:w-8!"
+               labelClassName="authButtonsLabelsSizes"/>
+         }
          <LoginSignUpSwitch hide={step !== 1} />
          {
             {
