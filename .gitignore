@@ -42,3 +42,8 @@ next-env.d.ts
 
 # vscode
 .vscode
+
+# SEO files that will be used by google's bots. Those files will be generated on build script.
+public/robots.txt
+public/sitemap-0.xml
+public/sitemap.xml
