@@ -6,6 +6,7 @@ import ReCaptcha from "@/components/divs/ReCaptchaDiv";
 import Form from "@/components/forms/DefaultForm/DefaultForm";
 import Email from "@/components/inputs/emailInput/EmailInput";
 import LoginSignUpSwitch from "@/components/buttons/switchAutoButton/SwitchAutoButton";
+import BackToHome from "@/components/buttons/backToHomeButton/BackToHome";
 
 export default function loginInputsDiv() {
    const { t, isLoading, errors, register, handleSubmit, submit } =
@@ -17,6 +18,11 @@ export default function loginInputsDiv() {
          handleSubmit={handleSubmit}
          className="flex flex-col gap-y-2 items-center"
       >
+         <BackToHome 
+            buttonLabel={t("termsAndConditions.backToHome")} 
+            className="backHomeAuth" 
+            iconClassName="w-4! md:w-8!"
+            labelClassName="authButtonsLabelsSizes"/>
          <LoginSignUpSwitch />
          <div className="w-full flex flex-col items-center gap-y-2">
             <Email

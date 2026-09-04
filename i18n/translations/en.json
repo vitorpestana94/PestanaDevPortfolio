@@ -459,8 +459,8 @@
    },
    "metaData": {
       "home": {
-         "title": "| Full Stack Web Developer",
-         "description": "Hello! My name is Vitor Pestana, and I'm a Full Stack Web Developer specializing in back-end development and scalable web applications."
+         "title": "| Back-end Web Developer",
+         "description": "Hello! My name is Vitor Pestana, and I'm a Back-end Web Developer who also works as a Full Stack Developer."
       },
       "termsAndConditions": {
          "title": "| Terms and Conditions",
@@ -563,6 +563,15 @@
       "85ED": "Something went wrong while requesting Nasa!",
       "8HK1" : "Error while requesting for art works!",
       "B51A": "Something went wrong while searching for art works!",
-      "4D9F": "Art works not found!"
+      "4D9F": "Art works not found!",
+      "94HB": "We couldn't validate the CAPTCHA. Please try again.",
+      "BDC2": "We couldn't confirm that this request was made by a human.",
+      "AF0C": "The CAPTCHA service returned an error. Please try again.",
+      "A02D": "We couldn't validate the CAPTCHA due to a missing configuration.",
+      "4C64": "We couldn't validate the CAPTCHA. Please try again.",
+      "B3F9": "The CAPTCHA token was not provided.",
+      "C7AE": "The CAPTCHA token is invalid. Please try again.",
+      "4JF2": "We couldn't process the CAPTCHA validation.",
+      "BKC4": "The CAPTCHA token has expired or has already been used. Please try again."
    }
 }

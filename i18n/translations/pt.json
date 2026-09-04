@@ -4,7 +4,7 @@
          "titulo": "Sobre mim",
          "about": {
             "me": "Olá! Me chamo Vitor Pestana, sou de Niterói (Rio de Janeiro, Brasil) e sou Back-end Web Developer que também trabalha como Full Stack Web Developer. Sempre tive interesse por tecnologia e, com o tempo, esse interesse evoluiu naturalmente para o desenvolvimento de software. Ao mesmo tempo, sou apaixonado pelas artes, pelo belo, pela lógica e pelo pensamento crítico. Antes de seguir as veredas da Ciência da Computação, formei-me em Filosofia. Embora a filosofia continue sendo minha maior paixão intelectual, descobri minha vocação no desenvolvimento de software. Por volta de 2019, comecei a estudar como softwares são construídos e, depois de escrever meu primeiro `for` em C, me apaixonei definitivamente por programação. À medida que aprofundei meus conhecimentos em Ciência da Computação, passei a me especializar em desenvolvimento back-end e a expandir minha experiência em desenvolvimento web. Hoje, a filosofia e as artes continuam a me inspirar intelectualmente, enquanto a Ciência da Computação, a Lógica e a Engenharia de Software são onde encontrei minha paixão profissional.",
-            "zeLeiteiro": "Valorizo na vida acima de tudo o Amor e profissionalmente não é diferente. Em tudo que faço, eu deixo uma parte de mim, da minha alma, do Amor. Em grego, este valor é definido pela palavra meraki (μεράκι), e eu o aprendi na minha família desde cedo. Não à toa coloco o sobrenome Pestana em destaque. Meu avô, seu Zé Leiteiro, ensinou-me desde criança a colocar o Amor em tudo que faço. Ele lutou na Segunda Guerra Mundial pela Marinha do Brasil contra o horror nazista; ele é o homem olhando para a câmera. Após a guerra, trabalhou como leiteiro com Amor; eramos muito podres. Com Amor, suor e sangue, abriu o caminho para que hoje eu possa ser quem sou. Assim como meu herói, o meu maior valor é o Amor que coloco em tudo que faço."
+            "zeLeiteiro": "Valorizo na vida acima de tudo o Amor e profissionalmente não é diferente. Em tudo que faço, eu deixo uma parte de mim, da minha alma, do Amor. Em grego, este valor é definido pela palavra meraki (μεράκι), e eu o aprendi na minha família desde cedo. Não à toa coloco o sobrenome Pestana em destaque. Meu avô, seu Zé Leiteiro, ensinou-me desde criança a colocar o Amor em tudo que faço. Ele lutou na Segunda Guerra Mundial pela Marinha do Brasil contra o horror nazista; ele é o homem olhando para a câmera. Após a guerra, trabalhou como leiteiro com Amor; eramos muito pobres. Com Amor, suor e sangue, abriu o caminho para que hoje eu possa ser quem sou. Assim como meu herói, o meu maior valor é o Amor que coloco em tudo que faço."
          }
       },
       "terceiraSessao": {
@@ -61,7 +61,7 @@
    },
    "auth": {
       "common": {
-         "with": "Continue with {platform}",
+         "with": "Continar com {platform}",
          "or": "ou"
       },
       "switchButton": {
@@ -459,8 +459,8 @@
    },
    "metaData": {
       "home": {
-         "title": "| Desenvolvedor Web Full Stack",
-         "description": "Olá! Meu nome é Vitor Pestana e sou um Desenvolvedor Web Full Stack especializado em desenvolvimento back-end e aplicações web escaláveis."
+         "title": "| Desenvolvedor Web Back-end",
+         "description": "Olá! Meu nome é Vitor Pestana e sou um Desenvolvedor Web Back-end que também trabalhar como Desenvolver Web Full Stack"
       },
       "artExhibition": {
          "title": "| Exposição de Arte",
@@ -563,6 +563,15 @@
       "85ED": "Algo de errado aconteceu enquanto requisitavamos o Nasa!",
       "8HK1": "Um erro ocorreu enquanto obras de arte eram buscadas!",
       "B51A": "Algo de errado ocorreu enquanto obras de arte eram buscadas",
-      "4D9F": "Obras de artes não encontradas!"
+      "4D9F": "Obras de artes não encontradas!",
+      "94HB": "Não foi possível validar o CAPTCHA. Tente novamente.",
+      "BDC2": "Não foi possível confirmar que a solicitação foi feita por uma pessoa.",
+      "AF0C": "O serviço de CAPTCHA retornou um erro. Tente novamente.",
+      "A02D": "Não foi possível validar o CAPTCHA devido a uma configuração ausente.",
+      "4C64": "Não foi possível validar o CAPTCHA. Tente novamente.",
+      "B3F9": "O token do CAPTCHA não foi informado.",
+      "C7AE": "O token do CAPTCHA é inválido. Tente novamente.",
+      "4JF2": "Não foi possível processar a validação do CAPTCHA.",
+      "BKC4": "O token do CAPTCHA expirou ou já foi utilizado. Tente novamente."
    }
 }

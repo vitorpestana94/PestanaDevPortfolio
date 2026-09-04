@@ -16,17 +16,17 @@ export default function HomePortfolioLink({
          whileHover={{ scale: 1.05 }}
          whileTap={{ scale: 1.05 }}
          onTap={handleTap}
-         onHoverEnd={() => hoverStart()}
-         onHoverStart={() => hoverEnd()}
+         onHoverEnd={hoverStart}
+         onHoverStart={hoverEnd}
          transition={{ type: "spring", stiffness: 150, damping: 6 }}
-         className={`${props.size.widthAndHeight} ${style} relative`}
+         className={`${props.size.widthAndHeight} ${style} relative cursor-pointer`}
       >
          <Link
             ref={linkRef}
             target="_blank"
             rel="noopener noreferrer"
             href={props.picture?.routeOrSiteUrl ?? ""}
-            className="pointer-events-none sm:pointer-events-auto"
+            className="pointer-events-none"
          >
             <Image
                src={`/png/${props.picture?.pictureUrl}.png`}

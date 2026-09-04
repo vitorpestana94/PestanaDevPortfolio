@@ -1,6 +1,5 @@
 import PortfolioDivTextInterface from "./PortfolioDivText/PortfolioDivText";
 import { motion } from "motion/react";
-import useIsMobile from "@/hooks/useIsMobile";
 import Icon from "@/components/icons/Icons";
 import { IconName } from "@/components/icons/Icons";
 
@@ -11,11 +10,10 @@ export default function PortfolioDivText({
    title,
    icons,
 }: PortfolioDivTextInterface) {
-   const { isMobile } = useIsMobile();
 
    return (
       <>
-         {show && !isMobile && (
+         {show && (
             <motion.div
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}

@@ -6,7 +6,7 @@ export default function AboutFirstTextBlock() {
       <Frame
          props={{
             className:
-               "w-[65%] p-5 sm:p-9 sm:w-[90%] xl:w-full xl:p-8 4xl:p-10",
+               "w-[80%] p-5 sm:p-9 sm:w-[90%] xl:w-full xl:p-8 4xl:p-10",
             waitIsInView: true,
          }}
       >
