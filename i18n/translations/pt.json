@@ -563,6 +563,15 @@
       "85ED": "Algo de errado aconteceu enquanto requisitavamos o Nasa!",
       "8HK1": "Um erro ocorreu enquanto obras de arte eram buscadas!",
       "B51A": "Algo de errado ocorreu enquanto obras de arte eram buscadas",
-      "4D9F": "Obras de artes não encontradas!"
+      "4D9F": "Obras de artes não encontradas!",
+      "94HB": "Não foi possível validar o CAPTCHA. Tente novamente.",
+      "BDC2": "Não foi possível confirmar que a solicitação foi feita por uma pessoa.",
+      "AF0C": "O serviço de CAPTCHA retornou um erro. Tente novamente.",
+      "A02D": "Não foi possível validar o CAPTCHA devido a uma configuração ausente.",
+      "4C64": "Não foi possível validar o CAPTCHA. Tente novamente.",
+      "B3F9": "O token do CAPTCHA não foi informado.",
+      "C7AE": "O token do CAPTCHA é inválido. Tente novamente.",
+      "4JF2": "Não foi possível processar a validação do CAPTCHA.",
+      "BKC4": "O token do CAPTCHA expirou ou já foi utilizado. Tente novamente."
    }
 }
