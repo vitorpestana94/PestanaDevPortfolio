@@ -1,5 +1,4 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.pestanadev.com.br/',
-  generateRobotsTxt: true,
+  siteUrl: 'https://www.pestanadev.com.br/'
 };
