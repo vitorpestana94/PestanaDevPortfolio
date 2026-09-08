@@ -1,5 +1,12 @@
 {
    "home": {
+      "primeiraSessao": {
+         "hello": "Olá, eu sou",
+         "about": "Filósofo · Cientista da computação · Desenvolvedor Back-end · Desenvolvedor Full Stack",
+         "presentation": "Crio soluções inteligentes para problemas persistentes de forma crítica e acertiva; sempre buscando da forma mais efetiva causar o máximo de impacto e gerar o máximo de valor.",
+         "cv": "Currículo",
+         "checkOut": "Conheça meus projetos"
+      },
       "segundaSessao": {
          "titulo": "Sobre mim",
          "about": {

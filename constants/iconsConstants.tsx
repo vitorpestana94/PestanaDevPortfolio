@@ -38,6 +38,7 @@ import Typescript from "@public/icons/typescript.svg";
 import Bootstrap from "@public/icons/bootstrap.svg";
 import Claude from "@public/icons/claude.svg";
 import Search from "@public/icons/search.svg";
+import Download from "@public/icons/download.svg";
 
 export const icons = {
    vP: <VP />,
@@ -79,5 +80,6 @@ export const icons = {
    typescript: <Typescript />,
    bootstrap: <Bootstrap />,
    claude: <Claude />,
-   search: <Search />
+   search: <Search />,
+   download: <Download />
 } as const;

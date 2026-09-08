@@ -121,7 +121,7 @@
    }
 
    .heroMarginTop {
-      @apply mt-5 sm:mt-16 xl:mt-30;
+      @apply mt-5 sm:mt-16;
    }
 
    .homeDefault {

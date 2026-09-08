@@ -1,5 +1,12 @@
 {
    "home": {
+      "primeiraSessao": {
+         "hello": "Hello, I'm",
+         "about": "Philosopher · Computer Scientist · Back-end Developer · Full Stack Developer",
+         "presentation": "I create intelligent solutions to persistent problems through critical and deliberate thinking, always seeking the most effective way to maximize impact and generate value.",
+         "cv": "Resume",
+         "checkOut": "Check out my projects"
+      },
       "segundaSessao": {
          "titulo": "About me",
          "about": {
