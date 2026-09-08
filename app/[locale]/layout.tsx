@@ -1,3 +1,4 @@
+import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import { Abril_Fatface, Montserrat } from "next/font/google";
 import "./globals.css";
@@ -58,6 +59,12 @@ export const metadata: Metadata = {
       keywords: "Vitor Pestana, Full Stack Web Developer",
    },
 };
+
+export function generateStaticParams() {
+   return routing.locales.map((locale) => ({
+      locale,
+   }));
+}
 
 export default async function RootLayout({
    children,
