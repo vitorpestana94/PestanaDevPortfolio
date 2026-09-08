@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-sitemap"
+    "build": "next build"
     "start": "next start",
     "lint": "eslint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
