@@ -54,9 +54,9 @@ export const metadata: Metadata = {
    icons: {
       icon: "/favicon.ico",
    },
-   keywords: ["Full Stack Web Developer", "Site"],
+   keywords: ["Full Stack Web Developer", "Site", "Back-end Web Developer", "Vitor Pestana", "Vitor Luiz Pestana Pereira"],
    other: {
-      keywords: "Vitor Pestana, Full Stack Web Developer",
+      keywords: "Vitor Pestana, Full Stack Web Developer, Back-end Web Developer, Site, Vitor Pestana, Vitor Luiz Pestana Pereira",
    },
 };
 
