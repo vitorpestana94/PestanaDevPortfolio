@@ -19,7 +19,8 @@ export default function SiteNavigationSpan() {
    return (
       <span
          className="flex flex-col items-center text-[#bfbfbf] z-50
-        text-[1rem] gap-y-5 
+        text-xs
+        lg:text-[1rem] gap-y-5 
         sm:gap-x-4.5 sm:flex-row sm:gap-y-0
         md:gap-x-5
         lg:gap-x-6

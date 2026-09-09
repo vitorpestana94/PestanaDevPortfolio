@@ -21,7 +21,7 @@ const abrilFatFace = Abril_Fatface({
 const montserrat = Montserrat({
    subsets: ["latin"],
    display: "swap",
-   weight: ["300", "400", "500", "700"], // Escolha os pesos que você precisa
+   weight: ["300", "400", "500", "700"],
    variable: "--font-montserrat",
 });
 
@@ -29,6 +29,10 @@ export const metadata: Metadata = {
    metadataBase: new URL(process.env.NEXTAUTH_URL),
    title: title,
    description: description,
+   icons: {
+    icon: imageForMetaData,
+    shortcut: imageForMetaData
+  },
    openGraph: {
       title: title,
       description: description,
@@ -51,12 +55,9 @@ export const metadata: Metadata = {
       description,
       images: [imageForMetaData],
    },
-   icons: {
-      icon: "/favicon.ico",
-   },
-   keywords: ["Full Stack Web Developer", "Site", "Back-end Web Developer", "Vitor Pestana", "Vitor Luiz Pestana Pereira"],
+   keywords: ["Full Stack Web Developer", "Site", "Back-end Web Developer", "Vitor Pestana", "Vitor Luiz Pestana Pereira", "Desenvolvedor Web Full Stack", "Desenvolvedor Web Back-end"],
    other: {
-      keywords: "Vitor Pestana, Full Stack Web Developer, Back-end Web Developer, Site, Vitor Pestana, Vitor Luiz Pestana Pereira",
+      keywords: "Vitor Pestana, Full Stack Web Developer, Back-end Web Developer, Site, Vitor Pestana, Vitor Luiz Pestana Pereira Desenvolvedor Web Full Stack Desenvolvedor Web Back-end",
    },
 };
 

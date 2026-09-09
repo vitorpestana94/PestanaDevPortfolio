@@ -4,7 +4,7 @@ import DownloadCurriculum from "../hyperLinks/DownloadCurriculum"
 
 export default function HeroLinks(){
     return (
-        <span className="flex gap-x-4">
+        <span className="flex items-center gap-x-5">
             <CheckMyProject />
             <DownloadCurriculum />        
         </span>

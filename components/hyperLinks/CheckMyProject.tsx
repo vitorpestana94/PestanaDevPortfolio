@@ -15,7 +15,8 @@ export default function CheckMyProject(){
          whileHover={scale}
          transition={transition}
          >
-            <Link href={"#meuTrabalho"} className="rounded-full bg-linear-to-br from-blue-600 to-[#38b6ff] p-5 pointer-events-auto text-white font-medium font-serif">
+            <Link href={"#meuTrabalho"} className="rounded-full bgLinear p-4 text-xs md:text-[1rem] md:p-5 
+            pointer-events-auto text-white font-medium font-serif">
                 {t("checkOut")}
             </Link>
         </motion.button>

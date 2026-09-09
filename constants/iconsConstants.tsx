@@ -39,6 +39,10 @@ import Bootstrap from "@public/icons/bootstrap.svg";
 import Claude from "@public/icons/claude.svg";
 import Search from "@public/icons/search.svg";
 import Download from "@public/icons/download.svg";
+import Frontend from "@public/icons/frontend.svg";
+import Backend from "@public/icons/backend.svg";
+import DataBase from "@public/icons/database.svg";
+import Tool from "@public/icons/tool.svg";
 
 export const icons = {
    vP: <VP />,
@@ -81,5 +85,9 @@ export const icons = {
    bootstrap: <Bootstrap />,
    claude: <Claude />,
    search: <Search />,
-   download: <Download />
+   download: <Download />,
+   database: <DataBase />,
+   frontend: <Frontend />,
+   backend: <Backend />,
+   tool: <Tool />
 } as const;
