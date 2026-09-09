@@ -28,7 +28,9 @@
          }
       },
       "quartaSessao": {
-         "titulo": "My skills"
+         "titulo": "My skills",
+         "tools": "Tools",
+         "database": "Database"
       },
       "ultimaSessao": {
          "copyright": "All rights reserverd",

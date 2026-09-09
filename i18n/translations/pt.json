@@ -28,7 +28,9 @@
          }
       },
       "quartaSessao": {
-         "titulo": "Minhas habilidades"
+         "titulo": "Minhas habilidades",
+         "tools": "Ferramentas",
+         "database": "Banco de Dados"
       },
       "ultimaSessao": {
          "copyright": "Todos os direitos reservados",
