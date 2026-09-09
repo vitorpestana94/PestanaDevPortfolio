@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 import Icon, { IconName } from "@/components/icons/Icons";
-import { backendSkills, frontendSkills, toolsSkills, databaseSkills, skillPerLabel, skills } from "@/constants/skillsConstants";
+import { backendSkills, frontendSkills, toolsSkills, databaseSkills, skillPerLabel } from "@/constants/skillsConstants";
 
-function Skill({ skillName, percentage} : { skillName:string, percentage:number}){
+function Skill({ skillName, percentage} : { skillName: string, percentage: number}){
     return (
         <span className="flex flex-col gap-y-2.5 text-white text-xs">
             <span className="flex w-full justify-between items-center">
@@ -12,7 +12,7 @@ function Skill({ skillName, percentage} : { skillName:string, percentage:number}
                         className="size-2 sm:size-3 lg:size-4 2xl:size-5" />
                     <p className="capitalize">{skillPerLabel[skillName] ?? skillName}</p>
                 </span>
-                <p>{`${percentage}%`}</p>
+                <p className="text-xs text-[#f5f5f5]">{`${percentage}%`}</p>
             </span>
             <span className="w-full bg-[#898989]/25 h-2 rounded-full">
                 <span className="block bgLinear rounded-full h-2"
@@ -27,7 +27,7 @@ function SkillContent({ mainSkill, skills } : { mainSkill : { name: string, icon
     <div className="flex flex-col gap-y-8 p-4 w-full">
         <span className="flex items-center gap-x-5">
             <Icon iconName={mainSkill.iconName} className={mainSkill.iconClassName ?? "aspect-square w-6 strokeAzulPestana"} />
-            <p className="text-white">{mainSkill.name}</p>
+            <p className="text-white font-abril font-medium">{mainSkill.name}</p>
         </span>
         <span className="flex flex-col gap-y-6">
            {Object.entries(skills).map(([skill, percentage], index) => (

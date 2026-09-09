@@ -33,27 +33,27 @@ export const skills: IconName[][] = [
 ];
 
 export const databaseSkills = {
-   [skills[1][0]]: 90,
-   [skills[1][1]]: 88,
-   [skills[1][2]]: 85,
+   [skills[1][0]]: 95,
+   [skills[1][1]]: 93,
+   [skills[1][2]]: 88,
 }
 
 export const backendSkills = {
-   [skills[0][0]]: 90,
-   [skills[0][1]]: 88,
-   [skills[0][2]]: 85,
+   [skills[0][0]]: 95,
+   [skills[0][1]]: 95,
+   [skills[0][2]]: 71,
 };
 
 export const frontendSkills = {
    [skills[2][0]]: 95,
-   [skills[2][1]]: 88,
-   [skills[2][2]]: 93,
-   [skills[2][3]]: 95,
-   [skills[2][4]]: 92,
-   [skills[2][7]]: 82,
+   [skills[2][2]]: 92,
+   [skills[2][1]]: 90,
+   [skills[2][3]]: 90,
+   [skills[2][4]]: 90,
+   [skills[2][7]]: 72,
 };
 
 export const toolsSkills = {
-   [skills[3][0]]: 92,
-   [skills[3][1]]: 85,
+   [skills[3][0]]: 95,
+   [skills[3][1]]: 90,
 };
