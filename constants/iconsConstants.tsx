@@ -43,6 +43,15 @@ import Frontend from "@public/icons/frontend.svg";
 import Backend from "@public/icons/backend.svg";
 import DataBase from "@public/icons/database.svg";
 import Tool from "@public/icons/tool.svg";
+import AspNet from "@public/icons/aspnet.svg";
+import Node from "@public/icons/node.svg";
+import Dapper from "@public/icons/dapper.svg";
+import Entity from "@public/icons/entity.svg";
+import MySQL from "@public/icons/mysql.svg";
+import PostgreSQL from "@public/icons/postgresql.svg"
+import VsCode from "@public/icons/vscode.svg";
+import VisualStudio from "@public/icons/visualstudio.svg";
+import BitBucket from "@public/icons/bitbucket.svg";
 
 export const icons = {
    vP: <VP />,
@@ -89,5 +98,14 @@ export const icons = {
    database: <DataBase />,
    frontend: <Frontend />,
    backend: <Backend />,
-   tool: <Tool />
+   tool: <Tool />,
+   aspnet: <AspNet />,
+   node: <Node />,
+   dapper: <Dapper />,
+   entity: <Entity />,
+   mysql: <MySQL />,
+   postgresql: <PostgreSQL />,
+   vscode: <VsCode />,
+   visualstudio: <VisualStudio />,
+   bitbucket: <BitBucket />
 } as const;

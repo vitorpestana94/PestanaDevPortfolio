@@ -4,7 +4,7 @@ import Wrapper from "@/components/wrappers/home/HomeWrapper";
 
 export default function HomeThirdSection() {
    return (
-      <section id="minhasHabilidades" className="homeSectionMargin">
+      <section id="minhasHabilidades" className="homeSectionMargin diferentSection">
          <Wrapper className="conteudoWrapper homeMobileDirection">
             <MySkills />
          </Wrapper>

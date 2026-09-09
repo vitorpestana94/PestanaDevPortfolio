@@ -112,6 +112,10 @@
       @apply flex border w-full text-[0.5rem] sm:text-[0.625rem] xxs:py-0.5 xs:py-1.5 xl:py-2 3xl:py-2.5 lg:text-[1rem] rounded-3xl border-[#808080] text-white px-4;
    }
 
+   .diferentSection {
+      @apply bg-[#070a10] py-30;
+   }
+
    .hoverPestana {
       @apply hover:text-[#38b6ff];
    }

@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Icon, { IconName } from "@/components/icons/Icons";
 import { backendSkills, frontendSkills, toolsSkills, databaseSkills, skillPerLabel } from "@/constants/skillsConstants";
+import capitalizeWord from "@/utils/strings/capitalizeWord";
 
 function Skill({ skillName, percentage} : { skillName: string, percentage: number}){
     return (
@@ -10,7 +11,7 @@ function Skill({ skillName, percentage} : { skillName: string, percentage: numbe
                     <Icon
                         iconName={skillName as IconName}
                         className="size-2 sm:size-3 lg:size-4 2xl:size-5" />
-                    <p className="capitalize">{skillPerLabel[skillName] ?? skillName}</p>
+                    <p>{skillPerLabel[skillName] ?? capitalizeWord(skillName)}</p>
                 </span>
                 <p className="text-xs text-[#f5f5f5]">{`${percentage}%`}</p>
             </span>
