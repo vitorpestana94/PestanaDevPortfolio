@@ -160,6 +160,10 @@
       @apply bg-white/5 backdrop-blur-xs rounded-full;
    }
 
+   .framePadding {
+      @apply p-5 sm:p-7 xl:p-8 4xl:p-10
+   }
+
    .homeParagraph {
       @apply text-[#F5F5F5] text-[0.625rem] sm:text-xs xl:text-[0.875rem] 3xl:text-[1rem] text-justify tracking-wide whitespace-pre-line;
    }

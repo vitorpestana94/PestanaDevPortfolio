@@ -1,11 +1,14 @@
 import Sobre from "@/components/paragraphs/PhotoParagraph";
-import SeuZeLeiteiro from "./HomePhotoDiv";
+import Foto from "./HomePhotoDiv";
+import FotoDoSeuZe from "./HomePicture";
 
 export default function HomeTextAndPicture() {
    return (
-      <div className="flex flex-col gap-y-10 3xl:gap-y-16 4xl:gap-y-20 justify-between sm:w-[60%] relative ">
+      <div className="flex relative">
+         <Foto className="w-1/2">
+            <FotoDoSeuZe />
+         </Foto>
          <Sobre />
-         <SeuZeLeiteiro />
       </div>
    );
 }
