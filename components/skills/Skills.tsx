@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import SkillDiv from "../divs/skillDiv/SkillDiv";
+import Skill from "../divs/skillDiv/SkillDiv";
 import useEffetInView from "@/hooks/useEffetInView";
 
 export default function Skills() {
@@ -15,10 +15,10 @@ export default function Skills() {
          transition={{ duration: 0.9, delay: 1.5 }}
          className="grid gap-6 mt-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4  
          mx-10 md:mx-15 lg:mx-20 xl:mx-25">
-            <SkillDiv skill="backend"/>
-            <SkillDiv skill="database"/>
-            <SkillDiv skill="frontend"/>
-            <SkillDiv skill="tool"/>
+            <Skill skill="backend"/>
+            <Skill skill="database"/>
+            <Skill skill="frontend"/>
+            <Skill skill="tool"/>
       </motion.div>
    );
 }

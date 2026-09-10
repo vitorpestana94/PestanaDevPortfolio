@@ -5,7 +5,7 @@ export default function FullStackWebDeveloperParagraph() {
 
    return (
       <h1
-         className="text-[#898989] text-nowrap font-medium text-[0.5rem] lg:text-[1rem] font-abril"
+         className="text-gray-400 text-nowrap font-medium text-[0.5rem] lg:text-[1rem]"
       >
          {t("about")}
       </h1>

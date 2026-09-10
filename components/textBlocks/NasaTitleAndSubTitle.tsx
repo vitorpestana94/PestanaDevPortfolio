@@ -10,7 +10,7 @@ export default function NasaTitleAndSubTitle({ title, subTitle, titleStyle, subT
             <h2 className={`azulPestana nasaTitle tracking-wider leading-tight font-abril font-bold ${titleStyle}`}>
                 {title}
             </h2>
-            <motion.p className={`nasaParagrah mx-auto md:mx-0 whitespace-pre-line text-center md:text-left ${subTitleStyle}`}
+            <motion.p className={`subTitleParagraph mx-auto md:mx-0 whitespace-pre-line text-center md:text-left ${subTitleStyle}`}
                 ref={ref}
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}

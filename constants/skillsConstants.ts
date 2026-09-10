@@ -9,7 +9,7 @@ export const skillPerLabel: { [key: string]: string } = {
    dotnet: ".NET",
    csharp: "C#",
    sql: "SQL",
-   sqlServer: "Microsoft\nSQL Server",
+   sqlServer: "SQL Server",
    mariadb: "Maria DB",
    next: "Next.js",
    tailwind: "Tailwind CSS",
@@ -31,6 +31,8 @@ export const skillPerLabel: { [key: string]: string } = {
 };
 
 export const skills: IconName[] = [...database, ...frontend, ...backend, ...tools];
+
+export const coreTechStack = [backend[1], backend[0], frontend[0], frontend[3], frontend[4], database[1]];
 
 export const databaseSkills = {
    [database[0]]: 95, // sql
