@@ -9,12 +9,12 @@ export default function CoreTechStackSpan(){
     return (
         <div className="self-start space-y-5">
             <p className="homeParagraph font-bold">{t("stack")}</p>
-            <span className="flex gap-x-10">
+            <span className="grid grid-cols-4 gap-5 md:flex md:gap-x-10">
                 {
                     coreTechStack.map((tech, index) => (
                         <div className="flex flex-col items-center gap-y-3" key={index}>
                             <Icon iconName={tech} className="aspect-square w-8" />
-                            <p className="subTitleParagraph">{skillPerLabel[tech] ?? capitalizeWord(tech)}</p>
+                            <p className="subTitleParagraph text-nowrap">{skillPerLabel[tech] ?? capitalizeWord(tech)}</p>
                         </div>
                     ))
                 }

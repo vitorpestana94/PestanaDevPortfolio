@@ -32,7 +32,7 @@ export const skillPerLabel: { [key: string]: string } = {
 
 export const skills: IconName[] = [...database, ...frontend, ...backend, ...tools];
 
-export const coreTechStack = [backend[1], backend[0], frontend[0], frontend[3], frontend[4], database[1]];
+export const coreTechStack = [backend[1], backend[0], backend[3], database[1], frontend[0], frontend[3], frontend[4]];
 
 export const databaseSkills = {
    [database[0]]: 95, // sql

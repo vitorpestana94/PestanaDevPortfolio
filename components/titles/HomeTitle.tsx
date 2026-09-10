@@ -8,7 +8,7 @@ export default function HomeTitle({ children, className }: { children: React.Rea
 
    return (
       <motion.div
-         className={`flex flex-col gap-y-3 ${className}`}
+         className={`flex flex-col gap-y-5 items-center sm:items-stretch ${className}`}
          ref={ref}
          initial={{ opacity: 0, x: -20 }}
          animate={isInView ? { opacity: 1, x: 0 } : {}}
