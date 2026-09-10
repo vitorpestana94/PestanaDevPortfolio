@@ -52,6 +52,7 @@ import PostgreSQL from "@public/icons/postgresql.svg"
 import VsCode from "@public/icons/vscode.svg";
 import VisualStudio from "@public/icons/visualstudio.svg";
 import BitBucket from "@public/icons/bitbucket.svg";
+import Resume from "@public/icons/resume.svg";
 
 export const icons = {
    vP: <VP />,
@@ -107,5 +108,6 @@ export const icons = {
    postgresql: <PostgreSQL />,
    vscode: <VsCode />,
    visualstudio: <VisualStudio />,
-   bitbucket: <BitBucket />
+   bitbucket: <BitBucket />,
+   resume: <Resume />
 } as const;

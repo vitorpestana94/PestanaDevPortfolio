@@ -11,7 +11,7 @@ export default function ProfilePictureDivMobile(){
     <>
         {
             isMobile && 
-            <Photo className="w-[30%] sm:w-[25%] self-center mx-auto mt-5">
+            <Photo className="w-[30%] sm:w-[25%] self-center mx-auto mt-5" delay={1.5}>
                 <ProfilePicture />
             </Photo>
         }

@@ -120,7 +120,9 @@
       @apply bg-[linear-gradient(160deg,#090909_0%,#131313_50%,#1f1f1f_100%)];
    }
 
-  .homeBg { @apply bg-[linear-gradient(160deg,#020202_0%,#020304_7%,#030507_14%,#040609_21%,#05080b_28%,#060a0e_35%,#070b10_42%,#080c11_49%,#090e13_56%,#0a1014_63%,#0b1116_70%,#0c1217_77%,#0d1319_84%,#0f151b_92%,#11161c_100%)]; }
+   .homeBg { 
+      @apply bg-[linear-gradient(160deg,#020202_0%,#020304_7%,#030507_14%,#040609_21%,#05080b_28%,#060a0e_35%,#070b10_42%,#080c11_49%,#090e13_56%,#0a1014_63%,#0b1116_70%,#0c1217_77%,#0d1319_84%,#0f151b_92%,#11161c_100%)]; 
+   }
 
    .heroMarginTop {
       @apply mt-5 sm:mt-16;
@@ -159,7 +161,7 @@
    }
 
    .homeParagraph {
-      @apply text-[#F5F5F5] text-[0.625rem] sm:text-xs xl:text-[0.875rem] 3xl:text-[1rem] text-justify tracking-wide whitespace-pre-line;
+      @apply text-[#F5F5F5] text-[0.625rem] xl:text-[0.875rem] 3xl:text-[1rem] text-justify tracking-wide whitespace-pre-line;
    }
 
    .homeSubTitle {

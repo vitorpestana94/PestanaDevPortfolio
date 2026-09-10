@@ -1,5 +1,5 @@
 import SocialMediaIcon from "../icons/specificIcons/socialMediaIcon/SocialMediaIcon";
-import Email from "../icons/Icons";
+import Icon from "../icons/Icons";
 import Link from "next/link";
 import options from "@/data/options.json";
 
@@ -27,8 +27,14 @@ export default function SocialMediaSpan() {
                linkToSocialMedia: options.socialMedias.whatsapp,
             }}
          />
+         <Link href="/pestanadevCV.pdf" download>
+             <Icon
+               iconName="resume"
+               className="homeSocialMediaIcons"
+            />
+         </Link>
          <Link href={"#email"} className="flex justify-center items-center">
-            <Email
+            <Icon
                iconName="email"
                className="homeSocialMediaIcons fill-none hover:fill-none stroke-[#bfbfbf]! hover:stroke-[#38b6ff]!"
             />

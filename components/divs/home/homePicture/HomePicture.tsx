@@ -2,14 +2,17 @@
 
 import SeuZeLeiteiroFoto from "@/components/images/SeuZeLeiteiro";
 import { motion } from "motion/react";
+import useHomePicture from "./useHomePicture";
 
 export default function HomePicture() {
-  const effect = { scale: 1.15 };
+  const { ref, isTapped, handleTap } = useHomePicture();
 
   return (
     <motion.div
-      whileHover={effect}
-      whileTap={effect}
+      ref={ref}
+      animate={{ scale: isTapped ? 1.15 : 1 }}
+      whileHover={{ scale: 1.15 }}
+      onTap={handleTap}
       transition={{ type: "spring", stiffness: 200, damping: 12 }}
     >
       <SeuZeLeiteiroFoto />
