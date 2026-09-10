@@ -9,6 +9,9 @@ export function DefaultHeaderLinks(){
             <Link className="hoverPestana" href={"#sobre"}>
                 {t("home.sobre")}
             </Link>
+            <Link className="hoverPestana" href={"#meusValores"}>
+                {t("home.valores")}
+            </Link>
             <Link className="hoverPestana" href={"#minhasHabilidades"}>
                 {t("home.mySkills")}
             </Link>
