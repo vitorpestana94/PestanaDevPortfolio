@@ -116,12 +116,16 @@
       @apply hover:text-[#38b6ff];
    }
 
+   .diferentSection {
+      @apply bg-[#070a10] py-10 xl:py-20;
+   }
+
    .homeGrayBg {
       @apply bg-[linear-gradient(160deg,#090909_0%,#131313_50%,#1f1f1f_100%)];
    }
 
    .homeBg { 
-      @apply bg-[linear-gradient(160deg,#020202_0%,#020304_7%,#030507_14%,#040609_21%,#05080b_28%,#060a0e_35%,#070b10_42%,#080c11_49%,#090e13_56%,#0a1014_63%,#0b1116_70%,#0c1217_77%,#0d1319_84%,#0f151b_92%,#11161c_100%)]; 
+      @apply bg-[#0A0A0A];
    }
 
    .heroMarginTop {
