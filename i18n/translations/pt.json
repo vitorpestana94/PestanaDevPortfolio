@@ -9,6 +9,11 @@
       },
       "segundaSessao": {
          "titulo": "Sobre mim",
+         "experience":{
+            "years" : "anos de experiência",
+            "projects": "projetos em produção",
+            "academic": "formações acadêmicas"
+         },
          "tituloValores": {
             "titulo": "Meu valores",
             "subTitulo": "Algumas perspectivas sobre o que acredito, o que valorizo ​​e o que me guia"

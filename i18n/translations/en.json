@@ -9,6 +9,11 @@
       },
       "segundaSessao": {
          "titulo": "About me",
+         "experience":{
+            "years" : "years of experience",
+            "projects": "live projects",
+            "academic": "bachelor's degree"
+         },
          "tituloValores": {
             "titulo": "My values",
             "subTitulo": "A few perspectives on what I believe in, what I value, and what guides me"
