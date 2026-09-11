@@ -165,7 +165,7 @@
    }
 
    .homeParagraph {
-      @apply text-[#F5F5F5] text-[0.625rem] xl:text-[0.875rem] 3xl:text-[1rem] text-justify tracking-wide whitespace-pre-line;
+      @apply text-[#F5F5F5] text-[0.625rem] xl:text-xs 3xl:text-[1rem] text-justify tracking-wide whitespace-pre-line;
    }
 
    .homeSubTitle {

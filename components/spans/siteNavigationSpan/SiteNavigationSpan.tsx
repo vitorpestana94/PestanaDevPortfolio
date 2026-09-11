@@ -24,7 +24,7 @@ export default function SiteNavigationSpan() {
         sm:gap-x-4.5
         md:gap-x-5
         lg:gap-x-6
-        xl:gap-x-8 xl:flex-row xl:gap-y-0
+        xl:gap-x-8 xl:flex-row xl:gap-y-0 xl:text-[0.875rem]
         4xl:text-[1.125rem] 4xl:gap-x-10"
       >
          {

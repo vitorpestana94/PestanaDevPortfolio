@@ -8,7 +8,7 @@ export default function CoreTechStackSpan(){
 
     return (
         <div className="self-start space-y-5">
-            <p className="homeParagraph font-bold">{t("stack")}</p>
+            <p className="homeParagraph font-bold text-[#38b6ff]!">{t("stack")}</p>
             <span className="grid grid-cols-4 gap-5 md:flex md:gap-x-10">
                 {
                     coreTechStack.map((tech, index) => (

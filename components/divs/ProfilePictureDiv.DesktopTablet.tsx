@@ -12,7 +12,7 @@ export default function ProfilePictureDivDesktopTablet(){
     <>
         {
             !isMobile && 
-            <Photo className="w-full my-auto mx-auto flex flex-col justify-center items-center">
+            <Photo className="w-full my-auto mx-auto flex flex-col justify-center items-center ">
                 <ProfilePicture />
                 <Experience />
             </Photo>
