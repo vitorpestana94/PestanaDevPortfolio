@@ -6,8 +6,8 @@ import options from "@/data/options.json";
 export default function SocialMediaSpan() {
    return (
       <span
-         className="grid grid-rows-2 grid-cols-2 gap-x-4 self-center gap-y-6 relative z-50
-         sm:w-auto sm:grid-rows-0 sm:grid-cols-0 sm:flex sm:flex-row sm:gap-x-3"
+         className="grid grid-rows-2 grid-cols-2 sm:grid-cols-3 gap-x-4 self-center gap-y-6 relative z-50
+         xl:w-auto xl:grid-rows-0 xl:grid-cols-0 xl:flex xl:flex-row xl:gap-x-3"
       >
          <SocialMediaIcon
             props={{
