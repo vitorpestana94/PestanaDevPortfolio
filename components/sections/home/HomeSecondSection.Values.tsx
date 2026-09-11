@@ -5,9 +5,11 @@ import MyValues from "@/components/titles/MyValuesTitle";
 export default function HomeSecondSectionValues() {
    return (
     <section id="meusValores" className="homeSectionMargin relative">
-        <Wrapper className="conteudoWrapper space-y-15 sm:space-y-20 xl:space-y-25">
-            <MyValues />
-            <SobreSeuZeLeiteiro />
+        <Wrapper className="conteudoWrapper">
+            <div className="w-full flex flex-col gap-y-15 sm:gap-y-20 xl:gap-y-25">
+                <MyValues />
+                <SobreSeuZeLeiteiro />
+            </div>
         </Wrapper>
     </section>
    );

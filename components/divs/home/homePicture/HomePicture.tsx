@@ -11,6 +11,7 @@ export default function HomePicture() {
     <motion.div
       ref={ref}
       animate={{ scale: isTapped ? 1.15 : 1 }}
+      className="w-full"
       whileHover={{ scale: 1.15 }}
       onTap={handleTap}
       transition={{ type: "spring", stiffness: 200, damping: 12 }}

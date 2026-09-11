@@ -12,7 +12,7 @@ export default function PhotoParagraph() {
    return (
       <Frame
          props={{
-         className:"w-[75%] sm:w-[85%] xl:1/2 framePadding order-1 xl:order-2",
+         className:"w-[75%] sm:w-[85%] xl:w-[50%] framePadding order-1 xl:order-2",
          waitIsInView: true,
       }}>
          <motion.p
