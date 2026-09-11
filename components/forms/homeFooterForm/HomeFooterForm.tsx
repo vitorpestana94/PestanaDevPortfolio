@@ -30,19 +30,19 @@ export default function HomeFooterForm() {
       <Form
          onSubmit={submit}
          handleSubmit={handleSubmit}
-         className="relative w-[40%] sm:w-[35%] flex flex-col items-center sm:items-end gap-y-3"
+         className="relative w-[40%] xl:w-[35%] flex flex-col items-center xl:items-end gap-y-3"
       >
          {isSuccess && <EmailSended />}
          <Contato title={t("ultimaSessao.form.titulo")} />
-         <div className="flex flex-col gap-y-4 items-center sm:items-end w-full">
-            <span className="flex flex-col gap-y-0.5 items-center sm:items-end w-full">
+         <div className="flex flex-col gap-y-4 items-center xl:items-end w-full">
+            <span className="flex flex-col gap-y-0.5 items-center xl:items-end w-full">
                <Input
                   type="clientName"
                   errors={errors}
                   register={register}
                   props={{
                      type: "text",
-                     styles: "w-[90%] sm:w-[15%]",
+                     styles: "w-[90%] xl:w-[15%]",
                      placeHolder: t("ultimaSessao.form.nome"),
                   }}
                />
@@ -53,11 +53,11 @@ export default function HomeFooterForm() {
                   props={{
                      type: "text",
                      placeHolder: t("ultimaSessao.form.email"),
-                     styles: "w-[90%] sm:w-[25%]",
+                     styles: "w-[90%] xl:w-[25%]",
                   }}
                />
             </span>
-            <div className="flex flex-col gap-y-4 w-full items-center sm:items-end">
+            <div className="flex flex-col gap-y-4 w-full items-center xl:items-end">
                <EmailText
                   errors={errors}
                   register={register}
@@ -67,10 +67,10 @@ export default function HomeFooterForm() {
                <ReCaptcha
                   styles={{
                      mainDiv: {
-                        className: "items-center sm:items-end w-full",
+                        className: "items-center xl:items-end w-full",
                      },
                      captcha: {
-                        className: "sm:text-end px-0!",
+                        className: "xl:text-end px-0!",
                      },
                   }}
                >

@@ -12,13 +12,13 @@ export default function HomeLastSection() {
    return (
       <section
          id="meuTrabalho"
-         className="homeGrayBg py-5 sm:py-10 md:py-16 xl:py-20"
+         className="homeGrayBg py-5 md:py-16 xl:py-20"
       >
-         <Wrapper className="conteudoWrapper flex flex-col items-center sm:items-stretch h-full sm:flex-row pr-6 sm:pr-0 justify-between">
+         <Wrapper className="conteudoWrapper flex flex-col items-center xl:items-stretch h-full xl:flex-row pr-6 xl:pr-0 justify-between">
             <div className="flex flex-col flex-1 justify-between">
                <VP
                   iconName="vP"
-                  className="homeVp mx-auto mb-2 sm:mb-0 sm:mx-0 sm:w-16! lg:w-20! 4xl:w-22!"
+                  className="homeVp mx-auto mb-2 xl:mb-0 xl:mx-0 md:w-16! 4xl:w-22!"
                />
                {!isMobile && <CopyRightTermsAndPrivacyPolicy />}
             </div>

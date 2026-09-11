@@ -7,7 +7,7 @@ export default function HomeFirstSection() {
    return (
       <BackGround>
          <Header />
-         <Wrapper className="heroMarginTop ">
+         <Wrapper className="heroMarginTop">
             <VitorPestanaFullStackWebDeveloper />
          </Wrapper>
       </BackGround>

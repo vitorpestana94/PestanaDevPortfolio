@@ -5,7 +5,7 @@ import ProfilePictureDesktop from "@components/divs/ProfilePictureDiv.DesktopTab
 export default function HomeSecondSection() {
    return (
       <section id="sobre" className="relative diferentSection">
-         <Wrapper className="conteudoWrapper homeMobileDirection sm:flex-row">
+         <Wrapper className="conteudoWrapper homeMobileDirection xl:flex-row">
             <SobreMim />
             <ProfilePictureDesktop />
          </Wrapper>

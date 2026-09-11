@@ -7,9 +7,7 @@ export default function HomeSecondSectionValues() {
     <section id="meusValores" className="homeSectionMargin relative">
         <Wrapper className="conteudoWrapper space-y-15 sm:space-y-20 xl:space-y-25">
             <MyValues />
-            <div className="homeMobileDirection xl:flex-row">
-                <SobreSeuZeLeiteiro />
-            </div>
+            <SobreSeuZeLeiteiro />
         </Wrapper>
     </section>
    );

@@ -6,7 +6,7 @@ export default function useIsMobile() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   function checkIfIsMobile() {
-    setIsMobile(window.innerWidth <= 639);
+    setIsMobile(window.innerWidth <= 1279);
   }
 
   useEffect(() => {

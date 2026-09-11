@@ -3,6 +3,7 @@
 import ProfilePicture from "@/components/images/ProfilePicture";
 import Photo from "@/components/divs/home/SecondSession/HomePhotoDiv";
 import useIsMobile from "@/hooks/useIsMobile";
+import Experience from "@/components/spans/experienceSpan/ExperienceSpan";
 
 export default function ProfilePictureDivMobile(){
     const { isMobile } = useIsMobile();
@@ -11,8 +12,9 @@ export default function ProfilePictureDivMobile(){
     <>
         {
             isMobile && 
-            <Photo className="w-[30%] sm:w-[25%] self-center mx-auto mt-5" delay={1.5}>
+            <Photo className="w-full my-auto mx-auto flex flex-col justify-center items-center" delay={1.5}>
                 <ProfilePicture />
+                <Experience />
             </Photo>
         }
     </>
