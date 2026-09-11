@@ -14,6 +14,10 @@
             "projects": "live projects",
             "academic": "bachelor's degree"
          },
+         "quote": {
+            "phrase": "The only way of knowing a person is to love them without hope.",
+            "reference": "— Walter Benjamin, Einbahnstraße (1928)"
+         },
          "tituloValores": {
             "titulo": "My values",
             "subTitulo": "A few perspectives on what I believe in, what I value, and what guides me"
