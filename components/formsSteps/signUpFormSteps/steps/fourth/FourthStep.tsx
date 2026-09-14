@@ -1,7 +1,7 @@
 import useFourthStep from "./useFourthStep";
 import Check from "@/components/icons/Icons";
 import Success from "@/components/paragraphs/FormParagraph";
-import Home from "@/components/buttons/formButton/FormButton";
+import Home from "@/components/buttons/animatedButton/AnimatedButton";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function FourthStep({

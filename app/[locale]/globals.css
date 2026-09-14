@@ -164,6 +164,14 @@
       @apply p-5 sm:p-7 xl:p-8 4xl:p-10
    }
 
+   .smallCallToAction {
+      @apply rounded-full bg-black px-4 py-2.5 text-xs md:text-[1rem] md:px-8 md:py-3.5 pointer-events-auto text-white font-medium font-serif flex justify-center items-center gap-x-3 border border-[#38b6ff]/30 hover:border-[#38b6ff]
+   }
+
+   .bigCallToAction {
+      @apply rounded-full p-4 text-xs md:text-[1rem] md:p-5 pointer-events-auto text-white font-medium font-serif;
+   }
+
    .homeParagraph {
       @apply text-[#F5F5F5] text-[0.625rem] xl:text-xs 3xl:text-[1rem] text-justify tracking-wide whitespace-pre-line;
    }
@@ -201,7 +209,7 @@
    }
 
    .homeMobileDirection {
-      @apply flex flex-col justify-between items-center gap-y-16 xl:items-start xl:gap-y-0;
+      @apply flex flex-col justify-between items-center gap-y-16 xl:items-stretch xl:gap-y-0;
    }
 
    .strokeAzulPestana {

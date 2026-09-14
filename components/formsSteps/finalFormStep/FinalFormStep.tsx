@@ -1,5 +1,5 @@
 import Success from "@/components/paragraphs/FormParagraph";
-import Home from "@/components/buttons/formButton/FormButton";
+import Home from "@/components/buttons/animatedButton/AnimatedButton";
 import useFinalFormStep from "./useFinalFormStep";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 

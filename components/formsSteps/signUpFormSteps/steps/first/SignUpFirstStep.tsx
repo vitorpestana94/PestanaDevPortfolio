@@ -4,7 +4,7 @@ import Or from "@/components/hrs/OrHr";
 import Wrapper from "@/components/wrappers/FormWrapper";
 import Email from "@/components/inputs/SignUpEmailFormInput/SignUpEmailFormInput";
 import useSignUpFirstStep from "./useSignUpFirstStep";
-import StartSignUpButton from "@/components/buttons/formButton/FormButton";
+import StartSignUpButton from "@/components/buttons/animatedButton/AnimatedButton";
 import Error from "@/components/errors/error/Error";
 import SignUpTitle from "@/components/titles/SignUpTitle";
 import ReCaptcha from "@/components/divs/ReCaptchaDiv";

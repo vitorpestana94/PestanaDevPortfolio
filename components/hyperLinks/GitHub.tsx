@@ -3,11 +3,11 @@
 import { Link } from "@/i18n/routing";
 import useFormButton from "@/components/buttons/animatedButton/useAnimatedButton";
 import { motion } from "motion/react";
-import { useTranslations } from "next-intl";
+import options from "@/data/options.json";
+import Icon from "../icons/Icons";
 
-export default function CheckMyProject(){
+export default function GitHub(){
     const { scale, transition } = useFormButton();
-    const t = useTranslations("home.primeiraSessao");
     
     return (
         <motion.button
@@ -15,8 +15,12 @@ export default function CheckMyProject(){
          whileHover={scale}
          transition={transition}
          >
-            <Link href={"#meuTrabalho"} className="bigCallToAction bgLinear">
-                {t("checkOut")}
+            <Link href={options.socialMedias.github} 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="smallCallToAction bg-[#24292E]! border-none!">
+                <Icon iconName="gitHub" className="aspect-square w-6"/>
+                <p>GitHub</p>
             </Link>
         </motion.button>
     )

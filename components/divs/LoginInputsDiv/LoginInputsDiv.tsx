@@ -1,5 +1,5 @@
 import Password from "../../inputs/LoginPasswordFormInput/LoginPasswordFormInput";
-import LoginButton from "../../buttons/formButton/FormButton";
+import LoginButton from "../../buttons/animatedButton/AnimatedButton";
 import useLoginInputsDiv from "./useLoginInputsDiv";
 import ForgotPassword from "@/components/paragraphs/forgotPassword/ForgotPasswordParagraph";
 import ReCaptcha from "@/components/divs/ReCaptchaDiv";

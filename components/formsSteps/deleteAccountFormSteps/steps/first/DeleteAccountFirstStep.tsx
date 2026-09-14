@@ -1,6 +1,6 @@
 import DeleteAccount from "@/components/paragraphs/FormParagraph";
 import Wrapper from "@/components/wrappers/FormWrapper";
-import Delete from "@/components/buttons/formButton/FormButton";
+import Delete from "@/components/buttons/animatedButton/AnimatedButton";
 import useDeleteAccountFirstStep from "./useDeleteAccountFirstStep";
 import useStepInterface from "@/models/interfaces/UI/useStepInterface";
 import YouReallyWannaDeleteYourAccount from "@/components/divs/deleteAccountDiv/DeleteAccountDiv";
