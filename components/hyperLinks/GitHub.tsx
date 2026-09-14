@@ -19,7 +19,7 @@ export default function GitHub(){
             target="_blank"
             rel="noopener noreferrer"
             className="smallCallToAction bg-[#24292E]! border-none!">
-                <Icon iconName="gitHub" className="aspect-square w-6"/>
+                <Icon iconName="gitHub" className="aspect-square w-6 fill-white"/>
                 <p>GitHub</p>
             </Link>
         </motion.button>

@@ -2,6 +2,7 @@ import SocialMediaIcon from "../icons/specificIcons/socialMediaIcon/SocialMediaI
 import Icon from "../icons/Icons";
 import Link from "next/link";
 import options from "@/data/options.json";
+import CurricullumIcon from "../hyperLinks/CurricullumIcon";
 
 export default function SocialMediaSpan() {
    return (
@@ -11,14 +12,20 @@ export default function SocialMediaSpan() {
       >
          <SocialMediaIcon
             props={{
-               iconName: "instagram",
-               linkToSocialMedia: options.socialMedias.instagram,
+               iconName: "linkedin",
+               linkToSocialMedia: options.socialMedias.linkedin,
             }}
          />
          <SocialMediaIcon
             props={{
-               iconName: "linkedin",
-               linkToSocialMedia: options.socialMedias.linkedin,
+               iconName: "gitHub",
+               linkToSocialMedia: options.socialMedias.github,
+            }}
+         />
+         <SocialMediaIcon
+            props={{
+               iconName: "instagram",
+               linkToSocialMedia: options.socialMedias.instagram,
             }}
          />
          <SocialMediaIcon
@@ -27,12 +34,7 @@ export default function SocialMediaSpan() {
                linkToSocialMedia: options.socialMedias.whatsapp,
             }}
          />
-         <Link href="/pestanadevCV.pdf" download>
-             <Icon
-               iconName="resume"
-               className="homeSocialMediaIcons"
-            />
-         </Link>
+         <CurricullumIcon />
          <Link href={"#email"} className="flex justify-center items-center">
             <Icon
                iconName="email"
