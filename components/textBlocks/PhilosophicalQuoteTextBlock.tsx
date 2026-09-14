@@ -13,7 +13,7 @@ export default function PhilosophicalQuoteTextBlock({ quote, reference } : { quo
             <p className="homeParagraph">
                 {`"${quote}"`}
             </p>
-            <p  className="homeParagraph self-end">
+            <p  className="text-[#F5F5F5] text-[0.5rem] xl:text-[0.625rem] 3xl:text-xs self-end">
                 {`— ${reference}`}
             </p>
         </motion.blockquote>
