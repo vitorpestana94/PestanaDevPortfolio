@@ -26,7 +26,7 @@ export default function HomePortfolioLink({
             target="_blank"
             rel="noopener noreferrer"
             href={props.picture?.routeOrSiteUrl ?? ""}
-            className="pointer-events-none"
+            className="pointer-events-none relative block h-full w-full"
          >
             <Image
                src={`/png/${props.picture?.pictureUrl}.png`}
