@@ -16,7 +16,7 @@ export const portfolioEsquerda = {
       picture: {
          pictureUrl: "magipass",
          routeOrSiteUrl: "https://www.magipass.com/en",
-         style: " bottom-full rounded-t-2xl -mb-[1px]",
+         style: " top-full rounded-b-2xl -mt-[1px] xl:bottom-full xl:rounded-t-2xl xl:-mb-[1px]",
       },
       size: {
          widthAndHeight:
@@ -64,7 +64,7 @@ export const portfolioMeio = {
       picture: {
          pictureUrl: "nasa",
          routeOrSiteUrl: "",
-         style: " bottom-full rounded-t-2xl -mb-[1px]",
+         style: " top-full rounded-b-2xl -mt-[1px] xl:bottom-full xl:rounded-t-2xl xl:-mb-[1px]",
       },
       size: {
          widthAndHeight:
