@@ -13,7 +13,7 @@ export default function ProfilePictureDivDesktopTablet(){
     <>
         {
             !isMobile && 
-            <Photo className="w-full  flex flex-col justify-around items-center">
+            <Photo className="w-full flex flex-col justify-around items-center">
                 <ProfilePicture />
                 <Experience />
                 <Links />

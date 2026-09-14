@@ -13,7 +13,7 @@ export default function ProfilePictureDivMobile(){
     <>
         {
             isMobile && 
-            <Photo className="w-full my-auto mx-auto flex flex-col justify-center items-center" delay={1.5}>
+            <Photo className="flex flex-col items-center gap-y-10 mt-10 xl:mt-0" delay={1.5}>
                 <ProfilePicture />
                 <Experience />
                 <Links />

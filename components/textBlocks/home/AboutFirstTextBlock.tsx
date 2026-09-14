@@ -7,7 +7,7 @@ export default function AboutFirstTextBlock() {
       <Frame
          props={{
             className:
-               "w-[80%] framePadding sm:w-[90%] xl:w-full flex flex-col gap-y-5",
+               "w-[80%] framePadding sm:w-[90%] xl:w-full flex flex-col ",
             waitIsInView: true,
          }}
       >
