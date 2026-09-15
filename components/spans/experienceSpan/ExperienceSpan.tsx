@@ -5,7 +5,7 @@ export default function ExperienceSpan(){
     const { years, projects, academic, t } = useExperienceSpan();
 
     return (
-        <span className="flex gap-x-1 px-5 sm:gap-x-5 xl:gap-x-10 xl:px-10">
+        <span className="flex justify-between">
             <ExperienceElement title={years} subtitle={t("years")} />
             <ExperienceElement title={projects} subtitle={t("projects")} />
             <ExperienceElement title={academic} subtitle={t("academic")} isLastElement shoulNotdAddPlus />
