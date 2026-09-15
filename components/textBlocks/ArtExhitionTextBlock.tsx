@@ -19,7 +19,7 @@ export default function ArtExhitionTextBlock(){
     }
 
     return (
-    <Wrapper className="flex flex-col items-center">
+    <Wrapper className="flex flex-col items-center mt-3.5">
         <Title>
             <h1 className="azulPestana homeSubTitle text-center">{t("title")}</h1>
             <h2 className="text-center text-gray-400 text-xs px-5 md:px-40 md:text-[1rem]">{getSubtitle()}</h2>
