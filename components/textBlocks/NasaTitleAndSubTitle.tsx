@@ -2,7 +2,7 @@ import Title from "@/components/titles/HomeTitle";
 import { motion } from "motion/react";
 import useEffetInView from "@/hooks/useEffetInView";
 
-export default function NasaTitleAndSubTitle({ title, subTitle, titleStyle, subTitleStyle } : { title: string, subTitle: string, titleStyle?: string, subTitleStyle?:string }){
+export default function NasaTitleAndSubTitle({ title, subTitle, titleStyle, subTitleStyle } : { title: string, subTitle: React.ReactNode, titleStyle?: string, subTitleStyle?:string }){
     const { ref, isInView } = useEffetInView();
 
     return (

@@ -469,7 +469,7 @@
    "nasa": {
       "firstSection": {
          "title": "Astronomy\nPicture\nOf The Day",
-         "about": "Data is retrieved from NASA's official \"Astronomy Picture of the Day\" (APOD) API, including the daily image, description, and author credits (when disponible)"
+         "about": "Data is retrieved from NASA's official <link>\"Astronomy Picture of the Day\" (APOD) API</link>, including the daily image, description, and author credits (when disponible)"
       },
       "secondSession": {
          "title": "Astronomies Pictures\nOf The Week",
@@ -478,7 +478,7 @@
    },
    "artExhibition": {
       "title": "Art Exhibition",
-      "subTitle": "Search the Metropolitan Museum of Art and discover incredible artworks.",
+      "subTitle": "Search the <link>Metropolitan Museum of Art</link> and discover incredible artworks.",
       "notFound": {
          "title" : "Not Found!",
          "subTitle": "I'm sorry! The term \"{search}\" could not be found in the Metropolitan Museum Database."

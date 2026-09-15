@@ -10,5 +10,7 @@
       "initialExpDate" : "09-01-2023",
       "projects": "5",
       "academic": "2"
-   }
+   },
+   "apod": "https://science.nasa.gov/apod/",
+   "museum": "https://www.metmuseum.org/pt"
 }
