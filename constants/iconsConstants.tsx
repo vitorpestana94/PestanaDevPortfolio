@@ -2,7 +2,7 @@ import VP from "@public/icons/vP.svg";
 import Instagram from "@public/icons/Instagram.svg";
 import Whatsapp from "@public/icons/Whatsapp.svg";
 import Linkedin from "@public/icons/Linkedin.svg";
-import GitHub from "@public/icons/github.svg";
+import GitHub from "@public/icons/Github.svg";
 import Google from "@public/icons/Google.svg";
 import Email from "@public/icons/Email.svg";
 import Menu from "@public/icons/menu.svg";
