@@ -55,9 +55,14 @@ export const metadata: Metadata = {
       description,
       images: [imageForMetaData],
    },
-   keywords: ["Full Stack Web Developer", "Site", "Back-end Web Developer", "Vitor Pestana", "Vitor Luiz Pestana Pereira", "Desenvolvedor Web Full Stack", "Desenvolvedor Web Back-end"],
+   keywords: [
+      "Full Stack Web Developer", "Back-end Web Developer", "Vitor Pestana", 
+      "Vitor Luiz Pestana Pereira", "Vitor Luiz Pestana Pereira Menezes", 
+      "Desenvolvedor Web Full Stack", "Desenvolvedor Web Back-end",
+      "C#", ".NET", "ASP.NET Core", "Next.js", "TypeScript", 
+      "Helping companies grow by building scalable and maintainable systems through critical thinking and a philosophical approach."],
    other: {
-      keywords: "Vitor Pestana, Full Stack Web Developer, Back-end Web Developer, Site, Vitor Pestana, Vitor Luiz Pestana Pereira Desenvolvedor Web Full Stack Desenvolvedor Web Back-end",
+      keywords: "Vitor Pestana, Full Stack Web Developer, Back-end Web Developer, Vitor Pestana, Vitor Luiz Pestana Pereira Desenvolvedor Web Full Stack Desenvolvedor Web Back-end, Back-end & Full Stack Developer | C# | .NET | ASP.NET Core | Next.js | TypeScript | Helping companies grow by building scalable and maintainable systems through critical thinking and a philosophical approach.",
    },
 };
 
