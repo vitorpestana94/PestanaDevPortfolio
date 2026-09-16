@@ -1,0 +1,24 @@
+import Icon from "../icons/Icons";
+import { coreTechStack, skillPerLabel } from "@/constants/skillsConstants";
+import capitalizeWord from "@/utils/strings/capitalizeWord";
+import { useTranslations } from "next-intl";
+
+export default function CoreTechStackSpan(){
+    const t = useTranslations("home.segundaSessao.about");
+
+    return (
+        <div className="self-start space-y-5 mt-10 xl:mt-8">
+            <p className="homeParagraph font-bold text-[#38b6ff]!">{t("stack")}</p>
+            <span className="grid grid-cols-4 gap-5 md:flex md:gap-x-10">
+                {
+                    coreTechStack.map((tech, index) => (
+                        <div className="flex flex-col items-center gap-y-3" key={index}>
+                            <Icon iconName={tech} className="aspect-square w-8" />
+                            <p className="subTitleParagraph 2xl:text-xs! text-nowrap">{skillPerLabel[tech] ?? capitalizeWord(tech)}</p>
+                        </div>
+                    ))
+                }
+            </span>
+        </div>
+    )
+}

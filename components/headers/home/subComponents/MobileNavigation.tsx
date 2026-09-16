@@ -7,7 +7,7 @@ export default function MobileNavigation() {
 
    return (
       <>
-         <div className="absolute top-10 sm:top-15.5 right-8 z-50">
+         <div className="absolute top-10 right-8 sm:top-8 sm:right-10 z-50">
             <Menu open={open} setOpen={setOpen} />
          </div>
          {open && <MobileNav ref={navRef} setOpen={setOpen} />}

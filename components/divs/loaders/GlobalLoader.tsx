@@ -19,7 +19,7 @@ export default function GlobalLoader({
          toastId.current = toast.loading(loadingMessage, {
             style: {
                backgroundColor: "#38b6ff",
-               color: "#ffff",
+               color: "#ffff"
             },
          });
       }

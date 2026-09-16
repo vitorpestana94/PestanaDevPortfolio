@@ -2,7 +2,7 @@ import VP from "@public/icons/vP.svg";
 import Instagram from "@public/icons/Instagram.svg";
 import Whatsapp from "@public/icons/Whatsapp.svg";
 import Linkedin from "@public/icons/Linkedin.svg";
-import GitHub from "@public/icons/Github.svg";
+import GitHub from "@public/icons/github.svg";
 import Google from "@public/icons/Google.svg";
 import Email from "@public/icons/Email.svg";
 import Menu from "@public/icons/menu.svg";
@@ -38,6 +38,21 @@ import Typescript from "@public/icons/typescript.svg";
 import Bootstrap from "@public/icons/bootstrap.svg";
 import Claude from "@public/icons/claude.svg";
 import Search from "@public/icons/search.svg";
+import Download from "@public/icons/download.svg";
+import Frontend from "@public/icons/frontend.svg";
+import Backend from "@public/icons/backend.svg";
+import DataBase from "@public/icons/database.svg";
+import Tool from "@public/icons/tool.svg";
+import AspNet from "@public/icons/aspnet.svg";
+import Node from "@public/icons/node.svg";
+import Dapper from "@public/icons/dapper.svg";
+import Entity from "@public/icons/entity.svg";
+import MySQL from "@public/icons/mysql.svg";
+import PostgreSQL from "@public/icons/postgresql.svg"
+import VsCode from "@public/icons/vscode.svg";
+import VisualStudio from "@public/icons/visualstudio.svg";
+import BitBucket from "@public/icons/bitbucket.svg";
+import Resume from "@public/icons/resume.svg";
 
 export const icons = {
    vP: <VP />,
@@ -79,5 +94,20 @@ export const icons = {
    typescript: <Typescript />,
    bootstrap: <Bootstrap />,
    claude: <Claude />,
-   search: <Search />
+   search: <Search />,
+   download: <Download />,
+   database: <DataBase />,
+   frontend: <Frontend />,
+   backend: <Backend />,
+   tool: <Tool />,
+   aspnet: <AspNet />,
+   node: <Node />,
+   dapper: <Dapper />,
+   entity: <Entity />,
+   mysql: <MySQL />,
+   postgresql: <PostgreSQL />,
+   vscode: <VsCode />,
+   visualstudio: <VisualStudio />,
+   bitbucket: <BitBucket />,
+   resume: <Resume />
 } as const;

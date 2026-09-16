@@ -1,11 +1,11 @@
 "use client";
 
-import useAuthButton from "./useFormButton";
-import AuthButtonInterface from "./FormButtonInterface";
+import useAuthButton from "./useAnimatedButton";
+import AuthButtonInterface from "./AnimatedButtonInterface";
 import { motion } from "motion/react";
 import Spinner from "@/components/loaders/Spinner";
 
-export default function FormButton({
+export default function AnimatedButton({
    buttonLabel,
    isFormWithErrors,
    isLoading,

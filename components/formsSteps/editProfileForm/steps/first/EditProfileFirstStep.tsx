@@ -2,7 +2,7 @@ import useEditProfileFirstStep from "./useEditProfileFirstStep";
 import Interface from "./EditProfileFirstStepInterface";
 import Input from "@/components/inputs/editProfileInput/EditProfileInput";
 import User from "@/models/interfaces/dtos/SystemUser";
-import EditButton from "@/components/buttons/formButton/FormButton";
+import EditButton from "@/components/buttons/animatedButton/AnimatedButton";
 import ChangeData from "@/components/paragraphs/FormParagraph";
 import Form from "@/components/forms/DefaultForm/DefaultForm";
 import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";

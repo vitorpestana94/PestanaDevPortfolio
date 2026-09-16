@@ -2,7 +2,7 @@ import SignUpThirdStepInterface from "./SignUpThirdStepInterface";
 import useSignUpThirdStep from "./useSignUpThirdStep";
 import Name from "@/components/inputs/NameInput/NameInput";
 import Password from "@/components/inputs/PasswordInput/PasswordInput";
-import Register from "@/components/buttons/formButton/FormButton";
+import Register from "@/components/buttons/animatedButton/AnimatedButton";
 import NowPleaseProvideNameAndPassword from "@/components/paragraphs/FormParagraph";
 import Form from "@/components/forms/DefaultForm/DefaultForm";
 import TermsAcception from "@/components/labels/TermsAcceptionLabel";

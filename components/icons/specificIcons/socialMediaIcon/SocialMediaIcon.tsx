@@ -10,7 +10,7 @@ export default function SocialMediaIcon({ props }: Interface) {
          href={props.linkToSocialMedia}
          className="flex justify-center items-center"
       >
-         <Icon iconName={props.iconName} className="homeSocialMediaIcons" />
+         <Icon iconName={props.iconName} className={`homeSocialMediaIcons ${props.className}`} />
       </Link>
    );
 }

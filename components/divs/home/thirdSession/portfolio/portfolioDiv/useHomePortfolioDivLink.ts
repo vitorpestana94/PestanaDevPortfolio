@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function useHomePortfolioDivLink() {
    const initialStyle = "z-0 portfolioDivsBorders";
@@ -8,6 +8,7 @@ export default function useHomePortfolioDivLink() {
    const [hasTapped, setHasTapped] = useState(false);
 
    const linkRef = useRef<HTMLAnchorElement>(null);
+   const divRef = useRef<HTMLDivElement>(null);
    const resetTimerRef = useRef<NodeJS.Timeout | null>(null);
 
    function hoverStart() {
@@ -19,6 +20,30 @@ export default function useHomePortfolioDivLink() {
       setStyle("z-20");
       setShow(true);
    }
+
+   useEffect(() => {
+      function handleOutsideTap(event: PointerEvent) {
+         if (!hasTapped) return;
+
+         const target = event.target as Node;
+
+         if (divRef.current && !divRef.current.contains(target)) {
+            setHasTapped(false);
+            setStyle(initialStyle);
+            setShow(false);
+
+            if (resetTimerRef.current) {
+               clearTimeout(resetTimerRef.current);
+            }
+         }
+      }
+
+      document.addEventListener("pointerdown", handleOutsideTap);
+
+      return () => {
+         document.removeEventListener("pointerdown", handleOutsideTap);
+      };
+   }, [hasTapped]);
 
    function handleTap(event: PointerEvent) {
       const isTouch = event.pointerType === "touch";
@@ -57,6 +82,7 @@ export default function useHomePortfolioDivLink() {
       hoverStart,
       handleTap,
       hoverEnd,
+      divRef,
       linkRef,
       show,
       style,

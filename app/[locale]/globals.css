@@ -60,11 +60,15 @@
 
 @layer components {
    .homeSocialMediaIcons {
-      @apply fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-6 lg:w-5 xl:w-5.5 3xl:w-6;
+      @apply fill-[#bfbfbf] hover:fill-[#38b6ff] aspect-square w-5 xl:w-5.5 3xl:w-6;
    }
 
    .bgAzulPestana {
       @apply bg-[#38b6ff];
+   }
+
+   .bgLinear {
+      @apply bg-linear-to-br from-blue-600 to-[#38b6ff];
    }
 
    .azulPestana {
@@ -112,16 +116,20 @@
       @apply hover:text-[#38b6ff];
    }
 
+   .diferentSection {
+      @apply bg-[#070a10] py-10 xl:py-20;
+   }
+
    .homeGrayBg {
       @apply bg-[linear-gradient(160deg,#090909_0%,#131313_50%,#1f1f1f_100%)];
    }
 
-   .homeBg {
-      @apply bg-[linear-gradient(160deg,#020202_0%,#070b10_45%,#11161c_100%)];
+   .homeBg { 
+      @apply bg-[#0A0A0A];
    }
 
    .heroMarginTop {
-      @apply mt-5 sm:mt-16 xl:mt-30;
+      @apply mt-5 sm:mt-16;
    }
 
    .homeDefault {
@@ -129,7 +137,7 @@
    }
 
    .portfolioDivsBorders {
-      @apply border-8 border-transparent;
+      @apply border-4 sm:border-8 border-transparent;
    }
 
    .legalDocumentParagraph {
@@ -152,8 +160,20 @@
       @apply bg-white/5 backdrop-blur-xs rounded-full;
    }
 
+   .framePadding {
+      @apply p-5 sm:p-7 xl:p-8 4xl:p-10
+   }
+
+   .smallCallToAction {
+      @apply rounded-full bg-black px-4 py-2.5 text-xs md:text-[1rem] md:px-8 md:py-3.5 pointer-events-auto text-white font-medium font-serif flex justify-center items-center gap-x-3 border border-[#38b6ff]/30 hover:border-[#38b6ff]
+   }
+
+   .bigCallToAction {
+      @apply rounded-full p-4 text-xs md:text-[1rem] md:p-5 pointer-events-auto text-white font-medium font-serif;
+   }
+
    .homeParagraph {
-      @apply text-white text-[0.625rem] sm:text-xs xl:text-[0.9375rem] 3xl:text-[1.125rem] 4xl:text-[1.375rem] text-justify tracking-wide;
+      @apply text-[#F5F5F5] text-[0.625rem] xl:text-xs 3xl:text-[1rem] text-justify tracking-wide whitespace-pre-line;
    }
 
    .homeSubTitle {
@@ -189,7 +209,7 @@
    }
 
    .homeMobileDirection {
-      @apply flex flex-col justify-between items-center gap-y-16 sm:items-start sm:gap-y-0;
+      @apply flex flex-col justify-between items-center gap-y-16 xl:items-stretch xl:gap-y-0;
    }
 
    .strokeAzulPestana {
@@ -269,8 +289,8 @@
       @apply font-abril text-[1.5rem] sm:text-[2.5rem];
    }
 
-   .nasaParagrah {
-      @apply text-gray-400 text-justify text-[0.5rem] lg:text-xs 3xl:text-base
+   .subTitleParagraph {
+      @apply text-gray-400 max-w-3xs sm:max-w-2xs text-center lg:max-w-none xl:text-justify  text-[0.5rem] lg:text-xs 2xl:text-[0.875rem] 3xl:text-base
    }
 
    .nasaTitle {

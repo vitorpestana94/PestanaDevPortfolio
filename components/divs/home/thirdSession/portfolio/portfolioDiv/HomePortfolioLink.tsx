@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function HomePortfolioLink({
    props,
 }: HomePortfolioDivInterface) {
-   const { hoverStart, hoverEnd, handleTap, linkRef, show, style } =
+   const { hoverStart, hoverEnd, handleTap, linkRef, divRef, show, style } =
       useHomePortfolioDiv();
 
    return (
@@ -16,6 +16,7 @@ export default function HomePortfolioLink({
          whileHover={{ scale: 1.05 }}
          whileTap={{ scale: 1.05 }}
          onTap={handleTap}
+         ref={divRef}
          onHoverEnd={hoverStart}
          onHoverStart={hoverEnd}
          transition={{ type: "spring", stiffness: 150, damping: 6 }}
@@ -26,7 +27,7 @@ export default function HomePortfolioLink({
             target="_blank"
             rel="noopener noreferrer"
             href={props.picture?.routeOrSiteUrl ?? ""}
-            className="pointer-events-none"
+            className="pointer-events-none relative block h-full w-full"
          >
             <Image
                src={`/png/${props.picture?.pictureUrl}.png`}

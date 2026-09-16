@@ -7,6 +7,7 @@ export default function MySkills() {
    return (
       <HomeTitle>
          <h2 className="azulPestana homeSubTitle">{t("titulo")}</h2>
+         <p className="subTitleParagraph">{t("subTitle")}</p>
       </HomeTitle>
    );
 }

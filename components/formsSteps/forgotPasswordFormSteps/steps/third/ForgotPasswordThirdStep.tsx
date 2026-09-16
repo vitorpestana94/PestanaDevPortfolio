@@ -1,7 +1,7 @@
 import Interface from "./ForgotPasswordThidStepInterface";
 import useForgotPasswordThirdStep from "./useForgotPasswordThirdStep";
 import Password from "@/components/inputs/PasswordInput/PasswordInput";
-import Register from "@/components/buttons/formButton/FormButton";
+import Register from "@/components/buttons/animatedButton/AnimatedButton";
 import NowSetNewPassword from "@/components/paragraphs/FormParagraph";
 import Form from "@/components/forms/DefaultForm/DefaultForm";
 import {

@@ -1,14 +1,37 @@
 {
    "home": {
+      "primeiraSessao": {
+         "hello": "Olá, eu sou",
+         "about": "Filósofo · Cientista da Computação · Desenvolvedor Back-end & Full Stack",
+         "presentation": "Projeto e desenvolvo soluções de software robustas de ponta a ponta, transformando problemas complexos em sistemas eficientes e escaláveis orientado pelo pensamento crítico e com foco na entrega de valor real.",
+         "cv": "Currículo",
+         "checkOut": "Conheça meus projetos"
+      },
       "segundaSessao": {
          "titulo": "Sobre mim",
+         "experience":{
+            "years" : "anos de experiência",
+            "projects": "projetos em produção",
+            "academic": "formações acadêmicas"
+         },
+         "quote": {
+            "phrase": "Só conhece realmente uma pessoa quem a ama sem esperança.",
+            "reference": "Walter Benjamin, Einbahnstraße (1928)"
+         },
+         "tituloValores": {
+            "titulo": "Meu valores",
+            "subTitulo": "Algumas perspectivas sobre o que acredito, o que valorizo ​​e o que me guia"
+         },
          "about": {
-            "me": "Olá! Me chamo Vitor Pestana, sou de Niterói (Rio de Janeiro, Brasil) e sou Back-end Web Developer que também trabalha como Full Stack Web Developer. Sempre tive interesse por tecnologia e, com o tempo, esse interesse evoluiu naturalmente para o desenvolvimento de software. Ao mesmo tempo, sou apaixonado pelas artes, pelo belo, pela lógica e pelo pensamento crítico. Antes de seguir as veredas da Ciência da Computação, formei-me em Filosofia. Embora a filosofia continue sendo minha maior paixão intelectual, descobri minha vocação no desenvolvimento de software. Por volta de 2019, comecei a estudar como softwares são construídos e, depois de escrever meu primeiro `for` em C, me apaixonei definitivamente por programação. À medida que aprofundei meus conhecimentos em Ciência da Computação, passei a me especializar em desenvolvimento back-end e a expandir minha experiência em desenvolvimento web. Hoje, a filosofia e as artes continuam a me inspirar intelectualmente, enquanto a Ciência da Computação, a Lógica e a Engenharia de Software são onde encontrei minha paixão profissional.",
-            "zeLeiteiro": "Valorizo na vida acima de tudo o Amor e profissionalmente não é diferente. Em tudo que faço, eu deixo uma parte de mim, da minha alma, do Amor. Em grego, este valor é definido pela palavra meraki (μεράκι), e eu o aprendi na minha família desde cedo. Não à toa coloco o sobrenome Pestana em destaque. Meu avô, seu Zé Leiteiro, ensinou-me desde criança a colocar o Amor em tudo que faço. Ele lutou na Segunda Guerra Mundial pela Marinha do Brasil contra o horror nazista; ele é o homem olhando para a câmera. Após a guerra, trabalhou como leiteiro com Amor; eramos muito pobres. Com Amor, suor e sangue, abriu o caminho para que hoje eu possa ser quem sou. Assim como meu herói, o meu maior valor é o Amor que coloco em tudo que faço."
+            "me": "Olá! Me chamo <strong>Vitor Luiz Pestana Pereira</strong>, sou de Niterói (Rio de Janeiro, Brasil) e sou um <strong>Back-end Web Developer</strong> que também trabalha como <strong>Full Stack Web Developer</strong>.\n\nSempre tive interesse por tecnologia e, com o tempo, esse interesse evoluiu naturalmente para o desenvolvimento de software. Ao mesmo tempo, sou apaixonado pelas <strong>artes, pelo belo, pela lógica e pelo pensamento crítico</strong>. Antes de seguir as veredas da <strong>Ciência da Computação</strong>, formei-me em <strong>Filosofia</strong>. Embora a Filosofia continue sendo minha maior paixão intelectual, descobri minha vocação no desenvolvimento de software. Por volta de 2019, comecei a estudar como softwares são construídos e, depois de escrever meu primeiro `for` em C, me apaixonei definitivamente por programação. À medida que aprofundei meus conhecimentos em Ciência da Computação, passei a me especializar em desenvolvimento back-end e a expandir minha experiência em desenvolvimento web. Tenho especial interesse pela construção de sistemas, arquitetura de software, APIs e pela resolução de problemas server-side. Todavia, também possuo a capacidade de desenvolver soluções client-side; o que me possibilita a entrega de sistemas de ponta a ponta. \n\nHoje, a <strong>Ciência da Computação</strong> é a minha <strong>paixão profissional</strong> e a <strong>Filosofia</strong> é a minha <strong>paixão intelectual</strong>; sendo esta a responsável pela minha forma de abordar a resolução de problemas, fortalecendo a minha habilidade mais valiosa no desenvolvimento de software: o <strong>pensamento crítico</strong>.",
+            "stack": "Meu stack",
+            "zeLeiteiro": "Valorizo na vida acima de tudo o <strong>Amor</strong> e profissionalmente não é diferente. Em tudo que faço, eu deixo uma parte de mim, da minha alma, do <strong>Amor</strong>.\n\nEm grego, este valor é definido pela palavra <strong>meraki (μεράκι)</strong>, e eu o aprendi na minha <strong>família</strong> desde cedo. Não à toa coloco o sobrenome <strong>Pestana</strong> em destaque.\n\nMeu avô, seu <strong>Zé Leiteiro</strong>, ensinou-me desde criança a colocar o <strong>Amor</strong> em tudo que faço. Ele lutou na <strong>Segunda Guerra Mundial</strong> pela <strong>Marinha do Brasil</strong> contra o terrível horror nazista; ele é o belo homem encarando com seu olhar penetrante a objetiva da câmera.\n\nApós a guerra, mesmo retornando vivo como <strong>herói</strong>, trabalhou como um simples <strong>leiteiro</strong> com muito <strong>Amor</strong>; nesta época, nossa família era muito pobre. Com <strong>Amor, suor e sangue</strong>, ele pavimentou o caminho para que hoje eu possa ser quem sou.\n\nAssim como meu herói de guerra, <strong>o meu maior valor é o Amor</strong> que coloco em tudo que faço."
          }
       },
       "terceiraSessao": {
          "titulo": "Meu trabalho",
+         "subTituloMobile": "Clique nos cards abaixo para ler as suas descrições; clique novamente para ser redirecionado",
+         "subTituloDesktop": "Passe o mouse sobre os cards abaixo para ler as suas descrições; clique para ser redirecionado",
          "imgs": {
             "magiPass": "Este sistema é um site e aplicativo móvel que oferece descontos em restaurantes e atrações para turistas que visitam Orlando. Você pode baixar o aplicativo na seção Downloads.\n\nFiz parte da equipe de desenvolvimento desta aplicação web. Este projeto utiliza Next.js e Tailwind para o front-end, .NET para o back-end e React Native para o aplicativo móvel.",
             "saideira": "Trata-se de um site e aplicativo que oferece promoções em cervejarias e bares da região serrana do Rio de Janeiro, sobretudo em Nova Friburgo.\n\nAtualmente, seu desenvolvimento está paralisado, portanto o app não pode ser baixado. O site estava em desenvolvido usando Next.js, Tailwind CSS, .NET e React Native para a versão mobile.",
@@ -21,7 +44,10 @@
          }
       },
       "quartaSessao": {
-         "titulo": "Minhas habilidades"
+         "titulo": "Minhas habilidades",
+         "subTitle": "Tecnologias e conhecimentos que fazem parte da minha forma de construir soluções",
+         "tools": "Ferramentas",
+         "database": "Banco de Dados"
       },
       "ultimaSessao": {
          "copyright": "Todos os direitos reservados",
@@ -48,6 +74,7 @@
       },
       "home": {
          "sobre": "Sobre mim",
+         "valores": "Meus Valores",
          "meuTrabalho": "Meu Trabalho",
          "mySkills": "Minhas Habilidades"
       },
@@ -442,7 +469,7 @@
    "nasa": {
       "firstSection": {
          "title": "Imagem\nAstronômica\ndo Dia",
-         "about": "Os dados são obtidos da API oficial \"Astronomy Picture of the Day\" (APOD) da NASA, incluindo a imagem do dia, sua descrição e os créditos do autor (quando disponíveis)."
+         "about": "Os dados são obtidos da API oficial <link>\"Astronomy Picture of the Day\" (APOD) da NASA</link> , incluindo a imagem do dia, sua descrição e os créditos do autor (quando disponíveis)."
       },
       "secondSession": {
          "title": "Imagens Astronômicas\nda Semana",
@@ -451,7 +478,7 @@
    },
    "artExhibition": {
       "title": "Exibição Artística",
-      "subTitle": "Pesquise no Metropolitan Museum of Art e descubra obras de arte incríveis.",
+      "subTitle": "Pesquise no <link>Metropolitan Museum of Art</link> e descubra obras de arte incríveis.",
       "notFound": {
          "title" : "Não encontrado",
          "subTitle": "Perdão! O termo \"{search}\" não foi encontrado na base de dados do Metropolitan Museum."

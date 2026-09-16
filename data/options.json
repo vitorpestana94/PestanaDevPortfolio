@@ -2,7 +2,15 @@
    "socialMedias": {
       "instagram": "https://www.instagram.com/vitorluizpestana/",
       "linkedin": "https://www.linkedin.com/in/vitor-pestana-9ab88b200/",
-      "whatsapp": "https://wa.me/5521991505625"
+      "whatsapp": "https://wa.me/5521991505625",
+      "github": "https://github.com/vitorpestana94"
    },
-   "email": "vitorpestanadev@gmail.com"
+   "email": "vitorpestanadev@gmail.com",
+   "experiece": {
+      "initialExpDate" : "09-01-2023",
+      "projects": "5",
+      "academic": "2"
+   },
+   "apod": "https://science.nasa.gov/apod/",
+   "museum": "https://www.metmuseum.org/pt"
 }

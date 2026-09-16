@@ -12,7 +12,7 @@ export default function Menu({
       className={`flex justify-center w-full ${open ? "hidden" : ""}`}
       onClick={() => setOpen(!open)}
     >
-      <MenuIcon iconName="menu" className="aspect-square w-6" />
+      <MenuIcon iconName="menu" className="aspect-square w-6 sm:w-8" />
     </div>
   );
 }
