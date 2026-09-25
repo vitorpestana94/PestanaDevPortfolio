@@ -290,7 +290,7 @@
    }
 
    .subTitleParagraph {
-      @apply text-gray-400 max-w-3xs sm:max-w-2xs text-center lg:max-w-none xl:text-justify  text-[0.5rem] lg:text-xs 2xl:text-[0.875rem] 3xl:text-base
+      @apply text-gray-400 max-w-3xs sm:max-w-2xs text-center lg:max-w-none xl:text-justify text-[0.5rem] lg:text-xs 2xl:text-[0.875rem] 3xl:text-base
    }
 
    .nasaTitle {
