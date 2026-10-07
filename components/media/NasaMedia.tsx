@@ -7,7 +7,7 @@ export default function NasaMedia({ data, isSlider = false } : { data: NasaAstro
     <>
         {
             data.media_type === "image" ? 
-                <NasaPicture title={data.title} url={data.url} copyRight={data.copyright} isSlider={isSlider} /> :
+                <NasaPicture title={data.title} url={data.hdUrl} copyRight={data.copyright} isSlider={isSlider} /> :
                 <NasaVideo url={data.url} title={data.title} copyRight={data.copyright} isSlider={isSlider} />
         }
     </>
