@@ -11,7 +11,7 @@ export default function NasaCopyright({ copyright, className } : Interface){
             3xl:text-[0.625rem]
             ${className}`}>
                 <span>© Copyright:</span>
-                <span title={copyright.replace("\n", "")} className="truncate cursor-default">{copyright}</span>
+                <span title={copyright.replace("\n", "")} className="truncate cursor-default max-w-xs">{copyright}</span>
             </div>
         }
         </>
