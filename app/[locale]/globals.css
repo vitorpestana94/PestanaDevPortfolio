@@ -308,6 +308,30 @@
    .nasaTextSlider {
       @apply text-[0.5rem] xl:text-[0.5625rem] 3xl:text-[0.625rem] text-gray-400 text-justify
    }
+
+   .scrumBoardButton {
+      @apply rounded-full bg-[#242424] px-4 py-2 text-[0.625rem] lg:text-xs text-white text-nowrap cursor-pointer flex items-center gap-x-2 border border-[#38b6ff]/30 hover:border-[#38b6ff];
+   }
+
+   .scrumBoardDropdown {
+      @apply absolute top-full right-0 mt-1.5 z-50 min-w-56 max-h-80 overflow-y-auto bg-[#242424] border border-black rounded-md flex flex-col text-[#bfbfbf] text-[0.625rem] lg:text-xs;
+   }
+
+   .scrumBoardDropdownItem {
+      @apply w-full flex justify-between items-center gap-x-3 px-4 py-2.5 text-start hover:bg-white/10;
+   }
+
+   .scrumBoardInput {
+      @apply bg-transparent text-white focus:outline-none border-b border-[#808080] focus:border-[#38b6ff] placeholder:text-[#808080];
+   }
+}
+
+/* Maps the Cult UI Kanban Board tokens to this site's colors */
+.scrumBoard {
+   --foreground: #ffffff;
+   --muted: #242424;
+   --muted-foreground: #bfbfbf;
+   --border: rgb(56 182 255 / 0.3);
 }
 
 html,
