@@ -2,7 +2,8 @@ import builder from "./request/RequestDtoBuilder";
 import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
 import IsEmailRegisteredResponseDto from "@/models/interfaces/dtos/responses/IsEmailRegisteredResponseDto";
 import { clientApi } from "@/lib/api/client";
-import { proxy } from "@/constants/httpConstants";
+import { proxy, accessToken } from "@/constants/httpConstants";
+import AccessTokenResponseDto from "@/models/interfaces/dtos/responses/AccessTokenResponseDto";
 
 export default class AuthServiceClient {
    static async ForgotPassword(request: ForgotPasswordRequest) {
@@ -28,4 +29,10 @@ export default class AuthServiceClient {
 
       return response.data;
     }
+
+   static async GetAccessToken(): Promise<AccessTokenResponseDto> {
+      const response = await clientApi.get(accessToken);
+
+      return response.data;
+   }
 }
