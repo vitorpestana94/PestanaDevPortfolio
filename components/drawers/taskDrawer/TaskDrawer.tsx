@@ -73,7 +73,7 @@ export default function TaskDrawer(props: Interface) {
                   <input
                      {...register("deadline")}
                      type="datetime-local"
-                     className="profileDataInputs scheme-dark cursor-pointer"
+                     className="profileDataInputs pl-5! scheme-dark cursor-pointer"
                   />
                   {hasDeadline && (
                      <button
