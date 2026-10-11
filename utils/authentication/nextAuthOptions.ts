@@ -153,6 +153,10 @@ export const nextAuthOptions = {
             if (session?.user?.email) {
                token.email = session.user.email;
             }
+
+            if (session?.lastBoardId !== undefined) {
+               token.lastBoardId = session.lastBoardId;
+            }
          }
 
          if (
@@ -210,6 +214,7 @@ export const nextAuthOptions = {
       async session({ session, token }: { session: Session; token: JWT }) {
          session.user.id = token.id as string;
          session.user.provider = token.provider as string;
+         session.lastBoardId = token.lastBoardId;
 
          return session;
       },

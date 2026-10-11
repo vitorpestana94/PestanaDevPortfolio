@@ -10,6 +10,12 @@ import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPassw
 import ChangeUserDataRequestDto from "@/models/interfaces/dtos/requests/ChangeUserDataRequestDto";
 import ChangeUserPasswordRequestDto from "@/models/interfaces/dtos/requests/ChangeUserPasswordRequestDto";
 import RefreshTokenRequest from "@/models/interfaces/dtos/requests/RefreshTokenRequest";
+import CreateBoardRequest from "@/models/interfaces/dtos/requests/board/CreateBoardRequest";
+import UpdateBoardRequest from "@/models/interfaces/dtos/requests/board/UpdateBoardRequest";
+import CreateTaskRequest from "@/models/interfaces/dtos/requests/board/CreateTaskRequest";
+import UpdateTaskRequest from "@/models/interfaces/dtos/requests/board/UpdateTaskRequest";
+import UpdateColumnRequest from "@/models/interfaces/dtos/requests/board/UpdateColumnRequest";
+import AddMemberRequest from "@/models/interfaces/dtos/requests/board/AddMemberRequest";
 
 export default class RequestDtoBuilder {
    private static _auth: string = "auth";
@@ -17,6 +23,7 @@ export default class RequestDtoBuilder {
    private static _user: string = "user";
    private static _nasa: string = "nasa";
    private static _art: string = "metropolitan-museum";
+   private static _board: string = "board";
 
    static LoginRequest(requestBody: LoginRequest): RequestDto {
       return {
@@ -157,6 +164,86 @@ export default class RequestDtoBuilder {
       return {
          path: `${this._nasa}/period`,
          queryParams: [`startDate:${startDate}`, `endDate:${endDate}`]
+      };
+   }
+
+   static CreateBoard(requestBody: CreateBoardRequest): RequestDto {
+      return {
+         path: `${this._board}`,
+         requestBody: requestBody,
+      };
+   }
+
+   static GetBoards(): RequestDto {
+      return {
+         path: `${this._board}`,
+      };
+   }
+
+   static GetBoard(boardId: string): RequestDto {
+      return {
+         path: `${this._board}`,
+         pathParams: [boardId],
+      };
+   }
+
+   static UpdateBoard(boardId: string, requestBody: UpdateBoardRequest): RequestDto {
+      return {
+         path: `${this._board}/${boardId}`,
+         requestBody: requestBody,
+      };
+   }
+
+   static DeleteBoard(boardId: string): RequestDto {
+      return {
+         path: `${this._board}/${boardId}`,
+      };
+   }
+
+   static CreateTask(boardId: string, requestBody: CreateTaskRequest): RequestDto {
+      return {
+         path: `${this._board}/${boardId}/tasks`,
+         requestBody: requestBody,
+      };
+   }
+
+   static UpdateTask(boardId: string, taskId: string, requestBody: UpdateTaskRequest): RequestDto {
+      return {
+         path: `${this._board}/${boardId}/tasks/${taskId}`,
+         requestBody: requestBody,
+      };
+   }
+
+   static DeleteTask(boardId: string, taskId: string): RequestDto {
+      return {
+         path: `${this._board}/${boardId}/tasks/${taskId}`,
+      };
+   }
+
+   static UpdateColumn(boardId: string, columnId: string, requestBody: UpdateColumnRequest): RequestDto {
+      return {
+         path: `${this._board}/${boardId}/columns/${columnId}`,
+         requestBody: requestBody,
+      };
+   }
+
+   static GetBoardMembers(boardId: string): RequestDto {
+      return {
+         path: `${this._board}`,
+         pathParams: [boardId, "members"],
+      };
+   }
+
+   static AddMember(boardId: string, requestBody: AddMemberRequest): RequestDto {
+      return {
+         path: `${this._board}/${boardId}/members`,
+         requestBody: requestBody,
+      };
+   }
+
+   static RemoveMember(boardId: string, userId: string): RequestDto {
+      return {
+         path: `${this._board}/${boardId}/members/${userId}`,
       };
    }
 }

@@ -6,9 +6,15 @@ import { toastError } from "@/utils/errors/toastHandlers";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { getErrorCode } from "@/utils/errors/errorMessagesHandlers";
+import { useRedirectTo } from "@/hooks/useRedirectTo";
+import useLocalePath from "@/hooks/useLocalePath";
+import { useRouter } from "next/navigation";
 
 export default function useSignUpFormSteps() {
    const [isLoading, setIsLoading] = useState<boolean>(false);
+   const router = useRouter();
+   const { redirectTo, boardId } = useRedirectTo();
+   const { path } = useLocalePath(redirectTo);
 
    const {
       watch,
@@ -42,7 +48,9 @@ export default function useSignUpFormSteps() {
          return;
       }
 
-      if (response.ok) {
+      if (response.ok && boardId) {
+         router.push(path);
+      } else if (response.ok) {
          nextStep();
       } else {
          toastError(t(`error.${getErrorCode(response?.error ?? "unexpected")}`))
