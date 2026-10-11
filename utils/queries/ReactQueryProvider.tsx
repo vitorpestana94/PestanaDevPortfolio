@@ -49,7 +49,11 @@ export default function ReactQueryProvider({
                },
             }),
             mutationCache: new MutationCache({
-               onError: (error) => {
+               onError: (error, _variables, _context, mutation) => {
+                  if (mutation.meta?.skipGlobalErrorHandler) {
+                     return;
+                  }
+
                   toastError(getErrorMessage(error.message));
                },
             }),
