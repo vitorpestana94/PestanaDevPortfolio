@@ -7,6 +7,7 @@ declare module "next-auth" {
          provider: string;
          id: string;
       } & DefaultSession["user"];
+      lastBoardId?: string;
    }
 }
 
@@ -14,6 +15,7 @@ declare module "next-auth/jwt" {
    interface JWT {
       id_token?: string;
       deviceId?: string;
+      lastBoardId?: string;
    }
 }
 
