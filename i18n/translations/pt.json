@@ -484,7 +484,76 @@
          "subTitle": "Perdão! O termo \"{search}\" não foi encontrado na base de dados do Metropolitan Museum."
       } 
    },
+   "scrumBoard": {
+      "create": {
+         "title": "Crie um Scrum Board",
+         "name": "Nome do quadro",
+         "description": "Descrição (opcional)",
+         "button": "Criar Quadro",
+         "errors": {
+            "name": "O nome do quadro é obrigatório!"
+         },
+         "defaultColumns": {
+            "one": "A fazer",
+            "two": "Fazendo",
+            "three": "Revisão",
+            "four": "Teste",
+            "five": "Concluído"
+         },
+         "defaultTask": {
+            "name": "Minha primeira tarefa",
+            "type": "Feature",
+            "description": "Clique em mim para me editar ou me arraste para outra coluna!"
+         }
+      },
+      "board": {
+         "newBoard": "Novo Quadro",
+         "members": "Membros",
+         "owner": "Dono",
+         "memberEmail": "e-mail do membro",
+         "addMember": "Adicionar Membro",
+         "memberAdded": "Membro adicionado com sucesso!",
+         "invitationSent": "O usuário ainda não é cadastrado, então um convite para se cadastrar foi enviado por e-mail!",
+         "leave": "Sair do quadro",
+         "deleteBoard": "Excluir quadro",
+         "deleteBoardConfirmation": "Tem certeza de que deseja excluir este quadro? Todas as suas tarefas serão perdidas.",
+         "description": "Adicione uma descrição",
+         "addTask": "+ Adicionar Tarefa",
+         "deadline": "Prazo:",
+         "trash": "Solte uma tarefa aqui para excluí-la"
+      },
+      "task": {
+         "title": "Editar Tarefa",
+         "createTitle": "Nova Tarefa",
+         "add": "Adicionar Tarefa",
+         "name": "Nome",
+         "type": "Tipo",
+         "description": "Descrição",
+         "owner": "Responsável",
+         "noOwner": "Sem responsável",
+         "deadline": "Prazo",
+         "clearDeadline": "Remover prazo",
+         "save": "Salvar",
+         "delete": "Excluir",
+         "errors": {
+            "name": "O nome da tarefa é obrigatório!"
+         }
+      },
+      "notifications": {
+         "deadlineSet": "A tarefa \"{task}\" agora tem prazo: {deadline}.",
+         "deadlineChanged": "O prazo da tarefa \"{task}\" foi alterado para {deadline}.",
+         "deadlineRemoved": "O prazo da tarefa \"{task}\" foi removido."
+      }
+   },
    "metaData": {
+      "scrumBoard": {
+         "title": "| Scrum Board",
+         "description": "Um scrum board em tempo real para organizar suas tarefas com o seu time."
+      },
+      "createScrumBoard": {
+         "title": "| Criar Scrum Board",
+         "description": "Aqui você pode criar o seu scrum board."
+      },
       "home": {
          "title": "| Desenvolvedor Web Back-end",
          "description": "Olá! Meu nome é Vitor Pestana e sou um Desenvolvedor Web Back-end que também trabalhar como Desenvolver Web Full Stack"
@@ -599,6 +668,30 @@
       "B3F9": "O token do CAPTCHA não foi informado.",
       "C7AE": "O token do CAPTCHA é inválido. Tente novamente.",
       "4JF2": "Não foi possível processar a validação do CAPTCHA.",
-      "BKC4": "O token do CAPTCHA expirou ou já foi utilizado. Tente novamente."
+      "BKC4": "O token do CAPTCHA expirou ou já foi utilizado. Tente novamente.",
+      "A7D3": "Os nomes das colunas do quadro devem ser diferentes entre si!",
+      "7E1A": "Você não é membro deste quadro!",
+      "C3D2": "Não é possível atualizar o quadro porque nenhuma alteração foi detectada.",
+      "E8C5": "Somente o dono do quadro pode realizar esta ação!",
+      "6A3C": "O quadro não foi encontrado!",
+      "2F7B": "O quadro não foi atualizado devido a erros internos!",
+      "9B4E": "O quadro não foi excluído devido a erros internos!",
+      "B2A8": "O responsável pela tarefa deve ser membro deste quadro!",
+      "8C1B": "A coluna não foi encontrada!",
+      "9C4D": "A tarefa não foi criada devido a erros internos!",
+      "1F6D": "Não é possível atualizar a tarefa porque nenhuma alteração foi detectada.",
+      "3B9F": "A tarefa não foi encontrada!",
+      "5D2C": "A tarefa não foi atualizada devido a erros internos!",
+      "A4E7": "A tarefa não foi excluída devido a erros internos!",
+      "E2F4": "Não é possível atualizar a coluna porque nenhuma alteração foi detectada.",
+      "6D8A": "Este quadro já possui uma coluna com este nome!",
+      "D6B3": "A coluna não foi atualizada devido a erros internos!",
+      "F5C7": "Este usuário já é membro deste quadro!",
+      "5E9B": "Você não foi convidado para este quadro!",
+      "C2F8": "O convite não foi criado devido a erros internos!",
+      "7B6F": "O membro não foi adicionado devido a erros internos!",
+      "2C8D": "O dono do quadro não pode ser removido do quadro!",
+      "C9E1": "O membro não foi encontrado neste quadro!",
+      "3E4B": "O membro não foi removido devido a erros internos!"
    }
 }
