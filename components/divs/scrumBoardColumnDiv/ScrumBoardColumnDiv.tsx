@@ -5,35 +5,14 @@ import useScrumBoardColumnDiv from "./useScrumBoardColumnDiv";
 import { Column } from "@/components/ui/kanban-board";
 import Icon from "@/components/icons/Icons";
 
-const firstPosition = 1;
-const lastPosition = 5;
-
-function MoveButton({ isRight = false, onClick }: { isRight?: boolean; onClick: () => void }) {
-   return (
-      <button type="button" className="cursor-pointer" onClick={onClick}>
-         <Icon
-            iconName="leftArrow"
-            className={`aspect-square w-4 fill-[#bfbfbf] hover:fill-[#38b6ff] ${isRight ? "rotate-180" : ""}`}
-         />
-      </button>
-   );
-}
-
 export default function ScrumBoardColumnDiv(props: Interface) {
-   const { position, column } = props;
-   const { t, isRenaming, setIsRenaming, rename, move } = useScrumBoardColumnDiv(props);
+   const { column } = props;
+   const { t, isRenaming, setIsRenaming, rename } = useScrumBoardColumnDiv(props);
 
    return (
       <div className="flex flex-col gap-y-3 min-h-60 lg:min-h-110 rounded-2xl p-3 bg-[#11182773] border border-[#38b6ff]/30">
-         <span className="flex justify-between items-center min-h-5 text-xs">
-            {position > firstPosition ? <MoveButton onClick={() => move(position - 1)} /> : <span />}
-            {position < lastPosition ? (
-               <MoveButton isRight onClick={() => move(position + 1)} />
-            ) : (
-               <span />
-            )}
-         </span>
-         <div className="flex-1">
+         {/* A grid stretches the Kanban column, so its drop area fills the whole column even when it's empty. */}
+         <div className="flex-1 grid">
             <Column
                column={column}
                dragState={props.dragState}
