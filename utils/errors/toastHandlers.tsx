@@ -13,6 +13,27 @@ export function toastError(message: string) {
    });
 }
 
+export function toastSuccess(message: string) {
+   toast.success(message, {
+      className: "text-black! text-[0.875rem]!",
+      icon: (
+         <Icon
+            iconName="check"
+            className="stroke-[#38b6ff]"
+         />
+      ),
+   });
+}
+
+export function toastInfo(message: string) {
+   toast.info(message, {
+      style: {
+         backgroundColor: "#38b6ff",
+         color: "#ffff",
+      },
+   });
+}
+
 export function toastLoading(message: string){
    toast.loading(message, {
       style: {
