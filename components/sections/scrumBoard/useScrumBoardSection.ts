@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useGetBoard } from "@/hooks/api/board/queries";
-import { useAcceptInvitation, useUpdateTask, useDeleteTask } from "@/hooks/api/board/mutations";
+import { useAcceptInvitation, useMoveTask, useDeleteTask } from "@/hooks/api/board/mutations";
 import useBoardHub from "@/hooks/useBoardHub";
 import { DragState } from "@/components/ui/kanban-board";
 import { moveTask, removeTask, removeBoardFromList } from "@/utils/board/boardCacheHandlers";
@@ -35,7 +35,7 @@ export default function useScrumBoardSection(boardId: string) {
 
    const { data, error } = useGetBoard(boardId, isInvitationHandled && !hasLeft);
    const { mutateAsync: acceptInvitation } = useAcceptInvitation();
-   const { mutateAsync: updateTask } = useUpdateTask();
+   const { mutateAsync: moveTaskToColumn } = useMoveTask();
    const { mutateAsync: deleteTask } = useDeleteTask();
 
    const boardData = data?.data;
@@ -65,7 +65,7 @@ export default function useScrumBoardSection(boardId: string) {
       moveTask(queryClient, boardId, taskId, toColumnId);
 
       try {
-         await updateTask({ boardId, taskId, request: { columnId: toColumnId } });
+         await moveTaskToColumn({ boardId, taskId, columnId: toColumnId });
       } catch {
          queryClient.invalidateQueries({ queryKey: ["getBoard", boardId] });
       }

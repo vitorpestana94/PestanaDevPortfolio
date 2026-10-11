@@ -76,6 +76,23 @@ export function useUpdateTask(): MutationDefaultProps<
    });
 }
 
+// Same request of useUpdateTask, but without the loading toast: the card is already moved on the screen.
+export function useMoveTask(): MutationDefaultProps<
+   void,
+   TaskParams & { columnId: string }
+> {
+   return useMutation({
+      mutationFn: async ({ boardId, taskId, columnId }) => {
+         return await BoardService.UpdateTask(boardId, taskId, { columnId });
+      },
+      mutationKey: ["moveTask"],
+      retry: false,
+      meta: {
+         skipGlobalLoader: true,
+      },
+   });
+}
+
 export function useDeleteTask(): MutationDefaultProps<void, TaskParams> {
    return useMutation({
       mutationFn: async ({ boardId, taskId }) => {

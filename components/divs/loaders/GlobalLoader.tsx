@@ -8,7 +8,9 @@ export default function GlobalLoader({
    loadingMessage: string;
 }) {
    const isFetching = useIsFetching();
-   const isMutating = useIsMutating();
+   const isMutating = useIsMutating({
+      predicate: (mutation) => !mutation.meta?.skipGlobalLoader,
+   });
 
    const toastId = useRef<string | number | null>(null);
 
