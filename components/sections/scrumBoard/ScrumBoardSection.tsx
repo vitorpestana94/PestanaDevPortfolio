@@ -44,11 +44,10 @@ export default function ScrumBoardSection({ boardId }: { boardId: string }) {
          </div>
          <MotionConfig transition={gentleSpring}>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-5 items-start">
-               {columns.map((column, index) => (
+               {columns.map((column) => (
                   <BoardColumn
                      key={column.id}
                      boardId={boardId}
-                     position={index + 1}
                      column={column}
                      dragState={dragState}
                      setDragState={setDragState}
