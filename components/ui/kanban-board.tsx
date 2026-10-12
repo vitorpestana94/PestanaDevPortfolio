@@ -293,7 +293,6 @@ function Card({
         {card.title}
       </div>
 
-      {/* Description */}
       {card.description && (
         <div
           className="line-clamp-3 text-[10.5px] leading-snug whitespace-pre-line"

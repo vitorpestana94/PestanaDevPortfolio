@@ -2,7 +2,6 @@ import { describe, it, expect, vi } from "vitest";
 import getKanbanColumns from "@/utils/board/getKanbanColumns";
 import { getBoardData, getTask } from "./boardMocks";
 
-// The icons are SVGs loaded by the Next.js build, so they aren't needed here.
 vi.mock("@/components/icons/Icons", () => ({ default: () => null }));
 
 const getColumns = (data = getBoardData()) => getKanbanColumns(data, "pt", "Prazo:");

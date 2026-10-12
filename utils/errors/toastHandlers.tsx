@@ -15,11 +15,15 @@ export function toastError(message: string) {
 
 export function toastSuccess(message: string) {
    toast.success(message, {
-      className: "text-black! text-[0.875rem]!",
+      className: "text-[0.875rem]!",
+      style: {
+         backgroundColor: "#38b6ff",
+         color: "#ffff",
+      },
       icon: (
          <Icon
             iconName="check"
-            className="stroke-[#38b6ff]"
+            className="aspect-square w-6 min-w-6 stroke-white"
          />
       ),
    });

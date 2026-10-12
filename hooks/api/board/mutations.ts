@@ -76,7 +76,6 @@ export function useUpdateTask(): MutationDefaultProps<
    });
 }
 
-// Same request of useUpdateTask, but without the loading toast: the card is already moved on the screen.
 export function useMoveTask(): MutationDefaultProps<
    void,
    TaskParams & { columnId: string }

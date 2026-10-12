@@ -66,7 +66,6 @@ export default function useBoardHub({
          .withAutomaticReconnect()
          .build();
 
-      // My own changes are already applied by the REST responses.
       const fromOthers =
          <T>(handler: (notification: BoardNotification<T>) => void) =>
          (notification: BoardNotification<T>) => {
@@ -75,7 +74,6 @@ export default function useBoardHub({
 
       connection.on("TaskCreated", fromOthers<BoardTask>((n) => upsertTask(queryClient, boardId, n.data)));
       connection.on("TaskUpdated", fromOthers<BoardTask>((n) => upsertTask(queryClient, boardId, n.data)));
-      // The task itself was already updated by the "TaskUpdated" event, which always comes first.
       connection.on("TaskDeadlineChanged", fromOthers<TaskDeadlineChanged>((n) => showDeadlineToast(n.data)));
       connection.on("TaskDeleted", fromOthers<string>((n) => removeTask(queryClient, boardId, n.data)));
       connection.on("ColumnsUpdated", fromOthers<BoardColumn[]>((n) => setColumns(queryClient, boardId, n.data)));
@@ -92,7 +90,6 @@ export default function useBoardHub({
          n.data === myUserId ? leaveBoard() : removeMember(queryClient, boardId, n.data),
       );
 
-      // Groups are lost on reconnect and events are not stored, so it joins again and resyncs.
       connection.onreconnected(async () => {
          await connection.invoke("JoinBoard", boardId);
 
@@ -105,8 +102,6 @@ export default function useBoardHub({
          .then(() => connection.invoke("JoinBoard", boardId))
          .catch(() => {});
 
-      // Stopping it while it's still negotiating throws an error (it happens with React Strict Mode on development),
-      // so it waits the start to finish first.
       return () => {
          connectionStart
             .then(() => connection.invoke("LeaveBoard", boardId))

@@ -40,6 +40,10 @@
             "artExhibiton": {
                "title": "Exibição Artística",
                "text": "Este path utiliza a API do Metropolitan Museum of Art para pesquisar seu catálogo por termo.\n\nEle evidencia minha experiência na integração com serviços externos, no gerenciamento de mecanismos de armazenamento temporário e na disponibilização otimizada de informações para interfaces web, mantendo uma operação estável e reduzindo chamadas dispensáveis a plataformas externas.\n\nPor padrão, ele busca por “Van Gogh”, mas você pode pesquisar o que quiser. Vá em frente e explore — nunca se sabe o que você pode encontrar!"
+            },
+            "board": {
+               "title": "Scrum Board",
+               "text": "Este caminho é um Scrum Board em tempo real, onde você pode organizar tarefas com outras pessoas.\n\nEle demonstra minha experiência com comunicação em tempo real usando SignalR, autenticação com JWT, interfaces de arrastar e soltar e sincronização entre cliente e servidor.\n\nCrie um quadro, convide seus amigos por e-mail e veja cada mudança acontecer ao vivo!"
             }
          }
       },
@@ -494,7 +498,7 @@
             "name": "O nome do quadro é obrigatório!"
          },
          "defaultColumns": {
-            "one": "A fazer",
+            "one": "A Fazer",
             "two": "Fazendo",
             "three": "Revisão",
             "four": "Teste",

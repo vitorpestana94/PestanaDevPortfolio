@@ -11,7 +11,6 @@ export default function MembersDropdown(props: Interface) {
       useMembersDropdown(props);
    const { dropdownRef, open, openOrClose } = useDropdown();
 
-   // The owner can remove anyone but themselves, and a member can only remove themselves (leave the board).
    const canRemove = (memberId: string, isMemberOwner: boolean) =>
       !isMemberOwner && (isOwner || memberId === myUserId);
 

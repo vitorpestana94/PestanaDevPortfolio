@@ -18,6 +18,7 @@ export default function ProviderProfilePicture({
          alt="userProfile"
          width={40}
          height={40}
+         priority
       />
    );
 }

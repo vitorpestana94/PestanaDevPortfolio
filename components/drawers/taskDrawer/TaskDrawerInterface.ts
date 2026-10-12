@@ -5,7 +5,7 @@ export default interface TaskDrawerInterface {
    boardId: string;
    boardUsers: BoardUser[];
    myUserId?: string;
-   task?: BoardTask; // Edits this task when it's present
-   columnId?: string; // Creates a task on this column when there's no task
+   task?: BoardTask;
+   columnId?: string;
    close: () => void;
 }
