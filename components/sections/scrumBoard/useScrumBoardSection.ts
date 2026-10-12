@@ -40,13 +40,11 @@ export default function useScrumBoardSection(boardId: string) {
 
    const boardData = data?.data;
 
-   // Called by the delete board button, by leaving the board and by the SignalR events, so it must run once.
    async function leaveBoard() {
       if (isLeaving.current) return;
 
       isLeaving.current = true;
 
-      // Stops the board query, so a deleted board (or one the user isn't a member anymore) is never requested again.
       setHasLeft(true);
       removeBoardFromList(queryClient, boardId);
 
@@ -85,7 +83,6 @@ export default function useScrumBoardSection(boardId: string) {
 
    useBoardHub({ boardId, myUserId, leaveBoard });
 
-   // Invited users accept their invitation (adding themselves as members) before loading the board.
    useEffect(() => {
       if (!shouldAcceptInvitation || !session?.user.email || invitationRequested.current) return;
 
@@ -108,7 +105,6 @@ export default function useScrumBoardSection(boardId: string) {
          });
    }, [session?.user.email]);
 
-   // The last displayed board is kept in the next auth cookie.
    useEffect(() => {
       if (boardData && session && session.lastBoardId !== boardId) {
          update({ lastBoardId: boardId });

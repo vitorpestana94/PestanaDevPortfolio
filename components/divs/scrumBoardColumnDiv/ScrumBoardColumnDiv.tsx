@@ -11,7 +11,6 @@ export default function ScrumBoardColumnDiv(props: Interface) {
 
    return (
       <div className="flex flex-col gap-y-3 min-h-60 lg:min-h-110 rounded-2xl p-3 bg-[#11182773] border border-[#38b6ff]/30">
-         {/* A grid stretches the Kanban column, so its drop area fills the whole column even when it's empty. */}
          <div className="flex-1 grid">
             <Column
                column={column}

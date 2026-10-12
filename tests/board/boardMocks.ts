@@ -31,7 +31,6 @@ export function getBoardData(): BoardData {
          createdAt: "2026-10-11T12:00:00",
          updatedAt: "2026-10-11T12:00:00",
       },
-      // The API doesn't guarantee the columns order.
       boardColumns: [5, 3, 1, 4, 2].map((position) => ({
          id: `column-${position}`,
          boardId,

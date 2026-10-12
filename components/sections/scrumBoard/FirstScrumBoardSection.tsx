@@ -5,7 +5,6 @@ import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useGetBoards } from "@/hooks/api/board/queries";
 
-// Used when there's no last displayed board stored: opens the first user board or the board creation.
 export default function FirstScrumBoardSection() {
    const locale = useLocale();
    const router = useRouter();

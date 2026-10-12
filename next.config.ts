@@ -45,7 +45,6 @@ const nextConfig: NextConfig = {
   eslint: {
    ignoreDuringBuilds: true,
 },
-  // Exposes the API URL to the browser, so the SignalR hub can be reached directly.
   env: {
     API_URL: process.env.API_URL,
   },

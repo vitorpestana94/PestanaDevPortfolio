@@ -39,7 +39,6 @@ export default function useCreateScrumBoardDrawer(close?: () => void) {
          },
       });
 
-      // The API doesn't return the new board id, but the boards come ordered by creation date, so the new one is the last.
       const { boards } = await queryClient.fetchQuery({
          queryKey: ["getBoards"],
          queryFn: () => BoardService.GetBoards(),

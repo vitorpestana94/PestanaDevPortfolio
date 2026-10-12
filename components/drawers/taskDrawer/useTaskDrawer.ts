@@ -50,14 +50,12 @@ export default function useTaskDrawer({ boardId, task, columnId, myUserId, close
    }
 
    async function update(data: UpdateTaskRequest) {
-      // Only the changed fields are sent; the API keeps the value of the fields not sent.
       const changedFields: UpdateTaskRequest = Object.fromEntries(
          Object.keys(dirtyFields).map((key) => [key, data[key as keyof UpdateTaskRequest]]),
       );
       const { deadline, ...otherFields } = changedFields;
       const request: UpdateTaskRequest = otherFields;
 
-      // An empty deadline can't be sent as null (it keeps the current one), so the API needs "clearDeadline".
       if (dirtyFields.deadline) {
          if (deadline) {
             request.deadline = getDeadlineFromInputValue(deadline);

@@ -40,6 +40,10 @@
             "artExhibiton": {
                "title": "Art Exhibition",
                "text": "This path uses the Metropolitan Museum of Art’s API to search its catalog by term.\n\nIt demonstrates my experience with integrating external services, managing caching mechanisms, and efficiently delivering data to web interfaces, ensuring stable performance while reducing unnecessary requests to third-party platforms.\n\nBy default, it searches for “Van Gogh,” but you can search for anything you’d like. Go ahead and explore — you never know what you might find!"
+            },
+            "board": {
+               "title": "Scrum Board",
+               "text": "This path is a real-time Scrum Board where you can organize tasks with other people.\n\nIt demonstrates my experience with real-time communication using SignalR, authentication with JWT, drag-and-drop interfaces and keeping the client in sync with the server.\n\nCreate a board, invite your friends by email and see every change happen live!"
             }
          }
       },
@@ -494,7 +498,7 @@
             "name": "The board name is required!"
          },
          "defaultColumns": {
-            "one": "To do",
+            "one": "To Do",
             "two": "Doing",
             "three": "Review",
             "four": "Test",

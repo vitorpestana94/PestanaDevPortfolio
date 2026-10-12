@@ -326,7 +326,6 @@
    }
 }
 
-/* Maps the Cult UI Kanban Board tokens to this site's colors */
 .scrumBoard {
    --foreground: #ffffff;
    --muted: #242424;

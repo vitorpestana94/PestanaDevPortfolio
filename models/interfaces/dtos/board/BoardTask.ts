@@ -6,7 +6,7 @@ export default interface BoardTask {
    taskType: string | null;
    taskName: string;
    taskDescription: string | null;
-   deadline: string | null; // Returned without offset, but it's UTC
+   deadline: string | null;
    createdAt: string;
    updatedAt: string;
 }

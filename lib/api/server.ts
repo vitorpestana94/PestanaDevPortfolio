@@ -18,6 +18,7 @@ export async function serverApi(req: NextRequest) {
 
   return axios.create({
     baseURL: process.env.API_URL,
+    allowAbsoluteUrls: false,
     headers,
   });
 }

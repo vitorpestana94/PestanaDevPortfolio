@@ -21,7 +21,6 @@ export default function useMembersDropdown({ boardId, myUserId, leaveBoard }: In
    async function add() {
       if (isAdding || !isEmailValid(email)) return;
 
-      // It can take a few seconds, because an invitation email is sent when the user isn't registered.
       const { invitationSent } = await addMember({
          boardId,
          request: { email, clientLocale: locale },

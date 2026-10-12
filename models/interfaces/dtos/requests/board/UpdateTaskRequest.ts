@@ -4,6 +4,6 @@ export default interface UpdateTaskRequest {
    taskName?: string | null;
    taskType?: string | null;
    taskDescription?: string | null;
-   deadline?: string | null; // Sets or changes it; null or absent keeps the current one
+   deadline?: string | null;
    clearDeadline?: boolean;
 }

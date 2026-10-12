@@ -7,7 +7,6 @@ import { getDeadlineAsLocaleString, isOverdue } from "@/utils/dates/deadlineHand
 
 const lastPosition = 5;
 
-// The Kanban only has icons for "todo", "in-progress" and "done", so the middle columns get their own icons.
 const iconPerPosition: { [key: number]: React.ReactNode } = {
    3: <Icon iconName="eyeOn" className="aspect-square w-3.25 stroke-[#38b6ff]" />,
    4: <Icon iconName="tool" className="aspect-square w-3.25 stroke-white" />,
@@ -46,7 +45,6 @@ function getCard(
       date: task.deadline
          ? `${deadlineLabel} ${getDeadlineAsLocaleString(task.deadline, locale)}`
          : undefined,
-      // Finished tasks are never overdue.
       isOverdue: !!task.deadline && !isDoneColumn && isOverdue(task.deadline),
    };
 }
@@ -56,7 +54,6 @@ export default function getKanbanColumns(
    locale: string,
    deadlineLabel: string,
 ): ColumnData[] {
-   // The API doesn't guarantee columns order and tasks have no position inside their column.
    return [...data.boardColumns]
       .sort((a, b) => a.position - b.position)
       .map((column) => ({

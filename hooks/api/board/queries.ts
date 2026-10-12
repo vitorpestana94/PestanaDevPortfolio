@@ -6,7 +6,7 @@ export function useGetBoards() {
       queryKey: ["getBoards"],
       queryFn: () => BoardService.GetBoards(),
       retry: false,
-      staleTime: 1000 * 60 * 5, // 5 minutes cache
+      staleTime: 1000 * 60 * 5,
    });
 }
 
@@ -16,7 +16,7 @@ export function useGetBoard(boardId: string, enabled: boolean = true) {
       queryFn: () => BoardService.GetBoard(boardId),
       enabled: enabled,
       retry: false,
-      staleTime: 1000 * 60 * 5, // 5 minutes cache, SignalR keeps it updated
+      staleTime: 1000 * 60 * 5,
    });
 }
 
@@ -26,6 +26,6 @@ export function useGetBoardMembers(boardId: string, enabled: boolean = true) {
       queryFn: () => BoardService.GetBoardMembers(boardId),
       enabled: enabled,
       retry: false,
-      staleTime: 1000 * 60 * 5, // 5 minutes cache, SignalR keeps it updated
+      staleTime: 1000 * 60 * 5,
    });
 }
