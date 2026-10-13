@@ -24,6 +24,7 @@ export const portfolioEsquerda = {
       },
       title: "Magipass",
       icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
+      priority: true,
    },
    saideira: {
       picture: {
@@ -48,7 +49,7 @@ export const portfolioEsquerda = {
       },
       size: {
          widthAndHeight:
-            "aspect-video sm:flex-1",
+            " flex-1",
       },
       icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
    },
@@ -76,6 +77,7 @@ export const portfolioMeio = {
       },
       title: "APOD",
       icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
+      priority: true,
    },
    gif: {
       bgImage:
@@ -96,6 +98,7 @@ export const portfolioDireita = {
          widthAndHeight: "flex-1",
       },
       icons: ["dotnet", "tailwind", "react", "next"] as ComponetIcon[],
+      priority: true,
    },
    noiteEstrelada: {
       bgImage:
