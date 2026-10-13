@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useQueryClient } from "@tanstack/react-query";
+import { getSession, signOut } from "next-auth/react";
 import * as signalR from "@microsoft/signalr";
 import { boardHub } from "@/constants/httpConstants";
 import AuthServiceClient from "@/services/AuthServiceClient";
@@ -23,8 +24,14 @@ import {
    removeMember,
 } from "@/utils/board/boardCacheHandlers";
 
-async function getAccessToken() {
-   const { token } = await AuthServiceClient.GetAccessToken();
+const unauthorized = 401;
+
+function isUnauthorized(error: unknown) {
+   return (error as { status?: number })?.status === unauthorized;
+}
+
+async function requestHubToken() {
+   const { token } = await AuthServiceClient.GetHubToken();
 
    return token;
 }
@@ -41,6 +48,28 @@ export default function useBoardHub({
    const queryClient = useQueryClient();
    const t = useTranslations("scrumBoard.notifications");
    const locale = useLocale();
+
+   async function getHubToken() {
+      try {
+         return await requestHubToken();
+      } catch (error) {
+         if (!isUnauthorized(error)) throw error;
+      }
+
+      await getSession();
+
+      try {
+         return await requestHubToken();
+      } catch (error) {
+         if (isUnauthorized(error)) {
+            await signOut({
+               callbackUrl: `/${locale}/authentication/login?redirectTo=scrum-board/${boardId}`,
+            });
+         }
+
+         throw error;
+      }
+   }
 
    function showDeadlineToast({ taskName, oldDeadline, newDeadline }: TaskDeadlineChanged) {
       if (!newDeadline) {
@@ -62,7 +91,7 @@ export default function useBoardHub({
       if (!myUserId) return;
 
       const connection = new signalR.HubConnectionBuilder()
-         .withUrl(boardHub, { accessTokenFactory: getAccessToken })
+         .withUrl(boardHub, { accessTokenFactory: getHubToken })
          .withAutomaticReconnect()
          .build();
 
