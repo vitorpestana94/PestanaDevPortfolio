@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
-import { handleGetAccessToken } from "@/utils/authentication/accessTokenHandlers";
+import { handleGetHubToken } from "@/utils/authentication/hubTokenHandlers";
 
 export async function GET(req: NextRequest) {
-   return handleGetAccessToken(req);
+   return handleGetHubToken(req);
 }
