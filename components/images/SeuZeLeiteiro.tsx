@@ -9,6 +9,7 @@ export default function SeuZeLeiteiro() {
             src={"/png/seuZeLeiteiro.png"}
             alt="seuZeLeiteiroPicture"
             fill
+            sizes="(min-width: 1280px) 42vw, (min-width: 640px) 68vw, 80vw"
             style={{ objectFit: "fill" }}
             loading="lazy"
          />

@@ -17,5 +17,6 @@ export default interface HomePortfolioDivInterface {
       text?: string;
       title?: string;
       icons?: ComponetIcon[];
+      priority?: boolean;
    };
 }

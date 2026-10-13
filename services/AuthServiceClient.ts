@@ -2,8 +2,8 @@ import builder from "./request/RequestDtoBuilder";
 import ForgotPasswordRequest from "@/models/interfaces/dtos/requests/ForgotPasswordRequest";
 import IsEmailRegisteredResponseDto from "@/models/interfaces/dtos/responses/IsEmailRegisteredResponseDto";
 import { clientApi } from "@/lib/api/client";
-import { proxy, accessToken } from "@/constants/httpConstants";
-import AccessTokenResponseDto from "@/models/interfaces/dtos/responses/AccessTokenResponseDto";
+import { proxy, hubToken } from "@/constants/httpConstants";
+import HubTokenResponseDto from "@/models/interfaces/dtos/responses/HubTokenResponseDto";
 
 export default class AuthServiceClient {
    static async ForgotPassword(request: ForgotPasswordRequest) {
@@ -30,8 +30,8 @@ export default class AuthServiceClient {
       return response.data;
     }
 
-   static async GetAccessToken(): Promise<AccessTokenResponseDto> {
-      const response = await clientApi.get(accessToken);
+   static async GetHubToken(): Promise<HubTokenResponseDto> {
+      const response = await clientApi.get(hubToken);
 
       return response.data;
    }

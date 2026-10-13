@@ -140,6 +140,12 @@ export default class RequestDtoBuilder {
       };
    }
 
+   static GetHubToken(): RequestDto {
+      return {
+         path: `${this._auth}/hub-token`,
+      };
+   }
+
    static DeleteUser(): RequestDto {
       return {
          path: `${this._auth}`,

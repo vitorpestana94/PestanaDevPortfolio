@@ -32,6 +32,7 @@ export default function HomePortfolioLink({
             <Image
                src={`/png/${props.picture?.pictureUrl}.png`}
                alt={props.title ?? props.picture?.pictureUrl!}
+               priority={props.priority}
                fill
                sizes="(max-width: 640px) 100vw, 33vw"
                quality={85}

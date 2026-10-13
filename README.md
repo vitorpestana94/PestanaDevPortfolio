@@ -39,7 +39,7 @@ Component → hook (TanStack Query) → Service → RequestDtoBuilder → /api/p
 - **Services** (`services/`) describe each API call, and **`RequestDtoBuilder`** centralizes paths, path params and query params.
 - **Hooks** (`hooks/api/`) wrap the services with TanStack Query, with global error and loading handling.
 - API errors start with a 4-character code (e.g. `7E1A`), translated in `i18n/translations`.
-- The only direct connection is **SignalR**, which needs the API token, provided by the **`/api/token`** route.
+- The API's JWT never reaches the browser. The only direct connection is **SignalR**: on every connection, the **`/api/hub-token`** route requests on the server a short-lived token (10 minutes) that only the hub accepts, because it has its own audience and is rejected by every other endpoint.
 
 ## Getting started
 
@@ -132,7 +132,7 @@ Unit tests with Vitest cover the board's logic: deadline dates (UTC), mapping th
 ## Project structure
 
 ```
-app/              Routes (App Router) and API routes (proxy, token, NextAuth)
+app/              Routes (App Router) and API routes (proxy, hub-token, NextAuth)
 components/       UI components, grouped by type (buttons, drawers, sections, pages…)
 components/ui/    Third-party components installed with shadcn (Cult UI Kanban Board)
 hooks/            Shared hooks and TanStack Query hooks (hooks/api)
