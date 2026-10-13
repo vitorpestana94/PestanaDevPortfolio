@@ -39,7 +39,7 @@ Componente → hook (TanStack Query) → Service → RequestDtoBuilder → /api/
 - Os **Services** (`services/`) descrevem cada chamada à API, e o **`RequestDtoBuilder`** centraliza caminhos, path params e query params.
 - Os **hooks** (`hooks/api/`) envolvem os services com o TanStack Query, com tratamento global de erros e de carregamento.
 - Os erros da API começam com um código de 4 caracteres (ex.: `7E1A`), traduzido em `i18n/translations`.
-- A única conexão direta é o **SignalR**, que precisa do token da API, fornecido pela rota **`/api/token`**.
+- O JWT da API nunca chega ao navegador. A única conexão direta é o **SignalR**: a cada conexão, a rota **`/api/hub-token`** pede no servidor um token de vida curta (10 minutos) que só o hub aceita, porque ele tem audience própria e é rejeitado por todos os outros endpoints.
 
 ## Como rodar
 
@@ -132,7 +132,7 @@ Os testes unitários com Vitest cobrem a lógica do quadro: datas de prazo (UTC)
 ## Estrutura do projeto
 
 ```
-app/              Rotas (App Router) e rotas de API (proxy, token, NextAuth)
+app/              Rotas (App Router) e rotas de API (proxy, hub-token, NextAuth)
 components/       Componentes de interface, agrupados por tipo (buttons, drawers, sections, pages…)
 components/ui/    Componentes de terceiros instalados com shadcn (Cult UI Kanban Board)
 hooks/            Hooks compartilhados e hooks do TanStack Query (hooks/api)
