@@ -25,7 +25,7 @@ export default function Drawer({ title, children, close }: Interface) {
             animate={{ x: 0 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="homeGrayBg h-full w-[85%] sm:w-[60%] lg:w-[40%] xl:w-[30%] flex flex-col gap-y-8
-            px-6 sm:px-10 py-8 overflow-y-auto border-l border-[#38b6ff]/30"
+            px-6 sm:px-10 py-8 overflow-y-auto"
          >
             <span className="flex justify-between items-center gap-x-4">
                <h2 className="authFormTitle">{title}</h2>
